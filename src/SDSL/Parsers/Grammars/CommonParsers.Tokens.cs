@@ -14,6 +14,8 @@ public static class CommonParsers
                 | Terminals.Literal("TextureCube")
                 | Terminals.Literal("Texture") & Terminals.Set("123") & "D"
             ) & ~Terminals.Literal("Array");
+        if(BuiltinNumericTypes == null || Identifier == null || Spaces == null)
+            Console.WriteLine("Something is null");
         TextureTypes =
             (TextureBase & "<" & (BuiltinNumericTypes | Identifier) & ">").SeparatedBy(Spaces)
             | TextureBase;
@@ -22,14 +24,14 @@ public static class CommonParsers
             | Buffer;
 
     }
-    public static SequenceParser Identifier { get; } = (Terminals.Letter | "_") & (Terminals.Letter | Terminals.Digit | "_") * 0;
+    public static SequenceParser Identifier { get; } = ((Terminals.Letter | "_") & (Terminals.Letter | Terminals.Digit | "_").Repeat(0)).WithName("Identifier");
     public static SequenceParser TextureBase { get; }
     public static AlternativeParser TextureTypes { get; }
     public static AlternativeParser BufferTypes { get; }
     public static Parser Space => Terminals.WhiteSpace;
-    public static RepeatParser Spaces { get; } = Terminals.WhiteSpace * 0;
-    public static RepeatParser Spaces1 { get; } = Terminals.WhiteSpace * 1;
-    public static LiteralTerminal AppendStructuredBuffer { get; } = new();
+    public static RepeatParser Spaces { get; } = Terminals.WhiteSpace.Repeat(0);
+    public static RepeatParser Spaces1 { get; } = Terminals.WhiteSpace.Repeat(0);
+    public static LiteralTerminal AppendStructuredBuffer { get; } = Terminals.Literal("AppendStructuredBuffer").WithName("AppendStructuredBuffer");
     public static AlternativeParser ComponentNumber { get; } = new();
 
     public static SequenceParser BuiltinNumericTypes { get; } =
@@ -103,12 +105,12 @@ public static class CommonParsers
     public static LiteralTerminal Volatile { get; } = Terminals.Literal("volatile").WithName("Volatile");
     public static LiteralTerminal Void { get; } = Terminals.Literal("void").WithName("Void");
     public static LiteralTerminal While { get; } = Terminals.Literal("while").WithName("While");
-    public static LiteralTerminal LeftParen { get; } = Terminals.Literal("(").WithName("LeftParen");
-    public static LiteralTerminal RightParen { get; } = Terminals.Literal(")").WithName("RightParen");
-    public static LiteralTerminal LeftBracket { get; } = Terminals.Literal("[").WithName("LeftBracket");
-    public static LiteralTerminal RightBracket { get; } = Terminals.Literal("]").WithName("RightBracket");
-    public static LiteralTerminal LeftBrace { get; } = Terminals.Literal("{").WithName("LeftBrace");
-    public static LiteralTerminal RightBrace { get; } = Terminals.Literal("}").WithName("RightBrace");
+    public static LiteralTerminal LeftParen { get; } = Terminals.Literal("(");
+    public static LiteralTerminal RightParen { get; } = Terminals.Literal(")");
+    public static LiteralTerminal LeftBracket { get; } = Terminals.Literal("[");
+    public static LiteralTerminal RightBracket { get; } = Terminals.Literal("]");
+    public static LiteralTerminal LeftBrace { get; } = Terminals.Literal("{");
+    public static LiteralTerminal RightBrace { get; } = Terminals.Literal("}");
     public static LiteralTerminal LeftShift { get; } = Terminals.Literal("<<").WithName("LeftShift");
     public static LiteralTerminal RightShift { get; } = Terminals.Literal(">>").WithName("RightShift");
     public static LiteralTerminal Plus { get; } = Terminals.Literal("+").WithName("Plus");
@@ -131,11 +133,11 @@ public static class CommonParsers
     public static LiteralTerminal LessEqual { get; } = Terminals.Literal("<=").WithName("LessEqual");
     public static LiteralTerminal Greater { get; } = Terminals.Literal(">").WithName("Greater");
     public static LiteralTerminal GreaterEqual { get; } = Terminals.Literal(">=").WithName("GreaterEqual");
-    public static LiteralTerminal Question { get; } = Terminals.Literal("?").WithName("Question");
-    public static LiteralTerminal Colon { get; } = Terminals.Literal(":").WithName("Colon");
-    public static LiteralTerminal ColonColon { get; } = Terminals.Literal("::").WithName("ColonColon");
-    public static LiteralTerminal Semi { get; } = Terminals.Literal(";").WithName("Semi");
-    public static LiteralTerminal Comma { get; } = Terminals.Literal(",").WithName("Comma");
+    public static LiteralTerminal Question { get; } = Terminals.Literal("?");
+    public static LiteralTerminal Colon { get; } = Terminals.Literal(":");
+    public static LiteralTerminal ColonColon { get; } = Terminals.Literal("::");
+    public static LiteralTerminal Semi { get; } = Terminals.Literal(";");
+    public static LiteralTerminal Comma { get; } = Terminals.Literal(",");
     public static LiteralTerminal Assign { get; } = Terminals.Literal("=").WithName("Assign");
     public static LiteralTerminal StarAssign { get; } = Terminals.Literal("*=").WithName("StarAssign");
     public static LiteralTerminal DivAssign { get; } = Terminals.Literal("/=").WithName("DivAssign");
@@ -148,7 +150,7 @@ public static class CommonParsers
     public static LiteralTerminal XorAssign { get; } = Terminals.Literal("^=").WithName("XorAssign");
     public static LiteralTerminal OrAssign { get; } = Terminals.Literal("|=").WithName("OrAssign");
 
-    public static LiteralTerminal Dot { get; } = Terminals.Literal(".").WithName("Dot");
+    public static LiteralTerminal Dot { get; } = Terminals.Literal(".");
     public static LiteralTerminal True { get; } = Terminals.Literal("true").WithName("True");
     public static LiteralTerminal False { get; } = Terminals.Literal("false").WithName("False");
     public static AlternativeParser PreprocessorDirectiveName { get; } =

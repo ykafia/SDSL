@@ -73,14 +73,13 @@ public class ChainAccessor : UnaryExpression, IStreamCheck, IVariableCheck
 public class ArrayAccessor : UnaryExpression, IVariableCheck
 {
     public ShaderToken Value { get; set; }
-    public IEnumerable<ShaderToken> Accessors { get; set; }
+    public List<ShaderToken> Accessors { get; set; }
 
     public ArrayAccessor(Match m, SymbolTable s)
     {
         Match = m;
         Value = GetToken(m.Matches[0], s);
-        throw new NotImplementedException();
-        // Accessors = m.Matches.GetRange(1,m.Matches.Count-1).Select(GetToken);
+        Accessors = m.Matches.GetRange(1,m.Matches.Count-1).Select(r => ShaderToken.GetToken(r, s)).ToList();
     }
     public void CheckVariables(SymbolTable s)
     {

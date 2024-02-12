@@ -24,8 +24,8 @@ public abstract class ShaderToken
 
 	public static ShaderToken Tokenize(Match match)
 	{
-		// return GetToken(match,SymbolTable.Empty);
-		return GetToken(match, null);
+		return GetToken(match,new());
+		// return GetToken(match, null);
 	}
 	public static ShaderToken GetToken(Match match, SymbolTable symbols)
 	{
@@ -71,7 +71,7 @@ public abstract class ShaderToken
 			"VariableTerm" or "Identifier" => new VariableNameLiteral(tmp, symbols),
 			"ValueTypes" or "TypeName" => new TypeNameLiteral(tmp, symbols),
 			"Boolean" => new BoolLiteral(tmp, symbols),
-			_ => throw new NotImplementedException()
+			string n => throw new NotImplementedException($"Value {n} not supported")
 		};
 	}
 
