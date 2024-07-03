@@ -193,8 +193,7 @@ public class BlockStatement : Statement, IStreamCheck, IStaticCheck
     public BlockStatement(Match m, SymbolTable s)
     {
         Match = m;
-        throw new NotImplementedException();
-        // Statements = m.Matches.Select(GetToken).Cast<Statement>().ToList();
+        Statements = m.Matches.Select(x => GetToken(x, s)).Cast<Statement>().ToList();
     }
 
     public bool CheckStream(SymbolTable s)

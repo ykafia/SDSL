@@ -102,7 +102,9 @@ public partial class SDSLGrammar : Grammar
             LeftBrace,
             Spaces,
             shaderContentTypes.Repeat(0).SeparatedBy(Spaces).Until(Spaces & "}"),
-            RightBrace
+            RightBrace,
+            Spaces,
+            Semi.Optional()
         )
         {Name = "Body", Separator = Spaces};
 

@@ -80,9 +80,8 @@ public class ShaderVariableDeclaration : ShaderToken
         IsStream = m["Stream"].Success;
         IsStaged = m["Stage"].Success;
         Semantic = m["Semantic"].Success ? m["Semantic"].StringValue : null;
-        throw new NotImplementedException();
-        // Type = s.PushType(m["ValueTypes"].StringValue,m["ValueTypes"]);
-        // Name = m["Identifier"].StringValue;
+        Type = s.ParseType(m["ValueTypes"].StringValue);
+        Name = m["Identifier"].StringValue;
     }
 }
 public class Generics : ShaderToken

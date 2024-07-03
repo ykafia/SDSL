@@ -25,7 +25,7 @@ public partial class SymbolTable
             ("ReturnType", _) => Tokenize(m.Matches[0]),
             ("ValueTypes", true) => Tokenize(m.Matches[0]),
             ("ArrayTypes", true) => Tokenize(m.Matches[0]),
-            ("ValueTypes", false) => Scalar(m.StringValue),
+            ("ValueTypes", false) => ParseType(m.StringValue),
             ("ScalarType", false) => Scalar(m.StringValue),
             ("bool", _) => Scalar(m.StringValue),
             ("sbyte", _) => Scalar(m.StringValue),
