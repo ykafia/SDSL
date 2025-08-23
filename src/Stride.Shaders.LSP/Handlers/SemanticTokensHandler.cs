@@ -9,6 +9,7 @@ using OmniSharp.Extensions.LanguageServer.Protocol;
 using OmniSharp.Extensions.LanguageServer.Protocol.Client.Capabilities;
 using OmniSharp.Extensions.LanguageServer.Protocol.Document;
 using OmniSharp.Extensions.LanguageServer.Protocol.Models;
+using Stride.Shaders.Parsing.SDSL.AST;
 
 
 namespace Stride.Shaders.Parsing.LSP;
@@ -54,11 +55,20 @@ public class SemanticTokensHandler(ILogger<SemanticTokensHandler> logger) : Sema
         await Task.Yield();
 
         var result = SDSLParser.Parse(content);
-        if(result.AST is ShaderFile sf && sf.Namespaces.Count > 0)
+        if (result.AST is ShaderFile sf && sf.Namespaces.Count > 0)
         {
-            var ns = sf.Namespaces[0];
-            _logger.LogInformation($"Handling namespace : {ns.Namespace}");
-            builder.Push(ns.Info.Line,ns.Info.Column, ns.Info.Length, SemanticTokenType.Namespace, SemanticTokenModifier.Declaration);
+            foreach (var ns in sf.Namespaces)
+            {
+                _logger.LogInformation($"Handling namespace : {ns.Namespace}");
+                foreach (var nsId in ns.NamespacePath)
+                    builder.Push(nsId.Info.Line, nsId.Info.Column, nsId.Info.Length, SemanticTokenType.Namespace, SemanticTokenModifier.Static);
+
+                foreach (var declaration in ns.Declarations)
+                {
+                    if (declaration is ShaderClass shaderClass)
+                        shaderClass.Tokenize(builder, identifier, cancellationToken, logger);
+                }
+            }
         }
 
         // foreach (var (line, text) in content.Split('\n').Select((text, line) => (line, text)))
@@ -110,5 +120,56 @@ public class SemanticTokensHandler(ILogger<SemanticTokensHandler> logger) : Sema
             },
             Range = true
         };
+    }
+}
+
+
+public static class SemanticTokenizerExtensions
+{
+    public static void Tokenize(this ShaderClass @class, SemanticTokensBuilder builder, ITextDocumentIdentifierParams identifier, CancellationToken cancellationToken, ILogger? logger = null)
+    {
+        logger?.LogInformation("Tokenizing class: {ClassName}", @class.Name.Name);
+        builder.Push(@class.Name.Info.Line, @class.Name.Info.Column, @class.Name.Info.Length, SemanticTokenType.Class, SemanticTokenModifier.Static);
+        foreach (var member in @class.Elements)
+        {
+            if (member is ShaderMethod method)
+                method.Tokenize(builder, identifier, cancellationToken, logger);
+            else if (member is ShaderStruct shaderStruct)
+                shaderStruct.Tokenize(builder, identifier, cancellationToken, logger);
+        }
+    }
+    public static void Tokenize(this ShaderMethod method, SemanticTokensBuilder builder, ITextDocumentIdentifierParams identifier, CancellationToken cancellationToken, ILogger? logger = null)
+    {
+        logger?.LogInformation("Tokenizing method: {MethodName}", method.Name.Name);
+        builder.Push(method.Name.Info.Line, method.Name.Info.Column, method.Name.Info.Length, SemanticTokenType.Method, SemanticTokenModifier.Static);
+        if (method.ReturnTypeName is not null)
+        {
+            builder.Push(method.ReturnTypeName.Info.Line, method.ReturnTypeName.Info.Column, method.ReturnTypeName.Info.Length, SemanticTokenType.Type, SemanticTokenModifier.Static);
+        }
+        foreach (var parameter in method.Parameters)
+        {
+            builder.Push(parameter.Name.Info.Line, parameter.Name.Info.Column, parameter.Name.Info.Length, SemanticTokenType.Parameter, SemanticTokenModifier.Static);
+            if (parameter.TypeName is not null)
+            {
+                builder.Push(parameter.TypeName.Info.Line, parameter.TypeName.Info.Column, parameter.TypeName.Info.Length, SemanticTokenType.Type, SemanticTokenModifier.Static);
+            }
+        }
+    }
+    public static void Tokenize(this ShaderStruct shaderStruct, SemanticTokensBuilder builder, ITextDocumentIdentifierParams identifier, CancellationToken cancellationToken, ILogger? logger = null)
+    {
+        logger?.LogInformation("Tokenizing struct: {Struct}", shaderStruct.Info);
+        builder.Push(shaderStruct.Info.Line, shaderStruct.Info.Column, 6, SemanticTokenType.Keyword, SemanticTokenModifier.Static);
+        builder.Push(shaderStruct.TypeName.Info.Line, shaderStruct.TypeName.Info.Column, shaderStruct.TypeName.Info.Length, SemanticTokenType.Struct, SemanticTokenModifier.Static);
+        foreach (var member in shaderStruct.Members)
+        {
+            if (member is ShaderStructMember shaderMember)
+            {
+                builder.Push(shaderMember.Name.Info.Line, shaderMember.Name.Info.Column, shaderMember.Name.Info.Length, SemanticTokenType.Variable, SemanticTokenModifier.Static);
+                if (shaderMember.TypeName is not null)
+                {
+                    builder.Push(shaderMember.TypeName.Info.Line, shaderMember.TypeName.Info.Column, shaderMember.TypeName.Info.Length, SemanticTokenType.Type, SemanticTokenModifier.Static);
+                }
+            }
+        }
     }
 }
