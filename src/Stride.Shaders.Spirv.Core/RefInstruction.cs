@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
+using CommunityToolkit.HighPerformance.Buffers;
 using Stride.Shaders.Spirv.Core.Buffers;
 using Stride.Shaders.Spirv.Core.Parsing;
 using static Spv.Specification;
@@ -201,4 +202,22 @@ public ref struct RefInstruction
 public interface IWrapperInstruction
 {
     RefInstruction Inner { get; set; }
+}
+
+public interface IHandyInstruction
+{
+    MemoryOwner<int> Memory { get; }
+    public void UpdateMemory();
+}
+
+public interface IHandyInstruction2
+{
+    OpDataIndex? DataIndex { get; set; }
+    MemoryOwner<int> Memory { get; }
+    public void UpdateMemory();
+}
+
+public interface IHandyRefInstruction
+{
+    ref OpData Data { get; }
 }

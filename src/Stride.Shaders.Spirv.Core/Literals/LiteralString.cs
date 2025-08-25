@@ -37,6 +37,7 @@ public readonly struct LiteralString : ISpirvElement, IFromSpirv<LiteralString>
         Value = pool.GetOrAdd(real);
     }
     public static implicit operator LiteralString(string s) => new(s);
+    public static implicit operator string(LiteralString s) => s.Value;
 
 
     public void WriteTo(Span<int> slice)

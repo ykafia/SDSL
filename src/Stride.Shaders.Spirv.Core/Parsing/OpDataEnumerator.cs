@@ -5,19 +5,20 @@ namespace Stride.Shaders.Spirv.Core.Parsing;
 /// <summary>
 /// An instruction operands enumerator, useful for parsing instructions
 /// </summary>
-public ref struct OperandEnumerator
+public ref struct OpDataEnumerator
 {
     static readonly OperandKind[] pairs = [.. Enum.GetValues<OperandKind>().Where(x => x.ToString().StartsWith("Pair"))];
-    RefInstruction instruction;
-    readonly Span<int> Operands => instruction.Operands;
+    readonly Span<int> instruction;
+    readonly Span<int> Operands => instruction[1..];
+    readonly SDSLOp OpCode => (SDSLOp)(instruction[0] & 0xFFFF);
     readonly LogicalOperandArray logicalOperands;
     int wid;
     int oid;
 
-    public OperandEnumerator(RefInstruction instruction)
+    public OpDataEnumerator(Span<int> instruction)
     {
         this.instruction = instruction;
-        logicalOperands = InstructionInfo.GetInfo(instruction.OpCode);
+        logicalOperands = InstructionInfo.GetInfo(OpCode);
         oid = -1;
         wid = 0;
     }
@@ -38,7 +39,7 @@ public ref struct OperandEnumerator
 
             var logOp = logicalOperands[oid];
 
-            if (instruction.OpCode == SDSLOp.OpDecorate)
+            if (OpCode == SDSLOp.OpDecorate)
             {
                 if (oid == 0)
                 {
@@ -161,7 +162,7 @@ public ref struct OperandEnumerator
     public SpvOperand ParseCurrent()
     {
         var logOp = logicalOperands[oid];
-        if (instruction.OpCode == SDSLOp.OpDecorate)
+        if (OpCode == SDSLOp.OpDecorate)
         {
             SpvOperand result = new();
             if (oid == 0)
@@ -214,37 +215,25 @@ public ref struct OperandEnumerator
                 while (!Operands[wid + length].HasEndString())
                     length += 1;
                 length += 1;
-                var result = new SpvOperand(OperandKind.LiteralString, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, length));
+                var result = new SpvOperand(logOp.Name, OperandKind.LiteralString, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, length));
 
                 return result;
             }
             else if (pairs.Contains(logOp.Kind ?? throw new NotImplementedException("")))
             {
-                var result = new SpvOperand(logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 2));
+                var result = new SpvOperand(logOp.Name, logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 2));
                 return result;
             }
             else
-                return new(logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 1));
+                return new(logOp.Name, logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 1));
         }
         else
         {
             if (pairs.Contains(logOp.Kind ?? OperandKind.None))
-                return new(logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 2));
+                return new(logOp.Name, logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 2));
             else
-                return new(logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 1));
+                return new(logOp.Name, logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 1));
         }
     }
 
-}
-
-public static class IntExtensions
-{
-    public static bool HasEndString(this int i)
-    {
-        return
-            (char)(i >> 24) == '\0'
-            || (char)(i >> 16 & 0XFF) == '\0'
-            || (char)(i >> 8 & 0xFF) == '\0'
-            || (char)(i & 0xFF) == '\0';
-    }
 }

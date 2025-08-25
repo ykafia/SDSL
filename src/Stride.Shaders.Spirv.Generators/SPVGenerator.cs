@@ -63,6 +63,7 @@ public partial class SPVGenerator : IIncrementalGenerator
         spirvSDSL = JsonSerializer.Deserialize<SpirvGrammar>(new StreamReader(assembly.GetManifestResourceStream(resourceSDSLName)).ReadToEnd(), options);
 
         GenerateStructs(context);
+        // GenerateStructs2(context);
 
         var config = Configuration.Default.WithDefaultLoader();
         var htmlContext = BrowsingContext.New(config);
