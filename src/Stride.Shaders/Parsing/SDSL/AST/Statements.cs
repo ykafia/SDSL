@@ -1,8 +1,9 @@
 using System.Text;
 using Stride.Shaders.Core;
 using Stride.Shaders.Parsing.Analysis;
+using Stride.Shaders.Spirv;
 using Stride.Shaders.Spirv.Building;
-using Stride.Shaders.Spirv.Core.Buffers;
+using Stride.Shaders.Spirv.Core;
 
 namespace Stride.Shaders.Parsing.SDSL.AST;
 
@@ -161,7 +162,7 @@ public class Declare(TypeName typename, TextLocation info) : Declaration(typenam
         foreach (var d in Variables)
         {
             var variable = context.Bound++;
-            var instruction = context.Buffer.InsertOpVariable(builder.Position, variable, registeredType, Spv.Specification.StorageClass.Function, null);
+            var instruction = context.Buffer.InsertOpVariable(builder.Position, variable, registeredType, Specification.StorageClass.Function, null);
             builder.Position += instruction.WordCount;
             context.AddName(variable, d.Variable);
 

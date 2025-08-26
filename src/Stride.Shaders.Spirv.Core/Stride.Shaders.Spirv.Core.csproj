@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<AdditionalFiles Include="..\Stride.Shaders.Spirv.Generators\Extensions\spirv.sdsl.grammar-ext.json" />
+		<AdditionalFiles Include="Extensions\spirv.sdsl.grammar-ext.json" />
 		<AdditionalFiles Include="..\..\submodules\SpirvHeaders\include\spirv\unified1\spirv.json" />
 		<AdditionalFiles Include="..\..\submodules\SpirvHeaders\include\spirv\unified1\spirv.core.grammar.json" />
 		<AdditionalFiles Include="..\..\submodules\SpirvHeaders\include\spirv\unified1\extinst.glsl.std.450.grammar.json" />

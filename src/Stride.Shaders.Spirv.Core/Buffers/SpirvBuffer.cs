@@ -50,7 +50,7 @@ public class SpirvBuffer : IMutSpirvBuffer, IDisposable
         _owner = MemoryOwner<int>.Allocate(initialSize, AllocationMode.Clear);
         Header = Header with
         {
-            MagicNumber = Spv.Specification.MagicNumber,
+            MagicNumber = Specification.MagicNumber,
             VersionNumber = new(1, 3)
         };
         Length = 5;

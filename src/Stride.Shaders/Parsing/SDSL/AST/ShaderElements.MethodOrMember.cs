@@ -1,8 +1,8 @@
 using Stride.Shaders.Core;
-using Stride.Shaders.Core.Analysis;
 using Stride.Shaders.Parsing.Analysis;
+using Stride.Shaders.Spirv;
 using Stride.Shaders.Spirv.Building;
-using Stride.Shaders.Spirv.Core.Buffers;
+using Stride.Shaders.Spirv.Core;
 
 namespace Stride.Shaders.Parsing.SDSL.AST;
 
@@ -83,7 +83,7 @@ public sealed class ShaderMember(
         var (builder, context, _) = compiler;
         var registeredType = context.GetOrRegister(Type);
         var variable = context.Bound++;
-        context.Buffer.AddOpVariable(variable, registeredType, Spv.Specification.StorageClass.Function, null);
+        context.Buffer.AddOpVariable(variable, registeredType, Specification.StorageClass.Function, null);
         if (Semantic != null)
             context.Buffer.AddOpSDSLDecorateSemantic(variable, Semantic.Name);
         context.AddName(variable, Name);
