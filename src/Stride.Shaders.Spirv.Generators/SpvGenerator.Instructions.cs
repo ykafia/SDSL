@@ -124,7 +124,7 @@ public partial class SPVGenerator : IIncrementalGenerator
                     foreach (var operand in operands)
                     {
 
-                        (string fieldName, string operandName) = ToFieldAndOperandName(operand);
+                        (string type, string fieldName, string operandName) = ToTypeFieldAndOperandName(operand);
 
 
                         body1.Append($"public {operand.Kind} {fieldName} {{ get; set {{ field = value; UpdateMemory(); }} }}");
@@ -263,8 +263,33 @@ public struct {instruction.OpName} : IHandyInstruction2
         );
     }
 
-    public static (string FieldName, string OperandName) ToFieldAndOperandName(OperandData operand)
+    public static (string TypeName, string FieldName, string OperandName) ToTypeFieldAndOperandName(OperandData operand)
     {
+        string typename = (operand.Kind, operand.Quantifier) switch
+        {
+            (string s, null or "") when s.StartsWith("Id") => "int",
+            ("LiteralInteger", null or "") => "int",
+            ("LiteralFloat", null or "") => "float",
+            ("LiteralString", null or "") => "string",
+            (string s, null or "") when s.StartsWith("Pair") => "(int, int)",
+            (string s, null or "") when !s.StartsWith("Literal") => s,
+            // ("PairIdRefIdRef", null or "") => "(IdRef, IdRef)",
+            // ("PairIdRefLiteralInteger", null or "") => "(IdRef, LiteralInteger)",
+            // ("PairLiteralIntegerIdRef", null or "") => "(LiteralInteger, IdRef)",
+            (string s, "?") when s.StartsWith("Id") => "int?",
+            ("LiteralInteger", "?") => "int?",
+            ("LiteralFloat", "?") => "float?",
+            ("LiteralString", "?") => "string?",
+            (string s, "*") when !s.StartsWith("Literal") => $"{s}?",
+            (string s, "*") when s.StartsWith("Id") => "int?",
+            ("LiteralInteger", "*") => "int[]",
+            ("LiteralFloat", "*") => "float[]",
+            ("LiteralString", "*") => "string[]",
+            (string s, "*") when !s.StartsWith("Literal") => $"{s}?",
+            _ => throw new NotImplementedException($"Could not generate C# type for {operand.Kind}-{operand.Quantifier}")
+        };
+
+
         string fieldName;
         string operandName = ConvertOperandName(operand.Name ?? ConvertKindToName(operand.Kind), operand.Quantifier);
         if (operand.Name is null or "")
