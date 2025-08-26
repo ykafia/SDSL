@@ -1,9 +1,10 @@
-﻿using static Spv.Specification;
+﻿using static Stride.Shaders.Spirv.Specification;
 
 namespace Stride.Shaders.Spirv.Core;
+
 public enum OperandKind
 {
-    None = 0,
+    None,
     ImageOperands,
     FPFastMathMode,
     SelectionControl,

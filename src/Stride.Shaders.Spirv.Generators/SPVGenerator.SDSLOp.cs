@@ -11,48 +11,105 @@ using System.Text.Json;
 using System.Security.Claims;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.CSharp;
+using AngleSharp.Common;
+using Microsoft.CodeAnalysis.Text;
+using System.Dynamic;
 
 namespace Stride.Shaders.Spirv.Generators;
+
 public partial class SPVGenerator
 {
-    public void CreateSDSLOp(IncrementalGeneratorInitializationContext context)
+    public void CreateSDSLOp(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
+
+        var instructionsProvider =
+            grammarProvider
+            .SelectMany(static (grammar, b) => grammar.Instructions?.AsList() ?? [])
+            .Where(static x => x.OpName is not null && !x.OpName.Contains("GLSL"))
+            .Collect()
+            .Select(static (arr, _) => new EquatableList<InstructionData>([.. arr]));
+
+        context.RegisterImplementationSourceOutput(
+            instructionsProvider,
+            ExecuteSDSLOpCreation
+        );
+
+    }
+    public void ExecuteSDSLOpCreation(SourceProductionContext ctx, EquatableList<InstructionData> instructionArray)
+    {
+
         var code = new StringBuilder();
-        var nsProvider = context
-            .SyntaxProvider
-            .CreateSyntaxProvider(
-                predicate: (node, _) => node is NamespaceDeclarationSyntax ns && ns.Name.ToString().StartsWith("Spv"),
-                transform: (node, _) => (NamespaceDeclarationSyntax)node.Node
-            );
-        context.RegisterImplementationSourceOutput(nsProvider, (ctx, nds) =>
-        {
-            var eds = nds.ChildNodes().OfType<ClassDeclarationSyntax>().First(x => x.Identifier.Text == "Specification").ChildNodes().OfType<EnumDeclarationSyntax>().First(x => x.Identifier.Text == "Op");
-            var members = eds.Members.Where(x => x.Identifier.Text != "Max").ToDictionary(x => x.Identifier.Text, y => ParseInteger(y.EqualsValue!.Value.ToString()));
-            var lastnum = eds.Members.Where(x => x.Identifier.Text != "Max").Select(x => ParseInteger(x.EqualsValue!.Value.ToString())).Max();
-
-            foreach (var e in spirvSDSL!.Instructions.Select(x => x.OpName))
-                members.Add(e!, ++lastnum);
-
-            code
+        code
+                .AppendLine("using static Stride.Shaders.Spirv.Specification;")
+                .AppendLine("")
                 .AppendLine("namespace Stride.Shaders.Spirv.Core;")
                 .AppendLine("")
                 .AppendLine("public enum SDSLOp : int")
                 .AppendLine("{");
-            foreach (var e in members)
-                code.Append(e.Key).Append(" = ").Append(e.Value).AppendLine(",");
-            code
-                .AppendLine("}");
+
+        Dictionary<string, int> members = instructionArray.Where(x => !x.OpName.Contains("SDSL")).ToDictionary(x => x.OpName, y => y.OpCode)!;
+        int lastnum = members.Values.Max();
+        foreach (var instruction in instructionArray!)
+        {
+            if (members.TryGetValue(instruction.OpName, out var value))
+            {
+                if (instruction.OpName.Contains("SDSL") && value <= 0)
+                    value = ++lastnum;
+                code.AppendLine($"    {instruction.OpName} = {value},");
+            }
+            else
+            {
+                members.Add(instruction.OpName, ++lastnum);
+                code.AppendLine($"    {instruction.OpName} = {lastnum},");
+            }
+        }
 
 
-            ctx.AddSource("SDSLOp.gen.cs", code.ToSourceText());
-        });
+        code.AppendLine("}");
+        ctx.AddSource("SDSLOp.gen.cs",
+            SourceText.From(
+                SyntaxFactory
+                .ParseCompilationUnit(code.ToString())
+                .NormalizeWhitespace()
+                .ToFullString(),
+                Encoding.UTF8
+         )
+        );
+        code.Clear();
+        code
+                .AppendLine("using static Stride.Shaders.Spirv.Specification;")
+                .AppendLine("")
+                .AppendLine("namespace Stride.Shaders.Spirv;")
+                .AppendLine("")
+                .AppendLine("public static partial class Specification")
+                .AppendLine("{")
+                .AppendLine("public enum Op : int")
+                .AppendLine("{");
 
-    }
-    public static int ParseInteger(string text)
-    {
-        if (text.StartsWith("0x"))
-            return int.Parse(text.Substring(2), System.Globalization.NumberStyles.HexNumber);
-        else
-            return int.Parse(text);
+        foreach (var instruction in instructionArray!)
+        {
+            if (members.TryGetValue(instruction.OpName, out var value))
+            {
+                if (instruction.OpName.Contains("SDSL") && value <= 0)
+                    value = ++lastnum;
+                code.AppendLine($"    {instruction.OpName} = {value},");
+            }
+            else
+            {
+                members.Add(instruction.OpName, ++lastnum);
+                code.AppendLine($"    {instruction.OpName} = {lastnum},");
+            }
+        }
+        code.AppendLine("}}");
+
+        ctx.AddSource("SpecificationOp.gen.cs",
+            SourceText.From(
+                SyntaxFactory
+                .ParseCompilationUnit(code.ToString())
+                .NormalizeWhitespace()
+                .ToFullString(),
+                Encoding.UTF8
+         )
+        );
     }
 }

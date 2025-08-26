@@ -10,74 +10,111 @@ using System.Reflection;
 using System.Text.Json;
 using System.Security.Claims;
 using System.Runtime.InteropServices.ComTypes;
+using Microsoft.CodeAnalysis.Text;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace Stride.Shaders.Spirv.Generators;
+
 public partial class SPVGenerator
 {
 
 
-    public void CreateInfo(IncrementalGeneratorInitializationContext context)
+    public void CreateInfo(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
 
-        GenerateKinds(context);
+        GenerateKinds(context, grammarProvider);
 
+        IncrementalValueProvider<EquatableList<InstructionData>> infoProvider =
+            grammarProvider
+            .SelectMany(static (grammar, _) => grammar.Instructions!.Value)
+            .Where(static x => x.OpName is not null && !x.OpName.Contains("GLSL"))
+            .Collect()
+            .Select(static (arr, _) => new EquatableList<InstructionData>([.. arr]));
+
+        context.RegisterImplementationSourceOutput(
+            infoProvider,
+            GenerateInstructionInformation
+        );
+    }
+    static void GenerateInstructionInformation(SourceProductionContext spc, EquatableList<InstructionData> instructions)
+    {
         var code = new StringBuilder();
+        code
+            .AppendLine("using static Stride.Shaders.Spirv.Specification;")
+            .AppendLine("")
+            .AppendLine("namespace Stride.Shaders.Spirv.Core;")
+            .AppendLine("")
+            .AppendLine("public partial class InstructionInfo")
+            .AppendLine("{")
+            .AppendLine("static InstructionInfo()")
+            .AppendLine("{");
+        foreach (var instruction in instructions)
+            GenerateInfo(instruction, code);
 
         code
-        .AppendLine("using static Spv.Specification;")
-        .AppendLine("")
-        .AppendLine("namespace Stride.Shaders.Spirv.Core;")
-        .AppendLine("")
-        .AppendLine("public partial class InstructionInfo")
-        .AppendLine("{")
-
-        .AppendLine("static InstructionInfo()")
-        .AppendLine("{")
-        ;
-
-
-        foreach (var instruction in spirvCore!.Instructions)
-        {
-            GenerateInfo(instruction, code);
-        }
-        foreach (var instruction in spirvSDSL!.Instructions)
-        {
-            GenerateInfo(instruction, code);
-        }
-        code
-        .AppendLine("Instance.InitOrder();")
-
-        .AppendLine("}")
-
-        .AppendLine("}");
-
-        context.RegisterPostInitializationOutput(ctx => ctx.AddSource("InstructionInfo.gen.cs", code.ToSourceText()));
+            .AppendLine("Instance.InitOrder();")
+            .AppendLine("}")
+            .AppendLine("}");
+        spc.AddSource(
+            "InstructionInfo.gen.cs",
+            SourceText.From(
+                SyntaxFactory
+                .ParseCompilationUnit(code.ToString())
+                .NormalizeWhitespace()
+                .ToFullString(),
+                Encoding.UTF8
+            )
+        );
     }
 
-    private void GenerateKinds(IncrementalGeneratorInitializationContext context)
+    private void GenerateKinds(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
-        var code = new StringBuilder()
-        .AppendLine("using static Spv.Specification;")
-        .AppendLine("")
-        .AppendLine("namespace Stride.Shaders.Spirv.Core;")
-        .AppendLine("\n\n")
-        .AppendLine("public enum OperandKind")
-        .AppendLine("{")
+        var kindsProvider = grammarProvider
+            .Select(static (grammar, _) => grammar.OperandKinds!.Value);
 
-        .AppendLine("None = 0,");
-        var kinds = spirvCore!.OperandKinds.Select(x => x.Kind);
-        foreach (var kind in kinds)
-        {
-            code.Append(kind).AppendLine(",");
-        }
-        code.AppendLine("}");
+        context.RegisterImplementationSourceOutput(kindsProvider,
+            static (spc, kinds) =>
+            {
+                var builder = new StringBuilder();
+                builder
+                    .AppendLine("using static Stride.Shaders.Spirv.Specification;")
+                    .AppendLine("")
+                    .AppendLine("namespace Stride.Shaders.Spirv.Core;")
+                    .AppendLine("")
+                    .AppendLine("public enum OperandKind")
+                    .AppendLine("{")
+                    .AppendLine("    None,");
+                if(kinds.AsDictionary() is Dictionary<string, OpKind> dict)
+                foreach (var kind in dict.Values)
+                    builder.AppendLine($"    {kind.Kind},");
+                builder
+                    .AppendLine("}");
+                spc.AddSource("OperandKind.gen.cs", builder.ToString());
+            }
+        );
+        // var code = new StringBuilder()
+        // .AppendLine("using static Stride.Shaders.Spirv.Specification;")
+        // .AppendLine("")
+        // .AppendLine("namespace Stride.Shaders.Spirv.Core;")
+        // .AppendLine("\n\n")
+        // .AppendLine("public enum OperandKind")
+        // .AppendLine("{")
 
-        context.RegisterPostInitializationOutput(ctx => ctx.AddSource("OperandKind.gen.cs", code.ToSourceText()));
+        // .AppendLine("None = 0,");
+        // var kinds = spirvCore!.OperandKinds.Select(x => x.Kind);
+        // foreach (var kind in kinds)
+        // {
+        //     code.Append(kind).AppendLine(",");
+        // }
+        // code.AppendLine("}");
+
+        // context.RegisterPostInitializationOutput(ctx => ctx.AddSource("OperandKind.gen.cs", code.ToSourceText()));
 
     }
 
-    public void GenerateInfo(InstructionData op, StringBuilder code)
+    public static void GenerateInfo(InstructionData op, StringBuilder code)
     {
+
         var opname = op.OpName;
         var spvClass = op.Class;
         if (opname == "OpExtInst")
@@ -88,7 +125,7 @@ public partial class SPVGenerator
             code.AppendLine("Instance.Register(SDSLOp.OpExtInst, OperandKind.LiteralInteger, OperandQuantifier.One, \"instruction\", \"GLSL\");");
             code.AppendLine("Instance.Register(SDSLOp.OpExtInst, OperandKind.IdRef, OperandQuantifier.ZeroOrMore, \"values\", \"GLSL\");");
         }
-        else if (op.Operands is List<OperandData> operands)
+        else if (op.Operands is EquatableList<OperandData> operands)
         {
             foreach (var operand in operands)
             {
@@ -124,7 +161,7 @@ public partial class SPVGenerator
                             .Append($", \"{spvClass}\"")
                             .AppendLine(");");
                     }
-                    
+
                 }
             }
         }
@@ -133,28 +170,4 @@ public partial class SPVGenerator
             code.Append("Instance.Register(SDSLOp.").Append(opname).AppendLine(", OperandKind.None, null, \"Debug\");");
         }
     }
-
-    public static string ConvertNameQuantToName(string name, string quant)
-    {
-        return (name, quant) switch
-        {
-            (_, "*") => "values",
-            ("event", _) => "eventId",
-            ("string", _) => "value",
-            ("base", _) => "baseId",
-            ("object", _) => "objectId",
-            ("default", _) => "defaultId",
-            _ => name.Replace("'", "").ToLowerInvariant()
-        };
-    }
-
-    public static string ConvertQuantifier(string quant)
-    {
-        if (quant == "*")
-            return "ZeroOrMore";
-        else if (quant == "?")
-            return "ZeroOrOne";
-        else return "One";
-    }
 }
-
