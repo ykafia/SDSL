@@ -42,10 +42,7 @@ public partial class SPVGenerator
                     grammar.Revision = parsed.Revision;
                 }
                 if (parsed.Instructions is not null)
-                {
-
                     grammar.Instructions?.AsList()?.AddRange(parsed.Instructions?.AsList() ?? []);
-                }
                 if (parsed.OperandKinds?.AsDictionary() is Dictionary<string, OpKind> parsedKinds && grammar.OperandKinds?.AsDictionary() is Dictionary<string, OpKind> grammarKinds)
                 {
                     foreach (var pk in parsedKinds)
