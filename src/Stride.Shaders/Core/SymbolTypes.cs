@@ -113,6 +113,7 @@ public sealed record BufferType(SymbolType BaseType, int Size) : SymbolType()
     public override string ToString() => $"Buffer<{BaseType}, {Size}>";
 }
 
+public sealed record SamplerType(string Name) : SymbolType();
 
 public abstract record TextureType(SymbolType BaseType) : SymbolType()
 {

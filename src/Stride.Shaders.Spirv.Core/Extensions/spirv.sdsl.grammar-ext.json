@@ -65,8 +65,12 @@
       "opname": "OpSDSLImportFunction",
       "class": "Miscellaneous",
       "operands": [
-        { "kind": "IdResultType" },
-        { "kind": "IdResult" },
+        {
+          "kind": "IdResultType"
+        },
+        {
+          "kind": "IdResult"
+        },
         {
           "kind": "LiteralString",
           "name": "functionName"
@@ -81,8 +85,12 @@
       "opname": "OpSDSLImportVariable",
       "class": "Miscellaneous",
       "operands": [
-        { "kind": "IdResultType" },
-        { "kind": "IdResult" },
+        {
+          "kind": "IdResultType"
+        },
+        {
+          "kind": "IdResult"
+        },
         {
           "kind": "LiteralString",
           "name": "variableName"
@@ -101,6 +109,51 @@
         {
           "enumerant": "Mixin",
           "value": 5367
+        }
+      ]
+    },
+    {
+      "kind": "SamplerStateParameter",
+      "enumerants": [
+        {
+          "enumerant": "Filter",
+          "value": 0
+        },
+        {
+          "enumerant": "AddressU",
+          "value": 1
+        },
+        {
+          "enumerant": "AddressV",
+          "value": 2
+        },
+        {
+          "enumerant": "AddressW",
+          "value": 3
+        },
+        {
+          "enumerant": "MipLODBias",
+          "value": 4
+        },
+        {
+          "enumerant": "MaxAnisotropy",
+          "value": 5
+        },
+        {
+          "enumerant": "ComparisonFunc",
+          "value": 6
+        },
+        {
+          "enumerant": "BorderColor",
+          "value": 7
+        },
+        {
+          "enumerant": "MinLOD",
+          "value": 8
+        },
+        {
+          "enumerant": "MaxLOD",
+          "value": 9
         }
       ]
     }

@@ -17,7 +17,7 @@ public abstract class MethodOrMember(TextLocation info, bool isStaged = false) :
 }
 
 
-public class SamplerStateAssign(Identifier name, Expression value, TextLocation info) : ShaderElement(info)
+public class SamplerStateParameter(Identifier name, Expression value, TextLocation info) : ShaderElement(info)
 {
     public Identifier Name { get; set; } = name;
     public Expression Value { get; set; } = value;
@@ -31,21 +31,46 @@ public class SamplerStateAssign(Identifier name, Expression value, TextLocation 
 public class ShaderSamplerState(Identifier name, TextLocation info) : MethodOrMember(info)
 {
     public Identifier Name { get; set; } = name;
-    public List<SamplerStateAssign> Members { get; set; } = [];
+    public List<SamplerStateParameter> Parameters { get; set; } = [];
+
+
+    public void Compile(SymbolTable table, ShaderClass shader, CompilerUnit compiler)
+    {
+        #warning sampler states with paramters not implemented
+        // The main issue is that SPIR-V doesn't have a direct equivalent of sampler states with parameters.
+        // We can create a basic sampler, but handling parameters would require a more complex approach,
+        // potentially storing parameters in a new SDSL specific instruction or decorations
+
+        // if(Parameters.Count > 0)
+        //     throw new NotImplementedException("SamplerState parameters are not yet supported in SPIR-V");
+        (_, var context, _) = compiler;
+        Type = new SamplerType(Name);
+        if (!table.RootSymbols.TryGetValue(Name, out _))
+        {
+            context
+            .FluentAdd(new OpTypeSampler(context.Bound++), out var register)
+            .FluentAdd(new OpName(register.ResultId, Name), out _);
+
+            var sid = new SymbolID(Name, SymbolKind.SamplerState);
+            var symbol = new Symbol(sid, Type, register.ResultId);
+            table.RootSymbols.Add(Name, symbol);
+        }
+        else throw new Exception($"SamplerState {Name} already defined");
+    }
 
     public override string ToString()
     {
-        return $"SamplerState {Name} ({string.Join(", ", Members)})";
+        return $"SamplerState {Name} ({string.Join(", ", Parameters)})";
     }
 }
 public class ShaderSamplerComparisonState(Identifier name, TextLocation info) : MethodOrMember(info)
 {
     public Identifier Name { get; set; } = name;
-    public List<SamplerStateAssign> Members { get; set; } = [];
+    public List<SamplerStateParameter> Members { get; set; } = [];
 
     public override string ToString()
     {
-        return $"SamplerState {Name} ({string.Join(", ", Members)})";
+        return $"SamplerComparisonState {Name} ({string.Join(", ", Members)})";
     }
 }
 
@@ -93,7 +118,7 @@ public sealed class ShaderMember(
             context.Add(new OpDecorateString(variable, Specification.Decoration.UserSemantic, Semantic.Name));
         context.AddName(variable, Name);
 
-        var sid =
+        var sid = 
             new SymbolID
             (
                 Name,
@@ -182,7 +207,7 @@ public class ShaderMethod(
             table.DeclaredTypes.TryAdd(argSym.ToString(), argSym);
             arg.Type = argSym;
         }
-        
+
         var (builder, context, _) = compiler;
         SpirvFunction function;
         if (Type is FunctionType ftype)

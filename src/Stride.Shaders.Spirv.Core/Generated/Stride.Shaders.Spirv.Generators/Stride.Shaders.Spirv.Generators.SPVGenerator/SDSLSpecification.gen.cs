@@ -28,6 +28,20 @@ public static partial class Specification
         MeshEXT = 5365,
     }
 
+    public enum SamplerStateParameter
+    {
+        Filter = 0,
+        AddressU = 1,
+        AddressV = 2,
+        AddressW = 3,
+        MipLODBias = 4,
+        MaxAnisotropy = 5,
+        ComparisonFunc = 6,
+        BorderColor = 7,
+        MinLOD = 8,
+        MaxLOD = 9,
+    }
+
     [Flags]
     public enum ImageOperandsMask
     {

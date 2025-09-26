@@ -6,6 +6,7 @@ public enum OperandKind
 {
     None,
     ExecutionModel,
+    SamplerStateParameter,
     ImageOperands,
     FPFastMathMode,
     SelectionControl,
