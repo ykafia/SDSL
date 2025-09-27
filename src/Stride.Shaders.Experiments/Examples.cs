@@ -250,6 +250,22 @@ public static partial class Examples
         // Console.WriteLine(code.Translate(Backend.Hlsl));
 
     }
+    public static void CompileTestFile(string filename)
+    {
+        var text = MonoGamePreProcessor.OpenAndRun(Path.Combine("./assets/SDSL/", filename));
+
+        var sdslc = new SDSLC
+        {
+            ShaderLoader = new ShaderLoader()
+        };
+        sdslc.Compile(text, out var bytecode);
+
+        File.WriteAllBytes($"{filename}.sdspv", bytecode);
+        var test = bytecode.AsMemory().Cast<byte, uint>().ToArray();
+        var code = new SpirvTranslator(bytecode.AsMemory().Cast<byte, uint>());
+        // Console.WriteLine(code.Translate(Backend.Hlsl));
+
+    }
 
     public abstract class ShaderSource
     {

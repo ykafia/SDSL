@@ -180,6 +180,11 @@ public class ShaderClass(Identifier name, TextLocation info) : ShaderDeclaration
                     //symbols.Add(symbol);
                 }
             }
+            else if (member is ShaderSamplerState samplerState)
+            {
+                samplerState.Type = new SamplerType(samplerState.Name);
+                table.DeclaredTypes.Add(samplerState.Type.ToString(), samplerState.Type);
+            }
         }
 
         var currentShader = new ShaderSymbol(Name, symbols);

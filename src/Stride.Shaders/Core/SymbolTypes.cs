@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Stride.Shaders.Spirv;
+using static Stride.Shaders.Spirv.Specification;
 
 namespace Stride.Shaders.Core;
 
@@ -16,17 +17,17 @@ public abstract record SymbolType()
 
     public static bool TryGetNumeric(string name, [MaybeNullWhen(false)] out SymbolType result)
     {
-        if(ScalarType.Types.TryGetValue(name, out var s))
+        if (ScalarType.Types.TryGetValue(name, out var s))
         {
             result = s;
             return true;
         }
-        else if(VectorType.Types.TryGetValue(name, out var v))
+        else if (VectorType.Types.TryGetValue(name, out var v))
         {
             result = v;
             return true;
         }
-        else if(MatrixType.Types.TryGetValue(name, out var m))
+        else if (MatrixType.Types.TryGetValue(name, out var m))
         {
             result = m;
             return true;
@@ -41,6 +42,31 @@ public abstract record SymbolType()
             result = null;
             return false;
         }
+    }
+
+    public static bool TryGetBufferType(string name, [MaybeNullWhen(false)] out SymbolType result)
+    {
+        (result, bool found) = name switch
+        {
+            "Buffer<float>" => (new BufferType(ScalarType.From("float"), -1) as SymbolType, true),
+            "Buffer<int>" => (new BufferType(ScalarType.From("int"), -1), true),
+            "Buffer<uint>" => (new BufferType(ScalarType.From("uint"), -1), true),
+            "Buffer<float2>" => (new BufferType(VectorType.From("float2"), -1), true),
+            "Buffer<float3>" => (new BufferType(VectorType.From("float3"), -1), true),
+            "Buffer<float4>" => (new BufferType(VectorType.From("float4"), -1), true),
+            "Buffer<int2>" => (new BufferType(VectorType.From("int2"), -1), true),
+            "Buffer<int3>" => (new BufferType(VectorType.From("int3"), -1), true),
+            "Buffer<int4>" => (new BufferType(VectorType.From("int4"), -1), true),
+            "Buffer<uint2>" => (new BufferType(VectorType.From("uint2"), -1), true),
+            "Buffer<uint3>" => (new BufferType(VectorType.From("uint3"), -1), true),
+            "Buffer<uint4>" => (new BufferType(VectorType.From("uint4"), -1), true),
+            "Texture" => (new Texture1DType(), true),
+            "Texture1D" => (new Texture1DType(), true),
+            "Texture2D" => (new Texture2DType(), true),
+            "Texture3D" => (new Texture3DType(), true),
+            _ => (null, false)
+        };
+        return found;
     }
 }
 
@@ -63,7 +89,7 @@ public sealed partial record ScalarType(string TypeName) : SymbolType()
     public override string ToString() => TypeName;
 }
 public sealed partial record VectorType(ScalarType BaseType, int Size) : SymbolType()
-{    
+{
     public override string ToString() => $"{BaseType}{Size}";
 }
 public sealed partial record MatrixType(ScalarType BaseType, int Rows, int Columns) : SymbolType()
@@ -115,21 +141,22 @@ public sealed record BufferType(SymbolType BaseType, int Size) : SymbolType()
 
 public sealed record SamplerType(string Name) : SymbolType();
 
-public abstract record TextureType(SymbolType BaseType) : SymbolType()
+public abstract record TextureType(Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
 {
-    public override string ToString() => $"Texture<{BaseType}>";
+    public override string ToString() => $"Texture({Dimension}, {Depth}, {Arrayed}, {Multisampled}, {Sampled}, {Format})";
 }
-public sealed record Texture1DType(SymbolType BaseType, int Size) : TextureType(BaseType)
+    
+public sealed record Texture1DType() : TextureType(Dim.Dim1D, 2, false, false, 1, ImageFormat.Unknown)
 {
-    public override string ToString() => $"Texture<{BaseType}, {Size}>";
+    public override string ToString() => "Texture1D";
 }
-public sealed record Texture2DType(SymbolType BaseType, int Width, int Height) : TextureType(BaseType)
+public sealed record Texture2DType() : TextureType(Dim.Dim2D, 2, false, false, 1, ImageFormat.Unknown)
 {
-    public override string ToString() => $"Texture<{BaseType}, {Width}, {Height}>";
+    public override string ToString() => "Texture2D";
 }
-public sealed record Texture3DType(SymbolType BaseType, int Width, int Height, int Depth) : TextureType(BaseType)
+public sealed record Texture3DType() : TextureType(Dim.Dim3D, 2, false, false, 1, ImageFormat.Unknown)
 {
-    public override string ToString() => $"Texture<{BaseType}, {Width}, {Height}, {Depth}>";
+    public override string ToString() => "Texture3D";
 }
 
 
@@ -137,7 +164,7 @@ public sealed record FunctionType(SymbolType ReturnType, List<SymbolType> Parame
 {
     public bool Equals(FunctionType? other)
     {
-        if(other is null)
+        if (other is null)
             return false;
         if (ReturnType == null || other.ReturnType == null)
             return false;
@@ -164,7 +191,7 @@ public sealed record FunctionType(SymbolType ReturnType, List<SymbolType> Parame
         for (int i = 0; i < ParameterTypes.Count; i++)
         {
             builder.Append(ParameterTypes[i].ToId());
-                builder.Append('_');
+            builder.Append('_');
         }
         return builder.Append(ReturnType.ToId()).ToString();
     }
@@ -173,10 +200,10 @@ public sealed record FunctionType(SymbolType ReturnType, List<SymbolType> Parame
     {
         var builder = new StringBuilder();
         builder.Append($"fn(");
-        for(int i = 0; i < ParameterTypes.Count; i++)
+        for (int i = 0; i < ParameterTypes.Count; i++)
         {
             builder.Append(ParameterTypes[i]);
-            if(i < ParameterTypes.Count - 1)
+            if (i < ParameterTypes.Count - 1)
                 builder.Append('*');
         }
         return builder.Append($")->{ReturnType}").ToString();

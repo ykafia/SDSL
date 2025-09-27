@@ -36,13 +36,14 @@ public class ShaderSamplerState(Identifier name, TextLocation info) : MethodOrMe
 
     public void Compile(SymbolTable table, ShaderClass shader, CompilerUnit compiler)
     {
-        #warning sampler states with paramters not implemented
+#warning sampler states with paramters not implemented
         // The main issue is that SPIR-V doesn't have a direct equivalent of sampler states with parameters.
         // We can create a basic sampler, but handling parameters would require a more complex approach,
         // potentially storing parameters in a new SDSL specific instruction or decorations
 
-        // if(Parameters.Count > 0)
-        //     throw new NotImplementedException("SamplerState parameters are not yet supported in SPIR-V");
+        if (Parameters.Count > 0)
+            table.Errors.Add(new SemanticErrors(Info, "Sampler states with parameters are not supported in SPIR-V generation."));
+            
         (_, var context, _) = compiler;
         Type = new SamplerType(Name);
         if (!table.RootSymbols.TryGetValue(Name, out _))
