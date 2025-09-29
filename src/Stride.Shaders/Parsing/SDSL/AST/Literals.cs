@@ -241,19 +241,19 @@ public class Identifier(string name, TextLocation info) : Literal(info)
     public SymbolType ResolveType(SymbolTable table)
     {
         return ResolveSymbol(table).Type;
-        for (int i = table.CurrentSymbols.Count - 1; i >= 0; --i)
-        {
-            if (table.CurrentSymbols![i]
-                .TryGetValue(Name, out var symbol))
-            {
-                if (symbol.Type is not UndefinedType and not null)
-                    return symbol.Type;
-                else
-                    return symbol.Type ?? new UndefinedType(Name);
-            }
-        }
+        // for (int i = table.CurrentSymbols.Count - 1; i >= 0; --i)
+        // {
+        //     if (table.CurrentSymbols![i]
+        //         .TryGetValue(Name, out var symbol))
+        //     {
+        //         if (symbol.Type is not UndefinedType and not null)
+        //             return symbol.Type;
+        //         else
+        //             return symbol.Type ?? new UndefinedType(Name);
+        //     }
+        // }
 
-        throw new NotImplementedException($"Cannot find symbol {Name}.");
+        // throw new NotImplementedException($"Cannot find symbol {Name}.");
     }
 
     public override SpirvValue Compile(SymbolTable table, ShaderClass shader, CompilerUnit compiler)
@@ -335,12 +335,17 @@ public class TypeName(string name, TextLocation info, bool isArray) : Literal(in
                 table.DeclaredTypes.Add(numeric.ToString(), numeric);
                 return numeric;
             }
-            else if (SymbolType.TryGetBufferType(Name, out var bufferType))
+            else if (SymbolType.TryGetBufferType(Name, null, out var bufferType))
             {
                 table.DeclaredTypes.Add(bufferType.ToString(), bufferType);
                 return bufferType;
             }
             else throw new NotImplementedException();
+        }
+        else if (Generics.Count == 1 && SymbolType.TryGetBufferType(Name, Generics[0].Name, out var bufferType))
+        {
+            table.DeclaredTypes.Add(bufferType.ToString(), bufferType);
+            return bufferType;
         }
         // else if (IsArray && Generics.Count == 0)
         // {

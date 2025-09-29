@@ -151,9 +151,10 @@ public class SpirvContext(SpirvModule module)
                 ConstantBufferSymbol cb => RegisterCBuffer(cb),
                 FunctionType f => RegisterFunctionType(f),
                 PointerType p => RegisterPointerType(p),
-                Texture1DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(VectorType.From("float4")), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
-                Texture2DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(VectorType.From("float4")), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
-                Texture3DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(VectorType.From("float4")), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
+                Texture1DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(t.ReturnType), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
+                Texture2DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(t.ReturnType), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
+                Texture3DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(t.ReturnType), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
+                SamplerType st => Buffer.Add(new OpTypeSampler(Bound++)).IdResult,
                 // StructSymbol st => RegisterStruct(st),
                 _ => throw new NotImplementedException($"Can't add type {type}")
             };

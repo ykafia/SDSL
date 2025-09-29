@@ -157,6 +157,7 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
         SymbolType currentValueType;
         if (Source is Identifier { Name: "streams" } streams && Accessors[0] is Identifier streamVar)
         {
+            //Person.Address.Street = "123 Street"
             source = streamVar.Compile(table, shader, compiler);
             currentValueType = streamVar.Type;
             firstIndex = 1;
@@ -170,7 +171,28 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
         else
         {
             source = Source.Compile(table, shader, compiler);
-            currentValueType = Source.Type;
+            if (Source is Identifier { Type: TextureType or PointerType { BaseType: TextureType or Texture2DType or Texture3DType } } && Accessors is [MethodCall { Name.Name: "Sample", Parameters.Values.Count : 2 } mc])
+            {
+                foreach (var param in mc.Parameters.Values)
+                    param.Compile(table, shader, compiler);
+                mc.Type = new FunctionType(
+                    Source.Type switch
+                    {
+                        TextureType t => t.ReturnType,
+                        PointerType { BaseType: TextureType t } => t.ReturnType,
+                        _ => throw new InvalidOperationException(),
+                    },
+                    [Source.Type]
+                );
+                currentValueType = mc.Type;
+                firstIndex = 1;
+                #error do sampling Op here
+                // Sampling an image in SPIR-V starts by creating a OpTypeSampledImage, it's an object containing both the image and the sampler
+                // Then you can use OpImageSampleImplicitLod or OpImageSampleExplicitLod to sample the image by providing the sampled image and coordinates
+                // All of that in the current function
+            }
+            else
+                currentValueType = Source.Type;
         }
 
         Span<int> indexes = stackalloc int[Accessors.Count];
@@ -187,7 +209,7 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
                 indexLiteral.Compile(table, shader, compiler);
                 indexes[i] = context.CreateConstant(indexLiteral).Id;
             }
-            else throw new NotImplementedException($"unknown accessor {accessor} in expression {this}");
+            else throw new NotImplementedException($"unknown accessor {accessor} in expression");
 
             currentValueType = accessor.Type;
         }
