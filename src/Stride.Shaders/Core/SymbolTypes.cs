@@ -44,7 +44,6 @@ public abstract record SymbolType()
         }
     }
 
-<<<<<<< HEAD
     public static bool TryGetBufferType(string name, string? templateType, [MaybeNullWhen(false)] out SymbolType result)
     {
         (result, bool found) = (name, templateType) switch
@@ -70,28 +69,6 @@ public abstract record SymbolType()
             ("Texture2D", "int4" or "uint4" or "float4") => (new Texture2DType(VectorType.From(templateType)), true),
             ("Texture3D", "int4" or "uint4" or "float4") => (new Texture3DType(VectorType.From(templateType)), true),
 
-=======
-    public static bool TryGetBufferType(string name, [MaybeNullWhen(false)] out SymbolType result)
-    {
-        (result, bool found) = name switch
-        {
-            "Buffer<float>" => (new BufferType(ScalarType.From("float"), -1) as SymbolType, true),
-            "Buffer<int>" => (new BufferType(ScalarType.From("int"), -1), true),
-            "Buffer<uint>" => (new BufferType(ScalarType.From("uint"), -1), true),
-            "Buffer<float2>" => (new BufferType(VectorType.From("float2"), -1), true),
-            "Buffer<float3>" => (new BufferType(VectorType.From("float3"), -1), true),
-            "Buffer<float4>" => (new BufferType(VectorType.From("float4"), -1), true),
-            "Buffer<int2>" => (new BufferType(VectorType.From("int2"), -1), true),
-            "Buffer<int3>" => (new BufferType(VectorType.From("int3"), -1), true),
-            "Buffer<int4>" => (new BufferType(VectorType.From("int4"), -1), true),
-            "Buffer<uint2>" => (new BufferType(VectorType.From("uint2"), -1), true),
-            "Buffer<uint3>" => (new BufferType(VectorType.From("uint3"), -1), true),
-            "Buffer<uint4>" => (new BufferType(VectorType.From("uint4"), -1), true),
-            "Texture" => (new Texture1DType(), true),
-            "Texture1D" => (new Texture1DType(), true),
-            "Texture2D" => (new Texture2DType(), true),
-            "Texture3D" => (new Texture3DType(), true),
->>>>>>> e1cc232a3496cc0dc765c608fa38297a18100853
             _ => (null, false)
         };
         return found;
