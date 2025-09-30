@@ -335,11 +335,7 @@ public class TypeName(string name, TextLocation info, bool isArray) : Literal(in
                 table.DeclaredTypes.Add(numeric.ToString(), numeric);
                 return numeric;
             }
-<<<<<<< HEAD
             else if (SymbolType.TryGetBufferType(Name, null, out var bufferType))
-=======
-            else if (SymbolType.TryGetBufferType(Name, out var bufferType))
->>>>>>> e1cc232a3496cc0dc765c608fa38297a18100853
             {
                 table.DeclaredTypes.Add(bufferType.ToString(), bufferType);
                 return bufferType;
