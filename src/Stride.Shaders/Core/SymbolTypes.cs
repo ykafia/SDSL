@@ -44,6 +44,7 @@ public abstract record SymbolType()
         }
     }
 
+<<<<<<< HEAD
     public static bool TryGetBufferType(string name, string? templateType, [MaybeNullWhen(false)] out SymbolType result)
     {
         (result, bool found) = (name, templateType) switch
@@ -69,6 +70,28 @@ public abstract record SymbolType()
             ("Texture2D", "int4" or "uint4" or "float4") => (new Texture2DType(VectorType.From(templateType)), true),
             ("Texture3D", "int4" or "uint4" or "float4") => (new Texture3DType(VectorType.From(templateType)), true),
 
+=======
+    public static bool TryGetBufferType(string name, [MaybeNullWhen(false)] out SymbolType result)
+    {
+        (result, bool found) = name switch
+        {
+            "Buffer<float>" => (new BufferType(ScalarType.From("float"), -1) as SymbolType, true),
+            "Buffer<int>" => (new BufferType(ScalarType.From("int"), -1), true),
+            "Buffer<uint>" => (new BufferType(ScalarType.From("uint"), -1), true),
+            "Buffer<float2>" => (new BufferType(VectorType.From("float2"), -1), true),
+            "Buffer<float3>" => (new BufferType(VectorType.From("float3"), -1), true),
+            "Buffer<float4>" => (new BufferType(VectorType.From("float4"), -1), true),
+            "Buffer<int2>" => (new BufferType(VectorType.From("int2"), -1), true),
+            "Buffer<int3>" => (new BufferType(VectorType.From("int3"), -1), true),
+            "Buffer<int4>" => (new BufferType(VectorType.From("int4"), -1), true),
+            "Buffer<uint2>" => (new BufferType(VectorType.From("uint2"), -1), true),
+            "Buffer<uint3>" => (new BufferType(VectorType.From("uint3"), -1), true),
+            "Buffer<uint4>" => (new BufferType(VectorType.From("uint4"), -1), true),
+            "Texture" => (new Texture1DType(), true),
+            "Texture1D" => (new Texture1DType(), true),
+            "Texture2D" => (new Texture2DType(), true),
+            "Texture3D" => (new Texture3DType(), true),
+>>>>>>> e1cc232a3496cc0dc765c608fa38297a18100853
             _ => (null, false)
         };
         return found;
@@ -146,6 +169,7 @@ public sealed record BufferType(SymbolType BaseType, int Size) : SymbolType()
 
 public sealed record SamplerType(string Name) : SymbolType();
 
+<<<<<<< HEAD
 public abstract record TextureType(SymbolType ReturnType, Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
 {
     public override string ToString() => $"Texture<{ReturnType}>({Dimension}, {Depth}, {Arrayed}, {Multisampled}, {Sampled}, {Format})";
@@ -162,6 +186,24 @@ public sealed record Texture2DType(SymbolType ReturnType) : TextureType(ReturnTy
 public sealed record Texture3DType(SymbolType ReturnType) : TextureType(ReturnType, Dim.Dim3D, 2, false, false, 1, ImageFormat.Unknown)
 {
     public override string ToString() => $"Texture3D<{ReturnType}>";
+=======
+public abstract record TextureType(Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
+{
+    public override string ToString() => $"Texture({Dimension}, {Depth}, {Arrayed}, {Multisampled}, {Sampled}, {Format})";
+}
+    
+public sealed record Texture1DType() : TextureType(Dim.Dim1D, 2, false, false, 1, ImageFormat.Unknown)
+{
+    public override string ToString() => "Texture1D";
+}
+public sealed record Texture2DType() : TextureType(Dim.Dim2D, 2, false, false, 1, ImageFormat.Unknown)
+{
+    public override string ToString() => "Texture2D";
+}
+public sealed record Texture3DType() : TextureType(Dim.Dim3D, 2, false, false, 1, ImageFormat.Unknown)
+{
+    public override string ToString() => "Texture3D";
+>>>>>>> e1cc232a3496cc0dc765c608fa38297a18100853
 }
 
 
