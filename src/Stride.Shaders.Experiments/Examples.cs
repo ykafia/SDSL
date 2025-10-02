@@ -10,6 +10,7 @@ using Stride.Shaders.Spirv.Building;
 using System.Diagnostics.CodeAnalysis;
 using Stride.Shaders.Spirv.Core.Buffers;
 using SourceLanguage = Silk.NET.Shaderc.SourceLanguage;
+using System.Runtime.InteropServices;
 
 namespace Stride.Shaders.Experiments;
 
@@ -239,6 +240,18 @@ public static partial class Examples
         var code = new SpirvTranslator(bytecode.AsMemory().Cast<byte, uint>());
         // Console.WriteLine(code.Translate(Backend.Hlsl));
 
+    }
+
+    public static void CompileTestFile(string filename)
+    {
+        var text = MonoGamePreProcessor.OpenAndRun(Path.Combine("./assets/SDSL/", filename));
+
+        var sdslc = new SDSLC
+        {
+            ShaderLoader = new ShaderLoader()
+        };
+        sdslc.Compile(text, out var _);
+        // Console.WriteLine(code.Translate(Backend.Hlsl));
     }
 
     public abstract class ShaderSource
