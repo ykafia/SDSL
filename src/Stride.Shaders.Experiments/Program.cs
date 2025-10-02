@@ -4,7 +4,7 @@ using Stride.Shaders.Spirv.Core.Buffers;
 using System.Runtime.InteropServices;
 using Stride.Shaders.Spirv.Tools;
 
-Examples.TranslateHLSL();
+// Examples.TranslateHLSL();
 
 //Examples.CompileSDSL();
 // Examples.MergeSDSL();

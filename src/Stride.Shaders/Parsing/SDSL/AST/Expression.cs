@@ -186,7 +186,7 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
                 );
                 currentValueType = mc.Type;
                 firstIndex = 1;
-                #error do sampling Op here
+                #warning do sampling Op here
                 // Sampling an image in SPIR-V starts by creating a OpTypeSampledImage, it's an object containing both the image and the sampler
                 // Then you can use OpImageSampleImplicitLod or OpImageSampleExplicitLod to sample the image by providing the sampled image and coordinates
                 // All of that in the current function

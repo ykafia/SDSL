@@ -146,7 +146,6 @@ public sealed record BufferType(SymbolType BaseType, int Size) : SymbolType()
 
 public sealed record SamplerType(string Name) : SymbolType();
 
-<<<<<<< HEAD
 public abstract record TextureType(SymbolType ReturnType, Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
 {
     public override string ToString() => $"Texture<{ReturnType}>({Dimension}, {Depth}, {Arrayed}, {Multisampled}, {Sampled}, {Format})";
@@ -163,24 +162,6 @@ public sealed record Texture2DType(SymbolType ReturnType) : TextureType(ReturnTy
 public sealed record Texture3DType(SymbolType ReturnType) : TextureType(ReturnType, Dim.Dim3D, 2, false, false, 1, ImageFormat.Unknown)
 {
     public override string ToString() => $"Texture3D<{ReturnType}>";
-=======
-public abstract record TextureType(Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
-{
-    public override string ToString() => $"Texture({Dimension}, {Depth}, {Arrayed}, {Multisampled}, {Sampled}, {Format})";
-}
-    
-public sealed record Texture1DType() : TextureType(Dim.Dim1D, 2, false, false, 1, ImageFormat.Unknown)
-{
-    public override string ToString() => "Texture1D";
-}
-public sealed record Texture2DType() : TextureType(Dim.Dim2D, 2, false, false, 1, ImageFormat.Unknown)
-{
-    public override string ToString() => "Texture2D";
-}
-public sealed record Texture3DType() : TextureType(Dim.Dim3D, 2, false, false, 1, ImageFormat.Unknown)
-{
-    public override string ToString() => "Texture3D";
->>>>>>> e1cc232a3496cc0dc765c608fa38297a18100853
 }
 
 
