@@ -65,12 +65,8 @@
       "opname": "OpSDSLImportFunction",
       "class": "Miscellaneous",
       "operands": [
-        {
-          "kind": "IdResultType"
-        },
-        {
-          "kind": "IdResult"
-        },
+        { "kind": "IdResultType" },
+        { "kind": "IdResult" },
         {
           "kind": "LiteralString",
           "name": "functionName"
@@ -85,12 +81,8 @@
       "opname": "OpSDSLImportVariable",
       "class": "Miscellaneous",
       "operands": [
-        {
-          "kind": "IdResultType"
-        },
-        {
-          "kind": "IdResult"
-        },
+        { "kind": "IdResultType" },
+        { "kind": "IdResult" },
         {
           "kind": "LiteralString",
           "name": "variableName"
@@ -100,60 +92,59 @@
           "name": "shader"
         }
       ]
+    },
+    {
+      "opname": "OpSDSLFunctionInfo",
+      "class": "Miscellaneous",
+      "operands": [
+        {
+          "kind": "FunctionFlags",
+          "name": "flags"
+        },
+        {
+          "kind": "IdRef",
+          "name": "parent"
+        }
+      ]
+    },
+    {
+      "opname": "OpSDSLBase",
+      "class": "Miscellaneous"
     }
   ],
   "operand_kinds": [
+    {
+      "category": "BitEnum",
+      "kind": "FunctionFlags",
+      "enumerants": [
+        {
+          "enumerant": "None",
+          "value": "0x0000"
+        },
+        {
+          "enumerant": "Abstract",
+          "value": "0x0001"
+        },
+        {
+          "enumerant": "Virtual",
+          "value": "0x0002"
+        },
+        {
+          "enumerant": "Override",
+          "value": "0x0004"
+        },
+        {
+          "enumerant": "Static",
+          "value": "0x0010"
+        }
+      ]
+    },
     {
       "kind": "ExecutionModel",
       "enumerants": [
         {
           "enumerant": "Mixin",
           "value": 5367
-        }
-      ]
-    },
-    {
-      "kind": "SamplerStateParameter",
-      "enumerants": [
-        {
-          "enumerant": "Filter",
-          "value": 0
-        },
-        {
-          "enumerant": "AddressU",
-          "value": 1
-        },
-        {
-          "enumerant": "AddressV",
-          "value": 2
-        },
-        {
-          "enumerant": "AddressW",
-          "value": 3
-        },
-        {
-          "enumerant": "MipLODBias",
-          "value": 4
-        },
-        {
-          "enumerant": "MaxAnisotropy",
-          "value": 5
-        },
-        {
-          "enumerant": "ComparisonFunc",
-          "value": 6
-        },
-        {
-          "enumerant": "BorderColor",
-          "value": 7
-        },
-        {
-          "enumerant": "MinLOD",
-          "value": 8
-        },
-        {
-          "enumerant": "MaxLOD",
-          "value": 9
         }
       ]
     }
