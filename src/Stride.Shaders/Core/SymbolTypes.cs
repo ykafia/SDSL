@@ -145,6 +145,7 @@ public sealed record BufferType(SymbolType BaseType, int Size) : SymbolType()
 
 // TODO: Add sampler parameters
 public sealed record SamplerType(string Name) : SymbolType();
+public sealed record SampledImage(TextureType ImageType) : SymbolType();
 
 public abstract record TextureType(SymbolType ReturnType, Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
 {

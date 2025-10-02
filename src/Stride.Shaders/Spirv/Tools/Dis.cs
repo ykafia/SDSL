@@ -12,7 +12,7 @@ namespace Stride.Shaders.Spirv.Tools;
 
 public static partial class Spv
 {
-    public static string Dis(NewSpirvBuffer buffer, bool useNames = true, bool writeToConsole = true)
+    public static string Dis(NewSpirvBuffer buffer, bool useNames = true, bool writeToConsole = false)
     {
         var writer = new DisWriter(buffer, useNames, writeToConsole);
         writer.Disassemble();
@@ -20,7 +20,7 @@ public static partial class Spv
         return writer.ToString();
     }
 
-    public static string Dis(SpirvReader reader, bool useNames = true, bool writeToConsole = true)
+    public static string Dis(SpirvReader reader, bool useNames = true, bool writeToConsole = false)
     {
         using var buffer = new NewSpirvBuffer(reader.Words);
         var writer = new DisWriter(buffer, useNames, writeToConsole);

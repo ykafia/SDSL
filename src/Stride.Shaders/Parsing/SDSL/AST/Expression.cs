@@ -6,6 +6,7 @@ using Stride.Shaders.Spirv.Core;
 using Stride.Shaders.Spirv.Core.Buffers;
 using System;
 using System.Text;
+using System.Threading.Channels;
 
 namespace Stride.Shaders.Parsing.SDSL.AST;
 
@@ -180,61 +181,77 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
         else
         {
             source = Source.Compile(table, shader, compiler);
-            if (Source is Identifier { Type: TextureType or PointerType { BaseType: TextureType or Texture2DType or Texture3DType } } && Accessors is [MethodCall { Name.Name: "Sample", Parameters.Values.Count: 2 } mc])
+            currentValueType = Source.Type;
+        }
+        if (Source is Identifier { ValueType: TextureType or Texture2DType or Texture3DType } && Accessors is [MethodCall { Name.Name: "Sample", Parameters.Values.Count: 2 } or MethodCall { Name.Name: "SampleLevel", Parameters.Values.Count: 3 }])
+        {
+            if (Accessors is [MethodCall { Name.Name: "Sample", Parameters.Values.Count: 2 } implicitSampling])
             {
-                foreach (var param in mc.Parameters.Values)
-                    param.Compile(table, shader, compiler);
-                mc.Type = new FunctionType(
-                    Source.Type switch
-                    {
-                        TextureType t => t.ReturnType,
-                        PointerType { BaseType: TextureType t } => t.ReturnType,
-                        _ => throw new InvalidOperationException(),
-                    },
-                    [Source.Type]
-                );
-                currentValueType = mc.Type;
-                firstIndex = 1;
-#warning do sampling Op here
-                // Sampling an image in SPIR-V starts by creating a OpTypeSampledImage, it's an object containing both the image and the sampler
-                // Then you can use OpImageSampleImplicitLod or OpImageSampleExplicitLod to sample the image by providing the sampled image and coordinates
-                // All of that in the current function
+
+                var samplerValue = implicitSampling.Parameters.Values[0].Compile(table, shader, compiler);
+                var texCoordValue = implicitSampling.Parameters.Values[1].Compile(table, shader, compiler);
+                var typeSampledImage = context.GetOrRegister(new SampledImage((TextureType)Source.ValueType));
+                var loadSampler = builder.Insert(new OpLoad(samplerValue.TypeId, context.Bound++, samplerValue.Id, Specification.MemoryAccessMask.None));
+                var loadCoord = builder.Insert(new OpLoad(texCoordValue.TypeId, context.Bound++, texCoordValue.Id, Specification.MemoryAccessMask.None));
+                var loadTexture = builder.Insert(new OpLoad(source.TypeId, context.Bound++, source.Id, Specification.MemoryAccessMask.None));
+                var sampledImage = builder.Insert(new OpSampledImage(typeSampledImage, context.Bound++, loadTexture.ResultId, loadSampler.ResultId));
+                var returnType = context.GetOrRegister(((TextureType)Source.ValueType).ReturnType);
+                var sample = builder.Insert(new OpImageSampleImplicitLod(returnType, context.Bound++, sampledImage.ResultId, loadCoord.ResultId, Specification.ImageOperandsMask.None));
+                return new(sample.ResultId, sample.ResultType);
+            }
+            else if (Accessors is [MethodCall { Name.Name: "SampleLevel", Parameters.Values.Count: 3 } explicitSampling])
+            {
+                var samplerValue = explicitSampling.Parameters.Values[0].Compile(table, shader, compiler);
+                var texCoordValue = explicitSampling.Parameters.Values[1].Compile(table, shader, compiler);
+                var levelValue = explicitSampling.Parameters.Values[2].Compile(table, shader, compiler);
+
+                var typeSampledImage = context.GetOrRegister(new SampledImage((TextureType)Source.ValueType));
+                var loadSampler = builder.Insert(new OpLoad(samplerValue.TypeId, context.Bound++, samplerValue.Id, Specification.MemoryAccessMask.None));
+                var loadCoord = builder.Insert(new OpLoad(texCoordValue.TypeId, context.Bound++, texCoordValue.Id, Specification.MemoryAccessMask.None));
+                var loadTexture = builder.Insert(new OpLoad(source.TypeId, context.Bound++, source.Id, Specification.MemoryAccessMask.None));
+                var sampledImage = builder.Insert(new OpSampledImage(typeSampledImage, context.Bound++, loadTexture.ResultId, loadSampler.ResultId));
+                var returnType = context.GetOrRegister(((TextureType)Source.ValueType).ReturnType);
+                var sample = builder.Insert(new OpImageSampleExplicitLod(returnType, context.Bound++, sampledImage.ResultId, loadCoord.ResultId, Specification.ImageOperandsMask.None));
+
+                throw new NotImplementedException("Texture sampling not implemented yet because of ImageOperand not added to instructions");
             }
             else
-                currentValueType = Source.Type;
+                throw new InvalidOperationException("Invalid Sample method call");
         }
-
-        Span<int> indexes = stackalloc int[Accessors.Count];
-        for (var i = firstIndex; i < Accessors.Count; i++)
+        else
         {
-            var accessor = Accessors[i];
-            if (currentValueType is PointerType p && p.BaseType is StructType s && accessor is Identifier field)
+            Span<int> indexes = stackalloc int[Accessors.Count];
+            for (var i = firstIndex; i < Accessors.Count; i++)
             {
-                var index = s.TryGetFieldIndex(field);
-                if (index == -1)
-                    throw new InvalidOperationException($"field {accessor} not found in struct type {s}");
-                //indexes[i] = builder.CreateConstant(context, shader, new IntegerLiteral(new(32, false, true), index, new())).Id;
-                var indexLiteral = new IntegerLiteral(new(32, false, true), index, new());
-                indexLiteral.Compile(table, shader, compiler);
-                indexes[i] = context.CreateConstant(indexLiteral).Id;
+                var accessor = Accessors[i];
+                if (currentValueType is PointerType p && p.BaseType is StructType s && accessor is Identifier field)
+                {
+                    var index = s.TryGetFieldIndex(field);
+                    if (index == -1)
+                        throw new InvalidOperationException($"field {accessor} not found in struct type {s}");
+                    //indexes[i] = builder.CreateConstant(context, shader, new IntegerLiteral(new(32, false, true), index, new())).Id;
+                    var indexLiteral = new IntegerLiteral(new(32, false, true), index, new());
+                    indexLiteral.Compile(table, shader, compiler);
+                    indexes[i] = context.CreateConstant(indexLiteral).Id;
+                }
+                else throw new NotImplementedException($"unknown accessor {accessor} in expression {this}");
+
+                currentValueType = accessor.Type;
             }
-            else throw new NotImplementedException($"unknown accessor {accessor} in expression {this}");
 
-            currentValueType = accessor.Type;
+            if (currentValueType is not PointerType && currentValueType != ScalarType.From("void"))
+                throw new InvalidOperationException();
+
+            Type = currentValueType;
+
+            // Do we need the OpAccessChain? (if we have streams.StreamVar, we can return StreamVar as is)
+            if (firstIndex == Accessors.Count)
+                return source;
+
+            var resultType = context.GetOrRegister(Type);
+            var result = builder.Insert(new OpAccessChain(variable, resultType, source.Id, [.. indexes]));
+            return new(result.ResultId, resultType);
         }
-
-        if (currentValueType is not PointerType && currentValueType != ScalarType.From("void"))
-            throw new InvalidOperationException();
-
-        Type = currentValueType;
-
-        // Do we need the OpAccessChain? (if we have streams.StreamVar, we can return StreamVar as is)
-        if (firstIndex == Accessors.Count)
-            return source;
-
-        var resultType = context.GetOrRegister(Type);
-        var result = builder.Insert(new OpAccessChain(variable, resultType, source.Id, [.. indexes]));
-        return new(result.ResultId, resultType);
     }
 
     public override string ToString()

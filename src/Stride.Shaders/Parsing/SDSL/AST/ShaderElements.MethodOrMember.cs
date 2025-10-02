@@ -47,7 +47,7 @@ public class ShaderSamplerState(Identifier name, TextLocation info) : MethodOrMe
             table.Errors.Add(new SemanticErrors(Info, "Sampler states with parameters are not supported in SPIR-V generation."));
 
         (_, var context) = compiler;
-        Type = new SamplerType(Name);
+        Type = new PointerType(new SamplerType(Name), Specification.StorageClass.UniformConstant);
         if (!table.RootSymbols.TryGetValue(Name, out _))
         {
             context

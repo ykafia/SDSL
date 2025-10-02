@@ -178,6 +178,7 @@ public class SpirvContext
                 Texture2DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(t.ReturnType), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
                 Texture3DType t => Buffer.Add(new OpTypeImage(Bound++, GetOrRegister(t.ReturnType), t.Dimension, t.Depth, t.Arrayed ? 1 : 0, t.Multisampled ? 1 : 0, t.Sampled, t.Format, null)).IdResult,
                 SamplerType st => Buffer.Add(new OpTypeSampler(Bound++)).IdResult,
+                SampledImage si => Buffer.Add(new OpTypeSampledImage(Bound++, GetOrRegister(si.ImageType))).IdResult,
                 // StructSymbol st => RegisterStruct(st),
                 _ => throw new NotImplementedException($"Can't add type {type}")
             };
@@ -312,8 +313,8 @@ public class SpirvContext
     [Obsolete("Use the insert method instead")]
     public NewSpirvBuffer GetBuffer() => Buffer;
 
-    public override string ToString()
-    {
-        return Spv.Dis(Buffer);
-    }
+    // public override string ToString()
+    // {
+    //     return Spv.Dis(Buffer, true, false);
+    // }
 }

@@ -95,8 +95,8 @@ public partial class SpirvBuilder()
         return Buffer[Position - 1].Op;
     }
 
-    public override string ToString()
-    {
-        return Spv.Dis(Buffer);
-    }
+    // public override string ToString()
+    // {
+    //     return Spv.Dis(Buffer);
+    // }
 }
