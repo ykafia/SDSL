@@ -65,8 +65,12 @@
       "opname": "OpSDSLImportFunction",
       "class": "Miscellaneous",
       "operands": [
-        { "kind": "IdResultType" },
-        { "kind": "IdResult" },
+        {
+          "kind": "IdResultType"
+        },
+        {
+          "kind": "IdResult"
+        },
         {
           "kind": "LiteralString",
           "name": "functionName"
@@ -81,8 +85,12 @@
       "opname": "OpSDSLImportVariable",
       "class": "Miscellaneous",
       "operands": [
-        { "kind": "IdResultType" },
-        { "kind": "IdResult" },
+        {
+          "kind": "IdResultType"
+        },
+        {
+          "kind": "IdResult"
+        },
         {
           "kind": "LiteralString",
           "name": "variableName"

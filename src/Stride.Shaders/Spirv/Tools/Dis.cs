@@ -808,7 +808,7 @@ public static partial class Spv
                 {
                     if (i.Op == Op.OpName)
                     {
-                        var nameInst = (OpName)i;
+                        var nameInst = new OpName(i);
                         maxName = maxName > nameInst.Name.Length ? maxName : nameInst.Name.Length;
                     }
                     else if (i.Op == Op.OpMemberName)

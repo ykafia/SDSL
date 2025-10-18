@@ -65,6 +65,11 @@ public static partial class Examples
 
 
         buffer.FluentAdd(new OpCapability(Capability.Shader));
+        var d = buffer.InsertData(1, new OpDecorate(12, ParameterizedFlags.DecorationUserSemantic("hello")));
+        foreach(var o in d)
+        {
+            Console.WriteLine(o.Name);
+        }
         var extInstImport = new OpExtInstImport(id++, "GLSL.std.450");
         buffer.AddRef(ref extInstImport);
         buffer.FluentAdd(new OpMemoryModel(AddressingModel.Logical, MemoryModel.GLSL450));
@@ -109,14 +114,14 @@ public static partial class Examples
         buffer.FluentAdd(new OpTypePointer(id++, StorageClass.Function, t_int), out var t_p_func);
         buffer.FluentAdd(new OpConstant<int>(t_int, id++, 4), out var constant8);
         buffer.FluentAdd(new OpVariable(t_p_input, id++, StorageClass.Input, null), out var v_input_3);
-        buffer.FluentAdd(new OpDecorate(t_array, Decoration.ArrayStride, 16));
-        buffer.FluentAdd(new OpMemberDecorate(t_struct, 0, Decoration.Offset, 0));
-        buffer.FluentAdd(new OpMemberDecorate(t_struct, 1, Decoration.Offset, 16));
-        buffer.FluentAdd(new OpMemberDecorate(t_struct, 2, Decoration.Offset, 96));
-        buffer.FluentAdd(new OpMemberDecorate(t_struct2, 0, Decoration.Offset, 0));
-        buffer.FluentAdd(new OpMemberDecorate(t_struct2, 1, Decoration.Offset, 112));
+        buffer.FluentAdd(new OpDecorate(t_array, ParameterizedFlags.DecorationArrayStride(16)));
+        buffer.FluentAdd(new OpMemberDecorate(t_struct, 0, ParameterizedFlags.DecorationOffset(0)));
+        buffer.FluentAdd(new OpMemberDecorate(t_struct, 1, ParameterizedFlags.DecorationOffset(16)));
+        buffer.FluentAdd(new OpMemberDecorate(t_struct, 2, ParameterizedFlags.DecorationOffset(96)));
+        buffer.FluentAdd(new OpMemberDecorate(t_struct2, 0, ParameterizedFlags.DecorationOffset(0)));
+        buffer.FluentAdd(new OpMemberDecorate(t_struct2, 1, ParameterizedFlags.DecorationOffset(112)));
         buffer.FluentAdd(new OpDecorate(t_struct2, Decoration.Block));
-        buffer.FluentAdd(new OpDecorate(v_struct2, Decoration.DescriptorSet, 0));
+        buffer.FluentAdd(new OpDecorate(v_struct2, ParameterizedFlags.DecorationDescriptorSet(0)));
         buffer.FluentAdd(new OpDecorate(v_input_2, Decoration.NoPerspective));
         buffer.FluentAdd(new OpName(t_p_func, "main"));
         buffer.FluentAdd(new OpName(t_struct, "S"));

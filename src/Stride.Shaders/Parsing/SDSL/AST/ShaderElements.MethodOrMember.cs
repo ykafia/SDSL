@@ -118,7 +118,7 @@ public sealed class ShaderMember(
         context.Add(new OpVariable(registeredType, variable, Specification.StorageClass.Private, null));
         context.Variables.Add(Name, new(variable, registeredType, Name));
         if (Semantic != null)
-            context.Add(new OpDecorateString(variable, Specification.Decoration.UserSemantic, Semantic.Name));
+            context.Add(new OpDecorateString(variable, ParameterizedFlags.DecorationUserSemantic(Semantic.Name)));
         context.AddName(variable, Name);
 
         var sid =

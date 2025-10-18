@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using Stride.Shaders.Spirv.Tools;
 
 
-Examples.CompileTestFile("TestTexture.sdsl");
+// Examples.CompileTestFile("TestTexture.sdsl");
 
 // Examples.TranslateHLSL();
 
@@ -21,4 +21,4 @@ Examples.CompileTestFile("TestTexture.sdsl");
 // Examples.CreateShader();
 
 // Examples.GenerateSpirv();
-// Examples.CreateNewShader();
+Examples.CreateNewShader();

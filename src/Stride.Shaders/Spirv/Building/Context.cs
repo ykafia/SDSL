@@ -197,7 +197,7 @@ public class SpirvContext
         {
             if (index > 0)
                 throw new NotImplementedException("Offset");
-            Buffer.Add(new OpMemberDecorate(result, index, Decoration.Offset, 0));
+            Buffer.Add(new OpMemberDecorate(result, index, ParameterizedFlags.DecorationOffset(0)));
         }
 
         return result;
