@@ -144,11 +144,19 @@ public sealed record BufferType(SymbolType BaseType, int Size) : SymbolType()
 }
 
 // TODO: Add sampler parameters
-public sealed record SamplerType(string Name) : SymbolType();
-public sealed record SampledImage(TextureType ImageType) : SymbolType();
+public sealed record SamplerType(string Name) : SymbolType()
+{
+    public override string ToId() => $"{Name}";
+    public override string ToString() => $"SamplerState {Name}";
+}
+public sealed record SampledImage(TextureType ImageType) : SymbolType()
+{
+    public override string ToString() => $"SampledImage<{ImageType}>";
+}
 
 public abstract record TextureType(SymbolType ReturnType, Dim Dimension, int Depth, bool Arrayed, bool Multisampled, int Sampled, ImageFormat Format) : SymbolType()
 {
+    public override string ToId() => $"Texture_{ReturnType}";
     public override string ToString() => $"Texture<{ReturnType}>({Dimension}, {Depth}, {Arrayed}, {Multisampled}, {Sampled}, {Format})";
 }
 

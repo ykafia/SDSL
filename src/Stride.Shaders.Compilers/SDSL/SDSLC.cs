@@ -39,7 +39,7 @@ public record struct SDSLC(IExternalShaderLoader ShaderLoader)
                         throw new Exception("Some parse errors");
 
                     var merged = compiler.ToBuffer();
-                    var dis = Spv.Dis(merged, true);
+                    var dis = Spv.Dis(merged, true, true);
                     lastBuffer = merged;
 
                     ShaderLoader.RegisterShader(shader.Name, merged);
