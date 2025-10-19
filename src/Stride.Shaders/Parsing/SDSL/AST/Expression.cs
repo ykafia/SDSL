@@ -197,6 +197,7 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
                 var sampledImage = builder.Insert(new OpSampledImage(typeSampledImage, context.Bound++, loadTexture.ResultId, loadSampler.ResultId));
                 var returnType = context.GetOrRegister(((TextureType)Source.ValueType).ReturnType);
                 var sample = builder.Insert(new OpImageSampleImplicitLod(returnType, context.Bound++, sampledImage.ResultId, loadCoord.ResultId, Specification.ImageOperandsMask.None));
+                Type = ((TextureType)Source.ValueType).ReturnType;
                 return new(sample.ResultId, sample.ResultType);
             }
             else if (Accessors is [MethodCall { Name.Name: "SampleLevel", Parameters.Values.Count: 3 } explicitSampling])
@@ -211,9 +212,9 @@ public class AccessorChainExpression(Expression source, TextLocation info) : Exp
                 var loadTexture = builder.Insert(new OpLoad(source.TypeId, context.Bound++, source.Id, Specification.MemoryAccessMask.None));
                 var sampledImage = builder.Insert(new OpSampledImage(typeSampledImage, context.Bound++, loadTexture.ResultId, loadSampler.ResultId));
                 var returnType = context.GetOrRegister(((TextureType)Source.ValueType).ReturnType);
-                var sample = builder.Insert(new OpImageSampleExplicitLod(returnType, context.Bound++, sampledImage.ResultId, loadCoord.ResultId, Specification.ImageOperandsMask.None));
-
-                throw new NotImplementedException("Texture sampling not implemented yet because of ImageOperand not added to instructions");
+                var sample = builder.Insert(new OpImageSampleExplicitLod(returnType, context.Bound++, sampledImage.ResultId, loadCoord.ResultId, ParameterizedFlags.ImageOperandsLod(levelValue.Id)));
+                Type = ((TextureType)Source.ValueType).ReturnType;
+                return new(sample.ResultId, sample.ResultType);
             }
             else
                 throw new InvalidOperationException("Invalid Sample method call");

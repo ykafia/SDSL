@@ -251,7 +251,6 @@ public static partial class Examples
             ShaderLoader = new ShaderLoader()
         };
         sdslc.Compile(text, out var _);
-        // Console.WriteLine(code.Translate(Backend.Hlsl));
     }
 
     public abstract class ShaderSource
