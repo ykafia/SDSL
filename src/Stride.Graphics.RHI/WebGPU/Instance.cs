@@ -12,7 +12,7 @@ public unsafe class WGPUInstance : IInstance
     public IAdapter RequestAdapter(in RequestAdapterOptions options, RequestAdapterDelegate callback)
     {
         var opt = options.ToWebGPU();
-        RequestAdapterCallback cb = (a, b, c, d) =>
+        RequestAdapterCallback cb = (status, adapter, data, userData) =>
         {
             throw new NotImplementedException();
             // callback((RequestAdapterStatus)a, new WGPUAdapter { wgpuAdapter = *b }, SilkMarshal.PtrToString((nint)c), d);
