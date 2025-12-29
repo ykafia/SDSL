@@ -101,8 +101,8 @@ public partial class SPVGenerator : IIncrementalGenerator
             public {instruction.OpName}(OpDataIndex index)
             {{
                 InstructionMemory ??= MemoryOwner<int>.Empty;
-                InitializeProperties(index.Data);
                 DataIndex = index;
+                InitializeProperties(index.Data);
             }}
             
             public {instruction.OpName}(OpData data)
@@ -171,22 +171,21 @@ public partial class SPVGenerator : IIncrementalGenerator
                     InstructionMemory?.Dispose();
                     InstructionMemory = tmp;
                 }}
-            }}"
-            );
-
-        structBuilder.AppendLine(@$"
-                private void InitializeProperties(OpData data)
+            }}
+            private void InitializeProperties(OpData data)
+            {{
+                foreach (var o in data)
                 {{
-                    foreach (var o in data)
+                    switch(o.Name)
                     {{
-                        switch(o.Name)
-                        {{
-                            {string.Join("\n", (instruction.Operands?.AsList() ?? []).Select(ToAssignSwitchCase))}
-                        }}
+                        {string.Join("\n", (instruction.Operands?.AsList() ?? []).Select(ToAssignSwitchCase))}
                     }}
                 }}
-            ");
-        structBuilder.AppendLine("}");
+            }}
+
+            public static implicit operator {instruction.OpName}{(instruction.OpName.EndsWith("Constant") ? "<T>" : "")}(OpDataIndex odi) => new(odi);
+            public static implicit operator {instruction.OpName}{(instruction.OpName.EndsWith("Constant") ? "<T>" : "")}(OpData data) => new(data);
+        }}");
         StringBuilderPool.Instance.Return(structBuilder);
         return structBuilder.ToString();
 

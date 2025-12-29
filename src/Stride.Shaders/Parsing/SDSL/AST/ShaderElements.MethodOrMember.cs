@@ -8,6 +8,7 @@ using Stride.Shaders.Spirv.Core.Buffers;
 using Stride.Shaders.Spirv.Tools;
 using System.Collections.Immutable;
 using System.Diagnostics.Metrics;
+using static Stride.Shaders.Spirv.Specification;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Stride.Shaders.Parsing.SDSL.AST;
@@ -78,7 +79,7 @@ public class ShaderSamplerState(Identifier name, TextLocation info) : MethodOrMe
                     case "MipLODBias":
                         {
                             var mipLODBias = (float)((FloatLiteral)parameter.Value).Value;
-                            context.Add(new OpDecorateString(variableId, ParameterizedFlags.DecorationSamplerStateMipLODBias(mipLODBias.ToString())));
+                            context.Add(new OpDecorateString(variableId, Decoration.SamplerStateMipLODBias, mipLODBias.ToString()));
                             break;
                         }
                     case "MaxAnisotropy":
@@ -90,13 +91,13 @@ public class ShaderSamplerState(Identifier name, TextLocation info) : MethodOrMe
                     case "MinLOD":
                         {
                             var minLOD = (float)((FloatLiteral)parameter.Value).Value;
-                            context.Add(new OpDecorateString(variableId, ParameterizedFlags.DecorationSamplerStateMinLOD(minLOD.ToString())));
+                            context.Add(new OpDecorateString(variableId, Decoration.SamplerStateMinLOD, minLOD.ToString()));
                             break;
                         }
                     case "MaxLOD":
                         {
                             var maxLOD = (float)((FloatLiteral)parameter.Value).Value;
-                            context.Add(new OpDecorateString(variableId, ParameterizedFlags.DecorationSamplerStateMaxLOD(maxLOD.ToString())));
+                            context.Add(new OpDecorateString(variableId, Decoration.SamplerStateMaxLOD, maxLOD.ToString()));
                             break;
                         }
                     case "BorderColor":
@@ -110,7 +111,7 @@ public class ShaderSamplerState(Identifier name, TextLocation info) : MethodOrMe
 
             var sid = new SymbolID(Name, SymbolKind.SamplerState);
             var symbol = new Symbol(sid, Type, register.ResultId);
-            table.CurrentShader.Variables.Add((symbol, IsStaged ? Specification.VariableFlagsMask.Stage : Specification.VariableFlagsMask.None));
+            table.CurrentShader.Variables.Add((symbol, IsStaged ? VariableFlagsMask.Stage : VariableFlagsMask.None));
             table.CurrentFrame.Add(Name, symbol);
         }
         else throw new Exception($"SamplerState {Name} already defined");
@@ -176,7 +177,7 @@ public sealed class ShaderMember(
         if (Type is PointerType pointerType)
             storageClass = pointerType.StorageClass;
 
-        var variableFlags = IsStaged ? Specification.VariableFlagsMask.Stage : Specification.VariableFlagsMask.None;
+        var variableFlags = IsStaged ? VariableFlagsMask.Stage : VariableFlagsMask.None;
 
         int? initializerMethod = null;
         if (Value != null)
@@ -200,7 +201,7 @@ public sealed class ShaderMember(
 
         builder.Insert(new OpVariableSDSL(registeredType, variable, storageClass, variableFlags, initializerMethod));
         if (Semantic != null)
-            context.Add(new OpDecorateString(variable, ParameterizedFlags.DecorationUserSemantic(Semantic.Name)));
+            context.Add(new OpDecorateString(variable, Decoration.UserSemantic, Semantic.Name));
         context.AddName(variable, Name);
 
         RGroup.DecorateVariableLinkInfo(table, shader, context, Info, Name, Attributes, variable);

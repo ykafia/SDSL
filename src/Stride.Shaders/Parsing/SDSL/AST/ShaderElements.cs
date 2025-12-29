@@ -6,6 +6,7 @@ using Stride.Shaders.Spirv.Building;
 using Stride.Shaders.Spirv.Core;
 using System;
 using System.Collections.Generic;
+using static Stride.Shaders.Spirv.Specification;
 
 namespace Stride.Shaders.Parsing.SDSL.AST;
 
@@ -321,7 +322,7 @@ public sealed class CBuffer(string name, TextLocation info) : ShaderBuffer(name,
                 if (linkInfo.LinkId is int linkId)
                     context.Add(new OpMemberDecorate(context.GetOrRegister(Type), index, ParameterizedFlags.DecorationLinkIdSDSL(linkId)));
                 else if (linkInfo.LinkName != null)
-                    context.Add(new OpMemberDecorateString(context.GetOrRegister(Type), index, ParameterizedFlags.DecorationLinkSDSL(linkInfo.LinkName)));
+                    context.Add(new OpMemberDecorateString(context.GetOrRegister(Type), index, Decoration.LinkSDSL, linkInfo.LinkName));
             }
         }
 
@@ -355,14 +356,14 @@ public sealed class RGroup(string name, TextLocation info) : ShaderBuffer(name, 
 
             var type = new PointerType(member.Type, storageClass);
             var typeId = context.GetOrRegister(type);
-            var variable = builder.Insert(new OpVariableSDSL(typeId, context.Bound++, storageClass, member.IsStaged ? Specification.VariableFlagsMask.Stage : Specification.VariableFlagsMask.None, null));
+            var variable = builder.Insert(new OpVariableSDSL(typeId, context.Bound++, storageClass, member.IsStaged ? VariableFlagsMask.Stage : VariableFlagsMask.None, null));
             context.AddName(variable.ResultId, member.Name);
 
             DecorateVariableLinkInfo(table, shaderClass, context, Info, member.Name, member.Attributes, variable.ResultId);
 
-            context.Add(new OpDecorateString(variable.ResultId, ParameterizedFlags.DecorationResourceGroupSDSL(resourceGroupName)));
+            context.Add(new OpDecorateString(variable.ResultId, Decoration.ResourceGroupSDSL, resourceGroupName));
             if (logicalGroupName != null)
-                context.Add(new OpDecorateString(variable.ResultId, ParameterizedFlags.DecorationLogicalGroupSDSL(logicalGroupName)));
+                context.Add(new OpDecorateString(variable.ResultId, Decoration.LogicalGroupSDSL, logicalGroupName));
 
             var sid = new SymbolID(member.Name, kind, Storage.Uniform);
             var symbol = new Symbol(sid, type, variable.ResultId);
@@ -376,7 +377,7 @@ public sealed class RGroup(string name, TextLocation info) : ShaderBuffer(name, 
         if (linkInfo.LinkId is int linkId)
             context.Add(new OpDecorate(variableId, ParameterizedFlags.DecorationLinkIdSDSL(linkId)));
         else
-            context.Add(new OpDecorateString(variableId, ParameterizedFlags.DecorationLinkSDSL(linkInfo.LinkName ?? $"{shaderClass.Name}.{memberName}")));
+            context.Add(new OpDecorateString(variableId, Decoration.LinkSDSL, linkInfo.LinkName ?? $"{shaderClass.Name}.{memberName}"));
     }
 }
 

@@ -218,16 +218,12 @@ namespace Stride.Shaders.Spirv.Processing
                             && ((OpDecorateString)instruction) is
                             {
                                 Target: int t,
-                                Decoration:
-                                {
-                                    Value: Decoration.UserSemantic,
-                                    Parameters: { } m
-                                }
+                                Decoration: Decoration.UserSemantic,
+                                Value: string n
                             }
                            )
                         {
-                            using var n = new LiteralValue<string>(m.Span);
-                            semanticTable[t] = n.Value;
+                            semanticTable[t] = n;
                         }
                     }
                 }
@@ -344,7 +340,7 @@ namespace Stride.Shaders.Spirv.Processing
                             stream.Value.InputLayoutLocation = inputLayoutLocationCount++;
                         context.Add(new OpDecorate(variable, ParameterizedFlags.DecorationLocation(stream.Value.InputLayoutLocation.Value)));
                         if (stream.Value.Semantic != null)
-                            context.Add(new OpDecorateString(variable, ParameterizedFlags.DecorationUserSemantic(stream.Value.Semantic)));
+                            context.Add(new OpDecorateString(variable, Decoration.UserSemantic, stream.Value.Semantic));
                     }
 
                     inputStreams.Add((stream.Value, variable.ResultId));
@@ -369,7 +365,7 @@ namespace Stride.Shaders.Spirv.Processing
 
                         context.Add(new OpDecorate(variable, ParameterizedFlags.DecorationLocation(stream.Value.OutputLayoutLocation.Value)));
                         if (stream.Value.Semantic != null)
-                            context.Add(new OpDecorateString(variable, ParameterizedFlags.DecorationUserSemantic(stream.Value.Semantic)));
+                            context.Add(new OpDecorateString(variable, Decoration.UserSemantic, stream.Value.Semantic));
                     }
 
                     outputStreams.Add((stream.Value, variable.ResultId));

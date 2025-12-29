@@ -448,12 +448,10 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
         {
             foreach (var i in buffer)
             {
-                if (i.Op == Op.OpMemberDecorateString && (OpMemberDecorateString)i is { Decoration: { Value: Decoration.LinkSDSL, Parameters: { } m } } memberDecorate)
+                if (i.Op == Op.OpMemberDecorateString && (OpMemberDecorateString)i is { Decoration: Decoration.LinkSDSL, Value: string m } memberDecorate)
                 {
-                    var n = new LiteralValue<string>(m.Span);
-                    n.Value = $"{n.Value}.{mixinNode.CompositionPath}";
-                    memberDecorate.Decoration = new(memberDecorate.Decoration.Value, n.Words);
-                    n.Dispose();
+                    m = $"{m}.{mixinNode.CompositionPath}";
+                    memberDecorate.Value = m;
                 }
             }
         }
@@ -895,21 +893,17 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
             if (i.Op == Op.OpDecorateString && (OpDecorateString)i is
                 {
                     Target: int t,
-                    Decoration:
-                    {
-                        Value: Decoration.LinkSDSL or Decoration.ResourceGroupSDSL or Decoration.LogicalGroupSDSL,
-                        Parameters: { } m
-                    }
+                    Decoration: Decoration.LinkSDSL or Decoration.ResourceGroupSDSL or Decoration.LogicalGroupSDSL,
+                    Value: string m
                 } decoration)
             {
-                using var n = new LiteralValue<string>(m.Span);
                 ref var linkInfo = ref CollectionsMarshal.GetValueRefOrAddDefault(linkInfos, t, out _);
-                if (decoration.Decoration.Value == Decoration.LinkSDSL)
-                    linkInfo.LinkName = n.Value;
-                else if (decoration.Decoration.Value == Decoration.ResourceGroupSDSL)
-                    linkInfo.ResourceGroup = n.Value;
-                else if (decoration.Decoration.Value == Decoration.LogicalGroupSDSL)
-                    linkInfo.LogicalGroup = n.Value;
+                if (decoration.Decoration == Decoration.LinkSDSL)
+                    linkInfo.LinkName = m;
+                else if (decoration.Decoration == Decoration.ResourceGroupSDSL)
+                    linkInfo.ResourceGroup = m;
+                else if (decoration.Decoration == Decoration.LogicalGroupSDSL)
+                    linkInfo.LogicalGroup = m;
             }
             else if ((i.Op == Op.OpDecorate || i.Op == Op.OpDecorateString) && (OpDecorate)i is
                 {
@@ -1172,9 +1166,9 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                 temp.RemoveAt(index--);
             else if (i.Op == Op.OpMemberDecorate && ((OpMemberDecorate)i).Decoration.Value == Decoration.LinkIdSDSL)
                 temp.RemoveAt(index--);
-            else if (i.Op == Op.OpDecorateString && ((OpDecorateString)i).Decoration.Value is Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
+            else if (i.Op == Op.OpDecorateString && ((OpDecorateString)i).Decoration is Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
                 temp.RemoveAt(index--);
-            else if (i.Op == Op.OpMemberDecorateString && ((OpMemberDecorateString)i).Decoration.Value is Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
+            else if (i.Op == Op.OpMemberDecorateString && ((OpMemberDecorateString)i).Decoration is Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
                 temp.RemoveAt(index--);
 
             // Remove SPIR-V about pointer types to other shaders (variable and types themselves are removed as well)

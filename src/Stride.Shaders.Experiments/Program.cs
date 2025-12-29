@@ -7,6 +7,7 @@ using Stride.Shaders.Compilers.Direct3D;
 using Stride.Shaders.Parsing.SDSL;
 using Stride.Shaders;
 using Stride.Shaders.Spirv.Core;
+using Stride.Shaders.Spirv;
 
 Console.WriteLine(Spv2DXIL.spirv_to_dxil_get_version());
 
@@ -23,7 +24,7 @@ File.WriteAllText("test.spvdis", source);
 
 
 
-var decorateString = new OpDecorateString(1, ParameterizedFlags.DecorationResourceGroupSDSL("groupName"));
+var decorateString = new OpDecorateString(1, Specification.Decoration.ResourceGroupSDSL, "groupName");
 
 
 // Examples.TryAllFiles();

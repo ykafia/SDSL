@@ -160,6 +160,7 @@ public class ShaderClass(Identifier name, TextLocation info) : ShaderDeclaration
             }
             else if (instruction.Op == Op.OpTypeFunctionSDSL && new OpTypeFunctionSDSL(instruction) is { } typeFunctionInstruction)
             {
+                var temp = new OpTypeFunctionSDSL(instruction);
                 var returnType = types[typeFunctionInstruction.ReturnType];
                 var parameterTypes = new List<(SymbolType Type, ParameterModifiers Flags)>();
                 foreach (var operand in typeFunctionInstruction.Values)

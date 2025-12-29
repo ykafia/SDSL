@@ -40,8 +40,8 @@ public struct OpSDSLShader : IMemoryInstruction
     public OpSDSLShader(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLShader(OpData data)
@@ -95,6 +95,9 @@ public struct OpSDSLShader : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLShader(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLShader(OpData data) => new(data);
 }
 
 public struct OpSDSLShaderEnd : IMemoryInstruction
@@ -132,8 +135,8 @@ public struct OpSDSLShaderEnd : IMemoryInstruction
     public OpSDSLShaderEnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLShaderEnd(OpData data)
@@ -167,6 +170,9 @@ public struct OpSDSLShaderEnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLShaderEnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLShaderEnd(OpData data) => new(data);
 }
 
 public struct OpSDSLEffect : IMemoryInstruction
@@ -204,8 +210,8 @@ public struct OpSDSLEffect : IMemoryInstruction
     public OpSDSLEffect(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLEffect(OpData data)
@@ -259,6 +265,9 @@ public struct OpSDSLEffect : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLEffect(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLEffect(OpData data) => new(data);
 }
 
 public struct OpSDSLComposition : IMemoryInstruction
@@ -296,8 +305,8 @@ public struct OpSDSLComposition : IMemoryInstruction
     public OpSDSLComposition(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLComposition(OpData data)
@@ -351,6 +360,9 @@ public struct OpSDSLComposition : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLComposition(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLComposition(OpData data) => new(data);
 }
 
 public struct OpSDSLCompositionEnd : IMemoryInstruction
@@ -388,8 +400,8 @@ public struct OpSDSLCompositionEnd : IMemoryInstruction
     public OpSDSLCompositionEnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLCompositionEnd(OpData data)
@@ -423,6 +435,9 @@ public struct OpSDSLCompositionEnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLCompositionEnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLCompositionEnd(OpData data) => new(data);
 }
 
 public struct OpSDSLMixinInherit : IMemoryInstruction
@@ -460,8 +475,8 @@ public struct OpSDSLMixinInherit : IMemoryInstruction
     public OpSDSLMixinInherit(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLMixinInherit(OpData data)
@@ -515,6 +530,9 @@ public struct OpSDSLMixinInherit : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLMixinInherit(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLMixinInherit(OpData data) => new(data);
 }
 
 public struct OpSDSLCompose : IMemoryInstruction
@@ -552,8 +570,8 @@ public struct OpSDSLCompose : IMemoryInstruction
     public OpSDSLCompose(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLCompose(OpData data)
@@ -622,6 +640,9 @@ public struct OpSDSLCompose : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLCompose(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLCompose(OpData data) => new(data);
 }
 
 public struct OpSDSLStage : IMemoryInstruction
@@ -659,8 +680,8 @@ public struct OpSDSLStage : IMemoryInstruction
     public OpSDSLStage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLStage(OpData data)
@@ -714,6 +735,9 @@ public struct OpSDSLStage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLStage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLStage(OpData data) => new(data);
 }
 
 public struct OpSDSLImportShader : IMemoryInstruction
@@ -751,8 +775,8 @@ public struct OpSDSLImportShader : IMemoryInstruction
     public OpSDSLImportShader(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLImportShader(OpData data)
@@ -837,6 +861,9 @@ public struct OpSDSLImportShader : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLImportShader(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLImportShader(OpData data) => new(data);
 }
 
 public struct OpSDSLImportFunction : IMemoryInstruction
@@ -874,8 +901,8 @@ public struct OpSDSLImportFunction : IMemoryInstruction
     public OpSDSLImportFunction(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLImportFunction(OpData data)
@@ -990,6 +1017,9 @@ public struct OpSDSLImportFunction : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLImportFunction(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLImportFunction(OpData data) => new(data);
 }
 
 public struct OpSDSLImportVariable : IMemoryInstruction
@@ -1027,8 +1057,8 @@ public struct OpSDSLImportVariable : IMemoryInstruction
     public OpSDSLImportVariable(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLImportVariable(OpData data)
@@ -1143,6 +1173,9 @@ public struct OpSDSLImportVariable : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLImportVariable(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLImportVariable(OpData data) => new(data);
 }
 
 public struct OpSDSLImportStruct : IMemoryInstruction
@@ -1180,8 +1213,8 @@ public struct OpSDSLImportStruct : IMemoryInstruction
     public OpSDSLImportStruct(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLImportStruct(OpData data)
@@ -1266,6 +1299,9 @@ public struct OpSDSLImportStruct : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLImportStruct(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLImportStruct(OpData data) => new(data);
 }
 
 public struct OpVariableSDSL : IMemoryInstruction
@@ -1303,8 +1339,8 @@ public struct OpVariableSDSL : IMemoryInstruction
     public OpVariableSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVariableSDSL(OpData data)
@@ -1420,6 +1456,9 @@ public struct OpVariableSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVariableSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVariableSDSL(OpData data) => new(data);
 }
 
 public struct OpMemberAccessSDSL : IMemoryInstruction
@@ -1457,8 +1496,8 @@ public struct OpMemberAccessSDSL : IMemoryInstruction
     public OpMemberAccessSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemberAccessSDSL(OpData data)
@@ -1558,6 +1597,9 @@ public struct OpMemberAccessSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemberAccessSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemberAccessSDSL(OpData data) => new(data);
 }
 
 public struct OpTypeFunctionSDSL : IMemoryInstruction
@@ -1595,8 +1637,8 @@ public struct OpTypeFunctionSDSL : IMemoryInstruction
     public OpTypeFunctionSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeFunctionSDSL(OpData data)
@@ -1681,6 +1723,9 @@ public struct OpTypeFunctionSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeFunctionSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeFunctionSDSL(OpData data) => new(data);
 }
 
 public struct OpSDSLFunctionInfo : IMemoryInstruction
@@ -1718,8 +1763,8 @@ public struct OpSDSLFunctionInfo : IMemoryInstruction
     public OpSDSLFunctionInfo(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLFunctionInfo(OpData data)
@@ -1788,6 +1833,9 @@ public struct OpSDSLFunctionInfo : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLFunctionInfo(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLFunctionInfo(OpData data) => new(data);
 }
 
 public struct OpBaseSDSL : IMemoryInstruction
@@ -1825,8 +1873,8 @@ public struct OpBaseSDSL : IMemoryInstruction
     public OpBaseSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBaseSDSL(OpData data)
@@ -1881,6 +1929,9 @@ public struct OpBaseSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBaseSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBaseSDSL(OpData data) => new(data);
 }
 
 public struct OpThisSDSL : IMemoryInstruction
@@ -1918,8 +1969,8 @@ public struct OpThisSDSL : IMemoryInstruction
     public OpThisSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpThisSDSL(OpData data)
@@ -1974,6 +2025,9 @@ public struct OpThisSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpThisSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpThisSDSL(OpData data) => new(data);
 }
 
 public struct OpStageSDSL : IMemoryInstruction
@@ -2011,8 +2065,8 @@ public struct OpStageSDSL : IMemoryInstruction
     public OpStageSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpStageSDSL(OpData data)
@@ -2067,6 +2121,9 @@ public struct OpStageSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpStageSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpStageSDSL(OpData data) => new(data);
 }
 
 public struct OpSDSLMixin : IMemoryInstruction
@@ -2104,8 +2161,8 @@ public struct OpSDSLMixin : IMemoryInstruction
     public OpSDSLMixin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLMixin(OpData data)
@@ -2174,6 +2231,9 @@ public struct OpSDSLMixin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLMixin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLMixin(OpData data) => new(data);
 }
 
 public struct OpSDSLMixinCompose : IMemoryInstruction
@@ -2211,8 +2271,8 @@ public struct OpSDSLMixinCompose : IMemoryInstruction
     public OpSDSLMixinCompose(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLMixinCompose(OpData data)
@@ -2281,6 +2341,9 @@ public struct OpSDSLMixinCompose : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLMixinCompose(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLMixinCompose(OpData data) => new(data);
 }
 
 public struct OpSDSLMixinComposeArray : IMemoryInstruction
@@ -2318,8 +2381,8 @@ public struct OpSDSLMixinComposeArray : IMemoryInstruction
     public OpSDSLMixinComposeArray(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLMixinComposeArray(OpData data)
@@ -2388,6 +2451,9 @@ public struct OpSDSLMixinComposeArray : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLMixinComposeArray(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLMixinComposeArray(OpData data) => new(data);
 }
 
 public struct OpSDSLGenericParameter : IMemoryInstruction
@@ -2425,8 +2491,8 @@ public struct OpSDSLGenericParameter : IMemoryInstruction
     public OpSDSLGenericParameter(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDSLGenericParameter(OpData data)
@@ -2496,6 +2562,9 @@ public struct OpSDSLGenericParameter : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDSLGenericParameter(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDSLGenericParameter(OpData data) => new(data);
 }
 
 public struct OpConstantStringSDSL : IMemoryInstruction
@@ -2533,8 +2602,8 @@ public struct OpConstantStringSDSL : IMemoryInstruction
     public OpConstantStringSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantStringSDSL(OpData data)
@@ -2604,6 +2673,9 @@ public struct OpConstantStringSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantStringSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantStringSDSL(OpData data) => new(data);
 }
 
 public struct OpTypeGenericSDSL : IMemoryInstruction
@@ -2641,8 +2713,8 @@ public struct OpTypeGenericSDSL : IMemoryInstruction
     public OpTypeGenericSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeGenericSDSL(OpData data)
@@ -2712,6 +2784,9 @@ public struct OpTypeGenericSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeGenericSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeGenericSDSL(OpData data) => new(data);
 }
 
 public struct OpForeachSDSL : IMemoryInstruction
@@ -2749,8 +2824,8 @@ public struct OpForeachSDSL : IMemoryInstruction
     public OpForeachSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpForeachSDSL(OpData data)
@@ -2835,6 +2910,9 @@ public struct OpForeachSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpForeachSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpForeachSDSL(OpData data) => new(data);
 }
 
 public struct OpForeachEndSDSL : IMemoryInstruction
@@ -2872,8 +2950,8 @@ public struct OpForeachEndSDSL : IMemoryInstruction
     public OpForeachEndSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpForeachEndSDSL(OpData data)
@@ -2907,6 +2985,9 @@ public struct OpForeachEndSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpForeachEndSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpForeachEndSDSL(OpData data) => new(data);
 }
 
 public struct OpUnresolvableShaderSDSL : IMemoryInstruction
@@ -2944,8 +3025,8 @@ public struct OpUnresolvableShaderSDSL : IMemoryInstruction
     public OpUnresolvableShaderSDSL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUnresolvableShaderSDSL(OpData data)
@@ -3014,6 +3095,9 @@ public struct OpUnresolvableShaderSDSL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUnresolvableShaderSDSL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUnresolvableShaderSDSL(OpData data) => new(data);
 }
 
 public struct OpNop : IMemoryInstruction
@@ -3051,8 +3135,8 @@ public struct OpNop : IMemoryInstruction
     public OpNop(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpNop(OpData data)
@@ -3086,6 +3170,9 @@ public struct OpNop : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpNop(OpDataIndex odi) => new(odi);
+    public static implicit operator OpNop(OpData data) => new(data);
 }
 
 public struct OpUndef : IMemoryInstruction
@@ -3123,8 +3210,8 @@ public struct OpUndef : IMemoryInstruction
     public OpUndef(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUndef(OpData data)
@@ -3194,6 +3281,9 @@ public struct OpUndef : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUndef(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUndef(OpData data) => new(data);
 }
 
 public struct OpSourceContinued : IMemoryInstruction
@@ -3231,8 +3321,8 @@ public struct OpSourceContinued : IMemoryInstruction
     public OpSourceContinued(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSourceContinued(OpData data)
@@ -3286,6 +3376,9 @@ public struct OpSourceContinued : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSourceContinued(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSourceContinued(OpData data) => new(data);
 }
 
 public struct OpSource : IMemoryInstruction
@@ -3323,8 +3416,8 @@ public struct OpSource : IMemoryInstruction
     public OpSource(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSource(OpData data)
@@ -3425,6 +3518,9 @@ public struct OpSource : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSource(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSource(OpData data) => new(data);
 }
 
 public struct OpSourceExtension : IMemoryInstruction
@@ -3462,8 +3558,8 @@ public struct OpSourceExtension : IMemoryInstruction
     public OpSourceExtension(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSourceExtension(OpData data)
@@ -3517,6 +3613,9 @@ public struct OpSourceExtension : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSourceExtension(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSourceExtension(OpData data) => new(data);
 }
 
 public struct OpName : IMemoryInstruction
@@ -3554,8 +3653,8 @@ public struct OpName : IMemoryInstruction
     public OpName(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpName(OpData data)
@@ -3624,6 +3723,9 @@ public struct OpName : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpName(OpDataIndex odi) => new(odi);
+    public static implicit operator OpName(OpData data) => new(data);
 }
 
 public struct OpMemberName : IMemoryInstruction
@@ -3661,8 +3763,8 @@ public struct OpMemberName : IMemoryInstruction
     public OpMemberName(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemberName(OpData data)
@@ -3746,6 +3848,9 @@ public struct OpMemberName : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemberName(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemberName(OpData data) => new(data);
 }
 
 public struct OpString : IMemoryInstruction
@@ -3783,8 +3888,8 @@ public struct OpString : IMemoryInstruction
     public OpString(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpString(OpData data)
@@ -3854,6 +3959,9 @@ public struct OpString : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpString(OpDataIndex odi) => new(odi);
+    public static implicit operator OpString(OpData data) => new(data);
 }
 
 public struct OpLine : IMemoryInstruction
@@ -3891,8 +3999,8 @@ public struct OpLine : IMemoryInstruction
     public OpLine(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLine(OpData data)
@@ -3976,6 +4084,9 @@ public struct OpLine : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLine(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLine(OpData data) => new(data);
 }
 
 public struct OpExtension : IMemoryInstruction
@@ -4013,8 +4124,8 @@ public struct OpExtension : IMemoryInstruction
     public OpExtension(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExtension(OpData data)
@@ -4068,6 +4179,9 @@ public struct OpExtension : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExtension(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExtension(OpData data) => new(data);
 }
 
 public struct OpExtInstImport : IMemoryInstruction
@@ -4105,8 +4219,8 @@ public struct OpExtInstImport : IMemoryInstruction
     public OpExtInstImport(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExtInstImport(OpData data)
@@ -4176,6 +4290,9 @@ public struct OpExtInstImport : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExtInstImport(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExtInstImport(OpData data) => new(data);
 }
 
 public struct OpExtInst : IMemoryInstruction
@@ -4213,8 +4330,8 @@ public struct OpExtInst : IMemoryInstruction
     public OpExtInst(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExtInst(OpData data)
@@ -4329,6 +4446,9 @@ public struct OpExtInst : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExtInst(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExtInst(OpData data) => new(data);
 }
 
 public struct OpMemoryModel : IMemoryInstruction
@@ -4366,8 +4486,8 @@ public struct OpMemoryModel : IMemoryInstruction
     public OpMemoryModel(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemoryModel(OpData data)
@@ -4436,6 +4556,9 @@ public struct OpMemoryModel : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemoryModel(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemoryModel(OpData data) => new(data);
 }
 
 public struct OpEntryPoint : IMemoryInstruction
@@ -4473,8 +4596,8 @@ public struct OpEntryPoint : IMemoryInstruction
     public OpEntryPoint(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEntryPoint(OpData data)
@@ -4573,6 +4696,9 @@ public struct OpEntryPoint : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEntryPoint(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEntryPoint(OpData data) => new(data);
 }
 
 public struct OpExecutionMode : IMemoryInstruction
@@ -4610,8 +4736,8 @@ public struct OpExecutionMode : IMemoryInstruction
     public OpExecutionMode(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExecutionMode(OpData data)
@@ -4680,6 +4806,9 @@ public struct OpExecutionMode : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExecutionMode(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExecutionMode(OpData data) => new(data);
 }
 
 public struct OpCapability : IMemoryInstruction
@@ -4717,8 +4846,8 @@ public struct OpCapability : IMemoryInstruction
     public OpCapability(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCapability(OpData data)
@@ -4772,6 +4901,9 @@ public struct OpCapability : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCapability(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCapability(OpData data) => new(data);
 }
 
 public struct OpTypeVoid : IMemoryInstruction
@@ -4809,8 +4941,8 @@ public struct OpTypeVoid : IMemoryInstruction
     public OpTypeVoid(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeVoid(OpData data)
@@ -4865,6 +4997,9 @@ public struct OpTypeVoid : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeVoid(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeVoid(OpData data) => new(data);
 }
 
 public struct OpTypeBool : IMemoryInstruction
@@ -4902,8 +5037,8 @@ public struct OpTypeBool : IMemoryInstruction
     public OpTypeBool(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeBool(OpData data)
@@ -4958,6 +5093,9 @@ public struct OpTypeBool : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeBool(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeBool(OpData data) => new(data);
 }
 
 public struct OpTypeInt : IMemoryInstruction
@@ -4995,8 +5133,8 @@ public struct OpTypeInt : IMemoryInstruction
     public OpTypeInt(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeInt(OpData data)
@@ -5081,6 +5219,9 @@ public struct OpTypeInt : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeInt(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeInt(OpData data) => new(data);
 }
 
 public struct OpTypeFloat : IMemoryInstruction
@@ -5118,8 +5259,8 @@ public struct OpTypeFloat : IMemoryInstruction
     public OpTypeFloat(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeFloat(OpData data)
@@ -5205,6 +5346,9 @@ public struct OpTypeFloat : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeFloat(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeFloat(OpData data) => new(data);
 }
 
 public struct OpTypeVector : IMemoryInstruction
@@ -5242,8 +5386,8 @@ public struct OpTypeVector : IMemoryInstruction
     public OpTypeVector(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeVector(OpData data)
@@ -5328,6 +5472,9 @@ public struct OpTypeVector : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeVector(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeVector(OpData data) => new(data);
 }
 
 public struct OpTypeMatrix : IMemoryInstruction
@@ -5365,8 +5512,8 @@ public struct OpTypeMatrix : IMemoryInstruction
     public OpTypeMatrix(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeMatrix(OpData data)
@@ -5451,6 +5598,9 @@ public struct OpTypeMatrix : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeMatrix(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeMatrix(OpData data) => new(data);
 }
 
 public struct OpTypeImage : IMemoryInstruction
@@ -5488,8 +5638,8 @@ public struct OpTypeImage : IMemoryInstruction
     public OpTypeImage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeImage(OpData data)
@@ -5665,6 +5815,9 @@ public struct OpTypeImage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeImage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeImage(OpData data) => new(data);
 }
 
 public struct OpTypeSampler : IMemoryInstruction
@@ -5702,8 +5855,8 @@ public struct OpTypeSampler : IMemoryInstruction
     public OpTypeSampler(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeSampler(OpData data)
@@ -5758,6 +5911,9 @@ public struct OpTypeSampler : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeSampler(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeSampler(OpData data) => new(data);
 }
 
 public struct OpTypeSampledImage : IMemoryInstruction
@@ -5795,8 +5951,8 @@ public struct OpTypeSampledImage : IMemoryInstruction
     public OpTypeSampledImage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeSampledImage(OpData data)
@@ -5866,6 +6022,9 @@ public struct OpTypeSampledImage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeSampledImage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeSampledImage(OpData data) => new(data);
 }
 
 public struct OpTypeArray : IMemoryInstruction
@@ -5903,8 +6062,8 @@ public struct OpTypeArray : IMemoryInstruction
     public OpTypeArray(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeArray(OpData data)
@@ -5989,6 +6148,9 @@ public struct OpTypeArray : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeArray(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeArray(OpData data) => new(data);
 }
 
 public struct OpTypeRuntimeArray : IMemoryInstruction
@@ -6026,8 +6188,8 @@ public struct OpTypeRuntimeArray : IMemoryInstruction
     public OpTypeRuntimeArray(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeRuntimeArray(OpData data)
@@ -6097,6 +6259,9 @@ public struct OpTypeRuntimeArray : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeRuntimeArray(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeRuntimeArray(OpData data) => new(data);
 }
 
 public struct OpTypeStruct : IMemoryInstruction
@@ -6134,8 +6299,8 @@ public struct OpTypeStruct : IMemoryInstruction
     public OpTypeStruct(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeStruct(OpData data)
@@ -6205,6 +6370,9 @@ public struct OpTypeStruct : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeStruct(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeStruct(OpData data) => new(data);
 }
 
 public struct OpTypeOpaque : IMemoryInstruction
@@ -6242,8 +6410,8 @@ public struct OpTypeOpaque : IMemoryInstruction
     public OpTypeOpaque(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeOpaque(OpData data)
@@ -6313,6 +6481,9 @@ public struct OpTypeOpaque : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeOpaque(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeOpaque(OpData data) => new(data);
 }
 
 public struct OpTypePointer : IMemoryInstruction
@@ -6350,8 +6521,8 @@ public struct OpTypePointer : IMemoryInstruction
     public OpTypePointer(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypePointer(OpData data)
@@ -6436,6 +6607,9 @@ public struct OpTypePointer : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypePointer(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypePointer(OpData data) => new(data);
 }
 
 public struct OpTypeFunction : IMemoryInstruction
@@ -6473,8 +6647,8 @@ public struct OpTypeFunction : IMemoryInstruction
     public OpTypeFunction(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeFunction(OpData data)
@@ -6559,6 +6733,9 @@ public struct OpTypeFunction : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeFunction(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeFunction(OpData data) => new(data);
 }
 
 public struct OpTypeEvent : IMemoryInstruction
@@ -6596,8 +6773,8 @@ public struct OpTypeEvent : IMemoryInstruction
     public OpTypeEvent(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeEvent(OpData data)
@@ -6652,6 +6829,9 @@ public struct OpTypeEvent : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeEvent(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeEvent(OpData data) => new(data);
 }
 
 public struct OpTypeDeviceEvent : IMemoryInstruction
@@ -6689,8 +6869,8 @@ public struct OpTypeDeviceEvent : IMemoryInstruction
     public OpTypeDeviceEvent(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeDeviceEvent(OpData data)
@@ -6745,6 +6925,9 @@ public struct OpTypeDeviceEvent : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeDeviceEvent(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeDeviceEvent(OpData data) => new(data);
 }
 
 public struct OpTypeReserveId : IMemoryInstruction
@@ -6782,8 +6965,8 @@ public struct OpTypeReserveId : IMemoryInstruction
     public OpTypeReserveId(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeReserveId(OpData data)
@@ -6838,6 +7021,9 @@ public struct OpTypeReserveId : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeReserveId(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeReserveId(OpData data) => new(data);
 }
 
 public struct OpTypeQueue : IMemoryInstruction
@@ -6875,8 +7061,8 @@ public struct OpTypeQueue : IMemoryInstruction
     public OpTypeQueue(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeQueue(OpData data)
@@ -6931,6 +7117,9 @@ public struct OpTypeQueue : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeQueue(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeQueue(OpData data) => new(data);
 }
 
 public struct OpTypePipe : IMemoryInstruction
@@ -6968,8 +7157,8 @@ public struct OpTypePipe : IMemoryInstruction
     public OpTypePipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypePipe(OpData data)
@@ -7039,6 +7228,9 @@ public struct OpTypePipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypePipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypePipe(OpData data) => new(data);
 }
 
 public struct OpTypeForwardPointer : IMemoryInstruction
@@ -7076,8 +7268,8 @@ public struct OpTypeForwardPointer : IMemoryInstruction
     public OpTypeForwardPointer(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeForwardPointer(OpData data)
@@ -7146,6 +7338,9 @@ public struct OpTypeForwardPointer : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeForwardPointer(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeForwardPointer(OpData data) => new(data);
 }
 
 public struct OpConstantTrue : IMemoryInstruction
@@ -7183,8 +7378,8 @@ public struct OpConstantTrue : IMemoryInstruction
     public OpConstantTrue(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantTrue(OpData data)
@@ -7254,6 +7449,9 @@ public struct OpConstantTrue : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantTrue(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantTrue(OpData data) => new(data);
 }
 
 public struct OpConstantFalse : IMemoryInstruction
@@ -7291,8 +7489,8 @@ public struct OpConstantFalse : IMemoryInstruction
     public OpConstantFalse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantFalse(OpData data)
@@ -7362,6 +7560,9 @@ public struct OpConstantFalse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantFalse(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantFalse(OpData data) => new(data);
 }
 
 public struct OpConstant<T> : IMemoryInstruction where T : struct, INumber<T>
@@ -7399,8 +7600,8 @@ public struct OpConstant<T> : IMemoryInstruction where T : struct, INumber<T>
     public OpConstant(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstant(OpData data)
@@ -7485,6 +7686,9 @@ public struct OpConstant<T> : IMemoryInstruction where T : struct, INumber<T>
             }
         }
     }
+
+    public static implicit operator OpConstant<T>(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstant<T>(OpData data) => new(data);
 }
 
 public struct OpConstantComposite : IMemoryInstruction
@@ -7522,8 +7726,8 @@ public struct OpConstantComposite : IMemoryInstruction
     public OpConstantComposite(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantComposite(OpData data)
@@ -7608,6 +7812,9 @@ public struct OpConstantComposite : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantComposite(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantComposite(OpData data) => new(data);
 }
 
 public struct OpConstantSampler : IMemoryInstruction
@@ -7645,8 +7852,8 @@ public struct OpConstantSampler : IMemoryInstruction
     public OpConstantSampler(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantSampler(OpData data)
@@ -7761,6 +7968,9 @@ public struct OpConstantSampler : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantSampler(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantSampler(OpData data) => new(data);
 }
 
 public struct OpConstantNull : IMemoryInstruction
@@ -7798,8 +8008,8 @@ public struct OpConstantNull : IMemoryInstruction
     public OpConstantNull(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantNull(OpData data)
@@ -7869,6 +8079,9 @@ public struct OpConstantNull : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantNull(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantNull(OpData data) => new(data);
 }
 
 public struct OpSpecConstantTrue : IMemoryInstruction
@@ -7906,8 +8119,8 @@ public struct OpSpecConstantTrue : IMemoryInstruction
     public OpSpecConstantTrue(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantTrue(OpData data)
@@ -7977,6 +8190,9 @@ public struct OpSpecConstantTrue : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantTrue(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantTrue(OpData data) => new(data);
 }
 
 public struct OpSpecConstantFalse : IMemoryInstruction
@@ -8014,8 +8230,8 @@ public struct OpSpecConstantFalse : IMemoryInstruction
     public OpSpecConstantFalse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantFalse(OpData data)
@@ -8085,6 +8301,9 @@ public struct OpSpecConstantFalse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantFalse(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantFalse(OpData data) => new(data);
 }
 
 public struct OpSpecConstant<T> : IMemoryInstruction where T : struct, INumber<T>
@@ -8122,8 +8341,8 @@ public struct OpSpecConstant<T> : IMemoryInstruction where T : struct, INumber<T
     public OpSpecConstant(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstant(OpData data)
@@ -8208,6 +8427,9 @@ public struct OpSpecConstant<T> : IMemoryInstruction where T : struct, INumber<T
             }
         }
     }
+
+    public static implicit operator OpSpecConstant<T>(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstant<T>(OpData data) => new(data);
 }
 
 public struct OpSpecConstantComposite : IMemoryInstruction
@@ -8245,8 +8467,8 @@ public struct OpSpecConstantComposite : IMemoryInstruction
     public OpSpecConstantComposite(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantComposite(OpData data)
@@ -8331,6 +8553,9 @@ public struct OpSpecConstantComposite : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantComposite(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantComposite(OpData data) => new(data);
 }
 
 public struct OpSpecConstantOp : IMemoryInstruction
@@ -8368,8 +8593,8 @@ public struct OpSpecConstantOp : IMemoryInstruction
     public OpSpecConstantOp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantOp(OpData data)
@@ -8454,6 +8679,9 @@ public struct OpSpecConstantOp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantOp(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantOp(OpData data) => new(data);
 }
 
 public struct OpFunction : IMemoryInstruction
@@ -8491,8 +8719,8 @@ public struct OpFunction : IMemoryInstruction
     public OpFunction(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFunction(OpData data)
@@ -8592,6 +8820,9 @@ public struct OpFunction : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFunction(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFunction(OpData data) => new(data);
 }
 
 public struct OpFunctionParameter : IMemoryInstruction
@@ -8629,8 +8860,8 @@ public struct OpFunctionParameter : IMemoryInstruction
     public OpFunctionParameter(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFunctionParameter(OpData data)
@@ -8700,6 +8931,9 @@ public struct OpFunctionParameter : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFunctionParameter(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFunctionParameter(OpData data) => new(data);
 }
 
 public struct OpFunctionEnd : IMemoryInstruction
@@ -8737,8 +8971,8 @@ public struct OpFunctionEnd : IMemoryInstruction
     public OpFunctionEnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFunctionEnd(OpData data)
@@ -8772,6 +9006,9 @@ public struct OpFunctionEnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFunctionEnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFunctionEnd(OpData data) => new(data);
 }
 
 public struct OpFunctionCall : IMemoryInstruction
@@ -8809,8 +9046,8 @@ public struct OpFunctionCall : IMemoryInstruction
     public OpFunctionCall(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFunctionCall(OpData data)
@@ -8910,6 +9147,9 @@ public struct OpFunctionCall : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFunctionCall(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFunctionCall(OpData data) => new(data);
 }
 
 public struct OpVariable : IMemoryInstruction
@@ -8947,8 +9187,8 @@ public struct OpVariable : IMemoryInstruction
     public OpVariable(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVariable(OpData data)
@@ -9049,6 +9289,9 @@ public struct OpVariable : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVariable(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVariable(OpData data) => new(data);
 }
 
 public struct OpImageTexelPointer : IMemoryInstruction
@@ -9086,8 +9329,8 @@ public struct OpImageTexelPointer : IMemoryInstruction
     public OpImageTexelPointer(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageTexelPointer(OpData data)
@@ -9202,6 +9445,9 @@ public struct OpImageTexelPointer : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageTexelPointer(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageTexelPointer(OpData data) => new(data);
 }
 
 public struct OpLoad : IMemoryInstruction
@@ -9239,8 +9485,8 @@ public struct OpLoad : IMemoryInstruction
     public OpLoad(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLoad(OpData data)
@@ -9341,6 +9587,9 @@ public struct OpLoad : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLoad(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLoad(OpData data) => new(data);
 }
 
 public struct OpStore : IMemoryInstruction
@@ -9378,8 +9627,8 @@ public struct OpStore : IMemoryInstruction
     public OpStore(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpStore(OpData data)
@@ -9464,6 +9713,9 @@ public struct OpStore : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpStore(OpDataIndex odi) => new(odi);
+    public static implicit operator OpStore(OpData data) => new(data);
 }
 
 public struct OpAccessChain : IMemoryInstruction
@@ -9501,8 +9753,8 @@ public struct OpAccessChain : IMemoryInstruction
     public OpAccessChain(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAccessChain(OpData data)
@@ -9602,6 +9854,9 @@ public struct OpAccessChain : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAccessChain(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAccessChain(OpData data) => new(data);
 }
 
 public struct OpInBoundsAccessChain : IMemoryInstruction
@@ -9639,8 +9894,8 @@ public struct OpInBoundsAccessChain : IMemoryInstruction
     public OpInBoundsAccessChain(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpInBoundsAccessChain(OpData data)
@@ -9740,6 +9995,9 @@ public struct OpInBoundsAccessChain : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpInBoundsAccessChain(OpDataIndex odi) => new(odi);
+    public static implicit operator OpInBoundsAccessChain(OpData data) => new(data);
 }
 
 public struct OpPtrAccessChain : IMemoryInstruction
@@ -9777,8 +10035,8 @@ public struct OpPtrAccessChain : IMemoryInstruction
     public OpPtrAccessChain(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPtrAccessChain(OpData data)
@@ -9893,6 +10151,9 @@ public struct OpPtrAccessChain : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPtrAccessChain(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPtrAccessChain(OpData data) => new(data);
 }
 
 public struct OpArrayLength : IMemoryInstruction
@@ -9930,8 +10191,8 @@ public struct OpArrayLength : IMemoryInstruction
     public OpArrayLength(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArrayLength(OpData data)
@@ -10031,6 +10292,9 @@ public struct OpArrayLength : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArrayLength(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArrayLength(OpData data) => new(data);
 }
 
 public struct OpGenericPtrMemSemantics : IMemoryInstruction
@@ -10068,8 +10332,8 @@ public struct OpGenericPtrMemSemantics : IMemoryInstruction
     public OpGenericPtrMemSemantics(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGenericPtrMemSemantics(OpData data)
@@ -10154,6 +10418,9 @@ public struct OpGenericPtrMemSemantics : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGenericPtrMemSemantics(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGenericPtrMemSemantics(OpData data) => new(data);
 }
 
 public struct OpInBoundsPtrAccessChain : IMemoryInstruction
@@ -10191,8 +10458,8 @@ public struct OpInBoundsPtrAccessChain : IMemoryInstruction
     public OpInBoundsPtrAccessChain(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpInBoundsPtrAccessChain(OpData data)
@@ -10307,6 +10574,9 @@ public struct OpInBoundsPtrAccessChain : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpInBoundsPtrAccessChain(OpDataIndex odi) => new(odi);
+    public static implicit operator OpInBoundsPtrAccessChain(OpData data) => new(data);
 }
 
 public struct OpDecorate : IMemoryInstruction
@@ -10344,8 +10614,8 @@ public struct OpDecorate : IMemoryInstruction
     public OpDecorate(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDecorate(OpData data)
@@ -10414,6 +10684,9 @@ public struct OpDecorate : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDecorate(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDecorate(OpData data) => new(data);
 }
 
 public struct OpMemberDecorate : IMemoryInstruction
@@ -10451,8 +10724,8 @@ public struct OpMemberDecorate : IMemoryInstruction
     public OpMemberDecorate(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemberDecorate(OpData data)
@@ -10536,6 +10809,9 @@ public struct OpMemberDecorate : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemberDecorate(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemberDecorate(OpData data) => new(data);
 }
 
 public struct OpDecorationGroup : IMemoryInstruction
@@ -10573,8 +10849,8 @@ public struct OpDecorationGroup : IMemoryInstruction
     public OpDecorationGroup(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDecorationGroup(OpData data)
@@ -10629,6 +10905,9 @@ public struct OpDecorationGroup : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDecorationGroup(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDecorationGroup(OpData data) => new(data);
 }
 
 public struct OpGroupDecorate : IMemoryInstruction
@@ -10666,8 +10945,8 @@ public struct OpGroupDecorate : IMemoryInstruction
     public OpGroupDecorate(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupDecorate(OpData data)
@@ -10736,6 +11015,9 @@ public struct OpGroupDecorate : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupDecorate(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupDecorate(OpData data) => new(data);
 }
 
 public struct OpGroupMemberDecorate : IMemoryInstruction
@@ -10773,8 +11055,8 @@ public struct OpGroupMemberDecorate : IMemoryInstruction
     public OpGroupMemberDecorate(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupMemberDecorate(OpData data)
@@ -10843,6 +11125,9 @@ public struct OpGroupMemberDecorate : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupMemberDecorate(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupMemberDecorate(OpData data) => new(data);
 }
 
 public struct OpVectorExtractDynamic : IMemoryInstruction
@@ -10880,8 +11165,8 @@ public struct OpVectorExtractDynamic : IMemoryInstruction
     public OpVectorExtractDynamic(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVectorExtractDynamic(OpData data)
@@ -10981,6 +11266,9 @@ public struct OpVectorExtractDynamic : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVectorExtractDynamic(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVectorExtractDynamic(OpData data) => new(data);
 }
 
 public struct OpVectorInsertDynamic : IMemoryInstruction
@@ -11018,8 +11306,8 @@ public struct OpVectorInsertDynamic : IMemoryInstruction
     public OpVectorInsertDynamic(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVectorInsertDynamic(OpData data)
@@ -11134,6 +11422,9 @@ public struct OpVectorInsertDynamic : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVectorInsertDynamic(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVectorInsertDynamic(OpData data) => new(data);
 }
 
 public struct OpVectorShuffle : IMemoryInstruction
@@ -11171,8 +11462,8 @@ public struct OpVectorShuffle : IMemoryInstruction
     public OpVectorShuffle(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVectorShuffle(OpData data)
@@ -11287,6 +11578,9 @@ public struct OpVectorShuffle : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVectorShuffle(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVectorShuffle(OpData data) => new(data);
 }
 
 public struct OpCompositeConstruct : IMemoryInstruction
@@ -11324,8 +11618,8 @@ public struct OpCompositeConstruct : IMemoryInstruction
     public OpCompositeConstruct(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCompositeConstruct(OpData data)
@@ -11410,6 +11704,9 @@ public struct OpCompositeConstruct : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCompositeConstruct(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCompositeConstruct(OpData data) => new(data);
 }
 
 public struct OpCompositeExtract : IMemoryInstruction
@@ -11447,8 +11744,8 @@ public struct OpCompositeExtract : IMemoryInstruction
     public OpCompositeExtract(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCompositeExtract(OpData data)
@@ -11548,6 +11845,9 @@ public struct OpCompositeExtract : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCompositeExtract(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCompositeExtract(OpData data) => new(data);
 }
 
 public struct OpCompositeInsert : IMemoryInstruction
@@ -11585,8 +11885,8 @@ public struct OpCompositeInsert : IMemoryInstruction
     public OpCompositeInsert(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCompositeInsert(OpData data)
@@ -11701,6 +12001,9 @@ public struct OpCompositeInsert : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCompositeInsert(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCompositeInsert(OpData data) => new(data);
 }
 
 public struct OpCopyObject : IMemoryInstruction
@@ -11738,8 +12041,8 @@ public struct OpCopyObject : IMemoryInstruction
     public OpCopyObject(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCopyObject(OpData data)
@@ -11824,6 +12127,9 @@ public struct OpCopyObject : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCopyObject(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCopyObject(OpData data) => new(data);
 }
 
 public struct OpTranspose : IMemoryInstruction
@@ -11861,8 +12167,8 @@ public struct OpTranspose : IMemoryInstruction
     public OpTranspose(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTranspose(OpData data)
@@ -11947,6 +12253,9 @@ public struct OpTranspose : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTranspose(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTranspose(OpData data) => new(data);
 }
 
 public struct OpSampledImage : IMemoryInstruction
@@ -11984,8 +12293,8 @@ public struct OpSampledImage : IMemoryInstruction
     public OpSampledImage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSampledImage(OpData data)
@@ -12085,6 +12394,9 @@ public struct OpSampledImage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSampledImage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSampledImage(OpData data) => new(data);
 }
 
 public struct OpImageSampleImplicitLod : IMemoryInstruction
@@ -12122,8 +12434,8 @@ public struct OpImageSampleImplicitLod : IMemoryInstruction
     public OpImageSampleImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleImplicitLod(OpData data)
@@ -12239,6 +12551,9 @@ public struct OpImageSampleImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleExplicitLod : IMemoryInstruction
@@ -12276,8 +12591,8 @@ public struct OpImageSampleExplicitLod : IMemoryInstruction
     public OpImageSampleExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleExplicitLod(OpData data)
@@ -12392,6 +12707,9 @@ public struct OpImageSampleExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleDrefImplicitLod : IMemoryInstruction
@@ -12429,8 +12747,8 @@ public struct OpImageSampleDrefImplicitLod : IMemoryInstruction
     public OpImageSampleDrefImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleDrefImplicitLod(OpData data)
@@ -12561,6 +12879,9 @@ public struct OpImageSampleDrefImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleDrefImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleDrefExplicitLod : IMemoryInstruction
@@ -12598,8 +12919,8 @@ public struct OpImageSampleDrefExplicitLod : IMemoryInstruction
     public OpImageSampleDrefExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleDrefExplicitLod(OpData data)
@@ -12729,6 +13050,9 @@ public struct OpImageSampleDrefExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleDrefExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleProjImplicitLod : IMemoryInstruction
@@ -12766,8 +13090,8 @@ public struct OpImageSampleProjImplicitLod : IMemoryInstruction
     public OpImageSampleProjImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleProjImplicitLod(OpData data)
@@ -12883,6 +13207,9 @@ public struct OpImageSampleProjImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleProjImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleProjImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleProjExplicitLod : IMemoryInstruction
@@ -12920,8 +13247,8 @@ public struct OpImageSampleProjExplicitLod : IMemoryInstruction
     public OpImageSampleProjExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleProjExplicitLod(OpData data)
@@ -13036,6 +13363,9 @@ public struct OpImageSampleProjExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleProjExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleProjExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
@@ -13073,8 +13403,8 @@ public struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
     public OpImageSampleProjDrefImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleProjDrefImplicitLod(OpData data)
@@ -13205,6 +13535,9 @@ public struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleProjDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleProjDrefImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
@@ -13242,8 +13575,8 @@ public struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
     public OpImageSampleProjDrefExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleProjDrefExplicitLod(OpData data)
@@ -13373,6 +13706,9 @@ public struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleProjDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleProjDrefExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageFetch : IMemoryInstruction
@@ -13410,8 +13746,8 @@ public struct OpImageFetch : IMemoryInstruction
     public OpImageFetch(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageFetch(OpData data)
@@ -13527,6 +13863,9 @@ public struct OpImageFetch : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageFetch(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageFetch(OpData data) => new(data);
 }
 
 public struct OpImageGather : IMemoryInstruction
@@ -13564,8 +13903,8 @@ public struct OpImageGather : IMemoryInstruction
     public OpImageGather(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageGather(OpData data)
@@ -13696,6 +14035,9 @@ public struct OpImageGather : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageGather(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageGather(OpData data) => new(data);
 }
 
 public struct OpImageDrefGather : IMemoryInstruction
@@ -13733,8 +14075,8 @@ public struct OpImageDrefGather : IMemoryInstruction
     public OpImageDrefGather(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageDrefGather(OpData data)
@@ -13865,6 +14207,9 @@ public struct OpImageDrefGather : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageDrefGather(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageDrefGather(OpData data) => new(data);
 }
 
 public struct OpImageRead : IMemoryInstruction
@@ -13902,8 +14247,8 @@ public struct OpImageRead : IMemoryInstruction
     public OpImageRead(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageRead(OpData data)
@@ -14019,6 +14364,9 @@ public struct OpImageRead : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageRead(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageRead(OpData data) => new(data);
 }
 
 public struct OpImageWrite : IMemoryInstruction
@@ -14056,8 +14404,8 @@ public struct OpImageWrite : IMemoryInstruction
     public OpImageWrite(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageWrite(OpData data)
@@ -14157,6 +14505,9 @@ public struct OpImageWrite : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageWrite(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageWrite(OpData data) => new(data);
 }
 
 public struct OpImage : IMemoryInstruction
@@ -14194,8 +14545,8 @@ public struct OpImage : IMemoryInstruction
     public OpImage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImage(OpData data)
@@ -14280,6 +14631,9 @@ public struct OpImage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImage(OpData data) => new(data);
 }
 
 public struct OpImageQueryFormat : IMemoryInstruction
@@ -14317,8 +14671,8 @@ public struct OpImageQueryFormat : IMemoryInstruction
     public OpImageQueryFormat(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQueryFormat(OpData data)
@@ -14403,6 +14757,9 @@ public struct OpImageQueryFormat : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQueryFormat(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQueryFormat(OpData data) => new(data);
 }
 
 public struct OpImageQueryOrder : IMemoryInstruction
@@ -14440,8 +14797,8 @@ public struct OpImageQueryOrder : IMemoryInstruction
     public OpImageQueryOrder(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQueryOrder(OpData data)
@@ -14526,6 +14883,9 @@ public struct OpImageQueryOrder : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQueryOrder(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQueryOrder(OpData data) => new(data);
 }
 
 public struct OpImageQuerySizeLod : IMemoryInstruction
@@ -14563,8 +14923,8 @@ public struct OpImageQuerySizeLod : IMemoryInstruction
     public OpImageQuerySizeLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQuerySizeLod(OpData data)
@@ -14664,6 +15024,9 @@ public struct OpImageQuerySizeLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQuerySizeLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQuerySizeLod(OpData data) => new(data);
 }
 
 public struct OpImageQuerySize : IMemoryInstruction
@@ -14701,8 +15064,8 @@ public struct OpImageQuerySize : IMemoryInstruction
     public OpImageQuerySize(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQuerySize(OpData data)
@@ -14787,6 +15150,9 @@ public struct OpImageQuerySize : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQuerySize(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQuerySize(OpData data) => new(data);
 }
 
 public struct OpImageQueryLod : IMemoryInstruction
@@ -14824,8 +15190,8 @@ public struct OpImageQueryLod : IMemoryInstruction
     public OpImageQueryLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQueryLod(OpData data)
@@ -14925,6 +15291,9 @@ public struct OpImageQueryLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQueryLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQueryLod(OpData data) => new(data);
 }
 
 public struct OpImageQueryLevels : IMemoryInstruction
@@ -14962,8 +15331,8 @@ public struct OpImageQueryLevels : IMemoryInstruction
     public OpImageQueryLevels(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQueryLevels(OpData data)
@@ -15048,6 +15417,9 @@ public struct OpImageQueryLevels : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQueryLevels(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQueryLevels(OpData data) => new(data);
 }
 
 public struct OpImageQuerySamples : IMemoryInstruction
@@ -15085,8 +15457,8 @@ public struct OpImageQuerySamples : IMemoryInstruction
     public OpImageQuerySamples(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageQuerySamples(OpData data)
@@ -15171,6 +15543,9 @@ public struct OpImageQuerySamples : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageQuerySamples(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageQuerySamples(OpData data) => new(data);
 }
 
 public struct OpConvertFToU : IMemoryInstruction
@@ -15208,8 +15583,8 @@ public struct OpConvertFToU : IMemoryInstruction
     public OpConvertFToU(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertFToU(OpData data)
@@ -15294,6 +15669,9 @@ public struct OpConvertFToU : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertFToU(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertFToU(OpData data) => new(data);
 }
 
 public struct OpConvertFToS : IMemoryInstruction
@@ -15331,8 +15709,8 @@ public struct OpConvertFToS : IMemoryInstruction
     public OpConvertFToS(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertFToS(OpData data)
@@ -15417,6 +15795,9 @@ public struct OpConvertFToS : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertFToS(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertFToS(OpData data) => new(data);
 }
 
 public struct OpConvertSToF : IMemoryInstruction
@@ -15454,8 +15835,8 @@ public struct OpConvertSToF : IMemoryInstruction
     public OpConvertSToF(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertSToF(OpData data)
@@ -15540,6 +15921,9 @@ public struct OpConvertSToF : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertSToF(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertSToF(OpData data) => new(data);
 }
 
 public struct OpConvertUToF : IMemoryInstruction
@@ -15577,8 +15961,8 @@ public struct OpConvertUToF : IMemoryInstruction
     public OpConvertUToF(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertUToF(OpData data)
@@ -15663,6 +16047,9 @@ public struct OpConvertUToF : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertUToF(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertUToF(OpData data) => new(data);
 }
 
 public struct OpUConvert : IMemoryInstruction
@@ -15700,8 +16087,8 @@ public struct OpUConvert : IMemoryInstruction
     public OpUConvert(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUConvert(OpData data)
@@ -15786,6 +16173,9 @@ public struct OpUConvert : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUConvert(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUConvert(OpData data) => new(data);
 }
 
 public struct OpSConvert : IMemoryInstruction
@@ -15823,8 +16213,8 @@ public struct OpSConvert : IMemoryInstruction
     public OpSConvert(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSConvert(OpData data)
@@ -15909,6 +16299,9 @@ public struct OpSConvert : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSConvert(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSConvert(OpData data) => new(data);
 }
 
 public struct OpFConvert : IMemoryInstruction
@@ -15946,8 +16339,8 @@ public struct OpFConvert : IMemoryInstruction
     public OpFConvert(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFConvert(OpData data)
@@ -16032,6 +16425,9 @@ public struct OpFConvert : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFConvert(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFConvert(OpData data) => new(data);
 }
 
 public struct OpQuantizeToF16 : IMemoryInstruction
@@ -16069,8 +16465,8 @@ public struct OpQuantizeToF16 : IMemoryInstruction
     public OpQuantizeToF16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpQuantizeToF16(OpData data)
@@ -16155,6 +16551,9 @@ public struct OpQuantizeToF16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpQuantizeToF16(OpDataIndex odi) => new(odi);
+    public static implicit operator OpQuantizeToF16(OpData data) => new(data);
 }
 
 public struct OpConvertPtrToU : IMemoryInstruction
@@ -16192,8 +16591,8 @@ public struct OpConvertPtrToU : IMemoryInstruction
     public OpConvertPtrToU(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertPtrToU(OpData data)
@@ -16278,6 +16677,9 @@ public struct OpConvertPtrToU : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertPtrToU(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertPtrToU(OpData data) => new(data);
 }
 
 public struct OpSatConvertSToU : IMemoryInstruction
@@ -16315,8 +16717,8 @@ public struct OpSatConvertSToU : IMemoryInstruction
     public OpSatConvertSToU(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSatConvertSToU(OpData data)
@@ -16401,6 +16803,9 @@ public struct OpSatConvertSToU : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSatConvertSToU(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSatConvertSToU(OpData data) => new(data);
 }
 
 public struct OpSatConvertUToS : IMemoryInstruction
@@ -16438,8 +16843,8 @@ public struct OpSatConvertUToS : IMemoryInstruction
     public OpSatConvertUToS(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSatConvertUToS(OpData data)
@@ -16524,6 +16929,9 @@ public struct OpSatConvertUToS : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSatConvertUToS(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSatConvertUToS(OpData data) => new(data);
 }
 
 public struct OpConvertUToPtr : IMemoryInstruction
@@ -16561,8 +16969,8 @@ public struct OpConvertUToPtr : IMemoryInstruction
     public OpConvertUToPtr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertUToPtr(OpData data)
@@ -16647,6 +17055,9 @@ public struct OpConvertUToPtr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertUToPtr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertUToPtr(OpData data) => new(data);
 }
 
 public struct OpPtrCastToGeneric : IMemoryInstruction
@@ -16684,8 +17095,8 @@ public struct OpPtrCastToGeneric : IMemoryInstruction
     public OpPtrCastToGeneric(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPtrCastToGeneric(OpData data)
@@ -16770,6 +17181,9 @@ public struct OpPtrCastToGeneric : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPtrCastToGeneric(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPtrCastToGeneric(OpData data) => new(data);
 }
 
 public struct OpGenericCastToPtr : IMemoryInstruction
@@ -16807,8 +17221,8 @@ public struct OpGenericCastToPtr : IMemoryInstruction
     public OpGenericCastToPtr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGenericCastToPtr(OpData data)
@@ -16893,6 +17307,9 @@ public struct OpGenericCastToPtr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGenericCastToPtr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGenericCastToPtr(OpData data) => new(data);
 }
 
 public struct OpGenericCastToPtrExplicit : IMemoryInstruction
@@ -16930,8 +17347,8 @@ public struct OpGenericCastToPtrExplicit : IMemoryInstruction
     public OpGenericCastToPtrExplicit(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGenericCastToPtrExplicit(OpData data)
@@ -17031,6 +17448,9 @@ public struct OpGenericCastToPtrExplicit : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGenericCastToPtrExplicit(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGenericCastToPtrExplicit(OpData data) => new(data);
 }
 
 public struct OpBitcast : IMemoryInstruction
@@ -17068,8 +17488,8 @@ public struct OpBitcast : IMemoryInstruction
     public OpBitcast(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitcast(OpData data)
@@ -17154,6 +17574,9 @@ public struct OpBitcast : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitcast(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitcast(OpData data) => new(data);
 }
 
 public struct OpSNegate : IMemoryInstruction
@@ -17191,8 +17614,8 @@ public struct OpSNegate : IMemoryInstruction
     public OpSNegate(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSNegate(OpData data)
@@ -17277,6 +17700,9 @@ public struct OpSNegate : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSNegate(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSNegate(OpData data) => new(data);
 }
 
 public struct OpFNegate : IMemoryInstruction
@@ -17314,8 +17740,8 @@ public struct OpFNegate : IMemoryInstruction
     public OpFNegate(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFNegate(OpData data)
@@ -17400,6 +17826,9 @@ public struct OpFNegate : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFNegate(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFNegate(OpData data) => new(data);
 }
 
 public struct OpIAdd : IMemoryInstruction
@@ -17437,8 +17866,8 @@ public struct OpIAdd : IMemoryInstruction
     public OpIAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIAdd(OpData data)
@@ -17538,6 +17967,9 @@ public struct OpIAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIAdd(OpData data) => new(data);
 }
 
 public struct OpFAdd : IMemoryInstruction
@@ -17575,8 +18007,8 @@ public struct OpFAdd : IMemoryInstruction
     public OpFAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFAdd(OpData data)
@@ -17676,6 +18108,9 @@ public struct OpFAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFAdd(OpData data) => new(data);
 }
 
 public struct OpISub : IMemoryInstruction
@@ -17713,8 +18148,8 @@ public struct OpISub : IMemoryInstruction
     public OpISub(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpISub(OpData data)
@@ -17814,6 +18249,9 @@ public struct OpISub : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpISub(OpDataIndex odi) => new(odi);
+    public static implicit operator OpISub(OpData data) => new(data);
 }
 
 public struct OpFSub : IMemoryInstruction
@@ -17851,8 +18289,8 @@ public struct OpFSub : IMemoryInstruction
     public OpFSub(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFSub(OpData data)
@@ -17952,6 +18390,9 @@ public struct OpFSub : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFSub(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFSub(OpData data) => new(data);
 }
 
 public struct OpIMul : IMemoryInstruction
@@ -17989,8 +18430,8 @@ public struct OpIMul : IMemoryInstruction
     public OpIMul(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIMul(OpData data)
@@ -18090,6 +18531,9 @@ public struct OpIMul : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIMul(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIMul(OpData data) => new(data);
 }
 
 public struct OpFMul : IMemoryInstruction
@@ -18127,8 +18571,8 @@ public struct OpFMul : IMemoryInstruction
     public OpFMul(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFMul(OpData data)
@@ -18228,6 +18672,9 @@ public struct OpFMul : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFMul(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFMul(OpData data) => new(data);
 }
 
 public struct OpUDiv : IMemoryInstruction
@@ -18265,8 +18712,8 @@ public struct OpUDiv : IMemoryInstruction
     public OpUDiv(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUDiv(OpData data)
@@ -18366,6 +18813,9 @@ public struct OpUDiv : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUDiv(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUDiv(OpData data) => new(data);
 }
 
 public struct OpSDiv : IMemoryInstruction
@@ -18403,8 +18853,8 @@ public struct OpSDiv : IMemoryInstruction
     public OpSDiv(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDiv(OpData data)
@@ -18504,6 +18954,9 @@ public struct OpSDiv : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDiv(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDiv(OpData data) => new(data);
 }
 
 public struct OpFDiv : IMemoryInstruction
@@ -18541,8 +18994,8 @@ public struct OpFDiv : IMemoryInstruction
     public OpFDiv(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFDiv(OpData data)
@@ -18642,6 +19095,9 @@ public struct OpFDiv : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFDiv(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFDiv(OpData data) => new(data);
 }
 
 public struct OpUMod : IMemoryInstruction
@@ -18679,8 +19135,8 @@ public struct OpUMod : IMemoryInstruction
     public OpUMod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUMod(OpData data)
@@ -18780,6 +19236,9 @@ public struct OpUMod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUMod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUMod(OpData data) => new(data);
 }
 
 public struct OpSRem : IMemoryInstruction
@@ -18817,8 +19276,8 @@ public struct OpSRem : IMemoryInstruction
     public OpSRem(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSRem(OpData data)
@@ -18918,6 +19377,9 @@ public struct OpSRem : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSRem(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSRem(OpData data) => new(data);
 }
 
 public struct OpSMod : IMemoryInstruction
@@ -18955,8 +19417,8 @@ public struct OpSMod : IMemoryInstruction
     public OpSMod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSMod(OpData data)
@@ -19056,6 +19518,9 @@ public struct OpSMod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSMod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSMod(OpData data) => new(data);
 }
 
 public struct OpFRem : IMemoryInstruction
@@ -19093,8 +19558,8 @@ public struct OpFRem : IMemoryInstruction
     public OpFRem(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFRem(OpData data)
@@ -19194,6 +19659,9 @@ public struct OpFRem : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFRem(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFRem(OpData data) => new(data);
 }
 
 public struct OpFMod : IMemoryInstruction
@@ -19231,8 +19699,8 @@ public struct OpFMod : IMemoryInstruction
     public OpFMod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFMod(OpData data)
@@ -19332,6 +19800,9 @@ public struct OpFMod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFMod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFMod(OpData data) => new(data);
 }
 
 public struct OpVectorTimesScalar : IMemoryInstruction
@@ -19369,8 +19840,8 @@ public struct OpVectorTimesScalar : IMemoryInstruction
     public OpVectorTimesScalar(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVectorTimesScalar(OpData data)
@@ -19470,6 +19941,9 @@ public struct OpVectorTimesScalar : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVectorTimesScalar(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVectorTimesScalar(OpData data) => new(data);
 }
 
 public struct OpMatrixTimesScalar : IMemoryInstruction
@@ -19507,8 +19981,8 @@ public struct OpMatrixTimesScalar : IMemoryInstruction
     public OpMatrixTimesScalar(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMatrixTimesScalar(OpData data)
@@ -19608,6 +20082,9 @@ public struct OpMatrixTimesScalar : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMatrixTimesScalar(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMatrixTimesScalar(OpData data) => new(data);
 }
 
 public struct OpVectorTimesMatrix : IMemoryInstruction
@@ -19645,8 +20122,8 @@ public struct OpVectorTimesMatrix : IMemoryInstruction
     public OpVectorTimesMatrix(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVectorTimesMatrix(OpData data)
@@ -19746,6 +20223,9 @@ public struct OpVectorTimesMatrix : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVectorTimesMatrix(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVectorTimesMatrix(OpData data) => new(data);
 }
 
 public struct OpMatrixTimesVector : IMemoryInstruction
@@ -19783,8 +20263,8 @@ public struct OpMatrixTimesVector : IMemoryInstruction
     public OpMatrixTimesVector(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMatrixTimesVector(OpData data)
@@ -19884,6 +20364,9 @@ public struct OpMatrixTimesVector : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMatrixTimesVector(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMatrixTimesVector(OpData data) => new(data);
 }
 
 public struct OpMatrixTimesMatrix : IMemoryInstruction
@@ -19921,8 +20404,8 @@ public struct OpMatrixTimesMatrix : IMemoryInstruction
     public OpMatrixTimesMatrix(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMatrixTimesMatrix(OpData data)
@@ -20022,6 +20505,9 @@ public struct OpMatrixTimesMatrix : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMatrixTimesMatrix(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMatrixTimesMatrix(OpData data) => new(data);
 }
 
 public struct OpOuterProduct : IMemoryInstruction
@@ -20059,8 +20545,8 @@ public struct OpOuterProduct : IMemoryInstruction
     public OpOuterProduct(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpOuterProduct(OpData data)
@@ -20160,6 +20646,9 @@ public struct OpOuterProduct : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpOuterProduct(OpDataIndex odi) => new(odi);
+    public static implicit operator OpOuterProduct(OpData data) => new(data);
 }
 
 public struct OpDot : IMemoryInstruction
@@ -20197,8 +20686,8 @@ public struct OpDot : IMemoryInstruction
     public OpDot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDot(OpData data)
@@ -20298,6 +20787,9 @@ public struct OpDot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDot(OpData data) => new(data);
 }
 
 public struct OpIAddCarry : IMemoryInstruction
@@ -20335,8 +20827,8 @@ public struct OpIAddCarry : IMemoryInstruction
     public OpIAddCarry(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIAddCarry(OpData data)
@@ -20436,6 +20928,9 @@ public struct OpIAddCarry : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIAddCarry(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIAddCarry(OpData data) => new(data);
 }
 
 public struct OpISubBorrow : IMemoryInstruction
@@ -20473,8 +20968,8 @@ public struct OpISubBorrow : IMemoryInstruction
     public OpISubBorrow(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpISubBorrow(OpData data)
@@ -20574,6 +21069,9 @@ public struct OpISubBorrow : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpISubBorrow(OpDataIndex odi) => new(odi);
+    public static implicit operator OpISubBorrow(OpData data) => new(data);
 }
 
 public struct OpUMulExtended : IMemoryInstruction
@@ -20611,8 +21109,8 @@ public struct OpUMulExtended : IMemoryInstruction
     public OpUMulExtended(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUMulExtended(OpData data)
@@ -20712,6 +21210,9 @@ public struct OpUMulExtended : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUMulExtended(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUMulExtended(OpData data) => new(data);
 }
 
 public struct OpSMulExtended : IMemoryInstruction
@@ -20749,8 +21250,8 @@ public struct OpSMulExtended : IMemoryInstruction
     public OpSMulExtended(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSMulExtended(OpData data)
@@ -20850,6 +21351,9 @@ public struct OpSMulExtended : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSMulExtended(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSMulExtended(OpData data) => new(data);
 }
 
 public struct OpAny : IMemoryInstruction
@@ -20887,8 +21391,8 @@ public struct OpAny : IMemoryInstruction
     public OpAny(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAny(OpData data)
@@ -20973,6 +21477,9 @@ public struct OpAny : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAny(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAny(OpData data) => new(data);
 }
 
 public struct OpAll : IMemoryInstruction
@@ -21010,8 +21517,8 @@ public struct OpAll : IMemoryInstruction
     public OpAll(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAll(OpData data)
@@ -21096,6 +21603,9 @@ public struct OpAll : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAll(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAll(OpData data) => new(data);
 }
 
 public struct OpIsNan : IMemoryInstruction
@@ -21133,8 +21643,8 @@ public struct OpIsNan : IMemoryInstruction
     public OpIsNan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsNan(OpData data)
@@ -21219,6 +21729,9 @@ public struct OpIsNan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsNan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsNan(OpData data) => new(data);
 }
 
 public struct OpIsInf : IMemoryInstruction
@@ -21256,8 +21769,8 @@ public struct OpIsInf : IMemoryInstruction
     public OpIsInf(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsInf(OpData data)
@@ -21342,6 +21855,9 @@ public struct OpIsInf : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsInf(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsInf(OpData data) => new(data);
 }
 
 public struct OpIsFinite : IMemoryInstruction
@@ -21379,8 +21895,8 @@ public struct OpIsFinite : IMemoryInstruction
     public OpIsFinite(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsFinite(OpData data)
@@ -21465,6 +21981,9 @@ public struct OpIsFinite : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsFinite(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsFinite(OpData data) => new(data);
 }
 
 public struct OpIsNormal : IMemoryInstruction
@@ -21502,8 +22021,8 @@ public struct OpIsNormal : IMemoryInstruction
     public OpIsNormal(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsNormal(OpData data)
@@ -21588,6 +22107,9 @@ public struct OpIsNormal : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsNormal(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsNormal(OpData data) => new(data);
 }
 
 public struct OpSignBitSet : IMemoryInstruction
@@ -21625,8 +22147,8 @@ public struct OpSignBitSet : IMemoryInstruction
     public OpSignBitSet(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSignBitSet(OpData data)
@@ -21711,6 +22233,9 @@ public struct OpSignBitSet : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSignBitSet(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSignBitSet(OpData data) => new(data);
 }
 
 public struct OpLessOrGreater : IMemoryInstruction
@@ -21748,8 +22273,8 @@ public struct OpLessOrGreater : IMemoryInstruction
     public OpLessOrGreater(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLessOrGreater(OpData data)
@@ -21849,6 +22374,9 @@ public struct OpLessOrGreater : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLessOrGreater(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLessOrGreater(OpData data) => new(data);
 }
 
 public struct OpOrdered : IMemoryInstruction
@@ -21886,8 +22414,8 @@ public struct OpOrdered : IMemoryInstruction
     public OpOrdered(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpOrdered(OpData data)
@@ -21987,6 +22515,9 @@ public struct OpOrdered : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpOrdered(OpDataIndex odi) => new(odi);
+    public static implicit operator OpOrdered(OpData data) => new(data);
 }
 
 public struct OpUnordered : IMemoryInstruction
@@ -22024,8 +22555,8 @@ public struct OpUnordered : IMemoryInstruction
     public OpUnordered(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUnordered(OpData data)
@@ -22125,6 +22656,9 @@ public struct OpUnordered : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUnordered(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUnordered(OpData data) => new(data);
 }
 
 public struct OpLogicalEqual : IMemoryInstruction
@@ -22162,8 +22696,8 @@ public struct OpLogicalEqual : IMemoryInstruction
     public OpLogicalEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLogicalEqual(OpData data)
@@ -22263,6 +22797,9 @@ public struct OpLogicalEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLogicalEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLogicalEqual(OpData data) => new(data);
 }
 
 public struct OpLogicalNotEqual : IMemoryInstruction
@@ -22300,8 +22837,8 @@ public struct OpLogicalNotEqual : IMemoryInstruction
     public OpLogicalNotEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLogicalNotEqual(OpData data)
@@ -22401,6 +22938,9 @@ public struct OpLogicalNotEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLogicalNotEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLogicalNotEqual(OpData data) => new(data);
 }
 
 public struct OpLogicalOr : IMemoryInstruction
@@ -22438,8 +22978,8 @@ public struct OpLogicalOr : IMemoryInstruction
     public OpLogicalOr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLogicalOr(OpData data)
@@ -22539,6 +23079,9 @@ public struct OpLogicalOr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLogicalOr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLogicalOr(OpData data) => new(data);
 }
 
 public struct OpLogicalAnd : IMemoryInstruction
@@ -22576,8 +23119,8 @@ public struct OpLogicalAnd : IMemoryInstruction
     public OpLogicalAnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLogicalAnd(OpData data)
@@ -22677,6 +23220,9 @@ public struct OpLogicalAnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLogicalAnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLogicalAnd(OpData data) => new(data);
 }
 
 public struct OpLogicalNot : IMemoryInstruction
@@ -22714,8 +23260,8 @@ public struct OpLogicalNot : IMemoryInstruction
     public OpLogicalNot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLogicalNot(OpData data)
@@ -22800,6 +23346,9 @@ public struct OpLogicalNot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLogicalNot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLogicalNot(OpData data) => new(data);
 }
 
 public struct OpSelect : IMemoryInstruction
@@ -22837,8 +23386,8 @@ public struct OpSelect : IMemoryInstruction
     public OpSelect(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSelect(OpData data)
@@ -22953,6 +23502,9 @@ public struct OpSelect : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSelect(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSelect(OpData data) => new(data);
 }
 
 public struct OpIEqual : IMemoryInstruction
@@ -22990,8 +23542,8 @@ public struct OpIEqual : IMemoryInstruction
     public OpIEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIEqual(OpData data)
@@ -23091,6 +23643,9 @@ public struct OpIEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIEqual(OpData data) => new(data);
 }
 
 public struct OpINotEqual : IMemoryInstruction
@@ -23128,8 +23683,8 @@ public struct OpINotEqual : IMemoryInstruction
     public OpINotEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpINotEqual(OpData data)
@@ -23229,6 +23784,9 @@ public struct OpINotEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpINotEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpINotEqual(OpData data) => new(data);
 }
 
 public struct OpUGreaterThan : IMemoryInstruction
@@ -23266,8 +23824,8 @@ public struct OpUGreaterThan : IMemoryInstruction
     public OpUGreaterThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUGreaterThan(OpData data)
@@ -23367,6 +23925,9 @@ public struct OpUGreaterThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUGreaterThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUGreaterThan(OpData data) => new(data);
 }
 
 public struct OpSGreaterThan : IMemoryInstruction
@@ -23404,8 +23965,8 @@ public struct OpSGreaterThan : IMemoryInstruction
     public OpSGreaterThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSGreaterThan(OpData data)
@@ -23505,6 +24066,9 @@ public struct OpSGreaterThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSGreaterThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSGreaterThan(OpData data) => new(data);
 }
 
 public struct OpUGreaterThanEqual : IMemoryInstruction
@@ -23542,8 +24106,8 @@ public struct OpUGreaterThanEqual : IMemoryInstruction
     public OpUGreaterThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUGreaterThanEqual(OpData data)
@@ -23643,6 +24207,9 @@ public struct OpUGreaterThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUGreaterThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUGreaterThanEqual(OpData data) => new(data);
 }
 
 public struct OpSGreaterThanEqual : IMemoryInstruction
@@ -23680,8 +24247,8 @@ public struct OpSGreaterThanEqual : IMemoryInstruction
     public OpSGreaterThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSGreaterThanEqual(OpData data)
@@ -23781,6 +24348,9 @@ public struct OpSGreaterThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSGreaterThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSGreaterThanEqual(OpData data) => new(data);
 }
 
 public struct OpULessThan : IMemoryInstruction
@@ -23818,8 +24388,8 @@ public struct OpULessThan : IMemoryInstruction
     public OpULessThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpULessThan(OpData data)
@@ -23919,6 +24489,9 @@ public struct OpULessThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpULessThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpULessThan(OpData data) => new(data);
 }
 
 public struct OpSLessThan : IMemoryInstruction
@@ -23956,8 +24529,8 @@ public struct OpSLessThan : IMemoryInstruction
     public OpSLessThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSLessThan(OpData data)
@@ -24057,6 +24630,9 @@ public struct OpSLessThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSLessThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSLessThan(OpData data) => new(data);
 }
 
 public struct OpULessThanEqual : IMemoryInstruction
@@ -24094,8 +24670,8 @@ public struct OpULessThanEqual : IMemoryInstruction
     public OpULessThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpULessThanEqual(OpData data)
@@ -24195,6 +24771,9 @@ public struct OpULessThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpULessThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpULessThanEqual(OpData data) => new(data);
 }
 
 public struct OpSLessThanEqual : IMemoryInstruction
@@ -24232,8 +24811,8 @@ public struct OpSLessThanEqual : IMemoryInstruction
     public OpSLessThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSLessThanEqual(OpData data)
@@ -24333,6 +24912,9 @@ public struct OpSLessThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSLessThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSLessThanEqual(OpData data) => new(data);
 }
 
 public struct OpFOrdEqual : IMemoryInstruction
@@ -24370,8 +24952,8 @@ public struct OpFOrdEqual : IMemoryInstruction
     public OpFOrdEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFOrdEqual(OpData data)
@@ -24471,6 +25053,9 @@ public struct OpFOrdEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFOrdEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFOrdEqual(OpData data) => new(data);
 }
 
 public struct OpFUnordEqual : IMemoryInstruction
@@ -24508,8 +25093,8 @@ public struct OpFUnordEqual : IMemoryInstruction
     public OpFUnordEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFUnordEqual(OpData data)
@@ -24609,6 +25194,9 @@ public struct OpFUnordEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFUnordEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFUnordEqual(OpData data) => new(data);
 }
 
 public struct OpFOrdNotEqual : IMemoryInstruction
@@ -24646,8 +25234,8 @@ public struct OpFOrdNotEqual : IMemoryInstruction
     public OpFOrdNotEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFOrdNotEqual(OpData data)
@@ -24747,6 +25335,9 @@ public struct OpFOrdNotEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFOrdNotEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFOrdNotEqual(OpData data) => new(data);
 }
 
 public struct OpFUnordNotEqual : IMemoryInstruction
@@ -24784,8 +25375,8 @@ public struct OpFUnordNotEqual : IMemoryInstruction
     public OpFUnordNotEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFUnordNotEqual(OpData data)
@@ -24885,6 +25476,9 @@ public struct OpFUnordNotEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFUnordNotEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFUnordNotEqual(OpData data) => new(data);
 }
 
 public struct OpFOrdLessThan : IMemoryInstruction
@@ -24922,8 +25516,8 @@ public struct OpFOrdLessThan : IMemoryInstruction
     public OpFOrdLessThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFOrdLessThan(OpData data)
@@ -25023,6 +25617,9 @@ public struct OpFOrdLessThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFOrdLessThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFOrdLessThan(OpData data) => new(data);
 }
 
 public struct OpFUnordLessThan : IMemoryInstruction
@@ -25060,8 +25657,8 @@ public struct OpFUnordLessThan : IMemoryInstruction
     public OpFUnordLessThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFUnordLessThan(OpData data)
@@ -25161,6 +25758,9 @@ public struct OpFUnordLessThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFUnordLessThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFUnordLessThan(OpData data) => new(data);
 }
 
 public struct OpFOrdGreaterThan : IMemoryInstruction
@@ -25198,8 +25798,8 @@ public struct OpFOrdGreaterThan : IMemoryInstruction
     public OpFOrdGreaterThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFOrdGreaterThan(OpData data)
@@ -25299,6 +25899,9 @@ public struct OpFOrdGreaterThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFOrdGreaterThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFOrdGreaterThan(OpData data) => new(data);
 }
 
 public struct OpFUnordGreaterThan : IMemoryInstruction
@@ -25336,8 +25939,8 @@ public struct OpFUnordGreaterThan : IMemoryInstruction
     public OpFUnordGreaterThan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFUnordGreaterThan(OpData data)
@@ -25437,6 +26040,9 @@ public struct OpFUnordGreaterThan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFUnordGreaterThan(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFUnordGreaterThan(OpData data) => new(data);
 }
 
 public struct OpFOrdLessThanEqual : IMemoryInstruction
@@ -25474,8 +26080,8 @@ public struct OpFOrdLessThanEqual : IMemoryInstruction
     public OpFOrdLessThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFOrdLessThanEqual(OpData data)
@@ -25575,6 +26181,9 @@ public struct OpFOrdLessThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFOrdLessThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFOrdLessThanEqual(OpData data) => new(data);
 }
 
 public struct OpFUnordLessThanEqual : IMemoryInstruction
@@ -25612,8 +26221,8 @@ public struct OpFUnordLessThanEqual : IMemoryInstruction
     public OpFUnordLessThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFUnordLessThanEqual(OpData data)
@@ -25713,6 +26322,9 @@ public struct OpFUnordLessThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFUnordLessThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFUnordLessThanEqual(OpData data) => new(data);
 }
 
 public struct OpFOrdGreaterThanEqual : IMemoryInstruction
@@ -25750,8 +26362,8 @@ public struct OpFOrdGreaterThanEqual : IMemoryInstruction
     public OpFOrdGreaterThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFOrdGreaterThanEqual(OpData data)
@@ -25851,6 +26463,9 @@ public struct OpFOrdGreaterThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFOrdGreaterThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFOrdGreaterThanEqual(OpData data) => new(data);
 }
 
 public struct OpFUnordGreaterThanEqual : IMemoryInstruction
@@ -25888,8 +26503,8 @@ public struct OpFUnordGreaterThanEqual : IMemoryInstruction
     public OpFUnordGreaterThanEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFUnordGreaterThanEqual(OpData data)
@@ -25989,6 +26604,9 @@ public struct OpFUnordGreaterThanEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFUnordGreaterThanEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFUnordGreaterThanEqual(OpData data) => new(data);
 }
 
 public struct OpShiftRightLogical : IMemoryInstruction
@@ -26026,8 +26644,8 @@ public struct OpShiftRightLogical : IMemoryInstruction
     public OpShiftRightLogical(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpShiftRightLogical(OpData data)
@@ -26127,6 +26745,9 @@ public struct OpShiftRightLogical : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpShiftRightLogical(OpDataIndex odi) => new(odi);
+    public static implicit operator OpShiftRightLogical(OpData data) => new(data);
 }
 
 public struct OpShiftRightArithmetic : IMemoryInstruction
@@ -26164,8 +26785,8 @@ public struct OpShiftRightArithmetic : IMemoryInstruction
     public OpShiftRightArithmetic(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpShiftRightArithmetic(OpData data)
@@ -26265,6 +26886,9 @@ public struct OpShiftRightArithmetic : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpShiftRightArithmetic(OpDataIndex odi) => new(odi);
+    public static implicit operator OpShiftRightArithmetic(OpData data) => new(data);
 }
 
 public struct OpShiftLeftLogical : IMemoryInstruction
@@ -26302,8 +26926,8 @@ public struct OpShiftLeftLogical : IMemoryInstruction
     public OpShiftLeftLogical(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpShiftLeftLogical(OpData data)
@@ -26403,6 +27027,9 @@ public struct OpShiftLeftLogical : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpShiftLeftLogical(OpDataIndex odi) => new(odi);
+    public static implicit operator OpShiftLeftLogical(OpData data) => new(data);
 }
 
 public struct OpBitwiseOr : IMemoryInstruction
@@ -26440,8 +27067,8 @@ public struct OpBitwiseOr : IMemoryInstruction
     public OpBitwiseOr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitwiseOr(OpData data)
@@ -26541,6 +27168,9 @@ public struct OpBitwiseOr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitwiseOr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitwiseOr(OpData data) => new(data);
 }
 
 public struct OpBitwiseXor : IMemoryInstruction
@@ -26578,8 +27208,8 @@ public struct OpBitwiseXor : IMemoryInstruction
     public OpBitwiseXor(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitwiseXor(OpData data)
@@ -26679,6 +27309,9 @@ public struct OpBitwiseXor : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitwiseXor(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitwiseXor(OpData data) => new(data);
 }
 
 public struct OpBitwiseAnd : IMemoryInstruction
@@ -26716,8 +27349,8 @@ public struct OpBitwiseAnd : IMemoryInstruction
     public OpBitwiseAnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitwiseAnd(OpData data)
@@ -26817,6 +27450,9 @@ public struct OpBitwiseAnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitwiseAnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitwiseAnd(OpData data) => new(data);
 }
 
 public struct OpNot : IMemoryInstruction
@@ -26854,8 +27490,8 @@ public struct OpNot : IMemoryInstruction
     public OpNot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpNot(OpData data)
@@ -26940,6 +27576,9 @@ public struct OpNot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpNot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpNot(OpData data) => new(data);
 }
 
 public struct OpBitFieldInsert : IMemoryInstruction
@@ -26977,8 +27616,8 @@ public struct OpBitFieldInsert : IMemoryInstruction
     public OpBitFieldInsert(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitFieldInsert(OpData data)
@@ -27108,6 +27747,9 @@ public struct OpBitFieldInsert : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitFieldInsert(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitFieldInsert(OpData data) => new(data);
 }
 
 public struct OpBitFieldSExtract : IMemoryInstruction
@@ -27145,8 +27787,8 @@ public struct OpBitFieldSExtract : IMemoryInstruction
     public OpBitFieldSExtract(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitFieldSExtract(OpData data)
@@ -27261,6 +27903,9 @@ public struct OpBitFieldSExtract : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitFieldSExtract(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitFieldSExtract(OpData data) => new(data);
 }
 
 public struct OpBitFieldUExtract : IMemoryInstruction
@@ -27298,8 +27943,8 @@ public struct OpBitFieldUExtract : IMemoryInstruction
     public OpBitFieldUExtract(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitFieldUExtract(OpData data)
@@ -27414,6 +28059,9 @@ public struct OpBitFieldUExtract : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitFieldUExtract(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitFieldUExtract(OpData data) => new(data);
 }
 
 public struct OpBitReverse : IMemoryInstruction
@@ -27451,8 +28099,8 @@ public struct OpBitReverse : IMemoryInstruction
     public OpBitReverse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitReverse(OpData data)
@@ -27537,6 +28185,9 @@ public struct OpBitReverse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitReverse(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitReverse(OpData data) => new(data);
 }
 
 public struct OpBitCount : IMemoryInstruction
@@ -27574,8 +28225,8 @@ public struct OpBitCount : IMemoryInstruction
     public OpBitCount(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBitCount(OpData data)
@@ -27660,6 +28311,9 @@ public struct OpBitCount : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBitCount(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBitCount(OpData data) => new(data);
 }
 
 public struct OpDPdx : IMemoryInstruction
@@ -27697,8 +28351,8 @@ public struct OpDPdx : IMemoryInstruction
     public OpDPdx(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDPdx(OpData data)
@@ -27783,6 +28437,9 @@ public struct OpDPdx : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDPdx(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDPdx(OpData data) => new(data);
 }
 
 public struct OpDPdy : IMemoryInstruction
@@ -27820,8 +28477,8 @@ public struct OpDPdy : IMemoryInstruction
     public OpDPdy(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDPdy(OpData data)
@@ -27906,6 +28563,9 @@ public struct OpDPdy : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDPdy(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDPdy(OpData data) => new(data);
 }
 
 public struct OpFwidth : IMemoryInstruction
@@ -27943,8 +28603,8 @@ public struct OpFwidth : IMemoryInstruction
     public OpFwidth(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFwidth(OpData data)
@@ -28029,6 +28689,9 @@ public struct OpFwidth : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFwidth(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFwidth(OpData data) => new(data);
 }
 
 public struct OpDPdxFine : IMemoryInstruction
@@ -28066,8 +28729,8 @@ public struct OpDPdxFine : IMemoryInstruction
     public OpDPdxFine(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDPdxFine(OpData data)
@@ -28152,6 +28815,9 @@ public struct OpDPdxFine : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDPdxFine(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDPdxFine(OpData data) => new(data);
 }
 
 public struct OpDPdyFine : IMemoryInstruction
@@ -28189,8 +28855,8 @@ public struct OpDPdyFine : IMemoryInstruction
     public OpDPdyFine(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDPdyFine(OpData data)
@@ -28275,6 +28941,9 @@ public struct OpDPdyFine : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDPdyFine(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDPdyFine(OpData data) => new(data);
 }
 
 public struct OpFwidthFine : IMemoryInstruction
@@ -28312,8 +28981,8 @@ public struct OpFwidthFine : IMemoryInstruction
     public OpFwidthFine(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFwidthFine(OpData data)
@@ -28398,6 +29067,9 @@ public struct OpFwidthFine : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFwidthFine(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFwidthFine(OpData data) => new(data);
 }
 
 public struct OpDPdxCoarse : IMemoryInstruction
@@ -28435,8 +29107,8 @@ public struct OpDPdxCoarse : IMemoryInstruction
     public OpDPdxCoarse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDPdxCoarse(OpData data)
@@ -28521,6 +29193,9 @@ public struct OpDPdxCoarse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDPdxCoarse(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDPdxCoarse(OpData data) => new(data);
 }
 
 public struct OpDPdyCoarse : IMemoryInstruction
@@ -28558,8 +29233,8 @@ public struct OpDPdyCoarse : IMemoryInstruction
     public OpDPdyCoarse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDPdyCoarse(OpData data)
@@ -28644,6 +29319,9 @@ public struct OpDPdyCoarse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDPdyCoarse(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDPdyCoarse(OpData data) => new(data);
 }
 
 public struct OpFwidthCoarse : IMemoryInstruction
@@ -28681,8 +29359,8 @@ public struct OpFwidthCoarse : IMemoryInstruction
     public OpFwidthCoarse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFwidthCoarse(OpData data)
@@ -28767,6 +29445,9 @@ public struct OpFwidthCoarse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFwidthCoarse(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFwidthCoarse(OpData data) => new(data);
 }
 
 public struct OpEmitVertex : IMemoryInstruction
@@ -28804,8 +29485,8 @@ public struct OpEmitVertex : IMemoryInstruction
     public OpEmitVertex(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEmitVertex(OpData data)
@@ -28839,6 +29520,9 @@ public struct OpEmitVertex : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEmitVertex(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEmitVertex(OpData data) => new(data);
 }
 
 public struct OpEndPrimitive : IMemoryInstruction
@@ -28876,8 +29560,8 @@ public struct OpEndPrimitive : IMemoryInstruction
     public OpEndPrimitive(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEndPrimitive(OpData data)
@@ -28911,6 +29595,9 @@ public struct OpEndPrimitive : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEndPrimitive(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEndPrimitive(OpData data) => new(data);
 }
 
 public struct OpEmitStreamVertex : IMemoryInstruction
@@ -28948,8 +29635,8 @@ public struct OpEmitStreamVertex : IMemoryInstruction
     public OpEmitStreamVertex(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEmitStreamVertex(OpData data)
@@ -29003,6 +29690,9 @@ public struct OpEmitStreamVertex : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEmitStreamVertex(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEmitStreamVertex(OpData data) => new(data);
 }
 
 public struct OpEndStreamPrimitive : IMemoryInstruction
@@ -29040,8 +29730,8 @@ public struct OpEndStreamPrimitive : IMemoryInstruction
     public OpEndStreamPrimitive(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEndStreamPrimitive(OpData data)
@@ -29095,6 +29785,9 @@ public struct OpEndStreamPrimitive : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEndStreamPrimitive(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEndStreamPrimitive(OpData data) => new(data);
 }
 
 public struct OpControlBarrier : IMemoryInstruction
@@ -29132,8 +29825,8 @@ public struct OpControlBarrier : IMemoryInstruction
     public OpControlBarrier(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpControlBarrier(OpData data)
@@ -29217,6 +29910,9 @@ public struct OpControlBarrier : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpControlBarrier(OpDataIndex odi) => new(odi);
+    public static implicit operator OpControlBarrier(OpData data) => new(data);
 }
 
 public struct OpMemoryBarrier : IMemoryInstruction
@@ -29254,8 +29950,8 @@ public struct OpMemoryBarrier : IMemoryInstruction
     public OpMemoryBarrier(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemoryBarrier(OpData data)
@@ -29324,6 +30020,9 @@ public struct OpMemoryBarrier : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemoryBarrier(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemoryBarrier(OpData data) => new(data);
 }
 
 public struct OpAtomicLoad : IMemoryInstruction
@@ -29361,8 +30060,8 @@ public struct OpAtomicLoad : IMemoryInstruction
     public OpAtomicLoad(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicLoad(OpData data)
@@ -29477,6 +30176,9 @@ public struct OpAtomicLoad : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicLoad(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicLoad(OpData data) => new(data);
 }
 
 public struct OpAtomicStore : IMemoryInstruction
@@ -29514,8 +30216,8 @@ public struct OpAtomicStore : IMemoryInstruction
     public OpAtomicStore(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicStore(OpData data)
@@ -29614,6 +30316,9 @@ public struct OpAtomicStore : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicStore(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicStore(OpData data) => new(data);
 }
 
 public struct OpAtomicExchange : IMemoryInstruction
@@ -29651,8 +30356,8 @@ public struct OpAtomicExchange : IMemoryInstruction
     public OpAtomicExchange(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicExchange(OpData data)
@@ -29782,6 +30487,9 @@ public struct OpAtomicExchange : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicExchange(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicExchange(OpData data) => new(data);
 }
 
 public struct OpAtomicCompareExchange : IMemoryInstruction
@@ -29819,8 +30527,8 @@ public struct OpAtomicCompareExchange : IMemoryInstruction
     public OpAtomicCompareExchange(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicCompareExchange(OpData data)
@@ -29980,6 +30688,9 @@ public struct OpAtomicCompareExchange : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicCompareExchange(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicCompareExchange(OpData data) => new(data);
 }
 
 public struct OpAtomicCompareExchangeWeak : IMemoryInstruction
@@ -30017,8 +30728,8 @@ public struct OpAtomicCompareExchangeWeak : IMemoryInstruction
     public OpAtomicCompareExchangeWeak(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicCompareExchangeWeak(OpData data)
@@ -30178,6 +30889,9 @@ public struct OpAtomicCompareExchangeWeak : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicCompareExchangeWeak(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicCompareExchangeWeak(OpData data) => new(data);
 }
 
 public struct OpAtomicIIncrement : IMemoryInstruction
@@ -30215,8 +30929,8 @@ public struct OpAtomicIIncrement : IMemoryInstruction
     public OpAtomicIIncrement(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicIIncrement(OpData data)
@@ -30331,6 +31045,9 @@ public struct OpAtomicIIncrement : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicIIncrement(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicIIncrement(OpData data) => new(data);
 }
 
 public struct OpAtomicIDecrement : IMemoryInstruction
@@ -30368,8 +31085,8 @@ public struct OpAtomicIDecrement : IMemoryInstruction
     public OpAtomicIDecrement(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicIDecrement(OpData data)
@@ -30484,6 +31201,9 @@ public struct OpAtomicIDecrement : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicIDecrement(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicIDecrement(OpData data) => new(data);
 }
 
 public struct OpAtomicIAdd : IMemoryInstruction
@@ -30521,8 +31241,8 @@ public struct OpAtomicIAdd : IMemoryInstruction
     public OpAtomicIAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicIAdd(OpData data)
@@ -30652,6 +31372,9 @@ public struct OpAtomicIAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicIAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicIAdd(OpData data) => new(data);
 }
 
 public struct OpAtomicISub : IMemoryInstruction
@@ -30689,8 +31412,8 @@ public struct OpAtomicISub : IMemoryInstruction
     public OpAtomicISub(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicISub(OpData data)
@@ -30820,6 +31543,9 @@ public struct OpAtomicISub : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicISub(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicISub(OpData data) => new(data);
 }
 
 public struct OpAtomicSMin : IMemoryInstruction
@@ -30857,8 +31583,8 @@ public struct OpAtomicSMin : IMemoryInstruction
     public OpAtomicSMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicSMin(OpData data)
@@ -30988,6 +31714,9 @@ public struct OpAtomicSMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicSMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicSMin(OpData data) => new(data);
 }
 
 public struct OpAtomicUMin : IMemoryInstruction
@@ -31025,8 +31754,8 @@ public struct OpAtomicUMin : IMemoryInstruction
     public OpAtomicUMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicUMin(OpData data)
@@ -31156,6 +31885,9 @@ public struct OpAtomicUMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicUMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicUMin(OpData data) => new(data);
 }
 
 public struct OpAtomicSMax : IMemoryInstruction
@@ -31193,8 +31925,8 @@ public struct OpAtomicSMax : IMemoryInstruction
     public OpAtomicSMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicSMax(OpData data)
@@ -31324,6 +32056,9 @@ public struct OpAtomicSMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicSMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicSMax(OpData data) => new(data);
 }
 
 public struct OpAtomicUMax : IMemoryInstruction
@@ -31361,8 +32096,8 @@ public struct OpAtomicUMax : IMemoryInstruction
     public OpAtomicUMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicUMax(OpData data)
@@ -31492,6 +32227,9 @@ public struct OpAtomicUMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicUMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicUMax(OpData data) => new(data);
 }
 
 public struct OpAtomicAnd : IMemoryInstruction
@@ -31529,8 +32267,8 @@ public struct OpAtomicAnd : IMemoryInstruction
     public OpAtomicAnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicAnd(OpData data)
@@ -31660,6 +32398,9 @@ public struct OpAtomicAnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicAnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicAnd(OpData data) => new(data);
 }
 
 public struct OpAtomicOr : IMemoryInstruction
@@ -31697,8 +32438,8 @@ public struct OpAtomicOr : IMemoryInstruction
     public OpAtomicOr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicOr(OpData data)
@@ -31828,6 +32569,9 @@ public struct OpAtomicOr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicOr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicOr(OpData data) => new(data);
 }
 
 public struct OpAtomicXor : IMemoryInstruction
@@ -31865,8 +32609,8 @@ public struct OpAtomicXor : IMemoryInstruction
     public OpAtomicXor(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicXor(OpData data)
@@ -31996,6 +32740,9 @@ public struct OpAtomicXor : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicXor(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicXor(OpData data) => new(data);
 }
 
 public struct OpPhi : IMemoryInstruction
@@ -32033,8 +32780,8 @@ public struct OpPhi : IMemoryInstruction
     public OpPhi(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPhi(OpData data)
@@ -32119,6 +32866,9 @@ public struct OpPhi : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPhi(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPhi(OpData data) => new(data);
 }
 
 public struct OpLoopMerge : IMemoryInstruction
@@ -32156,8 +32906,8 @@ public struct OpLoopMerge : IMemoryInstruction
     public OpLoopMerge(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLoopMerge(OpData data)
@@ -32241,6 +32991,9 @@ public struct OpLoopMerge : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLoopMerge(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLoopMerge(OpData data) => new(data);
 }
 
 public struct OpSelectionMerge : IMemoryInstruction
@@ -32278,8 +33031,8 @@ public struct OpSelectionMerge : IMemoryInstruction
     public OpSelectionMerge(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSelectionMerge(OpData data)
@@ -32348,6 +33101,9 @@ public struct OpSelectionMerge : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSelectionMerge(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSelectionMerge(OpData data) => new(data);
 }
 
 public struct OpLabel : IMemoryInstruction
@@ -32385,8 +33141,8 @@ public struct OpLabel : IMemoryInstruction
     public OpLabel(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLabel(OpData data)
@@ -32441,6 +33197,9 @@ public struct OpLabel : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLabel(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLabel(OpData data) => new(data);
 }
 
 public struct OpBranch : IMemoryInstruction
@@ -32478,8 +33237,8 @@ public struct OpBranch : IMemoryInstruction
     public OpBranch(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBranch(OpData data)
@@ -32533,6 +33292,9 @@ public struct OpBranch : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBranch(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBranch(OpData data) => new(data);
 }
 
 public struct OpBranchConditional : IMemoryInstruction
@@ -32570,8 +33332,8 @@ public struct OpBranchConditional : IMemoryInstruction
     public OpBranchConditional(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBranchConditional(OpData data)
@@ -32670,6 +33432,9 @@ public struct OpBranchConditional : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBranchConditional(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBranchConditional(OpData data) => new(data);
 }
 
 public struct OpSwitch : IMemoryInstruction
@@ -32707,8 +33472,8 @@ public struct OpSwitch : IMemoryInstruction
     public OpSwitch(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSwitch(OpData data)
@@ -32792,6 +33557,9 @@ public struct OpSwitch : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSwitch(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSwitch(OpData data) => new(data);
 }
 
 public struct OpKill : IMemoryInstruction
@@ -32829,8 +33597,8 @@ public struct OpKill : IMemoryInstruction
     public OpKill(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpKill(OpData data)
@@ -32864,6 +33632,9 @@ public struct OpKill : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpKill(OpDataIndex odi) => new(odi);
+    public static implicit operator OpKill(OpData data) => new(data);
 }
 
 public struct OpReturn : IMemoryInstruction
@@ -32901,8 +33672,8 @@ public struct OpReturn : IMemoryInstruction
     public OpReturn(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReturn(OpData data)
@@ -32936,6 +33707,9 @@ public struct OpReturn : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReturn(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReturn(OpData data) => new(data);
 }
 
 public struct OpReturnValue : IMemoryInstruction
@@ -32973,8 +33747,8 @@ public struct OpReturnValue : IMemoryInstruction
     public OpReturnValue(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReturnValue(OpData data)
@@ -33028,6 +33802,9 @@ public struct OpReturnValue : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReturnValue(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReturnValue(OpData data) => new(data);
 }
 
 public struct OpUnreachable : IMemoryInstruction
@@ -33065,8 +33842,8 @@ public struct OpUnreachable : IMemoryInstruction
     public OpUnreachable(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUnreachable(OpData data)
@@ -33100,6 +33877,9 @@ public struct OpUnreachable : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUnreachable(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUnreachable(OpData data) => new(data);
 }
 
 public struct OpLifetimeStart : IMemoryInstruction
@@ -33137,8 +33917,8 @@ public struct OpLifetimeStart : IMemoryInstruction
     public OpLifetimeStart(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLifetimeStart(OpData data)
@@ -33207,6 +33987,9 @@ public struct OpLifetimeStart : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLifetimeStart(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLifetimeStart(OpData data) => new(data);
 }
 
 public struct OpLifetimeStop : IMemoryInstruction
@@ -33244,8 +34027,8 @@ public struct OpLifetimeStop : IMemoryInstruction
     public OpLifetimeStop(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLifetimeStop(OpData data)
@@ -33314,6 +34097,9 @@ public struct OpLifetimeStop : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLifetimeStop(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLifetimeStop(OpData data) => new(data);
 }
 
 public struct OpGroupAsyncCopy : IMemoryInstruction
@@ -33351,8 +34137,8 @@ public struct OpGroupAsyncCopy : IMemoryInstruction
     public OpGroupAsyncCopy(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupAsyncCopy(OpData data)
@@ -33512,6 +34298,9 @@ public struct OpGroupAsyncCopy : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupAsyncCopy(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupAsyncCopy(OpData data) => new(data);
 }
 
 public struct OpGroupWaitEvents : IMemoryInstruction
@@ -33549,8 +34338,8 @@ public struct OpGroupWaitEvents : IMemoryInstruction
     public OpGroupWaitEvents(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupWaitEvents(OpData data)
@@ -33634,6 +34423,9 @@ public struct OpGroupWaitEvents : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupWaitEvents(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupWaitEvents(OpData data) => new(data);
 }
 
 public struct OpGroupAll : IMemoryInstruction
@@ -33671,8 +34463,8 @@ public struct OpGroupAll : IMemoryInstruction
     public OpGroupAll(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupAll(OpData data)
@@ -33772,6 +34564,9 @@ public struct OpGroupAll : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupAll(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupAll(OpData data) => new(data);
 }
 
 public struct OpGroupAny : IMemoryInstruction
@@ -33809,8 +34604,8 @@ public struct OpGroupAny : IMemoryInstruction
     public OpGroupAny(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupAny(OpData data)
@@ -33910,6 +34705,9 @@ public struct OpGroupAny : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupAny(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupAny(OpData data) => new(data);
 }
 
 public struct OpGroupBroadcast : IMemoryInstruction
@@ -33947,8 +34745,8 @@ public struct OpGroupBroadcast : IMemoryInstruction
     public OpGroupBroadcast(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupBroadcast(OpData data)
@@ -34063,6 +34861,9 @@ public struct OpGroupBroadcast : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupBroadcast(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupBroadcast(OpData data) => new(data);
 }
 
 public struct OpGroupIAdd : IMemoryInstruction
@@ -34100,8 +34901,8 @@ public struct OpGroupIAdd : IMemoryInstruction
     public OpGroupIAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupIAdd(OpData data)
@@ -34216,6 +35017,9 @@ public struct OpGroupIAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupIAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupIAdd(OpData data) => new(data);
 }
 
 public struct OpGroupFAdd : IMemoryInstruction
@@ -34253,8 +35057,8 @@ public struct OpGroupFAdd : IMemoryInstruction
     public OpGroupFAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFAdd(OpData data)
@@ -34369,6 +35173,9 @@ public struct OpGroupFAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFAdd(OpData data) => new(data);
 }
 
 public struct OpGroupFMin : IMemoryInstruction
@@ -34406,8 +35213,8 @@ public struct OpGroupFMin : IMemoryInstruction
     public OpGroupFMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFMin(OpData data)
@@ -34522,6 +35329,9 @@ public struct OpGroupFMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFMin(OpData data) => new(data);
 }
 
 public struct OpGroupUMin : IMemoryInstruction
@@ -34559,8 +35369,8 @@ public struct OpGroupUMin : IMemoryInstruction
     public OpGroupUMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupUMin(OpData data)
@@ -34675,6 +35485,9 @@ public struct OpGroupUMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupUMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupUMin(OpData data) => new(data);
 }
 
 public struct OpGroupSMin : IMemoryInstruction
@@ -34712,8 +35525,8 @@ public struct OpGroupSMin : IMemoryInstruction
     public OpGroupSMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupSMin(OpData data)
@@ -34828,6 +35641,9 @@ public struct OpGroupSMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupSMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupSMin(OpData data) => new(data);
 }
 
 public struct OpGroupFMax : IMemoryInstruction
@@ -34865,8 +35681,8 @@ public struct OpGroupFMax : IMemoryInstruction
     public OpGroupFMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFMax(OpData data)
@@ -34981,6 +35797,9 @@ public struct OpGroupFMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFMax(OpData data) => new(data);
 }
 
 public struct OpGroupUMax : IMemoryInstruction
@@ -35018,8 +35837,8 @@ public struct OpGroupUMax : IMemoryInstruction
     public OpGroupUMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupUMax(OpData data)
@@ -35134,6 +35953,9 @@ public struct OpGroupUMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupUMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupUMax(OpData data) => new(data);
 }
 
 public struct OpGroupSMax : IMemoryInstruction
@@ -35171,8 +35993,8 @@ public struct OpGroupSMax : IMemoryInstruction
     public OpGroupSMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupSMax(OpData data)
@@ -35287,6 +36109,9 @@ public struct OpGroupSMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupSMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupSMax(OpData data) => new(data);
 }
 
 public struct OpReadPipe : IMemoryInstruction
@@ -35324,8 +36149,8 @@ public struct OpReadPipe : IMemoryInstruction
     public OpReadPipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReadPipe(OpData data)
@@ -35455,6 +36280,9 @@ public struct OpReadPipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReadPipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReadPipe(OpData data) => new(data);
 }
 
 public struct OpWritePipe : IMemoryInstruction
@@ -35492,8 +36320,8 @@ public struct OpWritePipe : IMemoryInstruction
     public OpWritePipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpWritePipe(OpData data)
@@ -35623,6 +36451,9 @@ public struct OpWritePipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpWritePipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpWritePipe(OpData data) => new(data);
 }
 
 public struct OpReservedReadPipe : IMemoryInstruction
@@ -35660,8 +36491,8 @@ public struct OpReservedReadPipe : IMemoryInstruction
     public OpReservedReadPipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReservedReadPipe(OpData data)
@@ -35821,6 +36652,9 @@ public struct OpReservedReadPipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReservedReadPipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReservedReadPipe(OpData data) => new(data);
 }
 
 public struct OpReservedWritePipe : IMemoryInstruction
@@ -35858,8 +36692,8 @@ public struct OpReservedWritePipe : IMemoryInstruction
     public OpReservedWritePipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReservedWritePipe(OpData data)
@@ -36019,6 +36853,9 @@ public struct OpReservedWritePipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReservedWritePipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReservedWritePipe(OpData data) => new(data);
 }
 
 public struct OpReserveReadPipePackets : IMemoryInstruction
@@ -36056,8 +36893,8 @@ public struct OpReserveReadPipePackets : IMemoryInstruction
     public OpReserveReadPipePackets(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReserveReadPipePackets(OpData data)
@@ -36187,6 +37024,9 @@ public struct OpReserveReadPipePackets : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReserveReadPipePackets(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReserveReadPipePackets(OpData data) => new(data);
 }
 
 public struct OpReserveWritePipePackets : IMemoryInstruction
@@ -36224,8 +37064,8 @@ public struct OpReserveWritePipePackets : IMemoryInstruction
     public OpReserveWritePipePackets(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReserveWritePipePackets(OpData data)
@@ -36355,6 +37195,9 @@ public struct OpReserveWritePipePackets : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReserveWritePipePackets(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReserveWritePipePackets(OpData data) => new(data);
 }
 
 public struct OpCommitReadPipe : IMemoryInstruction
@@ -36392,8 +37235,8 @@ public struct OpCommitReadPipe : IMemoryInstruction
     public OpCommitReadPipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCommitReadPipe(OpData data)
@@ -36492,6 +37335,9 @@ public struct OpCommitReadPipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCommitReadPipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCommitReadPipe(OpData data) => new(data);
 }
 
 public struct OpCommitWritePipe : IMemoryInstruction
@@ -36529,8 +37375,8 @@ public struct OpCommitWritePipe : IMemoryInstruction
     public OpCommitWritePipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCommitWritePipe(OpData data)
@@ -36629,6 +37475,9 @@ public struct OpCommitWritePipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCommitWritePipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCommitWritePipe(OpData data) => new(data);
 }
 
 public struct OpIsValidReserveId : IMemoryInstruction
@@ -36666,8 +37515,8 @@ public struct OpIsValidReserveId : IMemoryInstruction
     public OpIsValidReserveId(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsValidReserveId(OpData data)
@@ -36752,6 +37601,9 @@ public struct OpIsValidReserveId : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsValidReserveId(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsValidReserveId(OpData data) => new(data);
 }
 
 public struct OpGetNumPipePackets : IMemoryInstruction
@@ -36789,8 +37641,8 @@ public struct OpGetNumPipePackets : IMemoryInstruction
     public OpGetNumPipePackets(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetNumPipePackets(OpData data)
@@ -36905,6 +37757,9 @@ public struct OpGetNumPipePackets : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetNumPipePackets(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetNumPipePackets(OpData data) => new(data);
 }
 
 public struct OpGetMaxPipePackets : IMemoryInstruction
@@ -36942,8 +37797,8 @@ public struct OpGetMaxPipePackets : IMemoryInstruction
     public OpGetMaxPipePackets(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetMaxPipePackets(OpData data)
@@ -37058,6 +37913,9 @@ public struct OpGetMaxPipePackets : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetMaxPipePackets(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetMaxPipePackets(OpData data) => new(data);
 }
 
 public struct OpGroupReserveReadPipePackets : IMemoryInstruction
@@ -37095,8 +37953,8 @@ public struct OpGroupReserveReadPipePackets : IMemoryInstruction
     public OpGroupReserveReadPipePackets(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupReserveReadPipePackets(OpData data)
@@ -37241,6 +38099,9 @@ public struct OpGroupReserveReadPipePackets : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupReserveReadPipePackets(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupReserveReadPipePackets(OpData data) => new(data);
 }
 
 public struct OpGroupReserveWritePipePackets : IMemoryInstruction
@@ -37278,8 +38139,8 @@ public struct OpGroupReserveWritePipePackets : IMemoryInstruction
     public OpGroupReserveWritePipePackets(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupReserveWritePipePackets(OpData data)
@@ -37424,6 +38285,9 @@ public struct OpGroupReserveWritePipePackets : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupReserveWritePipePackets(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupReserveWritePipePackets(OpData data) => new(data);
 }
 
 public struct OpGroupCommitReadPipe : IMemoryInstruction
@@ -37461,8 +38325,8 @@ public struct OpGroupCommitReadPipe : IMemoryInstruction
     public OpGroupCommitReadPipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupCommitReadPipe(OpData data)
@@ -37576,6 +38440,9 @@ public struct OpGroupCommitReadPipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupCommitReadPipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupCommitReadPipe(OpData data) => new(data);
 }
 
 public struct OpGroupCommitWritePipe : IMemoryInstruction
@@ -37613,8 +38480,8 @@ public struct OpGroupCommitWritePipe : IMemoryInstruction
     public OpGroupCommitWritePipe(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupCommitWritePipe(OpData data)
@@ -37728,6 +38595,9 @@ public struct OpGroupCommitWritePipe : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupCommitWritePipe(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupCommitWritePipe(OpData data) => new(data);
 }
 
 public struct OpEnqueueMarker : IMemoryInstruction
@@ -37765,8 +38635,8 @@ public struct OpEnqueueMarker : IMemoryInstruction
     public OpEnqueueMarker(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEnqueueMarker(OpData data)
@@ -37896,6 +38766,9 @@ public struct OpEnqueueMarker : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEnqueueMarker(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEnqueueMarker(OpData data) => new(data);
 }
 
 public struct OpEnqueueKernel : IMemoryInstruction
@@ -37933,8 +38806,8 @@ public struct OpEnqueueKernel : IMemoryInstruction
     public OpEnqueueKernel(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEnqueueKernel(OpData data)
@@ -38169,6 +39042,9 @@ public struct OpEnqueueKernel : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEnqueueKernel(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEnqueueKernel(OpData data) => new(data);
 }
 
 public struct OpGetKernelNDrangeSubGroupCount : IMemoryInstruction
@@ -38206,8 +39082,8 @@ public struct OpGetKernelNDrangeSubGroupCount : IMemoryInstruction
     public OpGetKernelNDrangeSubGroupCount(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetKernelNDrangeSubGroupCount(OpData data)
@@ -38352,6 +39228,9 @@ public struct OpGetKernelNDrangeSubGroupCount : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetKernelNDrangeSubGroupCount(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetKernelNDrangeSubGroupCount(OpData data) => new(data);
 }
 
 public struct OpGetKernelNDrangeMaxSubGroupSize : IMemoryInstruction
@@ -38389,8 +39268,8 @@ public struct OpGetKernelNDrangeMaxSubGroupSize : IMemoryInstruction
     public OpGetKernelNDrangeMaxSubGroupSize(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetKernelNDrangeMaxSubGroupSize(OpData data)
@@ -38535,6 +39414,9 @@ public struct OpGetKernelNDrangeMaxSubGroupSize : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetKernelNDrangeMaxSubGroupSize(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetKernelNDrangeMaxSubGroupSize(OpData data) => new(data);
 }
 
 public struct OpGetKernelWorkGroupSize : IMemoryInstruction
@@ -38572,8 +39454,8 @@ public struct OpGetKernelWorkGroupSize : IMemoryInstruction
     public OpGetKernelWorkGroupSize(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetKernelWorkGroupSize(OpData data)
@@ -38703,6 +39585,9 @@ public struct OpGetKernelWorkGroupSize : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetKernelWorkGroupSize(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetKernelWorkGroupSize(OpData data) => new(data);
 }
 
 public struct OpGetKernelPreferredWorkGroupSizeMultiple : IMemoryInstruction
@@ -38740,8 +39625,8 @@ public struct OpGetKernelPreferredWorkGroupSizeMultiple : IMemoryInstruction
     public OpGetKernelPreferredWorkGroupSizeMultiple(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetKernelPreferredWorkGroupSizeMultiple(OpData data)
@@ -38871,6 +39756,9 @@ public struct OpGetKernelPreferredWorkGroupSizeMultiple : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetKernelPreferredWorkGroupSizeMultiple(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetKernelPreferredWorkGroupSizeMultiple(OpData data) => new(data);
 }
 
 public struct OpRetainEvent : IMemoryInstruction
@@ -38908,8 +39796,8 @@ public struct OpRetainEvent : IMemoryInstruction
     public OpRetainEvent(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRetainEvent(OpData data)
@@ -38963,6 +39851,9 @@ public struct OpRetainEvent : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRetainEvent(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRetainEvent(OpData data) => new(data);
 }
 
 public struct OpReleaseEvent : IMemoryInstruction
@@ -39000,8 +39891,8 @@ public struct OpReleaseEvent : IMemoryInstruction
     public OpReleaseEvent(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReleaseEvent(OpData data)
@@ -39055,6 +39946,9 @@ public struct OpReleaseEvent : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReleaseEvent(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReleaseEvent(OpData data) => new(data);
 }
 
 public struct OpCreateUserEvent : IMemoryInstruction
@@ -39092,8 +39986,8 @@ public struct OpCreateUserEvent : IMemoryInstruction
     public OpCreateUserEvent(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCreateUserEvent(OpData data)
@@ -39163,6 +40057,9 @@ public struct OpCreateUserEvent : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCreateUserEvent(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCreateUserEvent(OpData data) => new(data);
 }
 
 public struct OpIsValidEvent : IMemoryInstruction
@@ -39200,8 +40097,8 @@ public struct OpIsValidEvent : IMemoryInstruction
     public OpIsValidEvent(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsValidEvent(OpData data)
@@ -39286,6 +40183,9 @@ public struct OpIsValidEvent : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsValidEvent(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsValidEvent(OpData data) => new(data);
 }
 
 public struct OpSetUserEventStatus : IMemoryInstruction
@@ -39323,8 +40223,8 @@ public struct OpSetUserEventStatus : IMemoryInstruction
     public OpSetUserEventStatus(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSetUserEventStatus(OpData data)
@@ -39393,6 +40293,9 @@ public struct OpSetUserEventStatus : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSetUserEventStatus(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSetUserEventStatus(OpData data) => new(data);
 }
 
 public struct OpCaptureEventProfilingInfo : IMemoryInstruction
@@ -39430,8 +40333,8 @@ public struct OpCaptureEventProfilingInfo : IMemoryInstruction
     public OpCaptureEventProfilingInfo(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCaptureEventProfilingInfo(OpData data)
@@ -39515,6 +40418,9 @@ public struct OpCaptureEventProfilingInfo : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCaptureEventProfilingInfo(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCaptureEventProfilingInfo(OpData data) => new(data);
 }
 
 public struct OpGetDefaultQueue : IMemoryInstruction
@@ -39552,8 +40458,8 @@ public struct OpGetDefaultQueue : IMemoryInstruction
     public OpGetDefaultQueue(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetDefaultQueue(OpData data)
@@ -39623,6 +40529,9 @@ public struct OpGetDefaultQueue : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetDefaultQueue(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetDefaultQueue(OpData data) => new(data);
 }
 
 public struct OpBuildNDRange : IMemoryInstruction
@@ -39660,8 +40569,8 @@ public struct OpBuildNDRange : IMemoryInstruction
     public OpBuildNDRange(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBuildNDRange(OpData data)
@@ -39776,6 +40685,9 @@ public struct OpBuildNDRange : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBuildNDRange(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBuildNDRange(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleImplicitLod : IMemoryInstruction
@@ -39813,8 +40725,8 @@ public struct OpImageSparseSampleImplicitLod : IMemoryInstruction
     public OpImageSparseSampleImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleImplicitLod(OpData data)
@@ -39930,6 +40842,9 @@ public struct OpImageSparseSampleImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleExplicitLod : IMemoryInstruction
@@ -39967,8 +40882,8 @@ public struct OpImageSparseSampleExplicitLod : IMemoryInstruction
     public OpImageSparseSampleExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleExplicitLod(OpData data)
@@ -40083,6 +40998,9 @@ public struct OpImageSparseSampleExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleDrefImplicitLod : IMemoryInstruction
@@ -40120,8 +41038,8 @@ public struct OpImageSparseSampleDrefImplicitLod : IMemoryInstruction
     public OpImageSparseSampleDrefImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleDrefImplicitLod(OpData data)
@@ -40252,6 +41170,9 @@ public struct OpImageSparseSampleDrefImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleDrefImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleDrefExplicitLod : IMemoryInstruction
@@ -40289,8 +41210,8 @@ public struct OpImageSparseSampleDrefExplicitLod : IMemoryInstruction
     public OpImageSparseSampleDrefExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleDrefExplicitLod(OpData data)
@@ -40420,6 +41341,9 @@ public struct OpImageSparseSampleDrefExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleDrefExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleProjImplicitLod : IMemoryInstruction
@@ -40457,8 +41381,8 @@ public struct OpImageSparseSampleProjImplicitLod : IMemoryInstruction
     public OpImageSparseSampleProjImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleProjImplicitLod(OpData data)
@@ -40574,6 +41498,9 @@ public struct OpImageSparseSampleProjImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleProjImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleProjImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleProjExplicitLod : IMemoryInstruction
@@ -40611,8 +41538,8 @@ public struct OpImageSparseSampleProjExplicitLod : IMemoryInstruction
     public OpImageSparseSampleProjExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleProjExplicitLod(OpData data)
@@ -40727,6 +41654,9 @@ public struct OpImageSparseSampleProjExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleProjExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleProjExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstruction
@@ -40764,8 +41694,8 @@ public struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstruction
     public OpImageSparseSampleProjDrefImplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleProjDrefImplicitLod(OpData data)
@@ -40896,6 +41826,9 @@ public struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleProjDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleProjDrefImplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstruction
@@ -40933,8 +41866,8 @@ public struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstruction
     public OpImageSparseSampleProjDrefExplicitLod(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseSampleProjDrefExplicitLod(OpData data)
@@ -41064,6 +41997,9 @@ public struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseSampleProjDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseSampleProjDrefExplicitLod(OpData data) => new(data);
 }
 
 public struct OpImageSparseFetch : IMemoryInstruction
@@ -41101,8 +42037,8 @@ public struct OpImageSparseFetch : IMemoryInstruction
     public OpImageSparseFetch(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseFetch(OpData data)
@@ -41218,6 +42154,9 @@ public struct OpImageSparseFetch : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseFetch(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseFetch(OpData data) => new(data);
 }
 
 public struct OpImageSparseGather : IMemoryInstruction
@@ -41255,8 +42194,8 @@ public struct OpImageSparseGather : IMemoryInstruction
     public OpImageSparseGather(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseGather(OpData data)
@@ -41387,6 +42326,9 @@ public struct OpImageSparseGather : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseGather(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseGather(OpData data) => new(data);
 }
 
 public struct OpImageSparseDrefGather : IMemoryInstruction
@@ -41424,8 +42366,8 @@ public struct OpImageSparseDrefGather : IMemoryInstruction
     public OpImageSparseDrefGather(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseDrefGather(OpData data)
@@ -41556,6 +42498,9 @@ public struct OpImageSparseDrefGather : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseDrefGather(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseDrefGather(OpData data) => new(data);
 }
 
 public struct OpImageSparseTexelsResident : IMemoryInstruction
@@ -41593,8 +42538,8 @@ public struct OpImageSparseTexelsResident : IMemoryInstruction
     public OpImageSparseTexelsResident(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseTexelsResident(OpData data)
@@ -41679,6 +42624,9 @@ public struct OpImageSparseTexelsResident : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseTexelsResident(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseTexelsResident(OpData data) => new(data);
 }
 
 public struct OpNoLine : IMemoryInstruction
@@ -41716,8 +42664,8 @@ public struct OpNoLine : IMemoryInstruction
     public OpNoLine(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpNoLine(OpData data)
@@ -41751,6 +42699,9 @@ public struct OpNoLine : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpNoLine(OpDataIndex odi) => new(odi);
+    public static implicit operator OpNoLine(OpData data) => new(data);
 }
 
 public struct OpAtomicFlagTestAndSet : IMemoryInstruction
@@ -41788,8 +42739,8 @@ public struct OpAtomicFlagTestAndSet : IMemoryInstruction
     public OpAtomicFlagTestAndSet(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicFlagTestAndSet(OpData data)
@@ -41904,6 +42855,9 @@ public struct OpAtomicFlagTestAndSet : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicFlagTestAndSet(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicFlagTestAndSet(OpData data) => new(data);
 }
 
 public struct OpAtomicFlagClear : IMemoryInstruction
@@ -41941,8 +42895,8 @@ public struct OpAtomicFlagClear : IMemoryInstruction
     public OpAtomicFlagClear(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicFlagClear(OpData data)
@@ -42026,6 +42980,9 @@ public struct OpAtomicFlagClear : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicFlagClear(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicFlagClear(OpData data) => new(data);
 }
 
 public struct OpImageSparseRead : IMemoryInstruction
@@ -42063,8 +43020,8 @@ public struct OpImageSparseRead : IMemoryInstruction
     public OpImageSparseRead(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSparseRead(OpData data)
@@ -42180,6 +43137,9 @@ public struct OpImageSparseRead : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSparseRead(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSparseRead(OpData data) => new(data);
 }
 
 public struct OpSizeOf : IMemoryInstruction
@@ -42217,8 +43177,8 @@ public struct OpSizeOf : IMemoryInstruction
     public OpSizeOf(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSizeOf(OpData data)
@@ -42303,6 +43263,9 @@ public struct OpSizeOf : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSizeOf(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSizeOf(OpData data) => new(data);
 }
 
 public struct OpTypePipeStorage : IMemoryInstruction
@@ -42340,8 +43303,8 @@ public struct OpTypePipeStorage : IMemoryInstruction
     public OpTypePipeStorage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypePipeStorage(OpData data)
@@ -42396,6 +43359,9 @@ public struct OpTypePipeStorage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypePipeStorage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypePipeStorage(OpData data) => new(data);
 }
 
 public struct OpConstantPipeStorage : IMemoryInstruction
@@ -42433,8 +43399,8 @@ public struct OpConstantPipeStorage : IMemoryInstruction
     public OpConstantPipeStorage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantPipeStorage(OpData data)
@@ -42549,6 +43515,9 @@ public struct OpConstantPipeStorage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantPipeStorage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantPipeStorage(OpData data) => new(data);
 }
 
 public struct OpCreatePipeFromPipeStorage : IMemoryInstruction
@@ -42586,8 +43555,8 @@ public struct OpCreatePipeFromPipeStorage : IMemoryInstruction
     public OpCreatePipeFromPipeStorage(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCreatePipeFromPipeStorage(OpData data)
@@ -42672,6 +43641,9 @@ public struct OpCreatePipeFromPipeStorage : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCreatePipeFromPipeStorage(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCreatePipeFromPipeStorage(OpData data) => new(data);
 }
 
 public struct OpGetKernelLocalSizeForSubgroupCount : IMemoryInstruction
@@ -42709,8 +43681,8 @@ public struct OpGetKernelLocalSizeForSubgroupCount : IMemoryInstruction
     public OpGetKernelLocalSizeForSubgroupCount(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetKernelLocalSizeForSubgroupCount(OpData data)
@@ -42855,6 +43827,9 @@ public struct OpGetKernelLocalSizeForSubgroupCount : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetKernelLocalSizeForSubgroupCount(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetKernelLocalSizeForSubgroupCount(OpData data) => new(data);
 }
 
 public struct OpGetKernelMaxNumSubgroups : IMemoryInstruction
@@ -42892,8 +43867,8 @@ public struct OpGetKernelMaxNumSubgroups : IMemoryInstruction
     public OpGetKernelMaxNumSubgroups(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGetKernelMaxNumSubgroups(OpData data)
@@ -43023,6 +43998,9 @@ public struct OpGetKernelMaxNumSubgroups : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGetKernelMaxNumSubgroups(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGetKernelMaxNumSubgroups(OpData data) => new(data);
 }
 
 public struct OpTypeNamedBarrier : IMemoryInstruction
@@ -43060,8 +44038,8 @@ public struct OpTypeNamedBarrier : IMemoryInstruction
     public OpTypeNamedBarrier(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeNamedBarrier(OpData data)
@@ -43116,6 +44094,9 @@ public struct OpTypeNamedBarrier : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeNamedBarrier(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeNamedBarrier(OpData data) => new(data);
 }
 
 public struct OpNamedBarrierInitialize : IMemoryInstruction
@@ -43153,8 +44134,8 @@ public struct OpNamedBarrierInitialize : IMemoryInstruction
     public OpNamedBarrierInitialize(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpNamedBarrierInitialize(OpData data)
@@ -43239,6 +44220,9 @@ public struct OpNamedBarrierInitialize : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpNamedBarrierInitialize(OpDataIndex odi) => new(odi);
+    public static implicit operator OpNamedBarrierInitialize(OpData data) => new(data);
 }
 
 public struct OpMemoryNamedBarrier : IMemoryInstruction
@@ -43276,8 +44260,8 @@ public struct OpMemoryNamedBarrier : IMemoryInstruction
     public OpMemoryNamedBarrier(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemoryNamedBarrier(OpData data)
@@ -43361,6 +44345,9 @@ public struct OpMemoryNamedBarrier : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemoryNamedBarrier(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemoryNamedBarrier(OpData data) => new(data);
 }
 
 public struct OpModuleProcessed : IMemoryInstruction
@@ -43398,8 +44385,8 @@ public struct OpModuleProcessed : IMemoryInstruction
     public OpModuleProcessed(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpModuleProcessed(OpData data)
@@ -43453,6 +44440,9 @@ public struct OpModuleProcessed : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpModuleProcessed(OpDataIndex odi) => new(odi);
+    public static implicit operator OpModuleProcessed(OpData data) => new(data);
 }
 
 public struct OpExecutionModeId : IMemoryInstruction
@@ -43490,8 +44480,8 @@ public struct OpExecutionModeId : IMemoryInstruction
     public OpExecutionModeId(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExecutionModeId(OpData data)
@@ -43560,6 +44550,9 @@ public struct OpExecutionModeId : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExecutionModeId(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExecutionModeId(OpData data) => new(data);
 }
 
 public struct OpDecorateId : IMemoryInstruction
@@ -43597,8 +44590,8 @@ public struct OpDecorateId : IMemoryInstruction
     public OpDecorateId(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDecorateId(OpData data)
@@ -43667,6 +44660,9 @@ public struct OpDecorateId : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDecorateId(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDecorateId(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformElect : IMemoryInstruction
@@ -43704,8 +44700,8 @@ public struct OpGroupNonUniformElect : IMemoryInstruction
     public OpGroupNonUniformElect(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformElect(OpData data)
@@ -43790,6 +44786,9 @@ public struct OpGroupNonUniformElect : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformElect(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformElect(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformAll : IMemoryInstruction
@@ -43827,8 +44826,8 @@ public struct OpGroupNonUniformAll : IMemoryInstruction
     public OpGroupNonUniformAll(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformAll(OpData data)
@@ -43928,6 +44927,9 @@ public struct OpGroupNonUniformAll : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformAll(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformAll(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformAny : IMemoryInstruction
@@ -43965,8 +44967,8 @@ public struct OpGroupNonUniformAny : IMemoryInstruction
     public OpGroupNonUniformAny(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformAny(OpData data)
@@ -44066,6 +45068,9 @@ public struct OpGroupNonUniformAny : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformAny(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformAny(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformAllEqual : IMemoryInstruction
@@ -44103,8 +45108,8 @@ public struct OpGroupNonUniformAllEqual : IMemoryInstruction
     public OpGroupNonUniformAllEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformAllEqual(OpData data)
@@ -44204,6 +45209,9 @@ public struct OpGroupNonUniformAllEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformAllEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformAllEqual(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBroadcast : IMemoryInstruction
@@ -44241,8 +45249,8 @@ public struct OpGroupNonUniformBroadcast : IMemoryInstruction
     public OpGroupNonUniformBroadcast(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBroadcast(OpData data)
@@ -44357,6 +45365,9 @@ public struct OpGroupNonUniformBroadcast : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBroadcast(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBroadcast(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBroadcastFirst : IMemoryInstruction
@@ -44394,8 +45405,8 @@ public struct OpGroupNonUniformBroadcastFirst : IMemoryInstruction
     public OpGroupNonUniformBroadcastFirst(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBroadcastFirst(OpData data)
@@ -44495,6 +45506,9 @@ public struct OpGroupNonUniformBroadcastFirst : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBroadcastFirst(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBroadcastFirst(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBallot : IMemoryInstruction
@@ -44532,8 +45546,8 @@ public struct OpGroupNonUniformBallot : IMemoryInstruction
     public OpGroupNonUniformBallot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBallot(OpData data)
@@ -44633,6 +45647,9 @@ public struct OpGroupNonUniformBallot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBallot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBallot(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformInverseBallot : IMemoryInstruction
@@ -44670,8 +45687,8 @@ public struct OpGroupNonUniformInverseBallot : IMemoryInstruction
     public OpGroupNonUniformInverseBallot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformInverseBallot(OpData data)
@@ -44771,6 +45788,9 @@ public struct OpGroupNonUniformInverseBallot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformInverseBallot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformInverseBallot(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBallotBitExtract : IMemoryInstruction
@@ -44808,8 +45828,8 @@ public struct OpGroupNonUniformBallotBitExtract : IMemoryInstruction
     public OpGroupNonUniformBallotBitExtract(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBallotBitExtract(OpData data)
@@ -44924,6 +45944,9 @@ public struct OpGroupNonUniformBallotBitExtract : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBallotBitExtract(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBallotBitExtract(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBallotBitCount : IMemoryInstruction
@@ -44961,8 +45984,8 @@ public struct OpGroupNonUniformBallotBitCount : IMemoryInstruction
     public OpGroupNonUniformBallotBitCount(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBallotBitCount(OpData data)
@@ -45077,6 +46100,9 @@ public struct OpGroupNonUniformBallotBitCount : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBallotBitCount(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBallotBitCount(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBallotFindLSB : IMemoryInstruction
@@ -45114,8 +46140,8 @@ public struct OpGroupNonUniformBallotFindLSB : IMemoryInstruction
     public OpGroupNonUniformBallotFindLSB(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBallotFindLSB(OpData data)
@@ -45215,6 +46241,9 @@ public struct OpGroupNonUniformBallotFindLSB : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBallotFindLSB(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBallotFindLSB(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBallotFindMSB : IMemoryInstruction
@@ -45252,8 +46281,8 @@ public struct OpGroupNonUniformBallotFindMSB : IMemoryInstruction
     public OpGroupNonUniformBallotFindMSB(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBallotFindMSB(OpData data)
@@ -45353,6 +46382,9 @@ public struct OpGroupNonUniformBallotFindMSB : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBallotFindMSB(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBallotFindMSB(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformShuffle : IMemoryInstruction
@@ -45390,8 +46422,8 @@ public struct OpGroupNonUniformShuffle : IMemoryInstruction
     public OpGroupNonUniformShuffle(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformShuffle(OpData data)
@@ -45506,6 +46538,9 @@ public struct OpGroupNonUniformShuffle : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformShuffle(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformShuffle(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformShuffleXor : IMemoryInstruction
@@ -45543,8 +46578,8 @@ public struct OpGroupNonUniformShuffleXor : IMemoryInstruction
     public OpGroupNonUniformShuffleXor(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformShuffleXor(OpData data)
@@ -45659,6 +46694,9 @@ public struct OpGroupNonUniformShuffleXor : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformShuffleXor(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformShuffleXor(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformShuffleUp : IMemoryInstruction
@@ -45696,8 +46734,8 @@ public struct OpGroupNonUniformShuffleUp : IMemoryInstruction
     public OpGroupNonUniformShuffleUp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformShuffleUp(OpData data)
@@ -45812,6 +46850,9 @@ public struct OpGroupNonUniformShuffleUp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformShuffleUp(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformShuffleUp(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformShuffleDown : IMemoryInstruction
@@ -45849,8 +46890,8 @@ public struct OpGroupNonUniformShuffleDown : IMemoryInstruction
     public OpGroupNonUniformShuffleDown(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformShuffleDown(OpData data)
@@ -45965,6 +47006,9 @@ public struct OpGroupNonUniformShuffleDown : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformShuffleDown(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformShuffleDown(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformIAdd : IMemoryInstruction
@@ -46002,8 +47046,8 @@ public struct OpGroupNonUniformIAdd : IMemoryInstruction
     public OpGroupNonUniformIAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformIAdd(OpData data)
@@ -46134,6 +47178,9 @@ public struct OpGroupNonUniformIAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformIAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformIAdd(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformFAdd : IMemoryInstruction
@@ -46171,8 +47218,8 @@ public struct OpGroupNonUniformFAdd : IMemoryInstruction
     public OpGroupNonUniformFAdd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformFAdd(OpData data)
@@ -46303,6 +47350,9 @@ public struct OpGroupNonUniformFAdd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformFAdd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformFAdd(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformIMul : IMemoryInstruction
@@ -46340,8 +47390,8 @@ public struct OpGroupNonUniformIMul : IMemoryInstruction
     public OpGroupNonUniformIMul(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformIMul(OpData data)
@@ -46472,6 +47522,9 @@ public struct OpGroupNonUniformIMul : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformIMul(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformIMul(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformFMul : IMemoryInstruction
@@ -46509,8 +47562,8 @@ public struct OpGroupNonUniformFMul : IMemoryInstruction
     public OpGroupNonUniformFMul(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformFMul(OpData data)
@@ -46641,6 +47694,9 @@ public struct OpGroupNonUniformFMul : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformFMul(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformFMul(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformSMin : IMemoryInstruction
@@ -46678,8 +47734,8 @@ public struct OpGroupNonUniformSMin : IMemoryInstruction
     public OpGroupNonUniformSMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformSMin(OpData data)
@@ -46810,6 +47866,9 @@ public struct OpGroupNonUniformSMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformSMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformSMin(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformUMin : IMemoryInstruction
@@ -46847,8 +47906,8 @@ public struct OpGroupNonUniformUMin : IMemoryInstruction
     public OpGroupNonUniformUMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformUMin(OpData data)
@@ -46979,6 +48038,9 @@ public struct OpGroupNonUniformUMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformUMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformUMin(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformFMin : IMemoryInstruction
@@ -47016,8 +48078,8 @@ public struct OpGroupNonUniformFMin : IMemoryInstruction
     public OpGroupNonUniformFMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformFMin(OpData data)
@@ -47148,6 +48210,9 @@ public struct OpGroupNonUniformFMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformFMin(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformFMin(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformSMax : IMemoryInstruction
@@ -47185,8 +48250,8 @@ public struct OpGroupNonUniformSMax : IMemoryInstruction
     public OpGroupNonUniformSMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformSMax(OpData data)
@@ -47317,6 +48382,9 @@ public struct OpGroupNonUniformSMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformSMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformSMax(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformUMax : IMemoryInstruction
@@ -47354,8 +48422,8 @@ public struct OpGroupNonUniformUMax : IMemoryInstruction
     public OpGroupNonUniformUMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformUMax(OpData data)
@@ -47486,6 +48554,9 @@ public struct OpGroupNonUniformUMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformUMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformUMax(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformFMax : IMemoryInstruction
@@ -47523,8 +48594,8 @@ public struct OpGroupNonUniformFMax : IMemoryInstruction
     public OpGroupNonUniformFMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformFMax(OpData data)
@@ -47655,6 +48726,9 @@ public struct OpGroupNonUniformFMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformFMax(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformFMax(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
@@ -47692,8 +48766,8 @@ public struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
     public OpGroupNonUniformBitwiseAnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBitwiseAnd(OpData data)
@@ -47824,6 +48898,9 @@ public struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBitwiseAnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBitwiseAnd(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
@@ -47861,8 +48938,8 @@ public struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
     public OpGroupNonUniformBitwiseOr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBitwiseOr(OpData data)
@@ -47993,6 +49070,9 @@ public struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBitwiseOr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBitwiseOr(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
@@ -48030,8 +49110,8 @@ public struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
     public OpGroupNonUniformBitwiseXor(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformBitwiseXor(OpData data)
@@ -48162,6 +49242,9 @@ public struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformBitwiseXor(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformBitwiseXor(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
@@ -48199,8 +49282,8 @@ public struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
     public OpGroupNonUniformLogicalAnd(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformLogicalAnd(OpData data)
@@ -48331,6 +49414,9 @@ public struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformLogicalAnd(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformLogicalAnd(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformLogicalOr : IMemoryInstruction
@@ -48368,8 +49454,8 @@ public struct OpGroupNonUniformLogicalOr : IMemoryInstruction
     public OpGroupNonUniformLogicalOr(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformLogicalOr(OpData data)
@@ -48500,6 +49586,9 @@ public struct OpGroupNonUniformLogicalOr : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformLogicalOr(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformLogicalOr(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformLogicalXor : IMemoryInstruction
@@ -48537,8 +49626,8 @@ public struct OpGroupNonUniformLogicalXor : IMemoryInstruction
     public OpGroupNonUniformLogicalXor(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformLogicalXor(OpData data)
@@ -48669,6 +49758,9 @@ public struct OpGroupNonUniformLogicalXor : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformLogicalXor(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformLogicalXor(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformQuadBroadcast : IMemoryInstruction
@@ -48706,8 +49798,8 @@ public struct OpGroupNonUniformQuadBroadcast : IMemoryInstruction
     public OpGroupNonUniformQuadBroadcast(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformQuadBroadcast(OpData data)
@@ -48822,6 +49914,9 @@ public struct OpGroupNonUniformQuadBroadcast : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformQuadBroadcast(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformQuadBroadcast(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformQuadSwap : IMemoryInstruction
@@ -48859,8 +49954,8 @@ public struct OpGroupNonUniformQuadSwap : IMemoryInstruction
     public OpGroupNonUniformQuadSwap(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformQuadSwap(OpData data)
@@ -48975,6 +50070,9 @@ public struct OpGroupNonUniformQuadSwap : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformQuadSwap(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformQuadSwap(OpData data) => new(data);
 }
 
 public struct OpCopyLogical : IMemoryInstruction
@@ -49012,8 +50110,8 @@ public struct OpCopyLogical : IMemoryInstruction
     public OpCopyLogical(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCopyLogical(OpData data)
@@ -49098,6 +50196,9 @@ public struct OpCopyLogical : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCopyLogical(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCopyLogical(OpData data) => new(data);
 }
 
 public struct OpPtrEqual : IMemoryInstruction
@@ -49135,8 +50236,8 @@ public struct OpPtrEqual : IMemoryInstruction
     public OpPtrEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPtrEqual(OpData data)
@@ -49236,6 +50337,9 @@ public struct OpPtrEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPtrEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPtrEqual(OpData data) => new(data);
 }
 
 public struct OpPtrNotEqual : IMemoryInstruction
@@ -49273,8 +50377,8 @@ public struct OpPtrNotEqual : IMemoryInstruction
     public OpPtrNotEqual(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPtrNotEqual(OpData data)
@@ -49374,6 +50478,9 @@ public struct OpPtrNotEqual : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPtrNotEqual(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPtrNotEqual(OpData data) => new(data);
 }
 
 public struct OpPtrDiff : IMemoryInstruction
@@ -49411,8 +50518,8 @@ public struct OpPtrDiff : IMemoryInstruction
     public OpPtrDiff(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPtrDiff(OpData data)
@@ -49512,6 +50619,9 @@ public struct OpPtrDiff : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPtrDiff(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPtrDiff(OpData data) => new(data);
 }
 
 public struct OpColorAttachmentReadEXT : IMemoryInstruction
@@ -49549,8 +50659,8 @@ public struct OpColorAttachmentReadEXT : IMemoryInstruction
     public OpColorAttachmentReadEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpColorAttachmentReadEXT(OpData data)
@@ -49651,6 +50761,9 @@ public struct OpColorAttachmentReadEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpColorAttachmentReadEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpColorAttachmentReadEXT(OpData data) => new(data);
 }
 
 public struct OpDepthAttachmentReadEXT : IMemoryInstruction
@@ -49688,8 +50801,8 @@ public struct OpDepthAttachmentReadEXT : IMemoryInstruction
     public OpDepthAttachmentReadEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDepthAttachmentReadEXT(OpData data)
@@ -49775,6 +50888,9 @@ public struct OpDepthAttachmentReadEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDepthAttachmentReadEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDepthAttachmentReadEXT(OpData data) => new(data);
 }
 
 public struct OpStencilAttachmentReadEXT : IMemoryInstruction
@@ -49812,8 +50928,8 @@ public struct OpStencilAttachmentReadEXT : IMemoryInstruction
     public OpStencilAttachmentReadEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpStencilAttachmentReadEXT(OpData data)
@@ -49899,6 +51015,9 @@ public struct OpStencilAttachmentReadEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpStencilAttachmentReadEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpStencilAttachmentReadEXT(OpData data) => new(data);
 }
 
 public struct OpTerminateInvocation : IMemoryInstruction
@@ -49936,8 +51055,8 @@ public struct OpTerminateInvocation : IMemoryInstruction
     public OpTerminateInvocation(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTerminateInvocation(OpData data)
@@ -49971,6 +51090,9 @@ public struct OpTerminateInvocation : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTerminateInvocation(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTerminateInvocation(OpData data) => new(data);
 }
 
 public struct OpTypeUntypedPointerKHR : IMemoryInstruction
@@ -50008,8 +51130,8 @@ public struct OpTypeUntypedPointerKHR : IMemoryInstruction
     public OpTypeUntypedPointerKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeUntypedPointerKHR(OpData data)
@@ -50079,6 +51201,9 @@ public struct OpTypeUntypedPointerKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeUntypedPointerKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeUntypedPointerKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedVariableKHR : IMemoryInstruction
@@ -50116,8 +51241,8 @@ public struct OpUntypedVariableKHR : IMemoryInstruction
     public OpUntypedVariableKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedVariableKHR(OpData data)
@@ -50234,6 +51359,9 @@ public struct OpUntypedVariableKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedVariableKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedVariableKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedAccessChainKHR : IMemoryInstruction
@@ -50271,8 +51399,8 @@ public struct OpUntypedAccessChainKHR : IMemoryInstruction
     public OpUntypedAccessChainKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedAccessChainKHR(OpData data)
@@ -50387,6 +51515,9 @@ public struct OpUntypedAccessChainKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedAccessChainKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedAccessChainKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
@@ -50424,8 +51555,8 @@ public struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
     public OpUntypedInBoundsAccessChainKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedInBoundsAccessChainKHR(OpData data)
@@ -50540,6 +51671,9 @@ public struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedInBoundsAccessChainKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedInBoundsAccessChainKHR(OpData data) => new(data);
 }
 
 public struct OpSubgroupBallotKHR : IMemoryInstruction
@@ -50577,8 +51711,8 @@ public struct OpSubgroupBallotKHR : IMemoryInstruction
     public OpSubgroupBallotKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupBallotKHR(OpData data)
@@ -50663,6 +51797,9 @@ public struct OpSubgroupBallotKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupBallotKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupBallotKHR(OpData data) => new(data);
 }
 
 public struct OpSubgroupFirstInvocationKHR : IMemoryInstruction
@@ -50700,8 +51837,8 @@ public struct OpSubgroupFirstInvocationKHR : IMemoryInstruction
     public OpSubgroupFirstInvocationKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupFirstInvocationKHR(OpData data)
@@ -50786,6 +51923,9 @@ public struct OpSubgroupFirstInvocationKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupFirstInvocationKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupFirstInvocationKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedPtrAccessChainKHR : IMemoryInstruction
@@ -50823,8 +51963,8 @@ public struct OpUntypedPtrAccessChainKHR : IMemoryInstruction
     public OpUntypedPtrAccessChainKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedPtrAccessChainKHR(OpData data)
@@ -50954,6 +52094,9 @@ public struct OpUntypedPtrAccessChainKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedPtrAccessChainKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedPtrAccessChainKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstruction
@@ -50991,8 +52134,8 @@ public struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstruction
     public OpUntypedInBoundsPtrAccessChainKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedInBoundsPtrAccessChainKHR(OpData data)
@@ -51122,6 +52265,9 @@ public struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedInBoundsPtrAccessChainKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedInBoundsPtrAccessChainKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedArrayLengthKHR : IMemoryInstruction
@@ -51159,8 +52305,8 @@ public struct OpUntypedArrayLengthKHR : IMemoryInstruction
     public OpUntypedArrayLengthKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedArrayLengthKHR(OpData data)
@@ -51275,6 +52421,9 @@ public struct OpUntypedArrayLengthKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedArrayLengthKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedArrayLengthKHR(OpData data) => new(data);
 }
 
 public struct OpUntypedPrefetchKHR : IMemoryInstruction
@@ -51312,8 +52461,8 @@ public struct OpUntypedPrefetchKHR : IMemoryInstruction
     public OpUntypedPrefetchKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUntypedPrefetchKHR(OpData data)
@@ -51430,6 +52579,9 @@ public struct OpUntypedPrefetchKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUntypedPrefetchKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUntypedPrefetchKHR(OpData data) => new(data);
 }
 
 public struct OpSubgroupAllKHR : IMemoryInstruction
@@ -51467,8 +52619,8 @@ public struct OpSubgroupAllKHR : IMemoryInstruction
     public OpSubgroupAllKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAllKHR(OpData data)
@@ -51553,6 +52705,9 @@ public struct OpSubgroupAllKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAllKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAllKHR(OpData data) => new(data);
 }
 
 public struct OpSubgroupAnyKHR : IMemoryInstruction
@@ -51590,8 +52745,8 @@ public struct OpSubgroupAnyKHR : IMemoryInstruction
     public OpSubgroupAnyKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAnyKHR(OpData data)
@@ -51676,6 +52831,9 @@ public struct OpSubgroupAnyKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAnyKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAnyKHR(OpData data) => new(data);
 }
 
 public struct OpSubgroupAllEqualKHR : IMemoryInstruction
@@ -51713,8 +52871,8 @@ public struct OpSubgroupAllEqualKHR : IMemoryInstruction
     public OpSubgroupAllEqualKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAllEqualKHR(OpData data)
@@ -51799,6 +52957,9 @@ public struct OpSubgroupAllEqualKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAllEqualKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAllEqualKHR(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformRotateKHR : IMemoryInstruction
@@ -51836,8 +52997,8 @@ public struct OpGroupNonUniformRotateKHR : IMemoryInstruction
     public OpGroupNonUniformRotateKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformRotateKHR(OpData data)
@@ -51968,6 +53129,9 @@ public struct OpGroupNonUniformRotateKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformRotateKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformRotateKHR(OpData data) => new(data);
 }
 
 public struct OpSubgroupReadInvocationKHR : IMemoryInstruction
@@ -52005,8 +53169,8 @@ public struct OpSubgroupReadInvocationKHR : IMemoryInstruction
     public OpSubgroupReadInvocationKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupReadInvocationKHR(OpData data)
@@ -52106,6 +53270,9 @@ public struct OpSubgroupReadInvocationKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupReadInvocationKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupReadInvocationKHR(OpData data) => new(data);
 }
 
 public struct OpExtInstWithForwardRefsKHR : IMemoryInstruction
@@ -52143,8 +53310,8 @@ public struct OpExtInstWithForwardRefsKHR : IMemoryInstruction
     public OpExtInstWithForwardRefsKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExtInstWithForwardRefsKHR(OpData data)
@@ -52259,6 +53426,9 @@ public struct OpExtInstWithForwardRefsKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExtInstWithForwardRefsKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExtInstWithForwardRefsKHR(OpData data) => new(data);
 }
 
 public struct OpTraceRayKHR : IMemoryInstruction
@@ -52296,8 +53466,8 @@ public struct OpTraceRayKHR : IMemoryInstruction
     public OpTraceRayKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTraceRayKHR(OpData data)
@@ -52501,6 +53671,9 @@ public struct OpTraceRayKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTraceRayKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTraceRayKHR(OpData data) => new(data);
 }
 
 public struct OpExecuteCallableKHR : IMemoryInstruction
@@ -52538,8 +53711,8 @@ public struct OpExecuteCallableKHR : IMemoryInstruction
     public OpExecuteCallableKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExecuteCallableKHR(OpData data)
@@ -52608,6 +53781,9 @@ public struct OpExecuteCallableKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExecuteCallableKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExecuteCallableKHR(OpData data) => new(data);
 }
 
 public struct OpConvertUToAccelerationStructureKHR : IMemoryInstruction
@@ -52645,8 +53821,8 @@ public struct OpConvertUToAccelerationStructureKHR : IMemoryInstruction
     public OpConvertUToAccelerationStructureKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertUToAccelerationStructureKHR(OpData data)
@@ -52731,6 +53907,9 @@ public struct OpConvertUToAccelerationStructureKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertUToAccelerationStructureKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertUToAccelerationStructureKHR(OpData data) => new(data);
 }
 
 public struct OpIgnoreIntersectionKHR : IMemoryInstruction
@@ -52768,8 +53947,8 @@ public struct OpIgnoreIntersectionKHR : IMemoryInstruction
     public OpIgnoreIntersectionKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIgnoreIntersectionKHR(OpData data)
@@ -52803,6 +53982,9 @@ public struct OpIgnoreIntersectionKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIgnoreIntersectionKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIgnoreIntersectionKHR(OpData data) => new(data);
 }
 
 public struct OpTerminateRayKHR : IMemoryInstruction
@@ -52840,8 +54022,8 @@ public struct OpTerminateRayKHR : IMemoryInstruction
     public OpTerminateRayKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTerminateRayKHR(OpData data)
@@ -52875,6 +54057,9 @@ public struct OpTerminateRayKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTerminateRayKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTerminateRayKHR(OpData data) => new(data);
 }
 
 public struct OpSDot : IMemoryInstruction
@@ -52912,8 +54097,8 @@ public struct OpSDot : IMemoryInstruction
     public OpSDot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDot(OpData data)
@@ -53029,6 +54214,9 @@ public struct OpSDot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDot(OpData data) => new(data);
 }
 
 public struct OpUDot : IMemoryInstruction
@@ -53066,8 +54254,8 @@ public struct OpUDot : IMemoryInstruction
     public OpUDot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUDot(OpData data)
@@ -53183,6 +54371,9 @@ public struct OpUDot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUDot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUDot(OpData data) => new(data);
 }
 
 public struct OpSUDot : IMemoryInstruction
@@ -53220,8 +54411,8 @@ public struct OpSUDot : IMemoryInstruction
     public OpSUDot(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSUDot(OpData data)
@@ -53337,6 +54528,9 @@ public struct OpSUDot : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSUDot(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSUDot(OpData data) => new(data);
 }
 
 public struct OpSDotAccSat : IMemoryInstruction
@@ -53374,8 +54568,8 @@ public struct OpSDotAccSat : IMemoryInstruction
     public OpSDotAccSat(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSDotAccSat(OpData data)
@@ -53506,6 +54700,9 @@ public struct OpSDotAccSat : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSDotAccSat(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSDotAccSat(OpData data) => new(data);
 }
 
 public struct OpUDotAccSat : IMemoryInstruction
@@ -53543,8 +54740,8 @@ public struct OpUDotAccSat : IMemoryInstruction
     public OpUDotAccSat(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUDotAccSat(OpData data)
@@ -53675,6 +54872,9 @@ public struct OpUDotAccSat : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUDotAccSat(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUDotAccSat(OpData data) => new(data);
 }
 
 public struct OpSUDotAccSat : IMemoryInstruction
@@ -53712,8 +54912,8 @@ public struct OpSUDotAccSat : IMemoryInstruction
     public OpSUDotAccSat(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSUDotAccSat(OpData data)
@@ -53844,6 +55044,9 @@ public struct OpSUDotAccSat : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSUDotAccSat(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSUDotAccSat(OpData data) => new(data);
 }
 
 public struct OpTypeCooperativeMatrixKHR : IMemoryInstruction
@@ -53881,8 +55084,8 @@ public struct OpTypeCooperativeMatrixKHR : IMemoryInstruction
     public OpTypeCooperativeMatrixKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeCooperativeMatrixKHR(OpData data)
@@ -54012,6 +55215,9 @@ public struct OpTypeCooperativeMatrixKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeCooperativeMatrixKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeCooperativeMatrixKHR(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
@@ -54049,8 +55255,8 @@ public struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
     public OpCooperativeMatrixLoadKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixLoadKHR(OpData data)
@@ -54182,6 +55388,9 @@ public struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixLoadKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixLoadKHR(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
@@ -54219,8 +55428,8 @@ public struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
     public OpCooperativeMatrixStoreKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixStoreKHR(OpData data)
@@ -54336,6 +55545,9 @@ public struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixStoreKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixStoreKHR(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
@@ -54373,8 +55585,8 @@ public struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
     public OpCooperativeMatrixMulAddKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixMulAddKHR(OpData data)
@@ -54505,6 +55717,9 @@ public struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixMulAddKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixMulAddKHR(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixLengthKHR : IMemoryInstruction
@@ -54542,8 +55757,8 @@ public struct OpCooperativeMatrixLengthKHR : IMemoryInstruction
     public OpCooperativeMatrixLengthKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixLengthKHR(OpData data)
@@ -54628,6 +55843,9 @@ public struct OpCooperativeMatrixLengthKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixLengthKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixLengthKHR(OpData data) => new(data);
 }
 
 public struct OpConstantCompositeReplicateEXT : IMemoryInstruction
@@ -54665,8 +55883,8 @@ public struct OpConstantCompositeReplicateEXT : IMemoryInstruction
     public OpConstantCompositeReplicateEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantCompositeReplicateEXT(OpData data)
@@ -54751,6 +55969,9 @@ public struct OpConstantCompositeReplicateEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantCompositeReplicateEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantCompositeReplicateEXT(OpData data) => new(data);
 }
 
 public struct OpSpecConstantCompositeReplicateEXT : IMemoryInstruction
@@ -54788,8 +56009,8 @@ public struct OpSpecConstantCompositeReplicateEXT : IMemoryInstruction
     public OpSpecConstantCompositeReplicateEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantCompositeReplicateEXT(OpData data)
@@ -54874,6 +56095,9 @@ public struct OpSpecConstantCompositeReplicateEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantCompositeReplicateEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantCompositeReplicateEXT(OpData data) => new(data);
 }
 
 public struct OpCompositeConstructReplicateEXT : IMemoryInstruction
@@ -54911,8 +56135,8 @@ public struct OpCompositeConstructReplicateEXT : IMemoryInstruction
     public OpCompositeConstructReplicateEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCompositeConstructReplicateEXT(OpData data)
@@ -54997,6 +56221,9 @@ public struct OpCompositeConstructReplicateEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCompositeConstructReplicateEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCompositeConstructReplicateEXT(OpData data) => new(data);
 }
 
 public struct OpTypeRayQueryKHR : IMemoryInstruction
@@ -55034,8 +56261,8 @@ public struct OpTypeRayQueryKHR : IMemoryInstruction
     public OpTypeRayQueryKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeRayQueryKHR(OpData data)
@@ -55090,6 +56317,9 @@ public struct OpTypeRayQueryKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeRayQueryKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeRayQueryKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryInitializeKHR : IMemoryInstruction
@@ -55127,8 +56357,8 @@ public struct OpRayQueryInitializeKHR : IMemoryInstruction
     public OpRayQueryInitializeKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryInitializeKHR(OpData data)
@@ -55287,6 +56517,9 @@ public struct OpRayQueryInitializeKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryInitializeKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryInitializeKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryTerminateKHR : IMemoryInstruction
@@ -55324,8 +56557,8 @@ public struct OpRayQueryTerminateKHR : IMemoryInstruction
     public OpRayQueryTerminateKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryTerminateKHR(OpData data)
@@ -55379,6 +56612,9 @@ public struct OpRayQueryTerminateKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryTerminateKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryTerminateKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGenerateIntersectionKHR : IMemoryInstruction
@@ -55416,8 +56652,8 @@ public struct OpRayQueryGenerateIntersectionKHR : IMemoryInstruction
     public OpRayQueryGenerateIntersectionKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGenerateIntersectionKHR(OpData data)
@@ -55486,6 +56722,9 @@ public struct OpRayQueryGenerateIntersectionKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGenerateIntersectionKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGenerateIntersectionKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryConfirmIntersectionKHR : IMemoryInstruction
@@ -55523,8 +56762,8 @@ public struct OpRayQueryConfirmIntersectionKHR : IMemoryInstruction
     public OpRayQueryConfirmIntersectionKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryConfirmIntersectionKHR(OpData data)
@@ -55578,6 +56817,9 @@ public struct OpRayQueryConfirmIntersectionKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryConfirmIntersectionKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryConfirmIntersectionKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryProceedKHR : IMemoryInstruction
@@ -55615,8 +56857,8 @@ public struct OpRayQueryProceedKHR : IMemoryInstruction
     public OpRayQueryProceedKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryProceedKHR(OpData data)
@@ -55701,6 +56943,9 @@ public struct OpRayQueryProceedKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryProceedKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryProceedKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionTypeKHR : IMemoryInstruction
@@ -55738,8 +56983,8 @@ public struct OpRayQueryGetIntersectionTypeKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionTypeKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionTypeKHR(OpData data)
@@ -55839,6 +57084,9 @@ public struct OpRayQueryGetIntersectionTypeKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionTypeKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionTypeKHR(OpData data) => new(data);
 }
 
 public struct OpImageSampleWeightedQCOM : IMemoryInstruction
@@ -55876,8 +57124,8 @@ public struct OpImageSampleWeightedQCOM : IMemoryInstruction
     public OpImageSampleWeightedQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleWeightedQCOM(OpData data)
@@ -55992,6 +57240,9 @@ public struct OpImageSampleWeightedQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleWeightedQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleWeightedQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBoxFilterQCOM : IMemoryInstruction
@@ -56029,8 +57280,8 @@ public struct OpImageBoxFilterQCOM : IMemoryInstruction
     public OpImageBoxFilterQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBoxFilterQCOM(OpData data)
@@ -56145,6 +57396,9 @@ public struct OpImageBoxFilterQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBoxFilterQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBoxFilterQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBlockMatchSSDQCOM : IMemoryInstruction
@@ -56182,8 +57436,8 @@ public struct OpImageBlockMatchSSDQCOM : IMemoryInstruction
     public OpImageBlockMatchSSDQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBlockMatchSSDQCOM(OpData data)
@@ -56328,6 +57582,9 @@ public struct OpImageBlockMatchSSDQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBlockMatchSSDQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBlockMatchSSDQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBlockMatchSADQCOM : IMemoryInstruction
@@ -56365,8 +57622,8 @@ public struct OpImageBlockMatchSADQCOM : IMemoryInstruction
     public OpImageBlockMatchSADQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBlockMatchSADQCOM(OpData data)
@@ -56511,6 +57768,9 @@ public struct OpImageBlockMatchSADQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBlockMatchSADQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBlockMatchSADQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBlockMatchWindowSSDQCOM : IMemoryInstruction
@@ -56548,8 +57808,8 @@ public struct OpImageBlockMatchWindowSSDQCOM : IMemoryInstruction
     public OpImageBlockMatchWindowSSDQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBlockMatchWindowSSDQCOM(OpData data)
@@ -56694,6 +57954,9 @@ public struct OpImageBlockMatchWindowSSDQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBlockMatchWindowSSDQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBlockMatchWindowSSDQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBlockMatchWindowSADQCOM : IMemoryInstruction
@@ -56731,8 +57994,8 @@ public struct OpImageBlockMatchWindowSADQCOM : IMemoryInstruction
     public OpImageBlockMatchWindowSADQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBlockMatchWindowSADQCOM(OpData data)
@@ -56877,6 +58140,9 @@ public struct OpImageBlockMatchWindowSADQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBlockMatchWindowSADQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBlockMatchWindowSADQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBlockMatchGatherSSDQCOM : IMemoryInstruction
@@ -56914,8 +58180,8 @@ public struct OpImageBlockMatchGatherSSDQCOM : IMemoryInstruction
     public OpImageBlockMatchGatherSSDQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBlockMatchGatherSSDQCOM(OpData data)
@@ -57060,6 +58326,9 @@ public struct OpImageBlockMatchGatherSSDQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBlockMatchGatherSSDQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBlockMatchGatherSSDQCOM(OpData data) => new(data);
 }
 
 public struct OpImageBlockMatchGatherSADQCOM : IMemoryInstruction
@@ -57097,8 +58366,8 @@ public struct OpImageBlockMatchGatherSADQCOM : IMemoryInstruction
     public OpImageBlockMatchGatherSADQCOM(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageBlockMatchGatherSADQCOM(OpData data)
@@ -57243,6 +58512,9 @@ public struct OpImageBlockMatchGatherSADQCOM : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageBlockMatchGatherSADQCOM(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageBlockMatchGatherSADQCOM(OpData data) => new(data);
 }
 
 public struct OpGroupIAddNonUniformAMD : IMemoryInstruction
@@ -57280,8 +58552,8 @@ public struct OpGroupIAddNonUniformAMD : IMemoryInstruction
     public OpGroupIAddNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupIAddNonUniformAMD(OpData data)
@@ -57396,6 +58668,9 @@ public struct OpGroupIAddNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupIAddNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupIAddNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupFAddNonUniformAMD : IMemoryInstruction
@@ -57433,8 +58708,8 @@ public struct OpGroupFAddNonUniformAMD : IMemoryInstruction
     public OpGroupFAddNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFAddNonUniformAMD(OpData data)
@@ -57549,6 +58824,9 @@ public struct OpGroupFAddNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFAddNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFAddNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupFMinNonUniformAMD : IMemoryInstruction
@@ -57586,8 +58864,8 @@ public struct OpGroupFMinNonUniformAMD : IMemoryInstruction
     public OpGroupFMinNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFMinNonUniformAMD(OpData data)
@@ -57702,6 +58980,9 @@ public struct OpGroupFMinNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFMinNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFMinNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupUMinNonUniformAMD : IMemoryInstruction
@@ -57739,8 +59020,8 @@ public struct OpGroupUMinNonUniformAMD : IMemoryInstruction
     public OpGroupUMinNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupUMinNonUniformAMD(OpData data)
@@ -57855,6 +59136,9 @@ public struct OpGroupUMinNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupUMinNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupUMinNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupSMinNonUniformAMD : IMemoryInstruction
@@ -57892,8 +59176,8 @@ public struct OpGroupSMinNonUniformAMD : IMemoryInstruction
     public OpGroupSMinNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupSMinNonUniformAMD(OpData data)
@@ -58008,6 +59292,9 @@ public struct OpGroupSMinNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupSMinNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupSMinNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupFMaxNonUniformAMD : IMemoryInstruction
@@ -58045,8 +59332,8 @@ public struct OpGroupFMaxNonUniformAMD : IMemoryInstruction
     public OpGroupFMaxNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFMaxNonUniformAMD(OpData data)
@@ -58161,6 +59448,9 @@ public struct OpGroupFMaxNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFMaxNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFMaxNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupUMaxNonUniformAMD : IMemoryInstruction
@@ -58198,8 +59488,8 @@ public struct OpGroupUMaxNonUniformAMD : IMemoryInstruction
     public OpGroupUMaxNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupUMaxNonUniformAMD(OpData data)
@@ -58314,6 +59604,9 @@ public struct OpGroupUMaxNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupUMaxNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupUMaxNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpGroupSMaxNonUniformAMD : IMemoryInstruction
@@ -58351,8 +59644,8 @@ public struct OpGroupSMaxNonUniformAMD : IMemoryInstruction
     public OpGroupSMaxNonUniformAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupSMaxNonUniformAMD(OpData data)
@@ -58467,6 +59760,9 @@ public struct OpGroupSMaxNonUniformAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupSMaxNonUniformAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupSMaxNonUniformAMD(OpData data) => new(data);
 }
 
 public struct OpFragmentMaskFetchAMD : IMemoryInstruction
@@ -58504,8 +59800,8 @@ public struct OpFragmentMaskFetchAMD : IMemoryInstruction
     public OpFragmentMaskFetchAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFragmentMaskFetchAMD(OpData data)
@@ -58605,6 +59901,9 @@ public struct OpFragmentMaskFetchAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFragmentMaskFetchAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFragmentMaskFetchAMD(OpData data) => new(data);
 }
 
 public struct OpFragmentFetchAMD : IMemoryInstruction
@@ -58642,8 +59941,8 @@ public struct OpFragmentFetchAMD : IMemoryInstruction
     public OpFragmentFetchAMD(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFragmentFetchAMD(OpData data)
@@ -58758,6 +60057,9 @@ public struct OpFragmentFetchAMD : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFragmentFetchAMD(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFragmentFetchAMD(OpData data) => new(data);
 }
 
 public struct OpReadClockKHR : IMemoryInstruction
@@ -58795,8 +60097,8 @@ public struct OpReadClockKHR : IMemoryInstruction
     public OpReadClockKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReadClockKHR(OpData data)
@@ -58881,6 +60183,9 @@ public struct OpReadClockKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReadClockKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReadClockKHR(OpData data) => new(data);
 }
 
 public struct OpAllocateNodePayloadsAMDX : IMemoryInstruction
@@ -58918,8 +60223,8 @@ public struct OpAllocateNodePayloadsAMDX : IMemoryInstruction
     public OpAllocateNodePayloadsAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAllocateNodePayloadsAMDX(OpData data)
@@ -59034,6 +60339,9 @@ public struct OpAllocateNodePayloadsAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAllocateNodePayloadsAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAllocateNodePayloadsAMDX(OpData data) => new(data);
 }
 
 public struct OpEnqueueNodePayloadsAMDX : IMemoryInstruction
@@ -59071,8 +60379,8 @@ public struct OpEnqueueNodePayloadsAMDX : IMemoryInstruction
     public OpEnqueueNodePayloadsAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEnqueueNodePayloadsAMDX(OpData data)
@@ -59126,6 +60434,9 @@ public struct OpEnqueueNodePayloadsAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEnqueueNodePayloadsAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEnqueueNodePayloadsAMDX(OpData data) => new(data);
 }
 
 public struct OpTypeNodePayloadArrayAMDX : IMemoryInstruction
@@ -59163,8 +60474,8 @@ public struct OpTypeNodePayloadArrayAMDX : IMemoryInstruction
     public OpTypeNodePayloadArrayAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeNodePayloadArrayAMDX(OpData data)
@@ -59234,6 +60545,9 @@ public struct OpTypeNodePayloadArrayAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeNodePayloadArrayAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeNodePayloadArrayAMDX(OpData data) => new(data);
 }
 
 public struct OpFinishWritingNodePayloadAMDX : IMemoryInstruction
@@ -59271,8 +60585,8 @@ public struct OpFinishWritingNodePayloadAMDX : IMemoryInstruction
     public OpFinishWritingNodePayloadAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFinishWritingNodePayloadAMDX(OpData data)
@@ -59357,6 +60671,9 @@ public struct OpFinishWritingNodePayloadAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFinishWritingNodePayloadAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFinishWritingNodePayloadAMDX(OpData data) => new(data);
 }
 
 public struct OpNodePayloadArrayLengthAMDX : IMemoryInstruction
@@ -59394,8 +60711,8 @@ public struct OpNodePayloadArrayLengthAMDX : IMemoryInstruction
     public OpNodePayloadArrayLengthAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpNodePayloadArrayLengthAMDX(OpData data)
@@ -59480,6 +60797,9 @@ public struct OpNodePayloadArrayLengthAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpNodePayloadArrayLengthAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpNodePayloadArrayLengthAMDX(OpData data) => new(data);
 }
 
 public struct OpIsNodePayloadValidAMDX : IMemoryInstruction
@@ -59517,8 +60837,8 @@ public struct OpIsNodePayloadValidAMDX : IMemoryInstruction
     public OpIsNodePayloadValidAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsNodePayloadValidAMDX(OpData data)
@@ -59618,6 +60938,9 @@ public struct OpIsNodePayloadValidAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsNodePayloadValidAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsNodePayloadValidAMDX(OpData data) => new(data);
 }
 
 public struct OpConstantStringAMDX : IMemoryInstruction
@@ -59655,8 +60978,8 @@ public struct OpConstantStringAMDX : IMemoryInstruction
     public OpConstantStringAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantStringAMDX(OpData data)
@@ -59726,6 +61049,9 @@ public struct OpConstantStringAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantStringAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantStringAMDX(OpData data) => new(data);
 }
 
 public struct OpSpecConstantStringAMDX : IMemoryInstruction
@@ -59763,8 +61089,8 @@ public struct OpSpecConstantStringAMDX : IMemoryInstruction
     public OpSpecConstantStringAMDX(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantStringAMDX(OpData data)
@@ -59834,6 +61160,9 @@ public struct OpSpecConstantStringAMDX : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantStringAMDX(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantStringAMDX(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformQuadAllKHR : IMemoryInstruction
@@ -59871,8 +61200,8 @@ public struct OpGroupNonUniformQuadAllKHR : IMemoryInstruction
     public OpGroupNonUniformQuadAllKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformQuadAllKHR(OpData data)
@@ -59957,6 +61286,9 @@ public struct OpGroupNonUniformQuadAllKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformQuadAllKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformQuadAllKHR(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformQuadAnyKHR : IMemoryInstruction
@@ -59994,8 +61326,8 @@ public struct OpGroupNonUniformQuadAnyKHR : IMemoryInstruction
     public OpGroupNonUniformQuadAnyKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformQuadAnyKHR(OpData data)
@@ -60080,6 +61412,9 @@ public struct OpGroupNonUniformQuadAnyKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformQuadAnyKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformQuadAnyKHR(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordHitMotionNV : IMemoryInstruction
@@ -60117,8 +61452,8 @@ public struct OpHitObjectRecordHitMotionNV : IMemoryInstruction
     public OpHitObjectRecordHitMotionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordHitMotionNV(OpData data)
@@ -60367,6 +61702,9 @@ public struct OpHitObjectRecordHitMotionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordHitMotionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordHitMotionNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordHitWithIndexMotionNV : IMemoryInstruction
@@ -60404,8 +61742,8 @@ public struct OpHitObjectRecordHitWithIndexMotionNV : IMemoryInstruction
     public OpHitObjectRecordHitWithIndexMotionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordHitWithIndexMotionNV(OpData data)
@@ -60639,6 +61977,9 @@ public struct OpHitObjectRecordHitWithIndexMotionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordHitWithIndexMotionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordHitWithIndexMotionNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordMissMotionNV : IMemoryInstruction
@@ -60676,8 +62017,8 @@ public struct OpHitObjectRecordMissMotionNV : IMemoryInstruction
     public OpHitObjectRecordMissMotionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordMissMotionNV(OpData data)
@@ -60821,6 +62162,9 @@ public struct OpHitObjectRecordMissMotionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordMissMotionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordMissMotionNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetWorldToObjectNV : IMemoryInstruction
@@ -60858,8 +62202,8 @@ public struct OpHitObjectGetWorldToObjectNV : IMemoryInstruction
     public OpHitObjectGetWorldToObjectNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetWorldToObjectNV(OpData data)
@@ -60944,6 +62288,9 @@ public struct OpHitObjectGetWorldToObjectNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetWorldToObjectNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetWorldToObjectNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetObjectToWorldNV : IMemoryInstruction
@@ -60981,8 +62328,8 @@ public struct OpHitObjectGetObjectToWorldNV : IMemoryInstruction
     public OpHitObjectGetObjectToWorldNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetObjectToWorldNV(OpData data)
@@ -61067,6 +62414,9 @@ public struct OpHitObjectGetObjectToWorldNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetObjectToWorldNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetObjectToWorldNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetObjectRayDirectionNV : IMemoryInstruction
@@ -61104,8 +62454,8 @@ public struct OpHitObjectGetObjectRayDirectionNV : IMemoryInstruction
     public OpHitObjectGetObjectRayDirectionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetObjectRayDirectionNV(OpData data)
@@ -61190,6 +62540,9 @@ public struct OpHitObjectGetObjectRayDirectionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetObjectRayDirectionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetObjectRayDirectionNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetObjectRayOriginNV : IMemoryInstruction
@@ -61227,8 +62580,8 @@ public struct OpHitObjectGetObjectRayOriginNV : IMemoryInstruction
     public OpHitObjectGetObjectRayOriginNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetObjectRayOriginNV(OpData data)
@@ -61313,6 +62666,9 @@ public struct OpHitObjectGetObjectRayOriginNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetObjectRayOriginNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetObjectRayOriginNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectTraceRayMotionNV : IMemoryInstruction
@@ -61350,8 +62706,8 @@ public struct OpHitObjectTraceRayMotionNV : IMemoryInstruction
     public OpHitObjectTraceRayMotionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectTraceRayMotionNV(OpData data)
@@ -61585,6 +62941,9 @@ public struct OpHitObjectTraceRayMotionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectTraceRayMotionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectTraceRayMotionNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetShaderRecordBufferHandleNV : IMemoryInstruction
@@ -61622,8 +62981,8 @@ public struct OpHitObjectGetShaderRecordBufferHandleNV : IMemoryInstruction
     public OpHitObjectGetShaderRecordBufferHandleNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetShaderRecordBufferHandleNV(OpData data)
@@ -61708,6 +63067,9 @@ public struct OpHitObjectGetShaderRecordBufferHandleNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetShaderRecordBufferHandleNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetShaderRecordBufferHandleNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetShaderBindingTableRecordIndexNV : IMemoryInstruction
@@ -61745,8 +63107,8 @@ public struct OpHitObjectGetShaderBindingTableRecordIndexNV : IMemoryInstruction
     public OpHitObjectGetShaderBindingTableRecordIndexNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetShaderBindingTableRecordIndexNV(OpData data)
@@ -61831,6 +63193,9 @@ public struct OpHitObjectGetShaderBindingTableRecordIndexNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetShaderBindingTableRecordIndexNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetShaderBindingTableRecordIndexNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordEmptyNV : IMemoryInstruction
@@ -61868,8 +63233,8 @@ public struct OpHitObjectRecordEmptyNV : IMemoryInstruction
     public OpHitObjectRecordEmptyNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordEmptyNV(OpData data)
@@ -61923,6 +63288,9 @@ public struct OpHitObjectRecordEmptyNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordEmptyNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordEmptyNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectTraceRayNV : IMemoryInstruction
@@ -61960,8 +63328,8 @@ public struct OpHitObjectTraceRayNV : IMemoryInstruction
     public OpHitObjectTraceRayNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectTraceRayNV(OpData data)
@@ -62180,6 +63548,9 @@ public struct OpHitObjectTraceRayNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectTraceRayNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectTraceRayNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordHitNV : IMemoryInstruction
@@ -62217,8 +63588,8 @@ public struct OpHitObjectRecordHitNV : IMemoryInstruction
     public OpHitObjectRecordHitNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordHitNV(OpData data)
@@ -62452,6 +63823,9 @@ public struct OpHitObjectRecordHitNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordHitNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordHitNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordHitWithIndexNV : IMemoryInstruction
@@ -62489,8 +63863,8 @@ public struct OpHitObjectRecordHitWithIndexNV : IMemoryInstruction
     public OpHitObjectRecordHitWithIndexNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordHitWithIndexNV(OpData data)
@@ -62709,6 +64083,9 @@ public struct OpHitObjectRecordHitWithIndexNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordHitWithIndexNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordHitWithIndexNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectRecordMissNV : IMemoryInstruction
@@ -62746,8 +64123,8 @@ public struct OpHitObjectRecordMissNV : IMemoryInstruction
     public OpHitObjectRecordMissNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectRecordMissNV(OpData data)
@@ -62876,6 +64253,9 @@ public struct OpHitObjectRecordMissNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectRecordMissNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectRecordMissNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectExecuteShaderNV : IMemoryInstruction
@@ -62913,8 +64293,8 @@ public struct OpHitObjectExecuteShaderNV : IMemoryInstruction
     public OpHitObjectExecuteShaderNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectExecuteShaderNV(OpData data)
@@ -62983,6 +64363,9 @@ public struct OpHitObjectExecuteShaderNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectExecuteShaderNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectExecuteShaderNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetCurrentTimeNV : IMemoryInstruction
@@ -63020,8 +64403,8 @@ public struct OpHitObjectGetCurrentTimeNV : IMemoryInstruction
     public OpHitObjectGetCurrentTimeNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetCurrentTimeNV(OpData data)
@@ -63106,6 +64489,9 @@ public struct OpHitObjectGetCurrentTimeNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetCurrentTimeNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetCurrentTimeNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetAttributesNV : IMemoryInstruction
@@ -63143,8 +64529,8 @@ public struct OpHitObjectGetAttributesNV : IMemoryInstruction
     public OpHitObjectGetAttributesNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetAttributesNV(OpData data)
@@ -63213,6 +64599,9 @@ public struct OpHitObjectGetAttributesNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetAttributesNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetAttributesNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetHitKindNV : IMemoryInstruction
@@ -63250,8 +64639,8 @@ public struct OpHitObjectGetHitKindNV : IMemoryInstruction
     public OpHitObjectGetHitKindNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetHitKindNV(OpData data)
@@ -63336,6 +64725,9 @@ public struct OpHitObjectGetHitKindNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetHitKindNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetHitKindNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetPrimitiveIndexNV : IMemoryInstruction
@@ -63373,8 +64765,8 @@ public struct OpHitObjectGetPrimitiveIndexNV : IMemoryInstruction
     public OpHitObjectGetPrimitiveIndexNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetPrimitiveIndexNV(OpData data)
@@ -63459,6 +64851,9 @@ public struct OpHitObjectGetPrimitiveIndexNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetPrimitiveIndexNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetPrimitiveIndexNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetGeometryIndexNV : IMemoryInstruction
@@ -63496,8 +64891,8 @@ public struct OpHitObjectGetGeometryIndexNV : IMemoryInstruction
     public OpHitObjectGetGeometryIndexNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetGeometryIndexNV(OpData data)
@@ -63582,6 +64977,9 @@ public struct OpHitObjectGetGeometryIndexNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetGeometryIndexNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetGeometryIndexNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetInstanceIdNV : IMemoryInstruction
@@ -63619,8 +65017,8 @@ public struct OpHitObjectGetInstanceIdNV : IMemoryInstruction
     public OpHitObjectGetInstanceIdNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetInstanceIdNV(OpData data)
@@ -63705,6 +65103,9 @@ public struct OpHitObjectGetInstanceIdNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetInstanceIdNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetInstanceIdNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetInstanceCustomIndexNV : IMemoryInstruction
@@ -63742,8 +65143,8 @@ public struct OpHitObjectGetInstanceCustomIndexNV : IMemoryInstruction
     public OpHitObjectGetInstanceCustomIndexNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetInstanceCustomIndexNV(OpData data)
@@ -63828,6 +65229,9 @@ public struct OpHitObjectGetInstanceCustomIndexNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetInstanceCustomIndexNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetInstanceCustomIndexNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetWorldRayDirectionNV : IMemoryInstruction
@@ -63865,8 +65269,8 @@ public struct OpHitObjectGetWorldRayDirectionNV : IMemoryInstruction
     public OpHitObjectGetWorldRayDirectionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetWorldRayDirectionNV(OpData data)
@@ -63951,6 +65355,9 @@ public struct OpHitObjectGetWorldRayDirectionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetWorldRayDirectionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetWorldRayDirectionNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetWorldRayOriginNV : IMemoryInstruction
@@ -63988,8 +65395,8 @@ public struct OpHitObjectGetWorldRayOriginNV : IMemoryInstruction
     public OpHitObjectGetWorldRayOriginNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetWorldRayOriginNV(OpData data)
@@ -64074,6 +65481,9 @@ public struct OpHitObjectGetWorldRayOriginNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetWorldRayOriginNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetWorldRayOriginNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetRayTMaxNV : IMemoryInstruction
@@ -64111,8 +65521,8 @@ public struct OpHitObjectGetRayTMaxNV : IMemoryInstruction
     public OpHitObjectGetRayTMaxNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetRayTMaxNV(OpData data)
@@ -64197,6 +65607,9 @@ public struct OpHitObjectGetRayTMaxNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetRayTMaxNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetRayTMaxNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectGetRayTMinNV : IMemoryInstruction
@@ -64234,8 +65647,8 @@ public struct OpHitObjectGetRayTMinNV : IMemoryInstruction
     public OpHitObjectGetRayTMinNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectGetRayTMinNV(OpData data)
@@ -64320,6 +65733,9 @@ public struct OpHitObjectGetRayTMinNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectGetRayTMinNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectGetRayTMinNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectIsEmptyNV : IMemoryInstruction
@@ -64357,8 +65773,8 @@ public struct OpHitObjectIsEmptyNV : IMemoryInstruction
     public OpHitObjectIsEmptyNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectIsEmptyNV(OpData data)
@@ -64443,6 +65859,9 @@ public struct OpHitObjectIsEmptyNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectIsEmptyNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectIsEmptyNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectIsHitNV : IMemoryInstruction
@@ -64480,8 +65899,8 @@ public struct OpHitObjectIsHitNV : IMemoryInstruction
     public OpHitObjectIsHitNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectIsHitNV(OpData data)
@@ -64566,6 +65985,9 @@ public struct OpHitObjectIsHitNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectIsHitNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectIsHitNV(OpData data) => new(data);
 }
 
 public struct OpHitObjectIsMissNV : IMemoryInstruction
@@ -64603,8 +66025,8 @@ public struct OpHitObjectIsMissNV : IMemoryInstruction
     public OpHitObjectIsMissNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpHitObjectIsMissNV(OpData data)
@@ -64689,6 +66111,9 @@ public struct OpHitObjectIsMissNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpHitObjectIsMissNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpHitObjectIsMissNV(OpData data) => new(data);
 }
 
 public struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
@@ -64726,8 +66151,8 @@ public struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
     public OpReorderThreadWithHitObjectNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReorderThreadWithHitObjectNV(OpData data)
@@ -64813,6 +66238,9 @@ public struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReorderThreadWithHitObjectNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReorderThreadWithHitObjectNV(OpData data) => new(data);
 }
 
 public struct OpReorderThreadWithHintNV : IMemoryInstruction
@@ -64850,8 +66278,8 @@ public struct OpReorderThreadWithHintNV : IMemoryInstruction
     public OpReorderThreadWithHintNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReorderThreadWithHintNV(OpData data)
@@ -64920,6 +66348,9 @@ public struct OpReorderThreadWithHintNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReorderThreadWithHintNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReorderThreadWithHintNV(OpData data) => new(data);
 }
 
 public struct OpTypeHitObjectNV : IMemoryInstruction
@@ -64957,8 +66388,8 @@ public struct OpTypeHitObjectNV : IMemoryInstruction
     public OpTypeHitObjectNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeHitObjectNV(OpData data)
@@ -65013,6 +66444,9 @@ public struct OpTypeHitObjectNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeHitObjectNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeHitObjectNV(OpData data) => new(data);
 }
 
 public struct OpImageSampleFootprintNV : IMemoryInstruction
@@ -65050,8 +66484,8 @@ public struct OpImageSampleFootprintNV : IMemoryInstruction
     public OpImageSampleFootprintNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpImageSampleFootprintNV(OpData data)
@@ -65197,6 +66631,9 @@ public struct OpImageSampleFootprintNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpImageSampleFootprintNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpImageSampleFootprintNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixConvertNV : IMemoryInstruction
@@ -65234,8 +66671,8 @@ public struct OpCooperativeMatrixConvertNV : IMemoryInstruction
     public OpCooperativeMatrixConvertNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixConvertNV(OpData data)
@@ -65320,6 +66757,9 @@ public struct OpCooperativeMatrixConvertNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixConvertNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixConvertNV(OpData data) => new(data);
 }
 
 public struct OpEmitMeshTasksEXT : IMemoryInstruction
@@ -65357,8 +66797,8 @@ public struct OpEmitMeshTasksEXT : IMemoryInstruction
     public OpEmitMeshTasksEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEmitMeshTasksEXT(OpData data)
@@ -65458,6 +66898,9 @@ public struct OpEmitMeshTasksEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEmitMeshTasksEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEmitMeshTasksEXT(OpData data) => new(data);
 }
 
 public struct OpSetMeshOutputsEXT : IMemoryInstruction
@@ -65495,8 +66938,8 @@ public struct OpSetMeshOutputsEXT : IMemoryInstruction
     public OpSetMeshOutputsEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSetMeshOutputsEXT(OpData data)
@@ -65565,6 +67008,9 @@ public struct OpSetMeshOutputsEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSetMeshOutputsEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSetMeshOutputsEXT(OpData data) => new(data);
 }
 
 public struct OpGroupNonUniformPartitionNV : IMemoryInstruction
@@ -65602,8 +67048,8 @@ public struct OpGroupNonUniformPartitionNV : IMemoryInstruction
     public OpGroupNonUniformPartitionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupNonUniformPartitionNV(OpData data)
@@ -65688,6 +67134,9 @@ public struct OpGroupNonUniformPartitionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupNonUniformPartitionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupNonUniformPartitionNV(OpData data) => new(data);
 }
 
 public struct OpWritePackedPrimitiveIndices4x8NV : IMemoryInstruction
@@ -65725,8 +67174,8 @@ public struct OpWritePackedPrimitiveIndices4x8NV : IMemoryInstruction
     public OpWritePackedPrimitiveIndices4x8NV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpWritePackedPrimitiveIndices4x8NV(OpData data)
@@ -65795,6 +67244,9 @@ public struct OpWritePackedPrimitiveIndices4x8NV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpWritePackedPrimitiveIndices4x8NV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpWritePackedPrimitiveIndices4x8NV(OpData data) => new(data);
 }
 
 public struct OpFetchMicroTriangleVertexPositionNV : IMemoryInstruction
@@ -65832,8 +67284,8 @@ public struct OpFetchMicroTriangleVertexPositionNV : IMemoryInstruction
     public OpFetchMicroTriangleVertexPositionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFetchMicroTriangleVertexPositionNV(OpData data)
@@ -65978,6 +67430,9 @@ public struct OpFetchMicroTriangleVertexPositionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFetchMicroTriangleVertexPositionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFetchMicroTriangleVertexPositionNV(OpData data) => new(data);
 }
 
 public struct OpFetchMicroTriangleVertexBarycentricNV : IMemoryInstruction
@@ -66015,8 +67470,8 @@ public struct OpFetchMicroTriangleVertexBarycentricNV : IMemoryInstruction
     public OpFetchMicroTriangleVertexBarycentricNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFetchMicroTriangleVertexBarycentricNV(OpData data)
@@ -66161,6 +67616,9 @@ public struct OpFetchMicroTriangleVertexBarycentricNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFetchMicroTriangleVertexBarycentricNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFetchMicroTriangleVertexBarycentricNV(OpData data) => new(data);
 }
 
 public struct OpReportIntersectionKHR : IMemoryInstruction
@@ -66198,8 +67656,8 @@ public struct OpReportIntersectionKHR : IMemoryInstruction
     public OpReportIntersectionKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReportIntersectionKHR(OpData data)
@@ -66299,6 +67757,9 @@ public struct OpReportIntersectionKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReportIntersectionKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReportIntersectionKHR(OpData data) => new(data);
 }
 
 public struct OpIgnoreIntersectionNV : IMemoryInstruction
@@ -66336,8 +67797,8 @@ public struct OpIgnoreIntersectionNV : IMemoryInstruction
     public OpIgnoreIntersectionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIgnoreIntersectionNV(OpData data)
@@ -66371,6 +67832,9 @@ public struct OpIgnoreIntersectionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIgnoreIntersectionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIgnoreIntersectionNV(OpData data) => new(data);
 }
 
 public struct OpTerminateRayNV : IMemoryInstruction
@@ -66408,8 +67872,8 @@ public struct OpTerminateRayNV : IMemoryInstruction
     public OpTerminateRayNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTerminateRayNV(OpData data)
@@ -66443,6 +67907,9 @@ public struct OpTerminateRayNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTerminateRayNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTerminateRayNV(OpData data) => new(data);
 }
 
 public struct OpTraceNV : IMemoryInstruction
@@ -66480,8 +67947,8 @@ public struct OpTraceNV : IMemoryInstruction
     public OpTraceNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTraceNV(OpData data)
@@ -66685,6 +68152,9 @@ public struct OpTraceNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTraceNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTraceNV(OpData data) => new(data);
 }
 
 public struct OpTraceMotionNV : IMemoryInstruction
@@ -66722,8 +68192,8 @@ public struct OpTraceMotionNV : IMemoryInstruction
     public OpTraceMotionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTraceMotionNV(OpData data)
@@ -66942,6 +68412,9 @@ public struct OpTraceMotionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTraceMotionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTraceMotionNV(OpData data) => new(data);
 }
 
 public struct OpTraceRayMotionNV : IMemoryInstruction
@@ -66979,8 +68452,8 @@ public struct OpTraceRayMotionNV : IMemoryInstruction
     public OpTraceRayMotionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTraceRayMotionNV(OpData data)
@@ -67199,6 +68672,9 @@ public struct OpTraceRayMotionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTraceRayMotionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTraceRayMotionNV(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionTriangleVertexPositionsKHR : IMemoryInstruction
@@ -67236,8 +68712,8 @@ public struct OpRayQueryGetIntersectionTriangleVertexPositionsKHR : IMemoryInstr
     public OpRayQueryGetIntersectionTriangleVertexPositionsKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionTriangleVertexPositionsKHR(OpData data)
@@ -67337,6 +68813,9 @@ public struct OpRayQueryGetIntersectionTriangleVertexPositionsKHR : IMemoryInstr
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionTriangleVertexPositionsKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionTriangleVertexPositionsKHR(OpData data) => new(data);
 }
 
 public struct OpTypeAccelerationStructureKHR : IMemoryInstruction
@@ -67374,8 +68853,8 @@ public struct OpTypeAccelerationStructureKHR : IMemoryInstruction
     public OpTypeAccelerationStructureKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAccelerationStructureKHR(OpData data)
@@ -67430,6 +68909,9 @@ public struct OpTypeAccelerationStructureKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAccelerationStructureKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAccelerationStructureKHR(OpData data) => new(data);
 }
 
 public struct OpExecuteCallableNV : IMemoryInstruction
@@ -67467,8 +68949,8 @@ public struct OpExecuteCallableNV : IMemoryInstruction
     public OpExecuteCallableNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExecuteCallableNV(OpData data)
@@ -67537,6 +69019,9 @@ public struct OpExecuteCallableNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExecuteCallableNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExecuteCallableNV(OpData data) => new(data);
 }
 
 public struct OpTypeCooperativeMatrixNV : IMemoryInstruction
@@ -67574,8 +69059,8 @@ public struct OpTypeCooperativeMatrixNV : IMemoryInstruction
     public OpTypeCooperativeMatrixNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeCooperativeMatrixNV(OpData data)
@@ -67690,6 +69175,9 @@ public struct OpTypeCooperativeMatrixNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeCooperativeMatrixNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeCooperativeMatrixNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixLoadNV : IMemoryInstruction
@@ -67727,8 +69215,8 @@ public struct OpCooperativeMatrixLoadNV : IMemoryInstruction
     public OpCooperativeMatrixLoadNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixLoadNV(OpData data)
@@ -67859,6 +69347,9 @@ public struct OpCooperativeMatrixLoadNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixLoadNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixLoadNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixStoreNV : IMemoryInstruction
@@ -67896,8 +69387,8 @@ public struct OpCooperativeMatrixStoreNV : IMemoryInstruction
     public OpCooperativeMatrixStoreNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixStoreNV(OpData data)
@@ -68012,6 +69503,9 @@ public struct OpCooperativeMatrixStoreNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixStoreNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixStoreNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixMulAddNV : IMemoryInstruction
@@ -68049,8 +69543,8 @@ public struct OpCooperativeMatrixMulAddNV : IMemoryInstruction
     public OpCooperativeMatrixMulAddNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixMulAddNV(OpData data)
@@ -68165,6 +69659,9 @@ public struct OpCooperativeMatrixMulAddNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixMulAddNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixMulAddNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixLengthNV : IMemoryInstruction
@@ -68202,8 +69699,8 @@ public struct OpCooperativeMatrixLengthNV : IMemoryInstruction
     public OpCooperativeMatrixLengthNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixLengthNV(OpData data)
@@ -68288,6 +69785,9 @@ public struct OpCooperativeMatrixLengthNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixLengthNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixLengthNV(OpData data) => new(data);
 }
 
 public struct OpBeginInvocationInterlockEXT : IMemoryInstruction
@@ -68325,8 +69825,8 @@ public struct OpBeginInvocationInterlockEXT : IMemoryInstruction
     public OpBeginInvocationInterlockEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpBeginInvocationInterlockEXT(OpData data)
@@ -68360,6 +69860,9 @@ public struct OpBeginInvocationInterlockEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpBeginInvocationInterlockEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpBeginInvocationInterlockEXT(OpData data) => new(data);
 }
 
 public struct OpEndInvocationInterlockEXT : IMemoryInstruction
@@ -68397,8 +69900,8 @@ public struct OpEndInvocationInterlockEXT : IMemoryInstruction
     public OpEndInvocationInterlockEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpEndInvocationInterlockEXT(OpData data)
@@ -68432,6 +69935,9 @@ public struct OpEndInvocationInterlockEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpEndInvocationInterlockEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpEndInvocationInterlockEXT(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixReduceNV : IMemoryInstruction
@@ -68469,8 +69975,8 @@ public struct OpCooperativeMatrixReduceNV : IMemoryInstruction
     public OpCooperativeMatrixReduceNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixReduceNV(OpData data)
@@ -68585,6 +70091,9 @@ public struct OpCooperativeMatrixReduceNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixReduceNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixReduceNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
@@ -68622,8 +70131,8 @@ public struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
     public OpCooperativeMatrixLoadTensorNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixLoadTensorNV(OpData data)
@@ -68768,6 +70277,9 @@ public struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixLoadTensorNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixLoadTensorNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
@@ -68805,8 +70317,8 @@ public struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
     public OpCooperativeMatrixStoreTensorNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixStoreTensorNV(OpData data)
@@ -68920,6 +70432,9 @@ public struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixStoreTensorNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixStoreTensorNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
@@ -68957,8 +70472,8 @@ public struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
     public OpCooperativeMatrixPerElementOpNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixPerElementOpNV(OpData data)
@@ -69073,6 +70588,9 @@ public struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixPerElementOpNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixPerElementOpNV(OpData data) => new(data);
 }
 
 public struct OpTypeTensorLayoutNV : IMemoryInstruction
@@ -69110,8 +70628,8 @@ public struct OpTypeTensorLayoutNV : IMemoryInstruction
     public OpTypeTensorLayoutNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeTensorLayoutNV(OpData data)
@@ -69196,6 +70714,9 @@ public struct OpTypeTensorLayoutNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeTensorLayoutNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeTensorLayoutNV(OpData data) => new(data);
 }
 
 public struct OpTypeTensorViewNV : IMemoryInstruction
@@ -69233,8 +70754,8 @@ public struct OpTypeTensorViewNV : IMemoryInstruction
     public OpTypeTensorViewNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeTensorViewNV(OpData data)
@@ -69334,6 +70855,9 @@ public struct OpTypeTensorViewNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeTensorViewNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeTensorViewNV(OpData data) => new(data);
 }
 
 public struct OpCreateTensorLayoutNV : IMemoryInstruction
@@ -69371,8 +70895,8 @@ public struct OpCreateTensorLayoutNV : IMemoryInstruction
     public OpCreateTensorLayoutNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCreateTensorLayoutNV(OpData data)
@@ -69442,6 +70966,9 @@ public struct OpCreateTensorLayoutNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCreateTensorLayoutNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCreateTensorLayoutNV(OpData data) => new(data);
 }
 
 public struct OpTensorLayoutSetDimensionNV : IMemoryInstruction
@@ -69479,8 +71006,8 @@ public struct OpTensorLayoutSetDimensionNV : IMemoryInstruction
     public OpTensorLayoutSetDimensionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorLayoutSetDimensionNV(OpData data)
@@ -69580,6 +71107,9 @@ public struct OpTensorLayoutSetDimensionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorLayoutSetDimensionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorLayoutSetDimensionNV(OpData data) => new(data);
 }
 
 public struct OpTensorLayoutSetStrideNV : IMemoryInstruction
@@ -69617,8 +71147,8 @@ public struct OpTensorLayoutSetStrideNV : IMemoryInstruction
     public OpTensorLayoutSetStrideNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorLayoutSetStrideNV(OpData data)
@@ -69718,6 +71248,9 @@ public struct OpTensorLayoutSetStrideNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorLayoutSetStrideNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorLayoutSetStrideNV(OpData data) => new(data);
 }
 
 public struct OpTensorLayoutSliceNV : IMemoryInstruction
@@ -69755,8 +71288,8 @@ public struct OpTensorLayoutSliceNV : IMemoryInstruction
     public OpTensorLayoutSliceNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorLayoutSliceNV(OpData data)
@@ -69856,6 +71389,9 @@ public struct OpTensorLayoutSliceNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorLayoutSliceNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorLayoutSliceNV(OpData data) => new(data);
 }
 
 public struct OpTensorLayoutSetClampValueNV : IMemoryInstruction
@@ -69893,8 +71429,8 @@ public struct OpTensorLayoutSetClampValueNV : IMemoryInstruction
     public OpTensorLayoutSetClampValueNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorLayoutSetClampValueNV(OpData data)
@@ -69994,6 +71530,9 @@ public struct OpTensorLayoutSetClampValueNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorLayoutSetClampValueNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorLayoutSetClampValueNV(OpData data) => new(data);
 }
 
 public struct OpCreateTensorViewNV : IMemoryInstruction
@@ -70031,8 +71570,8 @@ public struct OpCreateTensorViewNV : IMemoryInstruction
     public OpCreateTensorViewNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCreateTensorViewNV(OpData data)
@@ -70102,6 +71641,9 @@ public struct OpCreateTensorViewNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCreateTensorViewNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCreateTensorViewNV(OpData data) => new(data);
 }
 
 public struct OpTensorViewSetDimensionNV : IMemoryInstruction
@@ -70139,8 +71681,8 @@ public struct OpTensorViewSetDimensionNV : IMemoryInstruction
     public OpTensorViewSetDimensionNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorViewSetDimensionNV(OpData data)
@@ -70240,6 +71782,9 @@ public struct OpTensorViewSetDimensionNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorViewSetDimensionNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorViewSetDimensionNV(OpData data) => new(data);
 }
 
 public struct OpTensorViewSetStrideNV : IMemoryInstruction
@@ -70277,8 +71822,8 @@ public struct OpTensorViewSetStrideNV : IMemoryInstruction
     public OpTensorViewSetStrideNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorViewSetStrideNV(OpData data)
@@ -70378,6 +71923,9 @@ public struct OpTensorViewSetStrideNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorViewSetStrideNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorViewSetStrideNV(OpData data) => new(data);
 }
 
 public struct OpDemoteToHelperInvocation : IMemoryInstruction
@@ -70415,8 +71963,8 @@ public struct OpDemoteToHelperInvocation : IMemoryInstruction
     public OpDemoteToHelperInvocation(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDemoteToHelperInvocation(OpData data)
@@ -70450,6 +71998,9 @@ public struct OpDemoteToHelperInvocation : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDemoteToHelperInvocation(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDemoteToHelperInvocation(OpData data) => new(data);
 }
 
 public struct OpIsHelperInvocationEXT : IMemoryInstruction
@@ -70487,8 +72038,8 @@ public struct OpIsHelperInvocationEXT : IMemoryInstruction
     public OpIsHelperInvocationEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIsHelperInvocationEXT(OpData data)
@@ -70558,6 +72109,9 @@ public struct OpIsHelperInvocationEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIsHelperInvocationEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIsHelperInvocationEXT(OpData data) => new(data);
 }
 
 public struct OpTensorViewSetClipNV : IMemoryInstruction
@@ -70595,8 +72149,8 @@ public struct OpTensorViewSetClipNV : IMemoryInstruction
     public OpTensorViewSetClipNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorViewSetClipNV(OpData data)
@@ -70741,6 +72295,9 @@ public struct OpTensorViewSetClipNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorViewSetClipNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorViewSetClipNV(OpData data) => new(data);
 }
 
 public struct OpTensorLayoutSetBlockSizeNV : IMemoryInstruction
@@ -70778,8 +72335,8 @@ public struct OpTensorLayoutSetBlockSizeNV : IMemoryInstruction
     public OpTensorLayoutSetBlockSizeNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTensorLayoutSetBlockSizeNV(OpData data)
@@ -70879,6 +72436,9 @@ public struct OpTensorLayoutSetBlockSizeNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTensorLayoutSetBlockSizeNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTensorLayoutSetBlockSizeNV(OpData data) => new(data);
 }
 
 public struct OpCooperativeMatrixTransposeNV : IMemoryInstruction
@@ -70916,8 +72476,8 @@ public struct OpCooperativeMatrixTransposeNV : IMemoryInstruction
     public OpCooperativeMatrixTransposeNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCooperativeMatrixTransposeNV(OpData data)
@@ -71002,6 +72562,9 @@ public struct OpCooperativeMatrixTransposeNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCooperativeMatrixTransposeNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCooperativeMatrixTransposeNV(OpData data) => new(data);
 }
 
 public struct OpConvertUToImageNV : IMemoryInstruction
@@ -71039,8 +72602,8 @@ public struct OpConvertUToImageNV : IMemoryInstruction
     public OpConvertUToImageNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertUToImageNV(OpData data)
@@ -71125,6 +72688,9 @@ public struct OpConvertUToImageNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertUToImageNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertUToImageNV(OpData data) => new(data);
 }
 
 public struct OpConvertUToSamplerNV : IMemoryInstruction
@@ -71162,8 +72728,8 @@ public struct OpConvertUToSamplerNV : IMemoryInstruction
     public OpConvertUToSamplerNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertUToSamplerNV(OpData data)
@@ -71248,6 +72814,9 @@ public struct OpConvertUToSamplerNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertUToSamplerNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertUToSamplerNV(OpData data) => new(data);
 }
 
 public struct OpConvertImageToUNV : IMemoryInstruction
@@ -71285,8 +72854,8 @@ public struct OpConvertImageToUNV : IMemoryInstruction
     public OpConvertImageToUNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertImageToUNV(OpData data)
@@ -71371,6 +72940,9 @@ public struct OpConvertImageToUNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertImageToUNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertImageToUNV(OpData data) => new(data);
 }
 
 public struct OpConvertSamplerToUNV : IMemoryInstruction
@@ -71408,8 +72980,8 @@ public struct OpConvertSamplerToUNV : IMemoryInstruction
     public OpConvertSamplerToUNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertSamplerToUNV(OpData data)
@@ -71494,6 +73066,9 @@ public struct OpConvertSamplerToUNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertSamplerToUNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertSamplerToUNV(OpData data) => new(data);
 }
 
 public struct OpConvertUToSampledImageNV : IMemoryInstruction
@@ -71531,8 +73106,8 @@ public struct OpConvertUToSampledImageNV : IMemoryInstruction
     public OpConvertUToSampledImageNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertUToSampledImageNV(OpData data)
@@ -71617,6 +73192,9 @@ public struct OpConvertUToSampledImageNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertUToSampledImageNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertUToSampledImageNV(OpData data) => new(data);
 }
 
 public struct OpConvertSampledImageToUNV : IMemoryInstruction
@@ -71654,8 +73232,8 @@ public struct OpConvertSampledImageToUNV : IMemoryInstruction
     public OpConvertSampledImageToUNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertSampledImageToUNV(OpData data)
@@ -71740,6 +73318,9 @@ public struct OpConvertSampledImageToUNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertSampledImageToUNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertSampledImageToUNV(OpData data) => new(data);
 }
 
 public struct OpSamplerImageAddressingModeNV : IMemoryInstruction
@@ -71777,8 +73358,8 @@ public struct OpSamplerImageAddressingModeNV : IMemoryInstruction
     public OpSamplerImageAddressingModeNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSamplerImageAddressingModeNV(OpData data)
@@ -71832,6 +73413,9 @@ public struct OpSamplerImageAddressingModeNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSamplerImageAddressingModeNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSamplerImageAddressingModeNV(OpData data) => new(data);
 }
 
 public struct OpRawAccessChainNV : IMemoryInstruction
@@ -71869,8 +73453,8 @@ public struct OpRawAccessChainNV : IMemoryInstruction
     public OpRawAccessChainNV(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRawAccessChainNV(OpData data)
@@ -72016,6 +73600,9 @@ public struct OpRawAccessChainNV : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRawAccessChainNV(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRawAccessChainNV(OpData data) => new(data);
 }
 
 public struct OpSubgroupShuffleINTEL : IMemoryInstruction
@@ -72053,8 +73640,8 @@ public struct OpSubgroupShuffleINTEL : IMemoryInstruction
     public OpSubgroupShuffleINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupShuffleINTEL(OpData data)
@@ -72154,6 +73741,9 @@ public struct OpSubgroupShuffleINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupShuffleINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupShuffleINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupShuffleDownINTEL : IMemoryInstruction
@@ -72191,8 +73781,8 @@ public struct OpSubgroupShuffleDownINTEL : IMemoryInstruction
     public OpSubgroupShuffleDownINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupShuffleDownINTEL(OpData data)
@@ -72307,6 +73897,9 @@ public struct OpSubgroupShuffleDownINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupShuffleDownINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupShuffleDownINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupShuffleUpINTEL : IMemoryInstruction
@@ -72344,8 +73937,8 @@ public struct OpSubgroupShuffleUpINTEL : IMemoryInstruction
     public OpSubgroupShuffleUpINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupShuffleUpINTEL(OpData data)
@@ -72460,6 +74053,9 @@ public struct OpSubgroupShuffleUpINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupShuffleUpINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupShuffleUpINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupShuffleXorINTEL : IMemoryInstruction
@@ -72497,8 +74093,8 @@ public struct OpSubgroupShuffleXorINTEL : IMemoryInstruction
     public OpSubgroupShuffleXorINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupShuffleXorINTEL(OpData data)
@@ -72598,6 +74194,9 @@ public struct OpSubgroupShuffleXorINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupShuffleXorINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupShuffleXorINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupBlockReadINTEL : IMemoryInstruction
@@ -72635,8 +74234,8 @@ public struct OpSubgroupBlockReadINTEL : IMemoryInstruction
     public OpSubgroupBlockReadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupBlockReadINTEL(OpData data)
@@ -72721,6 +74320,9 @@ public struct OpSubgroupBlockReadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupBlockReadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupBlockReadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupBlockWriteINTEL : IMemoryInstruction
@@ -72758,8 +74360,8 @@ public struct OpSubgroupBlockWriteINTEL : IMemoryInstruction
     public OpSubgroupBlockWriteINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupBlockWriteINTEL(OpData data)
@@ -72828,6 +74430,9 @@ public struct OpSubgroupBlockWriteINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupBlockWriteINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupBlockWriteINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupImageBlockReadINTEL : IMemoryInstruction
@@ -72865,8 +74470,8 @@ public struct OpSubgroupImageBlockReadINTEL : IMemoryInstruction
     public OpSubgroupImageBlockReadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupImageBlockReadINTEL(OpData data)
@@ -72966,6 +74571,9 @@ public struct OpSubgroupImageBlockReadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupImageBlockReadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupImageBlockReadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupImageBlockWriteINTEL : IMemoryInstruction
@@ -73003,8 +74611,8 @@ public struct OpSubgroupImageBlockWriteINTEL : IMemoryInstruction
     public OpSubgroupImageBlockWriteINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupImageBlockWriteINTEL(OpData data)
@@ -73088,6 +74696,9 @@ public struct OpSubgroupImageBlockWriteINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupImageBlockWriteINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupImageBlockWriteINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupImageMediaBlockReadINTEL : IMemoryInstruction
@@ -73125,8 +74736,8 @@ public struct OpSubgroupImageMediaBlockReadINTEL : IMemoryInstruction
     public OpSubgroupImageMediaBlockReadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupImageMediaBlockReadINTEL(OpData data)
@@ -73256,6 +74867,9 @@ public struct OpSubgroupImageMediaBlockReadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupImageMediaBlockReadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupImageMediaBlockReadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupImageMediaBlockWriteINTEL : IMemoryInstruction
@@ -73293,8 +74907,8 @@ public struct OpSubgroupImageMediaBlockWriteINTEL : IMemoryInstruction
     public OpSubgroupImageMediaBlockWriteINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupImageMediaBlockWriteINTEL(OpData data)
@@ -73408,6 +75022,9 @@ public struct OpSubgroupImageMediaBlockWriteINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupImageMediaBlockWriteINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupImageMediaBlockWriteINTEL(OpData data) => new(data);
 }
 
 public struct OpUCountLeadingZerosINTEL : IMemoryInstruction
@@ -73445,8 +75062,8 @@ public struct OpUCountLeadingZerosINTEL : IMemoryInstruction
     public OpUCountLeadingZerosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUCountLeadingZerosINTEL(OpData data)
@@ -73531,6 +75148,9 @@ public struct OpUCountLeadingZerosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUCountLeadingZerosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUCountLeadingZerosINTEL(OpData data) => new(data);
 }
 
 public struct OpUCountTrailingZerosINTEL : IMemoryInstruction
@@ -73568,8 +75188,8 @@ public struct OpUCountTrailingZerosINTEL : IMemoryInstruction
     public OpUCountTrailingZerosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUCountTrailingZerosINTEL(OpData data)
@@ -73654,6 +75274,9 @@ public struct OpUCountTrailingZerosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUCountTrailingZerosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUCountTrailingZerosINTEL(OpData data) => new(data);
 }
 
 public struct OpAbsISubINTEL : IMemoryInstruction
@@ -73691,8 +75314,8 @@ public struct OpAbsISubINTEL : IMemoryInstruction
     public OpAbsISubINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAbsISubINTEL(OpData data)
@@ -73792,6 +75415,9 @@ public struct OpAbsISubINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAbsISubINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAbsISubINTEL(OpData data) => new(data);
 }
 
 public struct OpAbsUSubINTEL : IMemoryInstruction
@@ -73829,8 +75455,8 @@ public struct OpAbsUSubINTEL : IMemoryInstruction
     public OpAbsUSubINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAbsUSubINTEL(OpData data)
@@ -73930,6 +75556,9 @@ public struct OpAbsUSubINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAbsUSubINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAbsUSubINTEL(OpData data) => new(data);
 }
 
 public struct OpIAddSatINTEL : IMemoryInstruction
@@ -73967,8 +75596,8 @@ public struct OpIAddSatINTEL : IMemoryInstruction
     public OpIAddSatINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIAddSatINTEL(OpData data)
@@ -74068,6 +75697,9 @@ public struct OpIAddSatINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIAddSatINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIAddSatINTEL(OpData data) => new(data);
 }
 
 public struct OpUAddSatINTEL : IMemoryInstruction
@@ -74105,8 +75737,8 @@ public struct OpUAddSatINTEL : IMemoryInstruction
     public OpUAddSatINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUAddSatINTEL(OpData data)
@@ -74206,6 +75838,9 @@ public struct OpUAddSatINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUAddSatINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUAddSatINTEL(OpData data) => new(data);
 }
 
 public struct OpIAverageINTEL : IMemoryInstruction
@@ -74243,8 +75878,8 @@ public struct OpIAverageINTEL : IMemoryInstruction
     public OpIAverageINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIAverageINTEL(OpData data)
@@ -74344,6 +75979,9 @@ public struct OpIAverageINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIAverageINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIAverageINTEL(OpData data) => new(data);
 }
 
 public struct OpUAverageINTEL : IMemoryInstruction
@@ -74381,8 +76019,8 @@ public struct OpUAverageINTEL : IMemoryInstruction
     public OpUAverageINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUAverageINTEL(OpData data)
@@ -74482,6 +76120,9 @@ public struct OpUAverageINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUAverageINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUAverageINTEL(OpData data) => new(data);
 }
 
 public struct OpIAverageRoundedINTEL : IMemoryInstruction
@@ -74519,8 +76160,8 @@ public struct OpIAverageRoundedINTEL : IMemoryInstruction
     public OpIAverageRoundedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIAverageRoundedINTEL(OpData data)
@@ -74620,6 +76261,9 @@ public struct OpIAverageRoundedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIAverageRoundedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIAverageRoundedINTEL(OpData data) => new(data);
 }
 
 public struct OpUAverageRoundedINTEL : IMemoryInstruction
@@ -74657,8 +76301,8 @@ public struct OpUAverageRoundedINTEL : IMemoryInstruction
     public OpUAverageRoundedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUAverageRoundedINTEL(OpData data)
@@ -74758,6 +76402,9 @@ public struct OpUAverageRoundedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUAverageRoundedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUAverageRoundedINTEL(OpData data) => new(data);
 }
 
 public struct OpISubSatINTEL : IMemoryInstruction
@@ -74795,8 +76442,8 @@ public struct OpISubSatINTEL : IMemoryInstruction
     public OpISubSatINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpISubSatINTEL(OpData data)
@@ -74896,6 +76543,9 @@ public struct OpISubSatINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpISubSatINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpISubSatINTEL(OpData data) => new(data);
 }
 
 public struct OpUSubSatINTEL : IMemoryInstruction
@@ -74933,8 +76583,8 @@ public struct OpUSubSatINTEL : IMemoryInstruction
     public OpUSubSatINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUSubSatINTEL(OpData data)
@@ -75034,6 +76684,9 @@ public struct OpUSubSatINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUSubSatINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUSubSatINTEL(OpData data) => new(data);
 }
 
 public struct OpIMul32x16INTEL : IMemoryInstruction
@@ -75071,8 +76724,8 @@ public struct OpIMul32x16INTEL : IMemoryInstruction
     public OpIMul32x16INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpIMul32x16INTEL(OpData data)
@@ -75172,6 +76825,9 @@ public struct OpIMul32x16INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpIMul32x16INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpIMul32x16INTEL(OpData data) => new(data);
 }
 
 public struct OpUMul32x16INTEL : IMemoryInstruction
@@ -75209,8 +76865,8 @@ public struct OpUMul32x16INTEL : IMemoryInstruction
     public OpUMul32x16INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpUMul32x16INTEL(OpData data)
@@ -75310,6 +76966,9 @@ public struct OpUMul32x16INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpUMul32x16INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpUMul32x16INTEL(OpData data) => new(data);
 }
 
 public struct OpConstantFunctionPointerINTEL : IMemoryInstruction
@@ -75347,8 +77006,8 @@ public struct OpConstantFunctionPointerINTEL : IMemoryInstruction
     public OpConstantFunctionPointerINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantFunctionPointerINTEL(OpData data)
@@ -75433,6 +77092,9 @@ public struct OpConstantFunctionPointerINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantFunctionPointerINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantFunctionPointerINTEL(OpData data) => new(data);
 }
 
 public struct OpFunctionPointerCallINTEL : IMemoryInstruction
@@ -75470,8 +77132,8 @@ public struct OpFunctionPointerCallINTEL : IMemoryInstruction
     public OpFunctionPointerCallINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFunctionPointerCallINTEL(OpData data)
@@ -75556,6 +77218,9 @@ public struct OpFunctionPointerCallINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFunctionPointerCallINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFunctionPointerCallINTEL(OpData data) => new(data);
 }
 
 public struct OpAsmTargetINTEL : IMemoryInstruction
@@ -75593,8 +77258,8 @@ public struct OpAsmTargetINTEL : IMemoryInstruction
     public OpAsmTargetINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAsmTargetINTEL(OpData data)
@@ -75679,6 +77344,9 @@ public struct OpAsmTargetINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAsmTargetINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAsmTargetINTEL(OpData data) => new(data);
 }
 
 public struct OpAsmINTEL : IMemoryInstruction
@@ -75716,8 +77384,8 @@ public struct OpAsmINTEL : IMemoryInstruction
     public OpAsmINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAsmINTEL(OpData data)
@@ -75847,6 +77515,9 @@ public struct OpAsmINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAsmINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAsmINTEL(OpData data) => new(data);
 }
 
 public struct OpAsmCallINTEL : IMemoryInstruction
@@ -75884,8 +77555,8 @@ public struct OpAsmCallINTEL : IMemoryInstruction
     public OpAsmCallINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAsmCallINTEL(OpData data)
@@ -75985,6 +77656,9 @@ public struct OpAsmCallINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAsmCallINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAsmCallINTEL(OpData data) => new(data);
 }
 
 public struct OpAtomicFMinEXT : IMemoryInstruction
@@ -76022,8 +77696,8 @@ public struct OpAtomicFMinEXT : IMemoryInstruction
     public OpAtomicFMinEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicFMinEXT(OpData data)
@@ -76153,6 +77827,9 @@ public struct OpAtomicFMinEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicFMinEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicFMinEXT(OpData data) => new(data);
 }
 
 public struct OpAtomicFMaxEXT : IMemoryInstruction
@@ -76190,8 +77867,8 @@ public struct OpAtomicFMaxEXT : IMemoryInstruction
     public OpAtomicFMaxEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicFMaxEXT(OpData data)
@@ -76321,6 +77998,9 @@ public struct OpAtomicFMaxEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicFMaxEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicFMaxEXT(OpData data) => new(data);
 }
 
 public struct OpAssumeTrueKHR : IMemoryInstruction
@@ -76358,8 +78038,8 @@ public struct OpAssumeTrueKHR : IMemoryInstruction
     public OpAssumeTrueKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAssumeTrueKHR(OpData data)
@@ -76413,6 +78093,9 @@ public struct OpAssumeTrueKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAssumeTrueKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAssumeTrueKHR(OpData data) => new(data);
 }
 
 public struct OpExpectKHR : IMemoryInstruction
@@ -76450,8 +78133,8 @@ public struct OpExpectKHR : IMemoryInstruction
     public OpExpectKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpExpectKHR(OpData data)
@@ -76551,6 +78234,9 @@ public struct OpExpectKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpExpectKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpExpectKHR(OpData data) => new(data);
 }
 
 public struct OpDecorateString : IMemoryInstruction
@@ -76588,8 +78274,8 @@ public struct OpDecorateString : IMemoryInstruction
     public OpDecorateString(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpDecorateString(OpData data)
@@ -76673,6 +78359,9 @@ public struct OpDecorateString : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpDecorateString(OpDataIndex odi) => new(odi);
+    public static implicit operator OpDecorateString(OpData data) => new(data);
 }
 
 public struct OpMemberDecorateString : IMemoryInstruction
@@ -76710,8 +78399,8 @@ public struct OpMemberDecorateString : IMemoryInstruction
     public OpMemberDecorateString(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMemberDecorateString(OpData data)
@@ -76810,6 +78499,9 @@ public struct OpMemberDecorateString : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMemberDecorateString(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMemberDecorateString(OpData data) => new(data);
 }
 
 public struct OpVmeImageINTEL : IMemoryInstruction
@@ -76847,8 +78539,8 @@ public struct OpVmeImageINTEL : IMemoryInstruction
     public OpVmeImageINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVmeImageINTEL(OpData data)
@@ -76948,6 +78640,9 @@ public struct OpVmeImageINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVmeImageINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVmeImageINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeVmeImageINTEL : IMemoryInstruction
@@ -76985,8 +78680,8 @@ public struct OpTypeVmeImageINTEL : IMemoryInstruction
     public OpTypeVmeImageINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeVmeImageINTEL(OpData data)
@@ -77056,6 +78751,9 @@ public struct OpTypeVmeImageINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeVmeImageINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeVmeImageINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcImePayloadINTEL : IMemoryInstruction
@@ -77093,8 +78791,8 @@ public struct OpTypeAvcImePayloadINTEL : IMemoryInstruction
     public OpTypeAvcImePayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcImePayloadINTEL(OpData data)
@@ -77149,6 +78847,9 @@ public struct OpTypeAvcImePayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcImePayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcImePayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcRefPayloadINTEL : IMemoryInstruction
@@ -77186,8 +78887,8 @@ public struct OpTypeAvcRefPayloadINTEL : IMemoryInstruction
     public OpTypeAvcRefPayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcRefPayloadINTEL(OpData data)
@@ -77242,6 +78943,9 @@ public struct OpTypeAvcRefPayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcRefPayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcRefPayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcSicPayloadINTEL : IMemoryInstruction
@@ -77279,8 +78983,8 @@ public struct OpTypeAvcSicPayloadINTEL : IMemoryInstruction
     public OpTypeAvcSicPayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcSicPayloadINTEL(OpData data)
@@ -77335,6 +79039,9 @@ public struct OpTypeAvcSicPayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcSicPayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcSicPayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcMcePayloadINTEL : IMemoryInstruction
@@ -77372,8 +79079,8 @@ public struct OpTypeAvcMcePayloadINTEL : IMemoryInstruction
     public OpTypeAvcMcePayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcMcePayloadINTEL(OpData data)
@@ -77428,6 +79135,9 @@ public struct OpTypeAvcMcePayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcMcePayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcMcePayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcMceResultINTEL : IMemoryInstruction
@@ -77465,8 +79175,8 @@ public struct OpTypeAvcMceResultINTEL : IMemoryInstruction
     public OpTypeAvcMceResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcMceResultINTEL(OpData data)
@@ -77521,6 +79231,9 @@ public struct OpTypeAvcMceResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcMceResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcMceResultINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcImeResultINTEL : IMemoryInstruction
@@ -77558,8 +79271,8 @@ public struct OpTypeAvcImeResultINTEL : IMemoryInstruction
     public OpTypeAvcImeResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcImeResultINTEL(OpData data)
@@ -77614,6 +79327,9 @@ public struct OpTypeAvcImeResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcImeResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcImeResultINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcImeResultSingleReferenceStreamoutINTEL : IMemoryInstruction
@@ -77651,8 +79367,8 @@ public struct OpTypeAvcImeResultSingleReferenceStreamoutINTEL : IMemoryInstructi
     public OpTypeAvcImeResultSingleReferenceStreamoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcImeResultSingleReferenceStreamoutINTEL(OpData data)
@@ -77707,6 +79423,9 @@ public struct OpTypeAvcImeResultSingleReferenceStreamoutINTEL : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpTypeAvcImeResultSingleReferenceStreamoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcImeResultSingleReferenceStreamoutINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcImeResultDualReferenceStreamoutINTEL : IMemoryInstruction
@@ -77744,8 +79463,8 @@ public struct OpTypeAvcImeResultDualReferenceStreamoutINTEL : IMemoryInstruction
     public OpTypeAvcImeResultDualReferenceStreamoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcImeResultDualReferenceStreamoutINTEL(OpData data)
@@ -77800,6 +79519,9 @@ public struct OpTypeAvcImeResultDualReferenceStreamoutINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcImeResultDualReferenceStreamoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcImeResultDualReferenceStreamoutINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcImeSingleReferenceStreaminINTEL : IMemoryInstruction
@@ -77837,8 +79559,8 @@ public struct OpTypeAvcImeSingleReferenceStreaminINTEL : IMemoryInstruction
     public OpTypeAvcImeSingleReferenceStreaminINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcImeSingleReferenceStreaminINTEL(OpData data)
@@ -77893,6 +79615,9 @@ public struct OpTypeAvcImeSingleReferenceStreaminINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcImeSingleReferenceStreaminINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcImeSingleReferenceStreaminINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcImeDualReferenceStreaminINTEL : IMemoryInstruction
@@ -77930,8 +79655,8 @@ public struct OpTypeAvcImeDualReferenceStreaminINTEL : IMemoryInstruction
     public OpTypeAvcImeDualReferenceStreaminINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcImeDualReferenceStreaminINTEL(OpData data)
@@ -77986,6 +79711,9 @@ public struct OpTypeAvcImeDualReferenceStreaminINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcImeDualReferenceStreaminINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcImeDualReferenceStreaminINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcRefResultINTEL : IMemoryInstruction
@@ -78023,8 +79751,8 @@ public struct OpTypeAvcRefResultINTEL : IMemoryInstruction
     public OpTypeAvcRefResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcRefResultINTEL(OpData data)
@@ -78079,6 +79807,9 @@ public struct OpTypeAvcRefResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcRefResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcRefResultINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeAvcSicResultINTEL : IMemoryInstruction
@@ -78116,8 +79847,8 @@ public struct OpTypeAvcSicResultINTEL : IMemoryInstruction
     public OpTypeAvcSicResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeAvcSicResultINTEL(OpData data)
@@ -78172,6 +79903,9 @@ public struct OpTypeAvcSicResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeAvcSicResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeAvcSicResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL : IMemoryInstruction
@@ -78209,8 +79943,8 @@ public struct OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL : IM
     public OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL(OpData data)
@@ -78310,6 +80044,9 @@ public struct OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL : IM
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL : IMemoryInstruction
@@ -78347,8 +80084,8 @@ public struct OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL : IMemoryIn
     public OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL(OpData data)
@@ -78448,6 +80185,9 @@ public struct OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL : IMemoryIn
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL : IMemoryInstruction
@@ -78485,8 +80225,8 @@ public struct OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL : IMemoryInstruct
     public OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL(OpData data)
@@ -78586,6 +80326,9 @@ public struct OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetInterShapePenaltyINTEL : IMemoryInstruction
@@ -78623,8 +80366,8 @@ public struct OpSubgroupAvcMceSetInterShapePenaltyINTEL : IMemoryInstruction
     public OpSubgroupAvcMceSetInterShapePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetInterShapePenaltyINTEL(OpData data)
@@ -78724,6 +80467,9 @@ public struct OpSubgroupAvcMceSetInterShapePenaltyINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetInterShapePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetInterShapePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL : IMemoryInstruction
@@ -78761,8 +80507,8 @@ public struct OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL : IMemoryInst
     public OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL(OpData data)
@@ -78862,6 +80608,9 @@ public struct OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL : IMemoryInst
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetInterDirectionPenaltyINTEL : IMemoryInstruction
@@ -78899,8 +80648,8 @@ public struct OpSubgroupAvcMceSetInterDirectionPenaltyINTEL : IMemoryInstruction
     public OpSubgroupAvcMceSetInterDirectionPenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetInterDirectionPenaltyINTEL(OpData data)
@@ -79000,6 +80749,9 @@ public struct OpSubgroupAvcMceSetInterDirectionPenaltyINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetInterDirectionPenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetInterDirectionPenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL : IMemoryInstruction
@@ -79037,8 +80789,8 @@ public struct OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL : IMemoryInst
     public OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL(OpData data)
@@ -79138,6 +80890,9 @@ public struct OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL : IMemoryInst
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL : IMemoryInstruction
@@ -79175,8 +80930,8 @@ public struct OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL : IMemor
     public OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL(OpData data)
@@ -79276,6 +81031,9 @@ public struct OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL : IMemoryInstruction
@@ -79313,8 +81071,8 @@ public struct OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL : IMemoryInstr
     public OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL(OpData data)
@@ -79384,6 +81142,9 @@ public struct OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL : IMemoryInstr
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL : IMemoryInstruction
@@ -79421,8 +81182,8 @@ public struct OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL : IMemoryIns
     public OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL(OpData data)
@@ -79492,6 +81253,9 @@ public struct OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL : IMemoryIns
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL : IMemoryInstruction
@@ -79529,8 +81293,8 @@ public struct OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL : IMemoryInstru
     public OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL(OpData data)
@@ -79600,6 +81364,9 @@ public struct OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL : IMemoryInstru
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL : IMemoryInstruction
@@ -79637,8 +81404,8 @@ public struct OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL : IMemoryInstruct
     public OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL(OpData data)
@@ -79768,6 +81535,9 @@ public struct OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL : IMemoryInstruction
@@ -79805,8 +81575,8 @@ public struct OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL : IMemoryInstr
     public OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL(OpData data)
@@ -79906,6 +81676,9 @@ public struct OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL : IMemoryInstr
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL : IMemoryInstruction
@@ -79943,8 +81716,8 @@ public struct OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL : IMemoryInst
     public OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL(OpData data)
@@ -80014,6 +81787,9 @@ public struct OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL : IMemoryInst
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL : IMemoryInstruction
@@ -80051,8 +81827,8 @@ public struct OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL : IMemor
     public OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL(OpData data)
@@ -80122,6 +81898,9 @@ public struct OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetAcOnlyHaarINTEL : IMemoryInstruction
@@ -80159,8 +81938,8 @@ public struct OpSubgroupAvcMceSetAcOnlyHaarINTEL : IMemoryInstruction
     public OpSubgroupAvcMceSetAcOnlyHaarINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetAcOnlyHaarINTEL(OpData data)
@@ -80245,6 +82024,9 @@ public struct OpSubgroupAvcMceSetAcOnlyHaarINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetAcOnlyHaarINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetAcOnlyHaarINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL : IMemoryInstruction
@@ -80282,8 +82064,8 @@ public struct OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL : IMemoryIns
     public OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL(OpData data)
@@ -80383,6 +82165,9 @@ public struct OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL : IMemoryIns
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL : IMemoryInstruction
@@ -80420,8 +82205,8 @@ public struct OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL : I
     public OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL(OpData data)
@@ -80521,6 +82306,9 @@ public struct OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL : I
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolarityINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL : IMemoryInstruction
@@ -80558,8 +82346,8 @@ public struct OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL : I
     public OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL(OpData data)
@@ -80674,6 +82462,9 @@ public struct OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL : I
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolaritiesINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceConvertToImePayloadINTEL : IMemoryInstruction
@@ -80711,8 +82502,8 @@ public struct OpSubgroupAvcMceConvertToImePayloadINTEL : IMemoryInstruction
     public OpSubgroupAvcMceConvertToImePayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceConvertToImePayloadINTEL(OpData data)
@@ -80797,6 +82588,9 @@ public struct OpSubgroupAvcMceConvertToImePayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceConvertToImePayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceConvertToImePayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceConvertToImeResultINTEL : IMemoryInstruction
@@ -80834,8 +82628,8 @@ public struct OpSubgroupAvcMceConvertToImeResultINTEL : IMemoryInstruction
     public OpSubgroupAvcMceConvertToImeResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceConvertToImeResultINTEL(OpData data)
@@ -80920,6 +82714,9 @@ public struct OpSubgroupAvcMceConvertToImeResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceConvertToImeResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceConvertToImeResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceConvertToRefPayloadINTEL : IMemoryInstruction
@@ -80957,8 +82754,8 @@ public struct OpSubgroupAvcMceConvertToRefPayloadINTEL : IMemoryInstruction
     public OpSubgroupAvcMceConvertToRefPayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceConvertToRefPayloadINTEL(OpData data)
@@ -81043,6 +82840,9 @@ public struct OpSubgroupAvcMceConvertToRefPayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceConvertToRefPayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceConvertToRefPayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceConvertToRefResultINTEL : IMemoryInstruction
@@ -81080,8 +82880,8 @@ public struct OpSubgroupAvcMceConvertToRefResultINTEL : IMemoryInstruction
     public OpSubgroupAvcMceConvertToRefResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceConvertToRefResultINTEL(OpData data)
@@ -81166,6 +82966,9 @@ public struct OpSubgroupAvcMceConvertToRefResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceConvertToRefResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceConvertToRefResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceConvertToSicPayloadINTEL : IMemoryInstruction
@@ -81203,8 +83006,8 @@ public struct OpSubgroupAvcMceConvertToSicPayloadINTEL : IMemoryInstruction
     public OpSubgroupAvcMceConvertToSicPayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceConvertToSicPayloadINTEL(OpData data)
@@ -81289,6 +83092,9 @@ public struct OpSubgroupAvcMceConvertToSicPayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceConvertToSicPayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceConvertToSicPayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceConvertToSicResultINTEL : IMemoryInstruction
@@ -81326,8 +83132,8 @@ public struct OpSubgroupAvcMceConvertToSicResultINTEL : IMemoryInstruction
     public OpSubgroupAvcMceConvertToSicResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceConvertToSicResultINTEL(OpData data)
@@ -81412,6 +83218,9 @@ public struct OpSubgroupAvcMceConvertToSicResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceConvertToSicResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceConvertToSicResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetMotionVectorsINTEL : IMemoryInstruction
@@ -81449,8 +83258,8 @@ public struct OpSubgroupAvcMceGetMotionVectorsINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetMotionVectorsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetMotionVectorsINTEL(OpData data)
@@ -81535,6 +83344,9 @@ public struct OpSubgroupAvcMceGetMotionVectorsINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetMotionVectorsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetMotionVectorsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterDistortionsINTEL : IMemoryInstruction
@@ -81572,8 +83384,8 @@ public struct OpSubgroupAvcMceGetInterDistortionsINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetInterDistortionsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterDistortionsINTEL(OpData data)
@@ -81658,6 +83470,9 @@ public struct OpSubgroupAvcMceGetInterDistortionsINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterDistortionsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterDistortionsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetBestInterDistortionsINTEL : IMemoryInstruction
@@ -81695,8 +83510,8 @@ public struct OpSubgroupAvcMceGetBestInterDistortionsINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetBestInterDistortionsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetBestInterDistortionsINTEL(OpData data)
@@ -81781,6 +83596,9 @@ public struct OpSubgroupAvcMceGetBestInterDistortionsINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetBestInterDistortionsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetBestInterDistortionsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterMajorShapeINTEL : IMemoryInstruction
@@ -81818,8 +83636,8 @@ public struct OpSubgroupAvcMceGetInterMajorShapeINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetInterMajorShapeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterMajorShapeINTEL(OpData data)
@@ -81904,6 +83722,9 @@ public struct OpSubgroupAvcMceGetInterMajorShapeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterMajorShapeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterMajorShapeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterMinorShapeINTEL : IMemoryInstruction
@@ -81941,8 +83762,8 @@ public struct OpSubgroupAvcMceGetInterMinorShapeINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetInterMinorShapeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterMinorShapeINTEL(OpData data)
@@ -82027,6 +83848,9 @@ public struct OpSubgroupAvcMceGetInterMinorShapeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterMinorShapeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterMinorShapeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterDirectionsINTEL : IMemoryInstruction
@@ -82064,8 +83888,8 @@ public struct OpSubgroupAvcMceGetInterDirectionsINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetInterDirectionsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterDirectionsINTEL(OpData data)
@@ -82150,6 +83974,9 @@ public struct OpSubgroupAvcMceGetInterDirectionsINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterDirectionsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterDirectionsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterMotionVectorCountINTEL : IMemoryInstruction
@@ -82187,8 +84014,8 @@ public struct OpSubgroupAvcMceGetInterMotionVectorCountINTEL : IMemoryInstructio
     public OpSubgroupAvcMceGetInterMotionVectorCountINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterMotionVectorCountINTEL(OpData data)
@@ -82273,6 +84100,9 @@ public struct OpSubgroupAvcMceGetInterMotionVectorCountINTEL : IMemoryInstructio
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterMotionVectorCountINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterMotionVectorCountINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterReferenceIdsINTEL : IMemoryInstruction
@@ -82310,8 +84140,8 @@ public struct OpSubgroupAvcMceGetInterReferenceIdsINTEL : IMemoryInstruction
     public OpSubgroupAvcMceGetInterReferenceIdsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterReferenceIdsINTEL(OpData data)
@@ -82396,6 +84226,9 @@ public struct OpSubgroupAvcMceGetInterReferenceIdsINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterReferenceIdsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterReferenceIdsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL : IMemoryInstruction
@@ -82433,8 +84266,8 @@ public struct OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL : 
     public OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL(OpData data)
@@ -82549,6 +84382,9 @@ public struct OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL : 
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolaritiesINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeInitializeINTEL : IMemoryInstruction
@@ -82586,8 +84422,8 @@ public struct OpSubgroupAvcImeInitializeINTEL : IMemoryInstruction
     public OpSubgroupAvcImeInitializeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeInitializeINTEL(OpData data)
@@ -82702,6 +84538,9 @@ public struct OpSubgroupAvcImeInitializeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeInitializeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeInitializeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeSetSingleReferenceINTEL : IMemoryInstruction
@@ -82739,8 +84578,8 @@ public struct OpSubgroupAvcImeSetSingleReferenceINTEL : IMemoryInstruction
     public OpSubgroupAvcImeSetSingleReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeSetSingleReferenceINTEL(OpData data)
@@ -82855,6 +84694,9 @@ public struct OpSubgroupAvcImeSetSingleReferenceINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeSetSingleReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeSetSingleReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeSetDualReferenceINTEL : IMemoryInstruction
@@ -82892,8 +84734,8 @@ public struct OpSubgroupAvcImeSetDualReferenceINTEL : IMemoryInstruction
     public OpSubgroupAvcImeSetDualReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeSetDualReferenceINTEL(OpData data)
@@ -83023,6 +84865,9 @@ public struct OpSubgroupAvcImeSetDualReferenceINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeSetDualReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeSetDualReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeRefWindowSizeINTEL : IMemoryInstruction
@@ -83060,8 +84905,8 @@ public struct OpSubgroupAvcImeRefWindowSizeINTEL : IMemoryInstruction
     public OpSubgroupAvcImeRefWindowSizeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeRefWindowSizeINTEL(OpData data)
@@ -83161,6 +85006,9 @@ public struct OpSubgroupAvcImeRefWindowSizeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeRefWindowSizeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeRefWindowSizeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeAdjustRefOffsetINTEL : IMemoryInstruction
@@ -83198,8 +85046,8 @@ public struct OpSubgroupAvcImeAdjustRefOffsetINTEL : IMemoryInstruction
     public OpSubgroupAvcImeAdjustRefOffsetINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeAdjustRefOffsetINTEL(OpData data)
@@ -83329,6 +85177,9 @@ public struct OpSubgroupAvcImeAdjustRefOffsetINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeAdjustRefOffsetINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeAdjustRefOffsetINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeConvertToMcePayloadINTEL : IMemoryInstruction
@@ -83366,8 +85217,8 @@ public struct OpSubgroupAvcImeConvertToMcePayloadINTEL : IMemoryInstruction
     public OpSubgroupAvcImeConvertToMcePayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeConvertToMcePayloadINTEL(OpData data)
@@ -83452,6 +85303,9 @@ public struct OpSubgroupAvcImeConvertToMcePayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeConvertToMcePayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeConvertToMcePayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeSetMaxMotionVectorCountINTEL : IMemoryInstruction
@@ -83489,8 +85343,8 @@ public struct OpSubgroupAvcImeSetMaxMotionVectorCountINTEL : IMemoryInstruction
     public OpSubgroupAvcImeSetMaxMotionVectorCountINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeSetMaxMotionVectorCountINTEL(OpData data)
@@ -83590,6 +85444,9 @@ public struct OpSubgroupAvcImeSetMaxMotionVectorCountINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeSetMaxMotionVectorCountINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeSetMaxMotionVectorCountINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL : IMemoryInstruction
@@ -83627,8 +85484,8 @@ public struct OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL : IMemoryInstruct
     public OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL(OpData data)
@@ -83713,6 +85570,9 @@ public struct OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL : IMemoryInstruction
@@ -83750,8 +85610,8 @@ public struct OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL : IMemoryI
     public OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL(OpData data)
@@ -83851,6 +85711,9 @@ public struct OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL : IMemoryI
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeSetWeightedSadINTEL : IMemoryInstruction
@@ -83888,8 +85751,8 @@ public struct OpSubgroupAvcImeSetWeightedSadINTEL : IMemoryInstruction
     public OpSubgroupAvcImeSetWeightedSadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeSetWeightedSadINTEL(OpData data)
@@ -83989,6 +85852,9 @@ public struct OpSubgroupAvcImeSetWeightedSadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeSetWeightedSadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeSetWeightedSadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL : IMemoryInstruction
@@ -84026,8 +85892,8 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL : IMemoryInstruct
     public OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL(OpData data)
@@ -84142,6 +86008,9 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithDualReferenceINTEL : IMemoryInstruction
@@ -84179,8 +86048,8 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceINTEL : IMemoryInstructio
     public OpSubgroupAvcImeEvaluateWithDualReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithDualReferenceINTEL(OpData data)
@@ -84310,6 +86179,9 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceINTEL : IMemoryInstructio
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL : IMemoryInstruction
@@ -84347,8 +86219,8 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL : IMemory
     public OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL(OpData data)
@@ -84478,6 +86350,9 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL : IMemory
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL : IMemoryInstruction
@@ -84515,8 +86390,8 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL : IMemoryIn
     public OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL(OpData data)
@@ -84661,6 +86536,9 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL : IMemoryIn
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL : IMemoryInstruction
@@ -84698,8 +86576,8 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL : IMemor
     public OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL(OpData data)
@@ -84814,6 +86692,9 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL : IMemoryInstruction
@@ -84851,8 +86732,8 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL : IMemoryI
     public OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL(OpData data)
@@ -84982,6 +86863,9 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL : IMemoryI
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL : IMemoryInstruction
@@ -85019,8 +86903,8 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL : IMem
     public OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL(OpData data)
@@ -85150,6 +87034,9 @@ public struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL : IMem
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminoutINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL : IMemoryInstruction
@@ -85187,8 +87074,8 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL : IMemor
     public OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL(OpData data)
@@ -85333,6 +87220,9 @@ public struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeConvertToMceResultINTEL : IMemoryInstruction
@@ -85370,8 +87260,8 @@ public struct OpSubgroupAvcImeConvertToMceResultINTEL : IMemoryInstruction
     public OpSubgroupAvcImeConvertToMceResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeConvertToMceResultINTEL(OpData data)
@@ -85456,6 +87346,9 @@ public struct OpSubgroupAvcImeConvertToMceResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeConvertToMceResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeConvertToMceResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetSingleReferenceStreaminINTEL : IMemoryInstruction
@@ -85493,8 +87386,8 @@ public struct OpSubgroupAvcImeGetSingleReferenceStreaminINTEL : IMemoryInstructi
     public OpSubgroupAvcImeGetSingleReferenceStreaminINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetSingleReferenceStreaminINTEL(OpData data)
@@ -85579,6 +87472,9 @@ public struct OpSubgroupAvcImeGetSingleReferenceStreaminINTEL : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetSingleReferenceStreaminINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetSingleReferenceStreaminINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetDualReferenceStreaminINTEL : IMemoryInstruction
@@ -85616,8 +87512,8 @@ public struct OpSubgroupAvcImeGetDualReferenceStreaminINTEL : IMemoryInstruction
     public OpSubgroupAvcImeGetDualReferenceStreaminINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetDualReferenceStreaminINTEL(OpData data)
@@ -85702,6 +87598,9 @@ public struct OpSubgroupAvcImeGetDualReferenceStreaminINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetDualReferenceStreaminINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetDualReferenceStreaminINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL : IMemoryInstruction
@@ -85739,8 +87638,8 @@ public struct OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL : IMemoryInstru
     public OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL(OpData data)
@@ -85825,6 +87724,9 @@ public struct OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL : IMemoryInstru
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeStripDualReferenceStreamoutINTEL : IMemoryInstruction
@@ -85862,8 +87764,8 @@ public struct OpSubgroupAvcImeStripDualReferenceStreamoutINTEL : IMemoryInstruct
     public OpSubgroupAvcImeStripDualReferenceStreamoutINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeStripDualReferenceStreamoutINTEL(OpData data)
@@ -85948,6 +87850,9 @@ public struct OpSubgroupAvcImeStripDualReferenceStreamoutINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeStripDualReferenceStreamoutINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeStripDualReferenceStreamoutINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL : IMemoryInstruction
@@ -85985,8 +87890,8 @@ public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectors
     public OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL(OpData data)
@@ -86086,6 +87991,9 @@ public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectors
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeMotionVectorsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL : IMemoryInstruction
@@ -86123,8 +88031,8 @@ public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsIN
     public OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL(OpData data)
@@ -86224,6 +88132,9 @@ public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsIN
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeDistortionsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL : IMemoryInstruction
@@ -86261,8 +88172,8 @@ public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsI
     public OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL(OpData data)
@@ -86362,6 +88273,9 @@ public struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsI
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeReferenceIdsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL : IMemoryInstruction
@@ -86399,8 +88313,8 @@ public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsIN
     public OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL(OpData data)
@@ -86515,6 +88429,9 @@ public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsIN
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMotionVectorsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL : IMemoryInstruction
@@ -86552,8 +88469,8 @@ public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTE
     public OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL(OpData data)
@@ -86668,6 +88585,9 @@ public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTE
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDistortionsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL : IMemoryInstruction
@@ -86705,8 +88625,8 @@ public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINT
     public OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL(OpData data)
@@ -86821,6 +88741,9 @@ public struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINT
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeReferenceIdsINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetBorderReachedINTEL : IMemoryInstruction
@@ -86858,8 +88781,8 @@ public struct OpSubgroupAvcImeGetBorderReachedINTEL : IMemoryInstruction
     public OpSubgroupAvcImeGetBorderReachedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetBorderReachedINTEL(OpData data)
@@ -86959,6 +88882,9 @@ public struct OpSubgroupAvcImeGetBorderReachedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetBorderReachedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetBorderReachedINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL : IMemoryInstruction
@@ -86996,8 +88922,8 @@ public struct OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL : IMemoryInstruc
     public OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL(OpData data)
@@ -87082,6 +89008,9 @@ public struct OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL : IMemoryInstruc
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL : IMemoryInstruction
@@ -87119,8 +89048,8 @@ public struct OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL : IMe
     public OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL(OpData data)
@@ -87205,6 +89134,9 @@ public struct OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL : IMe
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminationINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL : IMemoryInstruction
@@ -87242,8 +89174,8 @@ public struct OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL : IMem
     public OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL(OpData data)
@@ -87328,6 +89260,9 @@ public struct OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL : IMem
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetWeightingPatternMinimumMotionVectorINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL : IMemoryInstruction
@@ -87365,8 +89300,8 @@ public struct OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL : IMemor
     public OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL(OpData data)
@@ -87451,6 +89386,9 @@ public struct OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcImeGetWeightingPatternMinimumDistortionINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcFmeInitializeINTEL : IMemoryInstruction
@@ -87488,8 +89426,8 @@ public struct OpSubgroupAvcFmeInitializeINTEL : IMemoryInstruction
     public OpSubgroupAvcFmeInitializeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcFmeInitializeINTEL(OpData data)
@@ -87664,6 +89602,9 @@ public struct OpSubgroupAvcFmeInitializeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcFmeInitializeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcFmeInitializeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcBmeInitializeINTEL : IMemoryInstruction
@@ -87701,8 +89642,8 @@ public struct OpSubgroupAvcBmeInitializeINTEL : IMemoryInstruction
     public OpSubgroupAvcBmeInitializeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcBmeInitializeINTEL(OpData data)
@@ -87892,6 +89833,9 @@ public struct OpSubgroupAvcBmeInitializeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcBmeInitializeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcBmeInitializeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefConvertToMcePayloadINTEL : IMemoryInstruction
@@ -87929,8 +89873,8 @@ public struct OpSubgroupAvcRefConvertToMcePayloadINTEL : IMemoryInstruction
     public OpSubgroupAvcRefConvertToMcePayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefConvertToMcePayloadINTEL(OpData data)
@@ -88015,6 +89959,9 @@ public struct OpSubgroupAvcRefConvertToMcePayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefConvertToMcePayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefConvertToMcePayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefSetBidirectionalMixDisableINTEL : IMemoryInstruction
@@ -88052,8 +89999,8 @@ public struct OpSubgroupAvcRefSetBidirectionalMixDisableINTEL : IMemoryInstructi
     public OpSubgroupAvcRefSetBidirectionalMixDisableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefSetBidirectionalMixDisableINTEL(OpData data)
@@ -88138,6 +90085,9 @@ public struct OpSubgroupAvcRefSetBidirectionalMixDisableINTEL : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefSetBidirectionalMixDisableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefSetBidirectionalMixDisableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefSetBilinearFilterEnableINTEL : IMemoryInstruction
@@ -88175,8 +90125,8 @@ public struct OpSubgroupAvcRefSetBilinearFilterEnableINTEL : IMemoryInstruction
     public OpSubgroupAvcRefSetBilinearFilterEnableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefSetBilinearFilterEnableINTEL(OpData data)
@@ -88261,6 +90211,9 @@ public struct OpSubgroupAvcRefSetBilinearFilterEnableINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefSetBilinearFilterEnableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefSetBilinearFilterEnableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL : IMemoryInstruction
@@ -88298,8 +90251,8 @@ public struct OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL : IMemoryInstruct
     public OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL(OpData data)
@@ -88414,6 +90367,9 @@ public struct OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefEvaluateWithDualReferenceINTEL : IMemoryInstruction
@@ -88451,8 +90407,8 @@ public struct OpSubgroupAvcRefEvaluateWithDualReferenceINTEL : IMemoryInstructio
     public OpSubgroupAvcRefEvaluateWithDualReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefEvaluateWithDualReferenceINTEL(OpData data)
@@ -88582,6 +90538,9 @@ public struct OpSubgroupAvcRefEvaluateWithDualReferenceINTEL : IMemoryInstructio
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefEvaluateWithDualReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefEvaluateWithDualReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL : IMemoryInstruction
@@ -88619,8 +90578,8 @@ public struct OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL : IMemoryInstructi
     public OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL(OpData data)
@@ -88735,6 +90694,9 @@ public struct OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL : IMemoryInstruction
@@ -88772,8 +90734,8 @@ public struct OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL : IMemor
     public OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL(OpData data)
@@ -88903,6 +90865,9 @@ public struct OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcRefConvertToMceResultINTEL : IMemoryInstruction
@@ -88940,8 +90905,8 @@ public struct OpSubgroupAvcRefConvertToMceResultINTEL : IMemoryInstruction
     public OpSubgroupAvcRefConvertToMceResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcRefConvertToMceResultINTEL(OpData data)
@@ -89026,6 +90991,9 @@ public struct OpSubgroupAvcRefConvertToMceResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcRefConvertToMceResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcRefConvertToMceResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicInitializeINTEL : IMemoryInstruction
@@ -89063,8 +91031,8 @@ public struct OpSubgroupAvcSicInitializeINTEL : IMemoryInstruction
     public OpSubgroupAvcSicInitializeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicInitializeINTEL(OpData data)
@@ -89149,6 +91117,9 @@ public struct OpSubgroupAvcSicInitializeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicInitializeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicInitializeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicConfigureSkcINTEL : IMemoryInstruction
@@ -89186,8 +91157,8 @@ public struct OpSubgroupAvcSicConfigureSkcINTEL : IMemoryInstruction
     public OpSubgroupAvcSicConfigureSkcINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicConfigureSkcINTEL(OpData data)
@@ -89347,6 +91318,9 @@ public struct OpSubgroupAvcSicConfigureSkcINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicConfigureSkcINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicConfigureSkcINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicConfigureIpeLumaINTEL : IMemoryInstruction
@@ -89384,8 +91358,8 @@ public struct OpSubgroupAvcSicConfigureIpeLumaINTEL : IMemoryInstruction
     public OpSubgroupAvcSicConfigureIpeLumaINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicConfigureIpeLumaINTEL(OpData data)
@@ -89575,6 +91549,9 @@ public struct OpSubgroupAvcSicConfigureIpeLumaINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicConfigureIpeLumaINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicConfigureIpeLumaINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicConfigureIpeLumaChromaINTEL : IMemoryInstruction
@@ -89612,8 +91589,8 @@ public struct OpSubgroupAvcSicConfigureIpeLumaChromaINTEL : IMemoryInstruction
     public OpSubgroupAvcSicConfigureIpeLumaChromaINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicConfigureIpeLumaChromaINTEL(OpData data)
@@ -89848,6 +91825,9 @@ public struct OpSubgroupAvcSicConfigureIpeLumaChromaINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicConfigureIpeLumaChromaINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicConfigureIpeLumaChromaINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetMotionVectorMaskINTEL : IMemoryInstruction
@@ -89885,8 +91865,8 @@ public struct OpSubgroupAvcSicGetMotionVectorMaskINTEL : IMemoryInstruction
     public OpSubgroupAvcSicGetMotionVectorMaskINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetMotionVectorMaskINTEL(OpData data)
@@ -89986,6 +91966,9 @@ public struct OpSubgroupAvcSicGetMotionVectorMaskINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetMotionVectorMaskINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetMotionVectorMaskINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicConvertToMcePayloadINTEL : IMemoryInstruction
@@ -90023,8 +92006,8 @@ public struct OpSubgroupAvcSicConvertToMcePayloadINTEL : IMemoryInstruction
     public OpSubgroupAvcSicConvertToMcePayloadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicConvertToMcePayloadINTEL(OpData data)
@@ -90109,6 +92092,9 @@ public struct OpSubgroupAvcSicConvertToMcePayloadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicConvertToMcePayloadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicConvertToMcePayloadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL : IMemoryInstruction
@@ -90146,8 +92132,8 @@ public struct OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL : IMemoryInstruction
     public OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL(OpData data)
@@ -90247,6 +92233,9 @@ public struct OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL : IMemoryInstruction
@@ -90284,8 +92273,8 @@ public struct OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL : IMemoryInstruc
     public OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL(OpData data)
@@ -90415,6 +92404,9 @@ public struct OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL : IMemoryInstruc
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL : IMemoryInstruction
@@ -90452,8 +92444,8 @@ public struct OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL : IMemoryInstr
     public OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL(OpData data)
@@ -90553,6 +92545,9 @@ public struct OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL : IMemoryInstr
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicSetBilinearFilterEnableINTEL : IMemoryInstruction
@@ -90590,8 +92585,8 @@ public struct OpSubgroupAvcSicSetBilinearFilterEnableINTEL : IMemoryInstruction
     public OpSubgroupAvcSicSetBilinearFilterEnableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicSetBilinearFilterEnableINTEL(OpData data)
@@ -90676,6 +92671,9 @@ public struct OpSubgroupAvcSicSetBilinearFilterEnableINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicSetBilinearFilterEnableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicSetBilinearFilterEnableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL : IMemoryInstruction
@@ -90713,8 +92711,8 @@ public struct OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL : IMemoryInstruc
     public OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL(OpData data)
@@ -90814,6 +92812,9 @@ public struct OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL : IMemoryInstruc
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL : IMemoryInstruction
@@ -90851,8 +92852,8 @@ public struct OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL : IMemoryInstruction
     public OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL(OpData data)
@@ -90952,6 +92953,9 @@ public struct OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicEvaluateIpeINTEL : IMemoryInstruction
@@ -90989,8 +92993,8 @@ public struct OpSubgroupAvcSicEvaluateIpeINTEL : IMemoryInstruction
     public OpSubgroupAvcSicEvaluateIpeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicEvaluateIpeINTEL(OpData data)
@@ -91090,6 +93094,9 @@ public struct OpSubgroupAvcSicEvaluateIpeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicEvaluateIpeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicEvaluateIpeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL : IMemoryInstruction
@@ -91127,8 +93134,8 @@ public struct OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL : IMemoryInstruct
     public OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL(OpData data)
@@ -91243,6 +93250,9 @@ public struct OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL : IMemoryInstruct
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicEvaluateWithDualReferenceINTEL : IMemoryInstruction
@@ -91280,8 +93290,8 @@ public struct OpSubgroupAvcSicEvaluateWithDualReferenceINTEL : IMemoryInstructio
     public OpSubgroupAvcSicEvaluateWithDualReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicEvaluateWithDualReferenceINTEL(OpData data)
@@ -91411,6 +93421,9 @@ public struct OpSubgroupAvcSicEvaluateWithDualReferenceINTEL : IMemoryInstructio
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicEvaluateWithDualReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicEvaluateWithDualReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL : IMemoryInstruction
@@ -91448,8 +93461,8 @@ public struct OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL : IMemoryInstructi
     public OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL(OpData data)
@@ -91564,6 +93577,9 @@ public struct OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL : IMemoryInstruction
@@ -91601,8 +93617,8 @@ public struct OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL : IMemor
     public OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL(OpData data)
@@ -91732,6 +93748,9 @@ public struct OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL : IMemor
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicConvertToMceResultINTEL : IMemoryInstruction
@@ -91769,8 +93788,8 @@ public struct OpSubgroupAvcSicConvertToMceResultINTEL : IMemoryInstruction
     public OpSubgroupAvcSicConvertToMceResultINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicConvertToMceResultINTEL(OpData data)
@@ -91855,6 +93874,9 @@ public struct OpSubgroupAvcSicConvertToMceResultINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicConvertToMceResultINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicConvertToMceResultINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetIpeLumaShapeINTEL : IMemoryInstruction
@@ -91892,8 +93914,8 @@ public struct OpSubgroupAvcSicGetIpeLumaShapeINTEL : IMemoryInstruction
     public OpSubgroupAvcSicGetIpeLumaShapeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetIpeLumaShapeINTEL(OpData data)
@@ -91978,6 +94000,9 @@ public struct OpSubgroupAvcSicGetIpeLumaShapeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetIpeLumaShapeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetIpeLumaShapeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL : IMemoryInstruction
@@ -92015,8 +94040,8 @@ public struct OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL : IMemoryInstruction
     public OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL(OpData data)
@@ -92101,6 +94126,9 @@ public struct OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL : IMemoryInstruction
@@ -92138,8 +94166,8 @@ public struct OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL : IMemoryInstructi
     public OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL(OpData data)
@@ -92224,6 +94252,9 @@ public struct OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetPackedIpeLumaModesINTEL : IMemoryInstruction
@@ -92261,8 +94292,8 @@ public struct OpSubgroupAvcSicGetPackedIpeLumaModesINTEL : IMemoryInstruction
     public OpSubgroupAvcSicGetPackedIpeLumaModesINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetPackedIpeLumaModesINTEL(OpData data)
@@ -92347,6 +94378,9 @@ public struct OpSubgroupAvcSicGetPackedIpeLumaModesINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetPackedIpeLumaModesINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetPackedIpeLumaModesINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetIpeChromaModeINTEL : IMemoryInstruction
@@ -92384,8 +94418,8 @@ public struct OpSubgroupAvcSicGetIpeChromaModeINTEL : IMemoryInstruction
     public OpSubgroupAvcSicGetIpeChromaModeINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetIpeChromaModeINTEL(OpData data)
@@ -92470,6 +94504,9 @@ public struct OpSubgroupAvcSicGetIpeChromaModeINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetIpeChromaModeINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetIpeChromaModeINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL : IMemoryInstruction
@@ -92507,8 +94544,8 @@ public struct OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL : IMemoryInstr
     public OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL(OpData data)
@@ -92593,6 +94630,9 @@ public struct OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL : IMemoryInstr
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL : IMemoryInstruction
@@ -92630,8 +94670,8 @@ public struct OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL : IMemoryInstruc
     public OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL(OpData data)
@@ -92716,6 +94756,9 @@ public struct OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL : IMemoryInstruc
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL(OpData data) => new(data);
 }
 
 public struct OpSubgroupAvcSicGetInterRawSadsINTEL : IMemoryInstruction
@@ -92753,8 +94796,8 @@ public struct OpSubgroupAvcSicGetInterRawSadsINTEL : IMemoryInstruction
     public OpSubgroupAvcSicGetInterRawSadsINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupAvcSicGetInterRawSadsINTEL(OpData data)
@@ -92839,6 +94882,9 @@ public struct OpSubgroupAvcSicGetInterRawSadsINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupAvcSicGetInterRawSadsINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupAvcSicGetInterRawSadsINTEL(OpData data) => new(data);
 }
 
 public struct OpVariableLengthArrayINTEL : IMemoryInstruction
@@ -92876,8 +94922,8 @@ public struct OpVariableLengthArrayINTEL : IMemoryInstruction
     public OpVariableLengthArrayINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpVariableLengthArrayINTEL(OpData data)
@@ -92962,6 +95008,9 @@ public struct OpVariableLengthArrayINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpVariableLengthArrayINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpVariableLengthArrayINTEL(OpData data) => new(data);
 }
 
 public struct OpSaveMemoryINTEL : IMemoryInstruction
@@ -92999,8 +95048,8 @@ public struct OpSaveMemoryINTEL : IMemoryInstruction
     public OpSaveMemoryINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSaveMemoryINTEL(OpData data)
@@ -93070,6 +95119,9 @@ public struct OpSaveMemoryINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSaveMemoryINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSaveMemoryINTEL(OpData data) => new(data);
 }
 
 public struct OpRestoreMemoryINTEL : IMemoryInstruction
@@ -93107,8 +95159,8 @@ public struct OpRestoreMemoryINTEL : IMemoryInstruction
     public OpRestoreMemoryINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRestoreMemoryINTEL(OpData data)
@@ -93162,6 +95214,9 @@ public struct OpRestoreMemoryINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRestoreMemoryINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRestoreMemoryINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatSinCosPiINTEL : IMemoryInstruction
@@ -93199,8 +95254,8 @@ public struct OpArbitraryFloatSinCosPiINTEL : IMemoryInstruction
     public OpArbitraryFloatSinCosPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatSinCosPiINTEL(OpData data)
@@ -93375,6 +95430,9 @@ public struct OpArbitraryFloatSinCosPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatSinCosPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatSinCosPiINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatCastINTEL : IMemoryInstruction
@@ -93412,8 +95470,8 @@ public struct OpArbitraryFloatCastINTEL : IMemoryInstruction
     public OpArbitraryFloatCastINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatCastINTEL(OpData data)
@@ -93573,6 +95631,9 @@ public struct OpArbitraryFloatCastINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatCastINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatCastINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatCastFromIntINTEL : IMemoryInstruction
@@ -93610,8 +95671,8 @@ public struct OpArbitraryFloatCastFromIntINTEL : IMemoryInstruction
     public OpArbitraryFloatCastFromIntINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatCastFromIntINTEL(OpData data)
@@ -93771,6 +95832,9 @@ public struct OpArbitraryFloatCastFromIntINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatCastFromIntINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatCastFromIntINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatCastToIntINTEL : IMemoryInstruction
@@ -93808,8 +95872,8 @@ public struct OpArbitraryFloatCastToIntINTEL : IMemoryInstruction
     public OpArbitraryFloatCastToIntINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatCastToIntINTEL(OpData data)
@@ -93954,6 +96018,9 @@ public struct OpArbitraryFloatCastToIntINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatCastToIntINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatCastToIntINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatAddINTEL : IMemoryInstruction
@@ -93991,8 +96058,8 @@ public struct OpArbitraryFloatAddINTEL : IMemoryInstruction
     public OpArbitraryFloatAddINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatAddINTEL(OpData data)
@@ -94182,6 +96249,9 @@ public struct OpArbitraryFloatAddINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatAddINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatAddINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatSubINTEL : IMemoryInstruction
@@ -94219,8 +96289,8 @@ public struct OpArbitraryFloatSubINTEL : IMemoryInstruction
     public OpArbitraryFloatSubINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatSubINTEL(OpData data)
@@ -94410,6 +96480,9 @@ public struct OpArbitraryFloatSubINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatSubINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatSubINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatMulINTEL : IMemoryInstruction
@@ -94447,8 +96520,8 @@ public struct OpArbitraryFloatMulINTEL : IMemoryInstruction
     public OpArbitraryFloatMulINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatMulINTEL(OpData data)
@@ -94638,6 +96711,9 @@ public struct OpArbitraryFloatMulINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatMulINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatMulINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatDivINTEL : IMemoryInstruction
@@ -94675,8 +96751,8 @@ public struct OpArbitraryFloatDivINTEL : IMemoryInstruction
     public OpArbitraryFloatDivINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatDivINTEL(OpData data)
@@ -94866,6 +96942,9 @@ public struct OpArbitraryFloatDivINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatDivINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatDivINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatGTINTEL : IMemoryInstruction
@@ -94903,8 +96982,8 @@ public struct OpArbitraryFloatGTINTEL : IMemoryInstruction
     public OpArbitraryFloatGTINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatGTINTEL(OpData data)
@@ -95034,6 +97113,9 @@ public struct OpArbitraryFloatGTINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatGTINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatGTINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatGEINTEL : IMemoryInstruction
@@ -95071,8 +97153,8 @@ public struct OpArbitraryFloatGEINTEL : IMemoryInstruction
     public OpArbitraryFloatGEINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatGEINTEL(OpData data)
@@ -95202,6 +97284,9 @@ public struct OpArbitraryFloatGEINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatGEINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatGEINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatLTINTEL : IMemoryInstruction
@@ -95239,8 +97324,8 @@ public struct OpArbitraryFloatLTINTEL : IMemoryInstruction
     public OpArbitraryFloatLTINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatLTINTEL(OpData data)
@@ -95370,6 +97455,9 @@ public struct OpArbitraryFloatLTINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatLTINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatLTINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatLEINTEL : IMemoryInstruction
@@ -95407,8 +97495,8 @@ public struct OpArbitraryFloatLEINTEL : IMemoryInstruction
     public OpArbitraryFloatLEINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatLEINTEL(OpData data)
@@ -95538,6 +97626,9 @@ public struct OpArbitraryFloatLEINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatLEINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatLEINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatEQINTEL : IMemoryInstruction
@@ -95575,8 +97666,8 @@ public struct OpArbitraryFloatEQINTEL : IMemoryInstruction
     public OpArbitraryFloatEQINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatEQINTEL(OpData data)
@@ -95706,6 +97797,9 @@ public struct OpArbitraryFloatEQINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatEQINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatEQINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatRecipINTEL : IMemoryInstruction
@@ -95743,8 +97837,8 @@ public struct OpArbitraryFloatRecipINTEL : IMemoryInstruction
     public OpArbitraryFloatRecipINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatRecipINTEL(OpData data)
@@ -95904,6 +97998,9 @@ public struct OpArbitraryFloatRecipINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatRecipINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatRecipINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatRSqrtINTEL : IMemoryInstruction
@@ -95941,8 +98038,8 @@ public struct OpArbitraryFloatRSqrtINTEL : IMemoryInstruction
     public OpArbitraryFloatRSqrtINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatRSqrtINTEL(OpData data)
@@ -96102,6 +98199,9 @@ public struct OpArbitraryFloatRSqrtINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatRSqrtINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatRSqrtINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatCbrtINTEL : IMemoryInstruction
@@ -96139,8 +98239,8 @@ public struct OpArbitraryFloatCbrtINTEL : IMemoryInstruction
     public OpArbitraryFloatCbrtINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatCbrtINTEL(OpData data)
@@ -96300,6 +98400,9 @@ public struct OpArbitraryFloatCbrtINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatCbrtINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatCbrtINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatHypotINTEL : IMemoryInstruction
@@ -96337,8 +98440,8 @@ public struct OpArbitraryFloatHypotINTEL : IMemoryInstruction
     public OpArbitraryFloatHypotINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatHypotINTEL(OpData data)
@@ -96528,6 +98631,9 @@ public struct OpArbitraryFloatHypotINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatHypotINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatHypotINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatSqrtINTEL : IMemoryInstruction
@@ -96565,8 +98671,8 @@ public struct OpArbitraryFloatSqrtINTEL : IMemoryInstruction
     public OpArbitraryFloatSqrtINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatSqrtINTEL(OpData data)
@@ -96726,6 +98832,9 @@ public struct OpArbitraryFloatSqrtINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatSqrtINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatSqrtINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatLogINTEL : IMemoryInstruction
@@ -96763,8 +98872,8 @@ public struct OpArbitraryFloatLogINTEL : IMemoryInstruction
     public OpArbitraryFloatLogINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatLogINTEL(OpData data)
@@ -96924,6 +99033,9 @@ public struct OpArbitraryFloatLogINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatLogINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatLogINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatLog2INTEL : IMemoryInstruction
@@ -96961,8 +99073,8 @@ public struct OpArbitraryFloatLog2INTEL : IMemoryInstruction
     public OpArbitraryFloatLog2INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatLog2INTEL(OpData data)
@@ -97122,6 +99234,9 @@ public struct OpArbitraryFloatLog2INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatLog2INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatLog2INTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatLog10INTEL : IMemoryInstruction
@@ -97159,8 +99274,8 @@ public struct OpArbitraryFloatLog10INTEL : IMemoryInstruction
     public OpArbitraryFloatLog10INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatLog10INTEL(OpData data)
@@ -97320,6 +99435,9 @@ public struct OpArbitraryFloatLog10INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatLog10INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatLog10INTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatLog1pINTEL : IMemoryInstruction
@@ -97357,8 +99475,8 @@ public struct OpArbitraryFloatLog1pINTEL : IMemoryInstruction
     public OpArbitraryFloatLog1pINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatLog1pINTEL(OpData data)
@@ -97518,6 +99636,9 @@ public struct OpArbitraryFloatLog1pINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatLog1pINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatLog1pINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatExpINTEL : IMemoryInstruction
@@ -97555,8 +99676,8 @@ public struct OpArbitraryFloatExpINTEL : IMemoryInstruction
     public OpArbitraryFloatExpINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatExpINTEL(OpData data)
@@ -97716,6 +99837,9 @@ public struct OpArbitraryFloatExpINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatExpINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatExpINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatExp2INTEL : IMemoryInstruction
@@ -97753,8 +99877,8 @@ public struct OpArbitraryFloatExp2INTEL : IMemoryInstruction
     public OpArbitraryFloatExp2INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatExp2INTEL(OpData data)
@@ -97914,6 +100038,9 @@ public struct OpArbitraryFloatExp2INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatExp2INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatExp2INTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatExp10INTEL : IMemoryInstruction
@@ -97951,8 +100078,8 @@ public struct OpArbitraryFloatExp10INTEL : IMemoryInstruction
     public OpArbitraryFloatExp10INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatExp10INTEL(OpData data)
@@ -98112,6 +100239,9 @@ public struct OpArbitraryFloatExp10INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatExp10INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatExp10INTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatExpm1INTEL : IMemoryInstruction
@@ -98149,8 +100279,8 @@ public struct OpArbitraryFloatExpm1INTEL : IMemoryInstruction
     public OpArbitraryFloatExpm1INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatExpm1INTEL(OpData data)
@@ -98310,6 +100440,9 @@ public struct OpArbitraryFloatExpm1INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatExpm1INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatExpm1INTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatSinINTEL : IMemoryInstruction
@@ -98347,8 +100480,8 @@ public struct OpArbitraryFloatSinINTEL : IMemoryInstruction
     public OpArbitraryFloatSinINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatSinINTEL(OpData data)
@@ -98508,6 +100641,9 @@ public struct OpArbitraryFloatSinINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatSinINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatSinINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatCosINTEL : IMemoryInstruction
@@ -98545,8 +100681,8 @@ public struct OpArbitraryFloatCosINTEL : IMemoryInstruction
     public OpArbitraryFloatCosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatCosINTEL(OpData data)
@@ -98706,6 +100842,9 @@ public struct OpArbitraryFloatCosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatCosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatCosINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatSinCosINTEL : IMemoryInstruction
@@ -98743,8 +100882,8 @@ public struct OpArbitraryFloatSinCosINTEL : IMemoryInstruction
     public OpArbitraryFloatSinCosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatSinCosINTEL(OpData data)
@@ -98904,6 +101043,9 @@ public struct OpArbitraryFloatSinCosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatSinCosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatSinCosINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatSinPiINTEL : IMemoryInstruction
@@ -98941,8 +101083,8 @@ public struct OpArbitraryFloatSinPiINTEL : IMemoryInstruction
     public OpArbitraryFloatSinPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatSinPiINTEL(OpData data)
@@ -99102,6 +101244,9 @@ public struct OpArbitraryFloatSinPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatSinPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatSinPiINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatCosPiINTEL : IMemoryInstruction
@@ -99139,8 +101284,8 @@ public struct OpArbitraryFloatCosPiINTEL : IMemoryInstruction
     public OpArbitraryFloatCosPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatCosPiINTEL(OpData data)
@@ -99300,6 +101445,9 @@ public struct OpArbitraryFloatCosPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatCosPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatCosPiINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatASinINTEL : IMemoryInstruction
@@ -99337,8 +101485,8 @@ public struct OpArbitraryFloatASinINTEL : IMemoryInstruction
     public OpArbitraryFloatASinINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatASinINTEL(OpData data)
@@ -99498,6 +101646,9 @@ public struct OpArbitraryFloatASinINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatASinINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatASinINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatASinPiINTEL : IMemoryInstruction
@@ -99535,8 +101686,8 @@ public struct OpArbitraryFloatASinPiINTEL : IMemoryInstruction
     public OpArbitraryFloatASinPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatASinPiINTEL(OpData data)
@@ -99696,6 +101847,9 @@ public struct OpArbitraryFloatASinPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatASinPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatASinPiINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatACosINTEL : IMemoryInstruction
@@ -99733,8 +101887,8 @@ public struct OpArbitraryFloatACosINTEL : IMemoryInstruction
     public OpArbitraryFloatACosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatACosINTEL(OpData data)
@@ -99894,6 +102048,9 @@ public struct OpArbitraryFloatACosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatACosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatACosINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatACosPiINTEL : IMemoryInstruction
@@ -99931,8 +102088,8 @@ public struct OpArbitraryFloatACosPiINTEL : IMemoryInstruction
     public OpArbitraryFloatACosPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatACosPiINTEL(OpData data)
@@ -100092,6 +102249,9 @@ public struct OpArbitraryFloatACosPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatACosPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatACosPiINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatATanINTEL : IMemoryInstruction
@@ -100129,8 +102289,8 @@ public struct OpArbitraryFloatATanINTEL : IMemoryInstruction
     public OpArbitraryFloatATanINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatATanINTEL(OpData data)
@@ -100290,6 +102450,9 @@ public struct OpArbitraryFloatATanINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatATanINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatATanINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatATanPiINTEL : IMemoryInstruction
@@ -100327,8 +102490,8 @@ public struct OpArbitraryFloatATanPiINTEL : IMemoryInstruction
     public OpArbitraryFloatATanPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatATanPiINTEL(OpData data)
@@ -100488,6 +102651,9 @@ public struct OpArbitraryFloatATanPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatATanPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatATanPiINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatATan2INTEL : IMemoryInstruction
@@ -100525,8 +102691,8 @@ public struct OpArbitraryFloatATan2INTEL : IMemoryInstruction
     public OpArbitraryFloatATan2INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatATan2INTEL(OpData data)
@@ -100716,6 +102882,9 @@ public struct OpArbitraryFloatATan2INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatATan2INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatATan2INTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatPowINTEL : IMemoryInstruction
@@ -100753,8 +102922,8 @@ public struct OpArbitraryFloatPowINTEL : IMemoryInstruction
     public OpArbitraryFloatPowINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatPowINTEL(OpData data)
@@ -100944,6 +103113,9 @@ public struct OpArbitraryFloatPowINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatPowINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatPowINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatPowRINTEL : IMemoryInstruction
@@ -100981,8 +103153,8 @@ public struct OpArbitraryFloatPowRINTEL : IMemoryInstruction
     public OpArbitraryFloatPowRINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatPowRINTEL(OpData data)
@@ -101172,6 +103344,9 @@ public struct OpArbitraryFloatPowRINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatPowRINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatPowRINTEL(OpData data) => new(data);
 }
 
 public struct OpArbitraryFloatPowNINTEL : IMemoryInstruction
@@ -101209,8 +103384,8 @@ public struct OpArbitraryFloatPowNINTEL : IMemoryInstruction
     public OpArbitraryFloatPowNINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArbitraryFloatPowNINTEL(OpData data)
@@ -101385,6 +103560,9 @@ public struct OpArbitraryFloatPowNINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArbitraryFloatPowNINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArbitraryFloatPowNINTEL(OpData data) => new(data);
 }
 
 public struct OpLoopControlINTEL : IMemoryInstruction
@@ -101422,8 +103600,8 @@ public struct OpLoopControlINTEL : IMemoryInstruction
     public OpLoopControlINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpLoopControlINTEL(OpData data)
@@ -101477,6 +103655,9 @@ public struct OpLoopControlINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpLoopControlINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpLoopControlINTEL(OpData data) => new(data);
 }
 
 public struct OpAliasDomainDeclINTEL : IMemoryInstruction
@@ -101514,8 +103695,8 @@ public struct OpAliasDomainDeclINTEL : IMemoryInstruction
     public OpAliasDomainDeclINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAliasDomainDeclINTEL(OpData data)
@@ -101586,6 +103767,9 @@ public struct OpAliasDomainDeclINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAliasDomainDeclINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAliasDomainDeclINTEL(OpData data) => new(data);
 }
 
 public struct OpAliasScopeDeclINTEL : IMemoryInstruction
@@ -101623,8 +103807,8 @@ public struct OpAliasScopeDeclINTEL : IMemoryInstruction
     public OpAliasScopeDeclINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAliasScopeDeclINTEL(OpData data)
@@ -101710,6 +103894,9 @@ public struct OpAliasScopeDeclINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAliasScopeDeclINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAliasScopeDeclINTEL(OpData data) => new(data);
 }
 
 public struct OpAliasScopeListDeclINTEL : IMemoryInstruction
@@ -101747,8 +103934,8 @@ public struct OpAliasScopeListDeclINTEL : IMemoryInstruction
     public OpAliasScopeListDeclINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAliasScopeListDeclINTEL(OpData data)
@@ -101818,6 +104005,9 @@ public struct OpAliasScopeListDeclINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAliasScopeListDeclINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAliasScopeListDeclINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedSqrtINTEL : IMemoryInstruction
@@ -101855,8 +104045,8 @@ public struct OpFixedSqrtINTEL : IMemoryInstruction
     public OpFixedSqrtINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedSqrtINTEL(OpData data)
@@ -102031,6 +104221,9 @@ public struct OpFixedSqrtINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedSqrtINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedSqrtINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedRecipINTEL : IMemoryInstruction
@@ -102068,8 +104261,8 @@ public struct OpFixedRecipINTEL : IMemoryInstruction
     public OpFixedRecipINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedRecipINTEL(OpData data)
@@ -102244,6 +104437,9 @@ public struct OpFixedRecipINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedRecipINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedRecipINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedRsqrtINTEL : IMemoryInstruction
@@ -102281,8 +104477,8 @@ public struct OpFixedRsqrtINTEL : IMemoryInstruction
     public OpFixedRsqrtINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedRsqrtINTEL(OpData data)
@@ -102457,6 +104653,9 @@ public struct OpFixedRsqrtINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedRsqrtINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedRsqrtINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedSinINTEL : IMemoryInstruction
@@ -102494,8 +104693,8 @@ public struct OpFixedSinINTEL : IMemoryInstruction
     public OpFixedSinINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedSinINTEL(OpData data)
@@ -102670,6 +104869,9 @@ public struct OpFixedSinINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedSinINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedSinINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedCosINTEL : IMemoryInstruction
@@ -102707,8 +104909,8 @@ public struct OpFixedCosINTEL : IMemoryInstruction
     public OpFixedCosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedCosINTEL(OpData data)
@@ -102883,6 +105085,9 @@ public struct OpFixedCosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedCosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedCosINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedSinCosINTEL : IMemoryInstruction
@@ -102920,8 +105125,8 @@ public struct OpFixedSinCosINTEL : IMemoryInstruction
     public OpFixedSinCosINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedSinCosINTEL(OpData data)
@@ -103096,6 +105301,9 @@ public struct OpFixedSinCosINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedSinCosINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedSinCosINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedSinPiINTEL : IMemoryInstruction
@@ -103133,8 +105341,8 @@ public struct OpFixedSinPiINTEL : IMemoryInstruction
     public OpFixedSinPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedSinPiINTEL(OpData data)
@@ -103309,6 +105517,9 @@ public struct OpFixedSinPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedSinPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedSinPiINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedCosPiINTEL : IMemoryInstruction
@@ -103346,8 +105557,8 @@ public struct OpFixedCosPiINTEL : IMemoryInstruction
     public OpFixedCosPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedCosPiINTEL(OpData data)
@@ -103522,6 +105733,9 @@ public struct OpFixedCosPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedCosPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedCosPiINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedSinCosPiINTEL : IMemoryInstruction
@@ -103559,8 +105773,8 @@ public struct OpFixedSinCosPiINTEL : IMemoryInstruction
     public OpFixedSinCosPiINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedSinCosPiINTEL(OpData data)
@@ -103735,6 +105949,9 @@ public struct OpFixedSinCosPiINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedSinCosPiINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedSinCosPiINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedLogINTEL : IMemoryInstruction
@@ -103772,8 +105989,8 @@ public struct OpFixedLogINTEL : IMemoryInstruction
     public OpFixedLogINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedLogINTEL(OpData data)
@@ -103948,6 +106165,9 @@ public struct OpFixedLogINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedLogINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedLogINTEL(OpData data) => new(data);
 }
 
 public struct OpFixedExpINTEL : IMemoryInstruction
@@ -103985,8 +106205,8 @@ public struct OpFixedExpINTEL : IMemoryInstruction
     public OpFixedExpINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFixedExpINTEL(OpData data)
@@ -104161,6 +106381,9 @@ public struct OpFixedExpINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFixedExpINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFixedExpINTEL(OpData data) => new(data);
 }
 
 public struct OpPtrCastToCrossWorkgroupINTEL : IMemoryInstruction
@@ -104198,8 +106421,8 @@ public struct OpPtrCastToCrossWorkgroupINTEL : IMemoryInstruction
     public OpPtrCastToCrossWorkgroupINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpPtrCastToCrossWorkgroupINTEL(OpData data)
@@ -104284,6 +106507,9 @@ public struct OpPtrCastToCrossWorkgroupINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpPtrCastToCrossWorkgroupINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpPtrCastToCrossWorkgroupINTEL(OpData data) => new(data);
 }
 
 public struct OpCrossWorkgroupCastToPtrINTEL : IMemoryInstruction
@@ -104321,8 +106547,8 @@ public struct OpCrossWorkgroupCastToPtrINTEL : IMemoryInstruction
     public OpCrossWorkgroupCastToPtrINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCrossWorkgroupCastToPtrINTEL(OpData data)
@@ -104407,6 +106633,9 @@ public struct OpCrossWorkgroupCastToPtrINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCrossWorkgroupCastToPtrINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCrossWorkgroupCastToPtrINTEL(OpData data) => new(data);
 }
 
 public struct OpReadPipeBlockingINTEL : IMemoryInstruction
@@ -104444,8 +106673,8 @@ public struct OpReadPipeBlockingINTEL : IMemoryInstruction
     public OpReadPipeBlockingINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpReadPipeBlockingINTEL(OpData data)
@@ -104545,6 +106774,9 @@ public struct OpReadPipeBlockingINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpReadPipeBlockingINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpReadPipeBlockingINTEL(OpData data) => new(data);
 }
 
 public struct OpWritePipeBlockingINTEL : IMemoryInstruction
@@ -104582,8 +106814,8 @@ public struct OpWritePipeBlockingINTEL : IMemoryInstruction
     public OpWritePipeBlockingINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpWritePipeBlockingINTEL(OpData data)
@@ -104683,6 +106915,9 @@ public struct OpWritePipeBlockingINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpWritePipeBlockingINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpWritePipeBlockingINTEL(OpData data) => new(data);
 }
 
 public struct OpFPGARegINTEL : IMemoryInstruction
@@ -104720,8 +106955,8 @@ public struct OpFPGARegINTEL : IMemoryInstruction
     public OpFPGARegINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpFPGARegINTEL(OpData data)
@@ -104821,6 +107056,9 @@ public struct OpFPGARegINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpFPGARegINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpFPGARegINTEL(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetRayTMinKHR : IMemoryInstruction
@@ -104858,8 +107096,8 @@ public struct OpRayQueryGetRayTMinKHR : IMemoryInstruction
     public OpRayQueryGetRayTMinKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetRayTMinKHR(OpData data)
@@ -104944,6 +107182,9 @@ public struct OpRayQueryGetRayTMinKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetRayTMinKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetRayTMinKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetRayFlagsKHR : IMemoryInstruction
@@ -104981,8 +107222,8 @@ public struct OpRayQueryGetRayFlagsKHR : IMemoryInstruction
     public OpRayQueryGetRayFlagsKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetRayFlagsKHR(OpData data)
@@ -105067,6 +107308,9 @@ public struct OpRayQueryGetRayFlagsKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetRayFlagsKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetRayFlagsKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionTKHR : IMemoryInstruction
@@ -105104,8 +107348,8 @@ public struct OpRayQueryGetIntersectionTKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionTKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionTKHR(OpData data)
@@ -105205,6 +107449,9 @@ public struct OpRayQueryGetIntersectionTKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionTKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionTKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionInstanceCustomIndexKHR : IMemoryInstruction
@@ -105242,8 +107489,8 @@ public struct OpRayQueryGetIntersectionInstanceCustomIndexKHR : IMemoryInstructi
     public OpRayQueryGetIntersectionInstanceCustomIndexKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionInstanceCustomIndexKHR(OpData data)
@@ -105343,6 +107590,9 @@ public struct OpRayQueryGetIntersectionInstanceCustomIndexKHR : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionInstanceCustomIndexKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionInstanceCustomIndexKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionInstanceIdKHR : IMemoryInstruction
@@ -105380,8 +107630,8 @@ public struct OpRayQueryGetIntersectionInstanceIdKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionInstanceIdKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionInstanceIdKHR(OpData data)
@@ -105481,6 +107731,9 @@ public struct OpRayQueryGetIntersectionInstanceIdKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionInstanceIdKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionInstanceIdKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR : IMemoryInstruction
@@ -105518,8 +107771,8 @@ public struct OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR
     public OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR(OpData data)
@@ -105619,6 +107872,9 @@ public struct OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionInstanceShaderBindingTableRecordOffsetKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionGeometryIndexKHR : IMemoryInstruction
@@ -105656,8 +107912,8 @@ public struct OpRayQueryGetIntersectionGeometryIndexKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionGeometryIndexKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionGeometryIndexKHR(OpData data)
@@ -105757,6 +108013,9 @@ public struct OpRayQueryGetIntersectionGeometryIndexKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionGeometryIndexKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionGeometryIndexKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionPrimitiveIndexKHR : IMemoryInstruction
@@ -105794,8 +108053,8 @@ public struct OpRayQueryGetIntersectionPrimitiveIndexKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionPrimitiveIndexKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionPrimitiveIndexKHR(OpData data)
@@ -105895,6 +108154,9 @@ public struct OpRayQueryGetIntersectionPrimitiveIndexKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionPrimitiveIndexKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionPrimitiveIndexKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionBarycentricsKHR : IMemoryInstruction
@@ -105932,8 +108194,8 @@ public struct OpRayQueryGetIntersectionBarycentricsKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionBarycentricsKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionBarycentricsKHR(OpData data)
@@ -106033,6 +108295,9 @@ public struct OpRayQueryGetIntersectionBarycentricsKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionBarycentricsKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionBarycentricsKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionFrontFaceKHR : IMemoryInstruction
@@ -106070,8 +108335,8 @@ public struct OpRayQueryGetIntersectionFrontFaceKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionFrontFaceKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionFrontFaceKHR(OpData data)
@@ -106171,6 +108436,9 @@ public struct OpRayQueryGetIntersectionFrontFaceKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionFrontFaceKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionFrontFaceKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionCandidateAABBOpaqueKHR : IMemoryInstruction
@@ -106208,8 +108476,8 @@ public struct OpRayQueryGetIntersectionCandidateAABBOpaqueKHR : IMemoryInstructi
     public OpRayQueryGetIntersectionCandidateAABBOpaqueKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionCandidateAABBOpaqueKHR(OpData data)
@@ -106294,6 +108562,9 @@ public struct OpRayQueryGetIntersectionCandidateAABBOpaqueKHR : IMemoryInstructi
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionCandidateAABBOpaqueKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionCandidateAABBOpaqueKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionObjectRayDirectionKHR : IMemoryInstruction
@@ -106331,8 +108602,8 @@ public struct OpRayQueryGetIntersectionObjectRayDirectionKHR : IMemoryInstructio
     public OpRayQueryGetIntersectionObjectRayDirectionKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionObjectRayDirectionKHR(OpData data)
@@ -106432,6 +108703,9 @@ public struct OpRayQueryGetIntersectionObjectRayDirectionKHR : IMemoryInstructio
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionObjectRayDirectionKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionObjectRayDirectionKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionObjectRayOriginKHR : IMemoryInstruction
@@ -106469,8 +108743,8 @@ public struct OpRayQueryGetIntersectionObjectRayOriginKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionObjectRayOriginKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionObjectRayOriginKHR(OpData data)
@@ -106570,6 +108844,9 @@ public struct OpRayQueryGetIntersectionObjectRayOriginKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionObjectRayOriginKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionObjectRayOriginKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetWorldRayDirectionKHR : IMemoryInstruction
@@ -106607,8 +108884,8 @@ public struct OpRayQueryGetWorldRayDirectionKHR : IMemoryInstruction
     public OpRayQueryGetWorldRayDirectionKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetWorldRayDirectionKHR(OpData data)
@@ -106693,6 +108970,9 @@ public struct OpRayQueryGetWorldRayDirectionKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetWorldRayDirectionKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetWorldRayDirectionKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetWorldRayOriginKHR : IMemoryInstruction
@@ -106730,8 +109010,8 @@ public struct OpRayQueryGetWorldRayOriginKHR : IMemoryInstruction
     public OpRayQueryGetWorldRayOriginKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetWorldRayOriginKHR(OpData data)
@@ -106816,6 +109096,9 @@ public struct OpRayQueryGetWorldRayOriginKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetWorldRayOriginKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetWorldRayOriginKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionObjectToWorldKHR : IMemoryInstruction
@@ -106853,8 +109136,8 @@ public struct OpRayQueryGetIntersectionObjectToWorldKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionObjectToWorldKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionObjectToWorldKHR(OpData data)
@@ -106954,6 +109237,9 @@ public struct OpRayQueryGetIntersectionObjectToWorldKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionObjectToWorldKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionObjectToWorldKHR(OpData data) => new(data);
 }
 
 public struct OpRayQueryGetIntersectionWorldToObjectKHR : IMemoryInstruction
@@ -106991,8 +109277,8 @@ public struct OpRayQueryGetIntersectionWorldToObjectKHR : IMemoryInstruction
     public OpRayQueryGetIntersectionWorldToObjectKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpRayQueryGetIntersectionWorldToObjectKHR(OpData data)
@@ -107092,6 +109378,9 @@ public struct OpRayQueryGetIntersectionWorldToObjectKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpRayQueryGetIntersectionWorldToObjectKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpRayQueryGetIntersectionWorldToObjectKHR(OpData data) => new(data);
 }
 
 public struct OpAtomicFAddEXT : IMemoryInstruction
@@ -107129,8 +109418,8 @@ public struct OpAtomicFAddEXT : IMemoryInstruction
     public OpAtomicFAddEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpAtomicFAddEXT(OpData data)
@@ -107260,6 +109549,9 @@ public struct OpAtomicFAddEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpAtomicFAddEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpAtomicFAddEXT(OpData data) => new(data);
 }
 
 public struct OpTypeBufferSurfaceINTEL : IMemoryInstruction
@@ -107297,8 +109589,8 @@ public struct OpTypeBufferSurfaceINTEL : IMemoryInstruction
     public OpTypeBufferSurfaceINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeBufferSurfaceINTEL(OpData data)
@@ -107368,6 +109660,9 @@ public struct OpTypeBufferSurfaceINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeBufferSurfaceINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeBufferSurfaceINTEL(OpData data) => new(data);
 }
 
 public struct OpTypeStructContinuedINTEL : IMemoryInstruction
@@ -107405,8 +109700,8 @@ public struct OpTypeStructContinuedINTEL : IMemoryInstruction
     public OpTypeStructContinuedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpTypeStructContinuedINTEL(OpData data)
@@ -107460,6 +109755,9 @@ public struct OpTypeStructContinuedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpTypeStructContinuedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpTypeStructContinuedINTEL(OpData data) => new(data);
 }
 
 public struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
@@ -107497,8 +109795,8 @@ public struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
     public OpConstantCompositeContinuedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConstantCompositeContinuedINTEL(OpData data)
@@ -107552,6 +109850,9 @@ public struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConstantCompositeContinuedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConstantCompositeContinuedINTEL(OpData data) => new(data);
 }
 
 public struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruction
@@ -107589,8 +109890,8 @@ public struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruction
     public OpSpecConstantCompositeContinuedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSpecConstantCompositeContinuedINTEL(OpData data)
@@ -107644,6 +109945,9 @@ public struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSpecConstantCompositeContinuedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSpecConstantCompositeContinuedINTEL(OpData data) => new(data);
 }
 
 public struct OpCompositeConstructContinuedINTEL : IMemoryInstruction
@@ -107681,8 +109985,8 @@ public struct OpCompositeConstructContinuedINTEL : IMemoryInstruction
     public OpCompositeConstructContinuedINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpCompositeConstructContinuedINTEL(OpData data)
@@ -107767,6 +110071,9 @@ public struct OpCompositeConstructContinuedINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpCompositeConstructContinuedINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpCompositeConstructContinuedINTEL(OpData data) => new(data);
 }
 
 public struct OpConvertFToBF16INTEL : IMemoryInstruction
@@ -107804,8 +110111,8 @@ public struct OpConvertFToBF16INTEL : IMemoryInstruction
     public OpConvertFToBF16INTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertFToBF16INTEL(OpData data)
@@ -107890,6 +110197,9 @@ public struct OpConvertFToBF16INTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertFToBF16INTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertFToBF16INTEL(OpData data) => new(data);
 }
 
 public struct OpConvertBF16ToFINTEL : IMemoryInstruction
@@ -107927,8 +110237,8 @@ public struct OpConvertBF16ToFINTEL : IMemoryInstruction
     public OpConvertBF16ToFINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpConvertBF16ToFINTEL(OpData data)
@@ -108013,6 +110323,9 @@ public struct OpConvertBF16ToFINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpConvertBF16ToFINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpConvertBF16ToFINTEL(OpData data) => new(data);
 }
 
 public struct OpControlBarrierArriveINTEL : IMemoryInstruction
@@ -108050,8 +110363,8 @@ public struct OpControlBarrierArriveINTEL : IMemoryInstruction
     public OpControlBarrierArriveINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpControlBarrierArriveINTEL(OpData data)
@@ -108135,6 +110448,9 @@ public struct OpControlBarrierArriveINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpControlBarrierArriveINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpControlBarrierArriveINTEL(OpData data) => new(data);
 }
 
 public struct OpControlBarrierWaitINTEL : IMemoryInstruction
@@ -108172,8 +110488,8 @@ public struct OpControlBarrierWaitINTEL : IMemoryInstruction
     public OpControlBarrierWaitINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpControlBarrierWaitINTEL(OpData data)
@@ -108257,6 +110573,9 @@ public struct OpControlBarrierWaitINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpControlBarrierWaitINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpControlBarrierWaitINTEL(OpData data) => new(data);
 }
 
 public struct OpArithmeticFenceEXT : IMemoryInstruction
@@ -108294,8 +110613,8 @@ public struct OpArithmeticFenceEXT : IMemoryInstruction
     public OpArithmeticFenceEXT(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpArithmeticFenceEXT(OpData data)
@@ -108380,6 +110699,9 @@ public struct OpArithmeticFenceEXT : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpArithmeticFenceEXT(OpDataIndex odi) => new(odi);
+    public static implicit operator OpArithmeticFenceEXT(OpData data) => new(data);
 }
 
 public struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
@@ -108417,8 +110739,8 @@ public struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
     public OpSubgroupBlockPrefetchINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpSubgroupBlockPrefetchINTEL(OpData data)
@@ -108503,6 +110825,9 @@ public struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpSubgroupBlockPrefetchINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpSubgroupBlockPrefetchINTEL(OpData data) => new(data);
 }
 
 public struct OpGroupIMulKHR : IMemoryInstruction
@@ -108540,8 +110865,8 @@ public struct OpGroupIMulKHR : IMemoryInstruction
     public OpGroupIMulKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupIMulKHR(OpData data)
@@ -108656,6 +110981,9 @@ public struct OpGroupIMulKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupIMulKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupIMulKHR(OpData data) => new(data);
 }
 
 public struct OpGroupFMulKHR : IMemoryInstruction
@@ -108693,8 +111021,8 @@ public struct OpGroupFMulKHR : IMemoryInstruction
     public OpGroupFMulKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupFMulKHR(OpData data)
@@ -108809,6 +111137,9 @@ public struct OpGroupFMulKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupFMulKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupFMulKHR(OpData data) => new(data);
 }
 
 public struct OpGroupBitwiseAndKHR : IMemoryInstruction
@@ -108846,8 +111177,8 @@ public struct OpGroupBitwiseAndKHR : IMemoryInstruction
     public OpGroupBitwiseAndKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupBitwiseAndKHR(OpData data)
@@ -108962,6 +111293,9 @@ public struct OpGroupBitwiseAndKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupBitwiseAndKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupBitwiseAndKHR(OpData data) => new(data);
 }
 
 public struct OpGroupBitwiseOrKHR : IMemoryInstruction
@@ -108999,8 +111333,8 @@ public struct OpGroupBitwiseOrKHR : IMemoryInstruction
     public OpGroupBitwiseOrKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupBitwiseOrKHR(OpData data)
@@ -109115,6 +111449,9 @@ public struct OpGroupBitwiseOrKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupBitwiseOrKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupBitwiseOrKHR(OpData data) => new(data);
 }
 
 public struct OpGroupBitwiseXorKHR : IMemoryInstruction
@@ -109152,8 +111489,8 @@ public struct OpGroupBitwiseXorKHR : IMemoryInstruction
     public OpGroupBitwiseXorKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupBitwiseXorKHR(OpData data)
@@ -109268,6 +111605,9 @@ public struct OpGroupBitwiseXorKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupBitwiseXorKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupBitwiseXorKHR(OpData data) => new(data);
 }
 
 public struct OpGroupLogicalAndKHR : IMemoryInstruction
@@ -109305,8 +111645,8 @@ public struct OpGroupLogicalAndKHR : IMemoryInstruction
     public OpGroupLogicalAndKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupLogicalAndKHR(OpData data)
@@ -109421,6 +111761,9 @@ public struct OpGroupLogicalAndKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupLogicalAndKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupLogicalAndKHR(OpData data) => new(data);
 }
 
 public struct OpGroupLogicalOrKHR : IMemoryInstruction
@@ -109458,8 +111801,8 @@ public struct OpGroupLogicalOrKHR : IMemoryInstruction
     public OpGroupLogicalOrKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupLogicalOrKHR(OpData data)
@@ -109574,6 +111917,9 @@ public struct OpGroupLogicalOrKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupLogicalOrKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupLogicalOrKHR(OpData data) => new(data);
 }
 
 public struct OpGroupLogicalXorKHR : IMemoryInstruction
@@ -109611,8 +111957,8 @@ public struct OpGroupLogicalXorKHR : IMemoryInstruction
     public OpGroupLogicalXorKHR(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpGroupLogicalXorKHR(OpData data)
@@ -109727,6 +112073,9 @@ public struct OpGroupLogicalXorKHR : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpGroupLogicalXorKHR(OpDataIndex odi) => new(odi);
+    public static implicit operator OpGroupLogicalXorKHR(OpData data) => new(data);
 }
 
 public struct OpMaskedGatherINTEL : IMemoryInstruction
@@ -109764,8 +112113,8 @@ public struct OpMaskedGatherINTEL : IMemoryInstruction
     public OpMaskedGatherINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMaskedGatherINTEL(OpData data)
@@ -109895,6 +112244,9 @@ public struct OpMaskedGatherINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMaskedGatherINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMaskedGatherINTEL(OpData data) => new(data);
 }
 
 public struct OpMaskedScatterINTEL : IMemoryInstruction
@@ -109932,8 +112284,8 @@ public struct OpMaskedScatterINTEL : IMemoryInstruction
     public OpMaskedScatterINTEL(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public OpMaskedScatterINTEL(OpData data)
@@ -110032,6 +112384,9 @@ public struct OpMaskedScatterINTEL : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator OpMaskedScatterINTEL(OpDataIndex odi) => new(odi);
+    public static implicit operator OpMaskedScatterINTEL(OpData data) => new(data);
 }
 
 public struct GLSLRound : IMemoryInstruction
@@ -110069,8 +112424,8 @@ public struct GLSLRound : IMemoryInstruction
     public GLSLRound(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLRound(OpData data)
@@ -110170,6 +112525,9 @@ public struct GLSLRound : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLRound(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLRound(OpData data) => new(data);
 }
 
 public struct GLSLRoundEven : IMemoryInstruction
@@ -110207,8 +112565,8 @@ public struct GLSLRoundEven : IMemoryInstruction
     public GLSLRoundEven(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLRoundEven(OpData data)
@@ -110308,6 +112666,9 @@ public struct GLSLRoundEven : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLRoundEven(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLRoundEven(OpData data) => new(data);
 }
 
 public struct GLSLTrunc : IMemoryInstruction
@@ -110345,8 +112706,8 @@ public struct GLSLTrunc : IMemoryInstruction
     public GLSLTrunc(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLTrunc(OpData data)
@@ -110446,6 +112807,9 @@ public struct GLSLTrunc : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLTrunc(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLTrunc(OpData data) => new(data);
 }
 
 public struct GLSLFAbs : IMemoryInstruction
@@ -110483,8 +112847,8 @@ public struct GLSLFAbs : IMemoryInstruction
     public GLSLFAbs(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFAbs(OpData data)
@@ -110584,6 +112948,9 @@ public struct GLSLFAbs : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFAbs(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFAbs(OpData data) => new(data);
 }
 
 public struct GLSLSAbs : IMemoryInstruction
@@ -110621,8 +112988,8 @@ public struct GLSLSAbs : IMemoryInstruction
     public GLSLSAbs(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSAbs(OpData data)
@@ -110722,6 +113089,9 @@ public struct GLSLSAbs : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSAbs(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSAbs(OpData data) => new(data);
 }
 
 public struct GLSLFSign : IMemoryInstruction
@@ -110759,8 +113129,8 @@ public struct GLSLFSign : IMemoryInstruction
     public GLSLFSign(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFSign(OpData data)
@@ -110860,6 +113230,9 @@ public struct GLSLFSign : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFSign(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFSign(OpData data) => new(data);
 }
 
 public struct GLSLSSign : IMemoryInstruction
@@ -110897,8 +113270,8 @@ public struct GLSLSSign : IMemoryInstruction
     public GLSLSSign(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSSign(OpData data)
@@ -110998,6 +113371,9 @@ public struct GLSLSSign : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSSign(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSSign(OpData data) => new(data);
 }
 
 public struct GLSLFloor : IMemoryInstruction
@@ -111035,8 +113411,8 @@ public struct GLSLFloor : IMemoryInstruction
     public GLSLFloor(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFloor(OpData data)
@@ -111136,6 +113512,9 @@ public struct GLSLFloor : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFloor(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFloor(OpData data) => new(data);
 }
 
 public struct GLSLCeil : IMemoryInstruction
@@ -111173,8 +113552,8 @@ public struct GLSLCeil : IMemoryInstruction
     public GLSLCeil(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLCeil(OpData data)
@@ -111274,6 +113653,9 @@ public struct GLSLCeil : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLCeil(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLCeil(OpData data) => new(data);
 }
 
 public struct GLSLFract : IMemoryInstruction
@@ -111311,8 +113693,8 @@ public struct GLSLFract : IMemoryInstruction
     public GLSLFract(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFract(OpData data)
@@ -111412,6 +113794,9 @@ public struct GLSLFract : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFract(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFract(OpData data) => new(data);
 }
 
 public struct GLSLRadians : IMemoryInstruction
@@ -111449,8 +113834,8 @@ public struct GLSLRadians : IMemoryInstruction
     public GLSLRadians(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLRadians(OpData data)
@@ -111550,6 +113935,9 @@ public struct GLSLRadians : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLRadians(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLRadians(OpData data) => new(data);
 }
 
 public struct GLSLDegrees : IMemoryInstruction
@@ -111587,8 +113975,8 @@ public struct GLSLDegrees : IMemoryInstruction
     public GLSLDegrees(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLDegrees(OpData data)
@@ -111688,6 +114076,9 @@ public struct GLSLDegrees : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLDegrees(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLDegrees(OpData data) => new(data);
 }
 
 public struct GLSLSin : IMemoryInstruction
@@ -111725,8 +114116,8 @@ public struct GLSLSin : IMemoryInstruction
     public GLSLSin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSin(OpData data)
@@ -111826,6 +114217,9 @@ public struct GLSLSin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSin(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSin(OpData data) => new(data);
 }
 
 public struct GLSLCos : IMemoryInstruction
@@ -111863,8 +114257,8 @@ public struct GLSLCos : IMemoryInstruction
     public GLSLCos(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLCos(OpData data)
@@ -111964,6 +114358,9 @@ public struct GLSLCos : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLCos(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLCos(OpData data) => new(data);
 }
 
 public struct GLSLTan : IMemoryInstruction
@@ -112001,8 +114398,8 @@ public struct GLSLTan : IMemoryInstruction
     public GLSLTan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLTan(OpData data)
@@ -112102,6 +114499,9 @@ public struct GLSLTan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLTan(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLTan(OpData data) => new(data);
 }
 
 public struct GLSLAsin : IMemoryInstruction
@@ -112139,8 +114539,8 @@ public struct GLSLAsin : IMemoryInstruction
     public GLSLAsin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAsin(OpData data)
@@ -112240,6 +114640,9 @@ public struct GLSLAsin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAsin(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAsin(OpData data) => new(data);
 }
 
 public struct GLSLAcos : IMemoryInstruction
@@ -112277,8 +114680,8 @@ public struct GLSLAcos : IMemoryInstruction
     public GLSLAcos(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAcos(OpData data)
@@ -112378,6 +114781,9 @@ public struct GLSLAcos : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAcos(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAcos(OpData data) => new(data);
 }
 
 public struct GLSLAtan : IMemoryInstruction
@@ -112415,8 +114821,8 @@ public struct GLSLAtan : IMemoryInstruction
     public GLSLAtan(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAtan(OpData data)
@@ -112516,6 +114922,9 @@ public struct GLSLAtan : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAtan(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAtan(OpData data) => new(data);
 }
 
 public struct GLSLSinh : IMemoryInstruction
@@ -112553,8 +114962,8 @@ public struct GLSLSinh : IMemoryInstruction
     public GLSLSinh(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSinh(OpData data)
@@ -112654,6 +115063,9 @@ public struct GLSLSinh : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSinh(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSinh(OpData data) => new(data);
 }
 
 public struct GLSLCosh : IMemoryInstruction
@@ -112691,8 +115103,8 @@ public struct GLSLCosh : IMemoryInstruction
     public GLSLCosh(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLCosh(OpData data)
@@ -112792,6 +115204,9 @@ public struct GLSLCosh : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLCosh(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLCosh(OpData data) => new(data);
 }
 
 public struct GLSLTanh : IMemoryInstruction
@@ -112829,8 +115244,8 @@ public struct GLSLTanh : IMemoryInstruction
     public GLSLTanh(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLTanh(OpData data)
@@ -112930,6 +115345,9 @@ public struct GLSLTanh : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLTanh(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLTanh(OpData data) => new(data);
 }
 
 public struct GLSLAsinh : IMemoryInstruction
@@ -112967,8 +115385,8 @@ public struct GLSLAsinh : IMemoryInstruction
     public GLSLAsinh(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAsinh(OpData data)
@@ -113068,6 +115486,9 @@ public struct GLSLAsinh : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAsinh(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAsinh(OpData data) => new(data);
 }
 
 public struct GLSLAcosh : IMemoryInstruction
@@ -113105,8 +115526,8 @@ public struct GLSLAcosh : IMemoryInstruction
     public GLSLAcosh(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAcosh(OpData data)
@@ -113206,6 +115627,9 @@ public struct GLSLAcosh : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAcosh(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAcosh(OpData data) => new(data);
 }
 
 public struct GLSLAtanh : IMemoryInstruction
@@ -113243,8 +115667,8 @@ public struct GLSLAtanh : IMemoryInstruction
     public GLSLAtanh(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAtanh(OpData data)
@@ -113344,6 +115768,9 @@ public struct GLSLAtanh : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAtanh(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAtanh(OpData data) => new(data);
 }
 
 public struct GLSLAtan2 : IMemoryInstruction
@@ -113381,8 +115808,8 @@ public struct GLSLAtan2 : IMemoryInstruction
     public GLSLAtan2(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLAtan2(OpData data)
@@ -113497,6 +115924,9 @@ public struct GLSLAtan2 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLAtan2(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLAtan2(OpData data) => new(data);
 }
 
 public struct GLSLPow : IMemoryInstruction
@@ -113534,8 +115964,8 @@ public struct GLSLPow : IMemoryInstruction
     public GLSLPow(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPow(OpData data)
@@ -113650,6 +116080,9 @@ public struct GLSLPow : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPow(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPow(OpData data) => new(data);
 }
 
 public struct GLSLExp : IMemoryInstruction
@@ -113687,8 +116120,8 @@ public struct GLSLExp : IMemoryInstruction
     public GLSLExp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLExp(OpData data)
@@ -113788,6 +116221,9 @@ public struct GLSLExp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLExp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLExp(OpData data) => new(data);
 }
 
 public struct GLSLLog : IMemoryInstruction
@@ -113825,8 +116261,8 @@ public struct GLSLLog : IMemoryInstruction
     public GLSLLog(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLLog(OpData data)
@@ -113926,6 +116362,9 @@ public struct GLSLLog : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLLog(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLLog(OpData data) => new(data);
 }
 
 public struct GLSLExp2 : IMemoryInstruction
@@ -113963,8 +116402,8 @@ public struct GLSLExp2 : IMemoryInstruction
     public GLSLExp2(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLExp2(OpData data)
@@ -114064,6 +116503,9 @@ public struct GLSLExp2 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLExp2(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLExp2(OpData data) => new(data);
 }
 
 public struct GLSLLog2 : IMemoryInstruction
@@ -114101,8 +116543,8 @@ public struct GLSLLog2 : IMemoryInstruction
     public GLSLLog2(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLLog2(OpData data)
@@ -114202,6 +116644,9 @@ public struct GLSLLog2 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLLog2(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLLog2(OpData data) => new(data);
 }
 
 public struct GLSLSqrt : IMemoryInstruction
@@ -114239,8 +116684,8 @@ public struct GLSLSqrt : IMemoryInstruction
     public GLSLSqrt(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSqrt(OpData data)
@@ -114340,6 +116785,9 @@ public struct GLSLSqrt : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSqrt(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSqrt(OpData data) => new(data);
 }
 
 public struct GLSLInverseSqrt : IMemoryInstruction
@@ -114377,8 +116825,8 @@ public struct GLSLInverseSqrt : IMemoryInstruction
     public GLSLInverseSqrt(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLInverseSqrt(OpData data)
@@ -114478,6 +116926,9 @@ public struct GLSLInverseSqrt : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLInverseSqrt(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLInverseSqrt(OpData data) => new(data);
 }
 
 public struct GLSLDeterminant : IMemoryInstruction
@@ -114515,8 +116966,8 @@ public struct GLSLDeterminant : IMemoryInstruction
     public GLSLDeterminant(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLDeterminant(OpData data)
@@ -114616,6 +117067,9 @@ public struct GLSLDeterminant : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLDeterminant(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLDeterminant(OpData data) => new(data);
 }
 
 public struct GLSLMatrixInverse : IMemoryInstruction
@@ -114653,8 +117107,8 @@ public struct GLSLMatrixInverse : IMemoryInstruction
     public GLSLMatrixInverse(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLMatrixInverse(OpData data)
@@ -114754,6 +117208,9 @@ public struct GLSLMatrixInverse : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLMatrixInverse(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLMatrixInverse(OpData data) => new(data);
 }
 
 public struct GLSLModf : IMemoryInstruction
@@ -114791,8 +117248,8 @@ public struct GLSLModf : IMemoryInstruction
     public GLSLModf(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLModf(OpData data)
@@ -114907,6 +117364,9 @@ public struct GLSLModf : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLModf(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLModf(OpData data) => new(data);
 }
 
 public struct GLSLModfStruct : IMemoryInstruction
@@ -114944,8 +117404,8 @@ public struct GLSLModfStruct : IMemoryInstruction
     public GLSLModfStruct(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLModfStruct(OpData data)
@@ -115045,6 +117505,9 @@ public struct GLSLModfStruct : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLModfStruct(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLModfStruct(OpData data) => new(data);
 }
 
 public struct GLSLFMin : IMemoryInstruction
@@ -115082,8 +117545,8 @@ public struct GLSLFMin : IMemoryInstruction
     public GLSLFMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFMin(OpData data)
@@ -115198,6 +117661,9 @@ public struct GLSLFMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFMin(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFMin(OpData data) => new(data);
 }
 
 public struct GLSLUMin : IMemoryInstruction
@@ -115235,8 +117701,8 @@ public struct GLSLUMin : IMemoryInstruction
     public GLSLUMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUMin(OpData data)
@@ -115351,6 +117817,9 @@ public struct GLSLUMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUMin(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUMin(OpData data) => new(data);
 }
 
 public struct GLSLSMin : IMemoryInstruction
@@ -115388,8 +117857,8 @@ public struct GLSLSMin : IMemoryInstruction
     public GLSLSMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSMin(OpData data)
@@ -115504,6 +117973,9 @@ public struct GLSLSMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSMin(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSMin(OpData data) => new(data);
 }
 
 public struct GLSLFMax : IMemoryInstruction
@@ -115541,8 +118013,8 @@ public struct GLSLFMax : IMemoryInstruction
     public GLSLFMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFMax(OpData data)
@@ -115657,6 +118129,9 @@ public struct GLSLFMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFMax(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFMax(OpData data) => new(data);
 }
 
 public struct GLSLUMax : IMemoryInstruction
@@ -115694,8 +118169,8 @@ public struct GLSLUMax : IMemoryInstruction
     public GLSLUMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUMax(OpData data)
@@ -115810,6 +118285,9 @@ public struct GLSLUMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUMax(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUMax(OpData data) => new(data);
 }
 
 public struct GLSLSMax : IMemoryInstruction
@@ -115847,8 +118325,8 @@ public struct GLSLSMax : IMemoryInstruction
     public GLSLSMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSMax(OpData data)
@@ -115963,6 +118441,9 @@ public struct GLSLSMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSMax(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSMax(OpData data) => new(data);
 }
 
 public struct GLSLFClamp : IMemoryInstruction
@@ -116000,8 +118481,8 @@ public struct GLSLFClamp : IMemoryInstruction
     public GLSLFClamp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFClamp(OpData data)
@@ -116131,6 +118612,9 @@ public struct GLSLFClamp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFClamp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFClamp(OpData data) => new(data);
 }
 
 public struct GLSLUClamp : IMemoryInstruction
@@ -116168,8 +118652,8 @@ public struct GLSLUClamp : IMemoryInstruction
     public GLSLUClamp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUClamp(OpData data)
@@ -116299,6 +118783,9 @@ public struct GLSLUClamp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUClamp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUClamp(OpData data) => new(data);
 }
 
 public struct GLSLSClamp : IMemoryInstruction
@@ -116336,8 +118823,8 @@ public struct GLSLSClamp : IMemoryInstruction
     public GLSLSClamp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSClamp(OpData data)
@@ -116467,6 +118954,9 @@ public struct GLSLSClamp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSClamp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSClamp(OpData data) => new(data);
 }
 
 public struct GLSLFMix : IMemoryInstruction
@@ -116504,8 +118994,8 @@ public struct GLSLFMix : IMemoryInstruction
     public GLSLFMix(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFMix(OpData data)
@@ -116635,6 +119125,9 @@ public struct GLSLFMix : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFMix(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFMix(OpData data) => new(data);
 }
 
 public struct GLSLIMix : IMemoryInstruction
@@ -116672,8 +119165,8 @@ public struct GLSLIMix : IMemoryInstruction
     public GLSLIMix(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLIMix(OpData data)
@@ -116803,6 +119296,9 @@ public struct GLSLIMix : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLIMix(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLIMix(OpData data) => new(data);
 }
 
 public struct GLSLStep : IMemoryInstruction
@@ -116840,8 +119336,8 @@ public struct GLSLStep : IMemoryInstruction
     public GLSLStep(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLStep(OpData data)
@@ -116956,6 +119452,9 @@ public struct GLSLStep : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLStep(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLStep(OpData data) => new(data);
 }
 
 public struct GLSLSmoothStep : IMemoryInstruction
@@ -116993,8 +119492,8 @@ public struct GLSLSmoothStep : IMemoryInstruction
     public GLSLSmoothStep(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLSmoothStep(OpData data)
@@ -117124,6 +119623,9 @@ public struct GLSLSmoothStep : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLSmoothStep(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLSmoothStep(OpData data) => new(data);
 }
 
 public struct GLSLFma : IMemoryInstruction
@@ -117161,8 +119663,8 @@ public struct GLSLFma : IMemoryInstruction
     public GLSLFma(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFma(OpData data)
@@ -117292,6 +119794,9 @@ public struct GLSLFma : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFma(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFma(OpData data) => new(data);
 }
 
 public struct GLSLFrexp : IMemoryInstruction
@@ -117329,8 +119834,8 @@ public struct GLSLFrexp : IMemoryInstruction
     public GLSLFrexp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFrexp(OpData data)
@@ -117445,6 +119950,9 @@ public struct GLSLFrexp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFrexp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFrexp(OpData data) => new(data);
 }
 
 public struct GLSLFrexpStruct : IMemoryInstruction
@@ -117482,8 +119990,8 @@ public struct GLSLFrexpStruct : IMemoryInstruction
     public GLSLFrexpStruct(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFrexpStruct(OpData data)
@@ -117583,6 +120091,9 @@ public struct GLSLFrexpStruct : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFrexpStruct(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFrexpStruct(OpData data) => new(data);
 }
 
 public struct GLSLLdexp : IMemoryInstruction
@@ -117620,8 +120131,8 @@ public struct GLSLLdexp : IMemoryInstruction
     public GLSLLdexp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLLdexp(OpData data)
@@ -117736,6 +120247,9 @@ public struct GLSLLdexp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLLdexp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLLdexp(OpData data) => new(data);
 }
 
 public struct GLSLPackSnorm4x8 : IMemoryInstruction
@@ -117773,8 +120287,8 @@ public struct GLSLPackSnorm4x8 : IMemoryInstruction
     public GLSLPackSnorm4x8(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPackSnorm4x8(OpData data)
@@ -117874,6 +120388,9 @@ public struct GLSLPackSnorm4x8 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPackSnorm4x8(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPackSnorm4x8(OpData data) => new(data);
 }
 
 public struct GLSLPackUnorm4x8 : IMemoryInstruction
@@ -117911,8 +120428,8 @@ public struct GLSLPackUnorm4x8 : IMemoryInstruction
     public GLSLPackUnorm4x8(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPackUnorm4x8(OpData data)
@@ -118012,6 +120529,9 @@ public struct GLSLPackUnorm4x8 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPackUnorm4x8(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPackUnorm4x8(OpData data) => new(data);
 }
 
 public struct GLSLPackSnorm2x16 : IMemoryInstruction
@@ -118049,8 +120569,8 @@ public struct GLSLPackSnorm2x16 : IMemoryInstruction
     public GLSLPackSnorm2x16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPackSnorm2x16(OpData data)
@@ -118150,6 +120670,9 @@ public struct GLSLPackSnorm2x16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPackSnorm2x16(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPackSnorm2x16(OpData data) => new(data);
 }
 
 public struct GLSLPackUnorm2x16 : IMemoryInstruction
@@ -118187,8 +120710,8 @@ public struct GLSLPackUnorm2x16 : IMemoryInstruction
     public GLSLPackUnorm2x16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPackUnorm2x16(OpData data)
@@ -118288,6 +120811,9 @@ public struct GLSLPackUnorm2x16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPackUnorm2x16(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPackUnorm2x16(OpData data) => new(data);
 }
 
 public struct GLSLPackHalf2x16 : IMemoryInstruction
@@ -118325,8 +120851,8 @@ public struct GLSLPackHalf2x16 : IMemoryInstruction
     public GLSLPackHalf2x16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPackHalf2x16(OpData data)
@@ -118426,6 +120952,9 @@ public struct GLSLPackHalf2x16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPackHalf2x16(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPackHalf2x16(OpData data) => new(data);
 }
 
 public struct GLSLPackDouble2x32 : IMemoryInstruction
@@ -118463,8 +120992,8 @@ public struct GLSLPackDouble2x32 : IMemoryInstruction
     public GLSLPackDouble2x32(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLPackDouble2x32(OpData data)
@@ -118564,6 +121093,9 @@ public struct GLSLPackDouble2x32 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLPackDouble2x32(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLPackDouble2x32(OpData data) => new(data);
 }
 
 public struct GLSLUnpackSnorm2x16 : IMemoryInstruction
@@ -118601,8 +121133,8 @@ public struct GLSLUnpackSnorm2x16 : IMemoryInstruction
     public GLSLUnpackSnorm2x16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUnpackSnorm2x16(OpData data)
@@ -118702,6 +121234,9 @@ public struct GLSLUnpackSnorm2x16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUnpackSnorm2x16(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUnpackSnorm2x16(OpData data) => new(data);
 }
 
 public struct GLSLUnpackUnorm2x16 : IMemoryInstruction
@@ -118739,8 +121274,8 @@ public struct GLSLUnpackUnorm2x16 : IMemoryInstruction
     public GLSLUnpackUnorm2x16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUnpackUnorm2x16(OpData data)
@@ -118840,6 +121375,9 @@ public struct GLSLUnpackUnorm2x16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUnpackUnorm2x16(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUnpackUnorm2x16(OpData data) => new(data);
 }
 
 public struct GLSLUnpackHalf2x16 : IMemoryInstruction
@@ -118877,8 +121415,8 @@ public struct GLSLUnpackHalf2x16 : IMemoryInstruction
     public GLSLUnpackHalf2x16(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUnpackHalf2x16(OpData data)
@@ -118978,6 +121516,9 @@ public struct GLSLUnpackHalf2x16 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUnpackHalf2x16(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUnpackHalf2x16(OpData data) => new(data);
 }
 
 public struct GLSLUnpackSnorm4x8 : IMemoryInstruction
@@ -119015,8 +121556,8 @@ public struct GLSLUnpackSnorm4x8 : IMemoryInstruction
     public GLSLUnpackSnorm4x8(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUnpackSnorm4x8(OpData data)
@@ -119116,6 +121657,9 @@ public struct GLSLUnpackSnorm4x8 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUnpackSnorm4x8(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUnpackSnorm4x8(OpData data) => new(data);
 }
 
 public struct GLSLUnpackUnorm4x8 : IMemoryInstruction
@@ -119153,8 +121697,8 @@ public struct GLSLUnpackUnorm4x8 : IMemoryInstruction
     public GLSLUnpackUnorm4x8(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUnpackUnorm4x8(OpData data)
@@ -119254,6 +121798,9 @@ public struct GLSLUnpackUnorm4x8 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUnpackUnorm4x8(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUnpackUnorm4x8(OpData data) => new(data);
 }
 
 public struct GLSLUnpackDouble2x32 : IMemoryInstruction
@@ -119291,8 +121838,8 @@ public struct GLSLUnpackDouble2x32 : IMemoryInstruction
     public GLSLUnpackDouble2x32(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLUnpackDouble2x32(OpData data)
@@ -119392,6 +121939,9 @@ public struct GLSLUnpackDouble2x32 : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLUnpackDouble2x32(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLUnpackDouble2x32(OpData data) => new(data);
 }
 
 public struct GLSLLength : IMemoryInstruction
@@ -119429,8 +121979,8 @@ public struct GLSLLength : IMemoryInstruction
     public GLSLLength(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLLength(OpData data)
@@ -119530,6 +122080,9 @@ public struct GLSLLength : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLLength(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLLength(OpData data) => new(data);
 }
 
 public struct GLSLDistance : IMemoryInstruction
@@ -119567,8 +122120,8 @@ public struct GLSLDistance : IMemoryInstruction
     public GLSLDistance(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLDistance(OpData data)
@@ -119683,6 +122236,9 @@ public struct GLSLDistance : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLDistance(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLDistance(OpData data) => new(data);
 }
 
 public struct GLSLCross : IMemoryInstruction
@@ -119720,8 +122276,8 @@ public struct GLSLCross : IMemoryInstruction
     public GLSLCross(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLCross(OpData data)
@@ -119836,6 +122392,9 @@ public struct GLSLCross : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLCross(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLCross(OpData data) => new(data);
 }
 
 public struct GLSLNormalize : IMemoryInstruction
@@ -119873,8 +122432,8 @@ public struct GLSLNormalize : IMemoryInstruction
     public GLSLNormalize(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLNormalize(OpData data)
@@ -119974,6 +122533,9 @@ public struct GLSLNormalize : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLNormalize(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLNormalize(OpData data) => new(data);
 }
 
 public struct GLSLFaceForward : IMemoryInstruction
@@ -120011,8 +122573,8 @@ public struct GLSLFaceForward : IMemoryInstruction
     public GLSLFaceForward(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFaceForward(OpData data)
@@ -120142,6 +122704,9 @@ public struct GLSLFaceForward : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFaceForward(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFaceForward(OpData data) => new(data);
 }
 
 public struct GLSLReflect : IMemoryInstruction
@@ -120179,8 +122744,8 @@ public struct GLSLReflect : IMemoryInstruction
     public GLSLReflect(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLReflect(OpData data)
@@ -120295,6 +122860,9 @@ public struct GLSLReflect : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLReflect(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLReflect(OpData data) => new(data);
 }
 
 public struct GLSLRefract : IMemoryInstruction
@@ -120332,8 +122900,8 @@ public struct GLSLRefract : IMemoryInstruction
     public GLSLRefract(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLRefract(OpData data)
@@ -120463,6 +123031,9 @@ public struct GLSLRefract : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLRefract(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLRefract(OpData data) => new(data);
 }
 
 public struct GLSLFindILsb : IMemoryInstruction
@@ -120500,8 +123071,8 @@ public struct GLSLFindILsb : IMemoryInstruction
     public GLSLFindILsb(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFindILsb(OpData data)
@@ -120601,6 +123172,9 @@ public struct GLSLFindILsb : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFindILsb(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFindILsb(OpData data) => new(data);
 }
 
 public struct GLSLFindSMsb : IMemoryInstruction
@@ -120638,8 +123212,8 @@ public struct GLSLFindSMsb : IMemoryInstruction
     public GLSLFindSMsb(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFindSMsb(OpData data)
@@ -120739,6 +123313,9 @@ public struct GLSLFindSMsb : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFindSMsb(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFindSMsb(OpData data) => new(data);
 }
 
 public struct GLSLFindUMsb : IMemoryInstruction
@@ -120776,8 +123353,8 @@ public struct GLSLFindUMsb : IMemoryInstruction
     public GLSLFindUMsb(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLFindUMsb(OpData data)
@@ -120877,6 +123454,9 @@ public struct GLSLFindUMsb : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLFindUMsb(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLFindUMsb(OpData data) => new(data);
 }
 
 public struct GLSLInterpolateAtCentroid : IMemoryInstruction
@@ -120914,8 +123494,8 @@ public struct GLSLInterpolateAtCentroid : IMemoryInstruction
     public GLSLInterpolateAtCentroid(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLInterpolateAtCentroid(OpData data)
@@ -121015,6 +123595,9 @@ public struct GLSLInterpolateAtCentroid : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLInterpolateAtCentroid(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLInterpolateAtCentroid(OpData data) => new(data);
 }
 
 public struct GLSLInterpolateAtSample : IMemoryInstruction
@@ -121052,8 +123635,8 @@ public struct GLSLInterpolateAtSample : IMemoryInstruction
     public GLSLInterpolateAtSample(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLInterpolateAtSample(OpData data)
@@ -121168,6 +123751,9 @@ public struct GLSLInterpolateAtSample : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLInterpolateAtSample(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLInterpolateAtSample(OpData data) => new(data);
 }
 
 public struct GLSLInterpolateAtOffset : IMemoryInstruction
@@ -121205,8 +123791,8 @@ public struct GLSLInterpolateAtOffset : IMemoryInstruction
     public GLSLInterpolateAtOffset(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLInterpolateAtOffset(OpData data)
@@ -121321,6 +123907,9 @@ public struct GLSLInterpolateAtOffset : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLInterpolateAtOffset(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLInterpolateAtOffset(OpData data) => new(data);
 }
 
 public struct GLSLNMin : IMemoryInstruction
@@ -121358,8 +123947,8 @@ public struct GLSLNMin : IMemoryInstruction
     public GLSLNMin(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLNMin(OpData data)
@@ -121474,6 +124063,9 @@ public struct GLSLNMin : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLNMin(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLNMin(OpData data) => new(data);
 }
 
 public struct GLSLNMax : IMemoryInstruction
@@ -121511,8 +124103,8 @@ public struct GLSLNMax : IMemoryInstruction
     public GLSLNMax(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLNMax(OpData data)
@@ -121627,6 +124219,9 @@ public struct GLSLNMax : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLNMax(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLNMax(OpData data) => new(data);
 }
 
 public struct GLSLNClamp : IMemoryInstruction
@@ -121664,8 +124259,8 @@ public struct GLSLNClamp : IMemoryInstruction
     public GLSLNClamp(OpDataIndex index)
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        InitializeProperties(index.Data);
         DataIndex = index;
+        InitializeProperties(index.Data);
     }
 
     public GLSLNClamp(OpData data)
@@ -121795,4 +124390,7 @@ public struct GLSLNClamp : IMemoryInstruction
             }
         }
     }
+
+    public static implicit operator GLSLNClamp(OpDataIndex odi) => new(odi);
+    public static implicit operator GLSLNClamp(OpData data) => new(data);
 }
