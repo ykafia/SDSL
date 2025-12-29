@@ -8,7 +8,7 @@ namespace Stride.Shaders.Spirv.Generators;
 
 public partial class SPVGenerator
 {
-    public void CreateSpecification(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
+    public void CreateSpecification(in IncrementalGeneratorInitializationContext context, in IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
         var sdsloProvider = grammarProvider
             .Select(static (grammar, _) => grammar);

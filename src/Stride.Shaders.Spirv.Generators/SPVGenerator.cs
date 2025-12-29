@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.CodeAnalysis.CSharp;
+using System.Collections.Concurrent;
 
 namespace Stride.Shaders.Spirv.Generators;
 
@@ -11,6 +12,8 @@ namespace Stride.Shaders.Spirv.Generators;
 public partial class SPVGenerator : IIncrementalGenerator
 {
     static readonly JsonSerializerOptions options = new();
+
+    static ConcurrentBag<(string filename, string content)> generatedFiles = new();
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
@@ -35,68 +38,12 @@ public partial class SPVGenerator : IIncrementalGenerator
             .Select(PreProcessEnumerants)
             .Select(PreProcessInstructions);
 
-        CreateParameterizedFuncs(context, grammarData);
+        
+        GenerateKinds(context, grammarData);
         CreateInfo(context, grammarData);
         CreateSDSLOp(context, grammarData);
         GenerateStructs(context, grammarData);
         CreateSpecification(context, grammarData);
-
-        // context.RegisterImplementationSourceOutput(
-        //     grammarData,
-        //     BufferGeneration
-        // );
-
-
+        CreateParameterizedFuncs(context, grammarData);
     }
-
-    public static void BufferGeneration(SourceProductionContext spc, SpirvGrammar source)
-    {
-
-        try
-        {
-            var code = new StringBuilder();
-            code
-                .AppendLine("using static Stride.Shaders.Spirv.Specification;")
-                .AppendLine("using Stride.Shaders.Spirv.Core.Buffers;")
-                .AppendLine("")
-                .AppendLine("namespace Stride.Shaders.Spirv.Core;")
-                .AppendLine("")
-                .AppendLine("public static class SpirvBufferExtensions")
-                .AppendLine("{");
-            foreach (var instruction in source.Instructions?.AsList() ?? [])
-            {
-                if (instruction.OpName.StartsWith("Op"))
-                    CreateOperation(instruction, code, source.OperandKinds?.AsDictionary() ?? []);
-                else
-                    CreateGlslOperation(instruction, code, source.OperandKinds?.AsDictionary() ?? []);
-            }
-            code
-                .AppendLine("}");
-
-            spc.AddSource("SpirvBufferExtensions.gen.cs",
-                SourceText.From(
-                    SyntaxFactory
-                    .ParseCompilationUnit(code.ToString())
-                    .NormalizeWhitespace()
-                    .ToFullString(),
-                    Encoding.UTF8
-                )
-            );
-        }
-        catch (Exception ex)
-        {
-            spc.AddSource("SpirvBufferExtensions.gen.cs",
-                SourceText.From(
-                    SyntaxFactory
-                    .ParseCompilationUnit($"/* Error generating SpirvBufferExtensions: {ex.Message} */")
-                    .NormalizeWhitespace()
-                    .ToFullString(),
-                    Encoding.UTF8
-                )
-            );
-        }
-
-    }
-
-
 }

@@ -127,8 +127,8 @@ public partial class SPVGenerator
         // var buffer = new List<OperandData>(24);
         if (grammar.Instructions?.AsList() is List<InstructionData> instructions)
         {
+            var extinst = instructions.First(x => x.OpName == "OpExtInst");
             for (int i = 0; i < instructions.Count; i++)
-            // foreach (var instruction in grammar.Instructions)
             {
                 var instruction = grammar.Instructions.Value.AsList()![i]!;
 
@@ -161,9 +161,14 @@ public partial class SPVGenerator
 
                 // A reusable buffer
                 var buffer = new List<(string, string)>(24);
-
+                
                 if (instruction.Operands?.AsList() is List<OperandData> operands)
+                {
+                    if(instruction.OpName.StartsWith("GLSL"))                        
+                            operands.InsertRange(0, extinst.Operands?.AsList().Where(x => x is not { Kind: "IdRef", Quantifier: "*" } and not { Kind: "LiteralExtInstInteger" }) ?? []);
+
                     PreProcessOperands(instruction, grammar.OperandKinds?.AsDictionary()!, buffer);
+                }
 
                 instructions[i] = instruction;
 

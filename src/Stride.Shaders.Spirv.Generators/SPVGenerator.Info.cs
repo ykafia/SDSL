@@ -9,7 +9,7 @@ namespace Stride.Shaders.Spirv.Generators;
 public partial class SPVGenerator
 {
 
-    public void CreateParameterizedFuncs(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
+    public void CreateParameterizedFuncs(in IncrementalGeneratorInitializationContext context, in IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
 
         context.RegisterImplementationSourceOutput(
@@ -17,10 +17,9 @@ public partial class SPVGenerator
             GenerateParameterizedFunctions
         );
     }
-    public void CreateInfo(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
+    public void CreateInfo(in IncrementalGeneratorInitializationContext context, in IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
 
-        GenerateKinds(context, grammarProvider);
         context.RegisterImplementationSourceOutput(
             grammarProvider,
             GenerateInstructionInformation
@@ -111,7 +110,7 @@ public partial class SPVGenerator
         );
     }
 
-    private void GenerateKinds(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
+    private void GenerateKinds(in IncrementalGeneratorInitializationContext context, in IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
         var kindsProvider = grammarProvider
             .Select(static (grammar, _) => grammar.OperandKinds!.Value);
@@ -165,6 +164,7 @@ public partial class SPVGenerator
                     .ToFullString(),
                     Encoding.UTF8
                 ));
+                
             }
         );
         // var code = new StringBuilder()

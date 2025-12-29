@@ -19,7 +19,7 @@ namespace Stride.Shaders.Spirv.Generators;
 
 public partial class SPVGenerator
 {
-    public void CreateSDSLOp(IncrementalGeneratorInitializationContext context, IncrementalValueProvider<SpirvGrammar> grammarProvider)
+    public void CreateSDSLOp(in IncrementalGeneratorInitializationContext context, in IncrementalValueProvider<SpirvGrammar> grammarProvider)
     {
 
         var instructionsProvider =

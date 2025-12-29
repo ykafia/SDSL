@@ -6,6 +6,7 @@ using Stride.Shaders.Spirv.Tools;
 using Stride.Shaders.Compilers.Direct3D;
 using Stride.Shaders.Parsing.SDSL;
 using Stride.Shaders;
+using Stride.Shaders.Spirv.Core;
 
 Console.WriteLine(Spv2DXIL.spirv_to_dxil_get_version());
 
@@ -19,6 +20,10 @@ shaderMixer.MergeSDSL(new ShaderClassSource("If"), out var bytecode, out _);
 var buffer = new NewSpirvBuffer(MemoryMarshal.Cast<byte, int>(bytecode.AsSpan()));
 var source = Spv.Dis(buffer);
 File.WriteAllText("test.spvdis", source);
+
+
+
+var decorateString = new OpDecorateString(1, ParameterizedFlags.DecorationResourceGroupSDSL("groupName"));
 
 
 // Examples.TryAllFiles();
