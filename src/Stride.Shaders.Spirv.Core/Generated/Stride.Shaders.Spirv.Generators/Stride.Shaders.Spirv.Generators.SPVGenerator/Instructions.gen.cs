@@ -100,7 +100,7 @@ public ref partial struct OpSDSLShader : IMemoryInstruction
                     ShaderName = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -181,7 +181,7 @@ public ref partial struct OpSDSLShaderEnd : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -283,7 +283,7 @@ public ref partial struct OpSDSLEffect : IMemoryInstruction
                     EffectName = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -385,7 +385,7 @@ public ref partial struct OpSDSLComposition : IMemoryInstruction
                     CompositionPath = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -466,7 +466,7 @@ public ref partial struct OpSDSLCompositionEnd : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -568,7 +568,7 @@ public ref partial struct OpSDSLMixinInherit : IMemoryInstruction
                     Shader = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -685,7 +685,7 @@ public ref partial struct OpSDSLCompose : IMemoryInstruction
                     Name = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -787,7 +787,7 @@ public ref partial struct OpSDSLStage : IMemoryInstruction
                     StagedElement = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -920,7 +920,7 @@ public ref partial struct OpSDSLImportShader : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -1086,7 +1086,7 @@ public ref partial struct OpSDSLImportFunction : IMemoryInstruction
                     Flags = o.ToEnum<FunctionFlagsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -1249,7 +1249,7 @@ public ref partial struct OpSDSLImportVariable : IMemoryInstruction
                     Flags = o.ToEnum<VariableFlagsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -1382,7 +1382,7 @@ public ref partial struct OpSDSLImportStruct : IMemoryInstruction
                     Shader = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -1546,7 +1546,7 @@ public ref partial struct OpVariableSDSL : IMemoryInstruction
                         MethodInitializer = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -1694,7 +1694,7 @@ public ref partial struct OpMemberAccessSDSL : IMemoryInstruction
                     Member = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -1827,7 +1827,7 @@ public ref partial struct OpTypeFunctionSDSL : IMemoryInstruction
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -1947,7 +1947,7 @@ public ref partial struct OpSDSLFunctionInfo : IMemoryInstruction
                     Parent = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -2050,7 +2050,7 @@ public ref partial struct OpBaseSDSL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -2153,7 +2153,7 @@ public ref partial struct OpThisSDSL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -2256,7 +2256,7 @@ public ref partial struct OpStageSDSL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -2373,7 +2373,7 @@ public ref partial struct OpSDSLMixin : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -2508,7 +2508,7 @@ public ref partial struct OpSDSLMixinCompose : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -2643,7 +2643,7 @@ public ref partial struct OpSDSLMixinComposeArray : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -2794,7 +2794,7 @@ public ref partial struct OpSDSLGenericParameter : IMemoryInstruction
                     DeclaringClass = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -2942,7 +2942,7 @@ public ref partial struct OpSDSLGenericReference : IMemoryInstruction
                     DeclaringClass = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3060,7 +3060,7 @@ public ref partial struct OpConstantStringSDSL : IMemoryInstruction
                     LiteralString = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3178,7 +3178,7 @@ public ref partial struct OpTypeGenericSDSL : IMemoryInstruction
                     Kind = o.ToEnum<GenericParameterKindSDSL>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3311,7 +3311,7 @@ public ref partial struct OpForeachSDSL : IMemoryInstruction
                     Collection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3392,7 +3392,7 @@ public ref partial struct OpForeachEndSDSL : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3509,7 +3509,7 @@ public ref partial struct OpUnresolvableShaderSDSL : IMemoryInstruction
                     ShaderCodeNameEnd = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3590,7 +3590,7 @@ public ref partial struct OpNop : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3708,7 +3708,7 @@ public ref partial struct OpUndef : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3810,7 +3810,7 @@ public ref partial struct OpSourceContinued : IMemoryInstruction
                     ContinuedSource = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -3959,7 +3959,7 @@ public ref partial struct OpSource : IMemoryInstruction
                         Source = o.ToLiteral<string?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4061,7 +4061,7 @@ public ref partial struct OpSourceExtension : IMemoryInstruction
                     Extension = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4178,7 +4178,7 @@ public ref partial struct OpName : IMemoryInstruction
                     Name = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4310,7 +4310,7 @@ public ref partial struct OpMemberName : IMemoryInstruction
                     Name = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4428,7 +4428,7 @@ public ref partial struct OpString : IMemoryInstruction
                     Value = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4560,7 +4560,7 @@ public ref partial struct OpLine : IMemoryInstruction
                     Column = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4662,7 +4662,7 @@ public ref partial struct OpExtension : IMemoryInstruction
                     Name = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4780,7 +4780,7 @@ public ref partial struct OpExtInstImport : IMemoryInstruction
                     Name = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -4943,7 +4943,7 @@ public ref partial struct OpExtInst : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -5063,7 +5063,7 @@ public ref partial struct OpMemoryModel : IMemoryInstruction
                     Memorymodel = o.ToEnum<MemoryModel>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -5210,7 +5210,7 @@ public ref partial struct OpEntryPoint : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -5330,7 +5330,7 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
                     Mode = o.ToEnum<ExecutionMode>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -5432,7 +5432,7 @@ public ref partial struct OpCapability : IMemoryInstruction
                     Capability = o.ToEnum<Capability>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -5535,7 +5535,7 @@ public ref partial struct OpTypeVoid : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -5638,7 +5638,7 @@ public ref partial struct OpTypeBool : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -5771,7 +5771,7 @@ public ref partial struct OpTypeInt : IMemoryInstruction
                     Signedness = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -5905,7 +5905,7 @@ public ref partial struct OpTypeFloat : IMemoryInstruction
                         FloatingPointEncoding = o.ToEnum<FPEncoding>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6038,7 +6038,7 @@ public ref partial struct OpTypeVector : IMemoryInstruction
                     ComponentCount = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6171,7 +6171,7 @@ public ref partial struct OpTypeMatrix : IMemoryInstruction
                     ColumnCount = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6395,7 +6395,7 @@ public ref partial struct OpTypeImage : IMemoryInstruction
                         Accessqualifier = o.ToEnum<AccessQualifier>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6498,7 +6498,7 @@ public ref partial struct OpTypeSampler : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6616,7 +6616,7 @@ public ref partial struct OpTypeSampledImage : IMemoryInstruction
                     ImageType = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6749,7 +6749,7 @@ public ref partial struct OpTypeArray : IMemoryInstruction
                     Length = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6867,7 +6867,7 @@ public ref partial struct OpTypeRuntimeArray : IMemoryInstruction
                     ElementType = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -6985,7 +6985,7 @@ public ref partial struct OpTypeStruct : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -7106,7 +7106,7 @@ public ref partial struct OpTypeOpaque : IMemoryInstruction
                     Thenameoftheopaquetype = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -7239,7 +7239,7 @@ public ref partial struct OpTypePointer : IMemoryInstruction
                     Type = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -7372,7 +7372,7 @@ public ref partial struct OpTypeFunction : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -7478,7 +7478,7 @@ public ref partial struct OpTypeEvent : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -7581,7 +7581,7 @@ public ref partial struct OpTypeDeviceEvent : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -7684,7 +7684,7 @@ public ref partial struct OpTypeReserveId : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -7787,7 +7787,7 @@ public ref partial struct OpTypeQueue : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -7905,7 +7905,7 @@ public ref partial struct OpTypePipe : IMemoryInstruction
                     Qualifier = o.ToEnum<AccessQualifier>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8022,7 +8022,7 @@ public ref partial struct OpTypeForwardPointer : IMemoryInstruction
                     Storageclass = o.ToEnum<StorageClass>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8140,7 +8140,7 @@ public ref partial struct OpConstantTrue : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8258,7 +8258,7 @@ public ref partial struct OpConstantFalse : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8391,7 +8391,7 @@ public ref partial struct OpConstant<T> : IMemoryInstruction where T : struct, I
                     Value = o.ToLiteral<LiteralValue<T>>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8524,7 +8524,7 @@ public ref partial struct OpConstantComposite : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -8690,7 +8690,7 @@ public ref partial struct OpConstantSampler : IMemoryInstruction
                     Samplerfiltermode = o.ToEnum<SamplerFilterMode>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8808,7 +8808,7 @@ public ref partial struct OpConstantNull : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -8926,7 +8926,7 @@ public ref partial struct OpSpecConstantTrue : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9044,7 +9044,7 @@ public ref partial struct OpSpecConstantFalse : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9177,7 +9177,7 @@ public ref partial struct OpSpecConstant<T> : IMemoryInstruction where T : struc
                     Value = o.ToLiteral<LiteralValue<T>>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9310,7 +9310,7 @@ public ref partial struct OpSpecConstantComposite : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -9446,7 +9446,7 @@ public ref partial struct OpSpecConstantOp : IMemoryInstruction
                     Opcode = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9594,7 +9594,7 @@ public ref partial struct OpFunction : IMemoryInstruction
                     FunctionType = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9712,7 +9712,7 @@ public ref partial struct OpFunctionParameter : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9793,7 +9793,7 @@ public ref partial struct OpFunctionEnd : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -9941,7 +9941,7 @@ public ref partial struct OpFunctionCall : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -10093,7 +10093,7 @@ public ref partial struct OpVariable : IMemoryInstruction
                         Initializer = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -10256,7 +10256,7 @@ public ref partial struct OpImageTexelPointer : IMemoryInstruction
                     Sample = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -10405,7 +10405,7 @@ public ref partial struct OpLoad : IMemoryInstruction
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -10538,7 +10538,7 @@ public ref partial struct OpStore : IMemoryInstruction
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -10686,7 +10686,7 @@ public ref partial struct OpAccessChain : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -10837,7 +10837,7 @@ public ref partial struct OpInBoundsAccessChain : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -11003,7 +11003,7 @@ public ref partial struct OpPtrAccessChain : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -11154,7 +11154,7 @@ public ref partial struct OpArrayLength : IMemoryInstruction
                     Arraymember = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -11287,7 +11287,7 @@ public ref partial struct OpGenericPtrMemSemantics : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -11450,7 +11450,7 @@ public ref partial struct OpInBoundsPtrAccessChain : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -11570,7 +11570,7 @@ public ref partial struct OpDecorate : IMemoryInstruction
                     Decoration = o.ToEnum<Decoration>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -11702,7 +11702,7 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
                     Decoration = o.ToEnum<Decoration>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -11805,7 +11805,7 @@ public ref partial struct OpDecorationGroup : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -11922,7 +11922,7 @@ public ref partial struct OpGroupDecorate : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -12042,7 +12042,7 @@ public ref partial struct OpGroupMemberDecorate : IMemoryInstruction
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -12193,7 +12193,7 @@ public ref partial struct OpVectorExtractDynamic : IMemoryInstruction
                     Index = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -12356,7 +12356,7 @@ public ref partial struct OpVectorInsertDynamic : IMemoryInstruction
                     Index = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -12519,7 +12519,7 @@ public ref partial struct OpVectorShuffle : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -12655,7 +12655,7 @@ public ref partial struct OpCompositeConstruct : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -12806,7 +12806,7 @@ public ref partial struct OpCompositeExtract : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -12972,7 +12972,7 @@ public ref partial struct OpCompositeInsert : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -13108,7 +13108,7 @@ public ref partial struct OpCopyObject : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -13241,7 +13241,7 @@ public ref partial struct OpTranspose : IMemoryInstruction
                     Matrix = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -13389,7 +13389,7 @@ public ref partial struct OpSampledImage : IMemoryInstruction
                     Sampler = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -13553,7 +13553,7 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -13716,7 +13716,7 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -13895,7 +13895,7 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -14073,7 +14073,7 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -14237,7 +14237,7 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -14400,7 +14400,7 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -14579,7 +14579,7 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -14757,7 +14757,7 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -14921,7 +14921,7 @@ public ref partial struct OpImageFetch : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15100,7 +15100,7 @@ public ref partial struct OpImageGather : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15279,7 +15279,7 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15443,7 +15443,7 @@ public ref partial struct OpImageRead : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15591,7 +15591,7 @@ public ref partial struct OpImageWrite : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15724,7 +15724,7 @@ public ref partial struct OpImage : IMemoryInstruction
                     SampledImage = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15857,7 +15857,7 @@ public ref partial struct OpImageQueryFormat : IMemoryInstruction
                     Image = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -15990,7 +15990,7 @@ public ref partial struct OpImageQueryOrder : IMemoryInstruction
                     Image = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16138,7 +16138,7 @@ public ref partial struct OpImageQuerySizeLod : IMemoryInstruction
                     LevelofDetail = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16271,7 +16271,7 @@ public ref partial struct OpImageQuerySize : IMemoryInstruction
                     Image = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16419,7 +16419,7 @@ public ref partial struct OpImageQueryLod : IMemoryInstruction
                     Coordinate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16552,7 +16552,7 @@ public ref partial struct OpImageQueryLevels : IMemoryInstruction
                     Image = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16685,7 +16685,7 @@ public ref partial struct OpImageQuerySamples : IMemoryInstruction
                     Image = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16818,7 +16818,7 @@ public ref partial struct OpConvertFToU : IMemoryInstruction
                     FloatValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -16951,7 +16951,7 @@ public ref partial struct OpConvertFToS : IMemoryInstruction
                     FloatValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17084,7 +17084,7 @@ public ref partial struct OpConvertSToF : IMemoryInstruction
                     SignedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17217,7 +17217,7 @@ public ref partial struct OpConvertUToF : IMemoryInstruction
                     UnsignedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17350,7 +17350,7 @@ public ref partial struct OpUConvert : IMemoryInstruction
                     UnsignedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17483,7 +17483,7 @@ public ref partial struct OpSConvert : IMemoryInstruction
                     SignedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17616,7 +17616,7 @@ public ref partial struct OpFConvert : IMemoryInstruction
                     FloatValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17749,7 +17749,7 @@ public ref partial struct OpQuantizeToF16 : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -17882,7 +17882,7 @@ public ref partial struct OpConvertPtrToU : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18015,7 +18015,7 @@ public ref partial struct OpSatConvertSToU : IMemoryInstruction
                     SignedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18148,7 +18148,7 @@ public ref partial struct OpSatConvertUToS : IMemoryInstruction
                     UnsignedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18281,7 +18281,7 @@ public ref partial struct OpConvertUToPtr : IMemoryInstruction
                     IntegerValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18414,7 +18414,7 @@ public ref partial struct OpPtrCastToGeneric : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18547,7 +18547,7 @@ public ref partial struct OpGenericCastToPtr : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18695,7 +18695,7 @@ public ref partial struct OpGenericCastToPtrExplicit : IMemoryInstruction
                     Storage = o.ToEnum<StorageClass>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18828,7 +18828,7 @@ public ref partial struct OpBitcast : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -18961,7 +18961,7 @@ public ref partial struct OpSNegate : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19094,7 +19094,7 @@ public ref partial struct OpFNegate : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19242,7 +19242,7 @@ public ref partial struct OpIAdd : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19390,7 +19390,7 @@ public ref partial struct OpFAdd : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19538,7 +19538,7 @@ public ref partial struct OpISub : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19686,7 +19686,7 @@ public ref partial struct OpFSub : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19834,7 +19834,7 @@ public ref partial struct OpIMul : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -19982,7 +19982,7 @@ public ref partial struct OpFMul : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -20130,7 +20130,7 @@ public ref partial struct OpUDiv : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -20278,7 +20278,7 @@ public ref partial struct OpSDiv : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -20426,7 +20426,7 @@ public ref partial struct OpFDiv : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -20574,7 +20574,7 @@ public ref partial struct OpUMod : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -20722,7 +20722,7 @@ public ref partial struct OpSRem : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -20870,7 +20870,7 @@ public ref partial struct OpSMod : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21018,7 +21018,7 @@ public ref partial struct OpFRem : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21166,7 +21166,7 @@ public ref partial struct OpFMod : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21314,7 +21314,7 @@ public ref partial struct OpVectorTimesScalar : IMemoryInstruction
                     Scalar = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21462,7 +21462,7 @@ public ref partial struct OpMatrixTimesScalar : IMemoryInstruction
                     Scalar = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21610,7 +21610,7 @@ public ref partial struct OpVectorTimesMatrix : IMemoryInstruction
                     Matrix = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21758,7 +21758,7 @@ public ref partial struct OpMatrixTimesVector : IMemoryInstruction
                     Vector = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -21906,7 +21906,7 @@ public ref partial struct OpMatrixTimesMatrix : IMemoryInstruction
                     RightMatrix = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22054,7 +22054,7 @@ public ref partial struct OpOuterProduct : IMemoryInstruction
                     Vector2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22202,7 +22202,7 @@ public ref partial struct OpDot : IMemoryInstruction
                     Vector2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22350,7 +22350,7 @@ public ref partial struct OpIAddCarry : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22498,7 +22498,7 @@ public ref partial struct OpISubBorrow : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22646,7 +22646,7 @@ public ref partial struct OpUMulExtended : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22794,7 +22794,7 @@ public ref partial struct OpSMulExtended : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -22927,7 +22927,7 @@ public ref partial struct OpAny : IMemoryInstruction
                     Vector = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23060,7 +23060,7 @@ public ref partial struct OpAll : IMemoryInstruction
                     Vector = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23193,7 +23193,7 @@ public ref partial struct OpIsNan : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23326,7 +23326,7 @@ public ref partial struct OpIsInf : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23459,7 +23459,7 @@ public ref partial struct OpIsFinite : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23592,7 +23592,7 @@ public ref partial struct OpIsNormal : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23725,7 +23725,7 @@ public ref partial struct OpSignBitSet : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -23873,7 +23873,7 @@ public ref partial struct OpLessOrGreater : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24021,7 +24021,7 @@ public ref partial struct OpOrdered : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24169,7 +24169,7 @@ public ref partial struct OpUnordered : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24317,7 +24317,7 @@ public ref partial struct OpLogicalEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24465,7 +24465,7 @@ public ref partial struct OpLogicalNotEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24613,7 +24613,7 @@ public ref partial struct OpLogicalOr : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24761,7 +24761,7 @@ public ref partial struct OpLogicalAnd : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -24894,7 +24894,7 @@ public ref partial struct OpLogicalNot : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25057,7 +25057,7 @@ public ref partial struct OpSelect : IMemoryInstruction
                     Object2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25205,7 +25205,7 @@ public ref partial struct OpIEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25353,7 +25353,7 @@ public ref partial struct OpINotEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25501,7 +25501,7 @@ public ref partial struct OpUGreaterThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25649,7 +25649,7 @@ public ref partial struct OpSGreaterThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25797,7 +25797,7 @@ public ref partial struct OpUGreaterThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -25945,7 +25945,7 @@ public ref partial struct OpSGreaterThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26093,7 +26093,7 @@ public ref partial struct OpULessThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26241,7 +26241,7 @@ public ref partial struct OpSLessThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26389,7 +26389,7 @@ public ref partial struct OpULessThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26537,7 +26537,7 @@ public ref partial struct OpSLessThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26685,7 +26685,7 @@ public ref partial struct OpFOrdEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26833,7 +26833,7 @@ public ref partial struct OpFUnordEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -26981,7 +26981,7 @@ public ref partial struct OpFOrdNotEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -27129,7 +27129,7 @@ public ref partial struct OpFUnordNotEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -27277,7 +27277,7 @@ public ref partial struct OpFOrdLessThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -27425,7 +27425,7 @@ public ref partial struct OpFUnordLessThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -27573,7 +27573,7 @@ public ref partial struct OpFOrdGreaterThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -27721,7 +27721,7 @@ public ref partial struct OpFUnordGreaterThan : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -27869,7 +27869,7 @@ public ref partial struct OpFOrdLessThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28017,7 +28017,7 @@ public ref partial struct OpFUnordLessThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28165,7 +28165,7 @@ public ref partial struct OpFOrdGreaterThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28313,7 +28313,7 @@ public ref partial struct OpFUnordGreaterThanEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28461,7 +28461,7 @@ public ref partial struct OpShiftRightLogical : IMemoryInstruction
                     Shift = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28609,7 +28609,7 @@ public ref partial struct OpShiftRightArithmetic : IMemoryInstruction
                     Shift = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28757,7 +28757,7 @@ public ref partial struct OpShiftLeftLogical : IMemoryInstruction
                     Shift = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -28905,7 +28905,7 @@ public ref partial struct OpBitwiseOr : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29053,7 +29053,7 @@ public ref partial struct OpBitwiseXor : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29201,7 +29201,7 @@ public ref partial struct OpBitwiseAnd : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29334,7 +29334,7 @@ public ref partial struct OpNot : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29512,7 +29512,7 @@ public ref partial struct OpBitFieldInsert : IMemoryInstruction
                     Count = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29675,7 +29675,7 @@ public ref partial struct OpBitFieldSExtract : IMemoryInstruction
                     Count = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29838,7 +29838,7 @@ public ref partial struct OpBitFieldUExtract : IMemoryInstruction
                     Count = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -29971,7 +29971,7 @@ public ref partial struct OpBitReverse : IMemoryInstruction
                     BaseId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30104,7 +30104,7 @@ public ref partial struct OpBitCount : IMemoryInstruction
                     BaseId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30237,7 +30237,7 @@ public ref partial struct OpDPdx : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30370,7 +30370,7 @@ public ref partial struct OpDPdy : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30503,7 +30503,7 @@ public ref partial struct OpFwidth : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30636,7 +30636,7 @@ public ref partial struct OpDPdxFine : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30769,7 +30769,7 @@ public ref partial struct OpDPdyFine : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -30902,7 +30902,7 @@ public ref partial struct OpFwidthFine : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31035,7 +31035,7 @@ public ref partial struct OpDPdxCoarse : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31168,7 +31168,7 @@ public ref partial struct OpDPdyCoarse : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31301,7 +31301,7 @@ public ref partial struct OpFwidthCoarse : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31382,7 +31382,7 @@ public ref partial struct OpEmitVertex : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31463,7 +31463,7 @@ public ref partial struct OpEndPrimitive : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31565,7 +31565,7 @@ public ref partial struct OpEmitStreamVertex : IMemoryInstruction
                     Stream = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31667,7 +31667,7 @@ public ref partial struct OpEndStreamPrimitive : IMemoryInstruction
                     Stream = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31799,7 +31799,7 @@ public ref partial struct OpControlBarrier : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -31916,7 +31916,7 @@ public ref partial struct OpMemoryBarrier : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -32079,7 +32079,7 @@ public ref partial struct OpAtomicLoad : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -32226,7 +32226,7 @@ public ref partial struct OpAtomicStore : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -32404,7 +32404,7 @@ public ref partial struct OpAtomicExchange : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -32612,7 +32612,7 @@ public ref partial struct OpAtomicCompareExchange : IMemoryInstruction
                     Comparator = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -32820,7 +32820,7 @@ public ref partial struct OpAtomicCompareExchangeWeak : IMemoryInstruction
                     Comparator = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -32983,7 +32983,7 @@ public ref partial struct OpAtomicIIncrement : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -33146,7 +33146,7 @@ public ref partial struct OpAtomicIDecrement : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -33324,7 +33324,7 @@ public ref partial struct OpAtomicIAdd : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -33502,7 +33502,7 @@ public ref partial struct OpAtomicISub : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -33680,7 +33680,7 @@ public ref partial struct OpAtomicSMin : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -33858,7 +33858,7 @@ public ref partial struct OpAtomicUMin : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -34036,7 +34036,7 @@ public ref partial struct OpAtomicSMax : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -34214,7 +34214,7 @@ public ref partial struct OpAtomicUMax : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -34392,7 +34392,7 @@ public ref partial struct OpAtomicAnd : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -34570,7 +34570,7 @@ public ref partial struct OpAtomicOr : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -34748,7 +34748,7 @@ public ref partial struct OpAtomicXor : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -34881,7 +34881,7 @@ public ref partial struct OpPhi : IMemoryInstruction
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -35016,7 +35016,7 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
                     Loopcontrol = o.ToEnum<LoopControlMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35133,7 +35133,7 @@ public ref partial struct OpSelectionMerge : IMemoryInstruction
                     Selectioncontrol = o.ToEnum<SelectionControlMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35236,7 +35236,7 @@ public ref partial struct OpLabel : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35338,7 +35338,7 @@ public ref partial struct OpBranch : IMemoryInstruction
                     TargetLabel = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35485,7 +35485,7 @@ public ref partial struct OpBranchConditional : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -35620,7 +35620,7 @@ public ref partial struct OpSwitch : IMemoryInstruction
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -35704,7 +35704,7 @@ public ref partial struct OpKill : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35785,7 +35785,7 @@ public ref partial struct OpReturn : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35887,7 +35887,7 @@ public ref partial struct OpReturnValue : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -35968,7 +35968,7 @@ public ref partial struct OpUnreachable : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -36085,7 +36085,7 @@ public ref partial struct OpLifetimeStart : IMemoryInstruction
                     Size = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -36202,7 +36202,7 @@ public ref partial struct OpLifetimeStop : IMemoryInstruction
                     Size = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -36410,7 +36410,7 @@ public ref partial struct OpGroupAsyncCopy : IMemoryInstruction
                     EventId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -36542,7 +36542,7 @@ public ref partial struct OpGroupWaitEvents : IMemoryInstruction
                     EventsList = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -36690,7 +36690,7 @@ public ref partial struct OpGroupAll : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -36838,7 +36838,7 @@ public ref partial struct OpGroupAny : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37001,7 +37001,7 @@ public ref partial struct OpGroupBroadcast : IMemoryInstruction
                     LocalId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37164,7 +37164,7 @@ public ref partial struct OpGroupIAdd : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37327,7 +37327,7 @@ public ref partial struct OpGroupFAdd : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37490,7 +37490,7 @@ public ref partial struct OpGroupFMin : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37653,7 +37653,7 @@ public ref partial struct OpGroupUMin : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37816,7 +37816,7 @@ public ref partial struct OpGroupSMin : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -37979,7 +37979,7 @@ public ref partial struct OpGroupFMax : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -38142,7 +38142,7 @@ public ref partial struct OpGroupUMax : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -38305,7 +38305,7 @@ public ref partial struct OpGroupSMax : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -38483,7 +38483,7 @@ public ref partial struct OpReadPipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -38661,7 +38661,7 @@ public ref partial struct OpWritePipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -38869,7 +38869,7 @@ public ref partial struct OpReservedReadPipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -39077,7 +39077,7 @@ public ref partial struct OpReservedWritePipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -39255,7 +39255,7 @@ public ref partial struct OpReserveReadPipePackets : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -39433,7 +39433,7 @@ public ref partial struct OpReserveWritePipePackets : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -39580,7 +39580,7 @@ public ref partial struct OpCommitReadPipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -39727,7 +39727,7 @@ public ref partial struct OpCommitWritePipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -39860,7 +39860,7 @@ public ref partial struct OpIsValidReserveId : IMemoryInstruction
                     ReserveId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -40023,7 +40023,7 @@ public ref partial struct OpGetNumPipePackets : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -40186,7 +40186,7 @@ public ref partial struct OpGetMaxPipePackets : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -40379,7 +40379,7 @@ public ref partial struct OpGroupReserveReadPipePackets : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -40572,7 +40572,7 @@ public ref partial struct OpGroupReserveWritePipePackets : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -40734,7 +40734,7 @@ public ref partial struct OpGroupCommitReadPipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -40896,7 +40896,7 @@ public ref partial struct OpGroupCommitWritePipe : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -41074,7 +41074,7 @@ public ref partial struct OpEnqueueMarker : IMemoryInstruction
                     RetEvent = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -41357,7 +41357,7 @@ public ref partial struct OpEnqueueKernel : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -41553,7 +41553,7 @@ public ref partial struct OpGetKernelNDrangeSubGroupCount : IMemoryInstruction
                     ParamAlign = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -41746,7 +41746,7 @@ public ref partial struct OpGetKernelNDrangeMaxSubGroupSize : IMemoryInstruction
                     ParamAlign = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -41924,7 +41924,7 @@ public ref partial struct OpGetKernelWorkGroupSize : IMemoryInstruction
                     ParamAlign = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42102,7 +42102,7 @@ public ref partial struct OpGetKernelPreferredWorkGroupSizeMultiple : IMemoryIns
                     ParamAlign = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42204,7 +42204,7 @@ public ref partial struct OpRetainEvent : IMemoryInstruction
                     EventId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42306,7 +42306,7 @@ public ref partial struct OpReleaseEvent : IMemoryInstruction
                     EventId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42424,7 +42424,7 @@ public ref partial struct OpCreateUserEvent : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42557,7 +42557,7 @@ public ref partial struct OpIsValidEvent : IMemoryInstruction
                     EventId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42674,7 +42674,7 @@ public ref partial struct OpSetUserEventStatus : IMemoryInstruction
                     Status = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42806,7 +42806,7 @@ public ref partial struct OpCaptureEventProfilingInfo : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -42924,7 +42924,7 @@ public ref partial struct OpGetDefaultQueue : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -43087,7 +43087,7 @@ public ref partial struct OpBuildNDRange : IMemoryInstruction
                     GlobalWorkOffset = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -43251,7 +43251,7 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -43414,7 +43414,7 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -43593,7 +43593,7 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -43771,7 +43771,7 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -43935,7 +43935,7 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -44098,7 +44098,7 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -44277,7 +44277,7 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -44455,7 +44455,7 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -44619,7 +44619,7 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -44798,7 +44798,7 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -44977,7 +44977,7 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45110,7 +45110,7 @@ public ref partial struct OpImageSparseTexelsResident : IMemoryInstruction
                     ResidentCode = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45191,7 +45191,7 @@ public ref partial struct OpNoLine : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45354,7 +45354,7 @@ public ref partial struct OpAtomicFlagTestAndSet : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45486,7 +45486,7 @@ public ref partial struct OpAtomicFlagClear : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45650,7 +45650,7 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45783,7 +45783,7 @@ public ref partial struct OpSizeOf : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -45886,7 +45886,7 @@ public ref partial struct OpTypePipeStorage : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46049,7 +46049,7 @@ public ref partial struct OpConstantPipeStorage : IMemoryInstruction
                     Capacity = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46182,7 +46182,7 @@ public ref partial struct OpCreatePipeFromPipeStorage : IMemoryInstruction
                     PipeStorage = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46375,7 +46375,7 @@ public ref partial struct OpGetKernelLocalSizeForSubgroupCount : IMemoryInstruct
                     ParamAlign = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46553,7 +46553,7 @@ public ref partial struct OpGetKernelMaxNumSubgroups : IMemoryInstruction
                     ParamAlign = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46656,7 +46656,7 @@ public ref partial struct OpTypeNamedBarrier : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46789,7 +46789,7 @@ public ref partial struct OpNamedBarrierInitialize : IMemoryInstruction
                     SubgroupCount = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -46921,7 +46921,7 @@ public ref partial struct OpMemoryNamedBarrier : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47023,7 +47023,7 @@ public ref partial struct OpModuleProcessed : IMemoryInstruction
                     Process = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47140,7 +47140,7 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
                     Mode = o.ToEnum<ExecutionMode>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47257,7 +47257,7 @@ public ref partial struct OpDecorateId : IMemoryInstruction
                     Decoration = o.ToEnum<Decoration>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47390,7 +47390,7 @@ public ref partial struct OpGroupNonUniformElect : IMemoryInstruction
                     Execution = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47538,7 +47538,7 @@ public ref partial struct OpGroupNonUniformAll : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47686,7 +47686,7 @@ public ref partial struct OpGroupNonUniformAny : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47834,7 +47834,7 @@ public ref partial struct OpGroupNonUniformAllEqual : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -47997,7 +47997,7 @@ public ref partial struct OpGroupNonUniformBroadcast : IMemoryInstruction
                     Id = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -48145,7 +48145,7 @@ public ref partial struct OpGroupNonUniformBroadcastFirst : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -48293,7 +48293,7 @@ public ref partial struct OpGroupNonUniformBallot : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -48441,7 +48441,7 @@ public ref partial struct OpGroupNonUniformInverseBallot : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -48604,7 +48604,7 @@ public ref partial struct OpGroupNonUniformBallotBitExtract : IMemoryInstruction
                     Index = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -48767,7 +48767,7 @@ public ref partial struct OpGroupNonUniformBallotBitCount : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -48915,7 +48915,7 @@ public ref partial struct OpGroupNonUniformBallotFindLSB : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -49063,7 +49063,7 @@ public ref partial struct OpGroupNonUniformBallotFindMSB : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -49226,7 +49226,7 @@ public ref partial struct OpGroupNonUniformShuffle : IMemoryInstruction
                     Id = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -49389,7 +49389,7 @@ public ref partial struct OpGroupNonUniformShuffleXor : IMemoryInstruction
                     Mask = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -49552,7 +49552,7 @@ public ref partial struct OpGroupNonUniformShuffleUp : IMemoryInstruction
                     Delta = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -49715,7 +49715,7 @@ public ref partial struct OpGroupNonUniformShuffleDown : IMemoryInstruction
                     Delta = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -49894,7 +49894,7 @@ public ref partial struct OpGroupNonUniformIAdd : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -50073,7 +50073,7 @@ public ref partial struct OpGroupNonUniformFAdd : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -50252,7 +50252,7 @@ public ref partial struct OpGroupNonUniformIMul : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -50431,7 +50431,7 @@ public ref partial struct OpGroupNonUniformFMul : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -50610,7 +50610,7 @@ public ref partial struct OpGroupNonUniformSMin : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -50789,7 +50789,7 @@ public ref partial struct OpGroupNonUniformUMin : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -50968,7 +50968,7 @@ public ref partial struct OpGroupNonUniformFMin : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -51147,7 +51147,7 @@ public ref partial struct OpGroupNonUniformSMax : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -51326,7 +51326,7 @@ public ref partial struct OpGroupNonUniformUMax : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -51505,7 +51505,7 @@ public ref partial struct OpGroupNonUniformFMax : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -51684,7 +51684,7 @@ public ref partial struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -51863,7 +51863,7 @@ public ref partial struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -52042,7 +52042,7 @@ public ref partial struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -52221,7 +52221,7 @@ public ref partial struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -52400,7 +52400,7 @@ public ref partial struct OpGroupNonUniformLogicalOr : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -52579,7 +52579,7 @@ public ref partial struct OpGroupNonUniformLogicalXor : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -52742,7 +52742,7 @@ public ref partial struct OpGroupNonUniformQuadBroadcast : IMemoryInstruction
                     Index = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -52905,7 +52905,7 @@ public ref partial struct OpGroupNonUniformQuadSwap : IMemoryInstruction
                     Direction = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53038,7 +53038,7 @@ public ref partial struct OpCopyLogical : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53186,7 +53186,7 @@ public ref partial struct OpPtrEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53334,7 +53334,7 @@ public ref partial struct OpPtrNotEqual : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53482,7 +53482,7 @@ public ref partial struct OpPtrDiff : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53631,7 +53631,7 @@ public ref partial struct OpColorAttachmentReadEXT : IMemoryInstruction
                         Sample = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53765,7 +53765,7 @@ public ref partial struct OpDepthAttachmentReadEXT : IMemoryInstruction
                         Sample = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53899,7 +53899,7 @@ public ref partial struct OpStencilAttachmentReadEXT : IMemoryInstruction
                         Sample = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -53980,7 +53980,7 @@ public ref partial struct OpTerminateInvocation : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -54098,7 +54098,7 @@ public ref partial struct OpTypeUntypedPointerKHR : IMemoryInstruction
                     Storageclass = o.ToEnum<StorageClass>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -54263,7 +54263,7 @@ public ref partial struct OpUntypedVariableKHR : IMemoryInstruction
                         Initializer = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -54426,7 +54426,7 @@ public ref partial struct OpUntypedAccessChainKHR : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -54592,7 +54592,7 @@ public ref partial struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -54728,7 +54728,7 @@ public ref partial struct OpSubgroupBallotKHR : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -54861,7 +54861,7 @@ public ref partial struct OpSubgroupFirstInvocationKHR : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -55039,7 +55039,7 @@ public ref partial struct OpUntypedPtrAccessChainKHR : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -55220,7 +55220,7 @@ public ref partial struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstructio
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -55386,7 +55386,7 @@ public ref partial struct OpUntypedArrayLengthKHR : IMemoryInstruction
                     Arraymember = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -55551,7 +55551,7 @@ public ref partial struct OpUntypedPrefetchKHR : IMemoryInstruction
                         CacheType = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -55684,7 +55684,7 @@ public ref partial struct OpSubgroupAllKHR : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -55817,7 +55817,7 @@ public ref partial struct OpSubgroupAnyKHR : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -55950,7 +55950,7 @@ public ref partial struct OpSubgroupAllEqualKHR : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -56129,7 +56129,7 @@ public ref partial struct OpGroupNonUniformRotateKHR : IMemoryInstruction
                         ClusterSize = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -56277,7 +56277,7 @@ public ref partial struct OpSubgroupReadInvocationKHR : IMemoryInstruction
                     Index = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -56440,7 +56440,7 @@ public ref partial struct OpExtInstWithForwardRefsKHR : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -56695,7 +56695,7 @@ public ref partial struct OpTraceRayKHR : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -56812,7 +56812,7 @@ public ref partial struct OpExecuteCallableKHR : IMemoryInstruction
                     CallableData = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -56945,7 +56945,7 @@ public ref partial struct OpConvertUToAccelerationStructureKHR : IMemoryInstruct
                     Accel = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57026,7 +57026,7 @@ public ref partial struct OpIgnoreIntersectionKHR : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57107,7 +57107,7 @@ public ref partial struct OpTerminateRayKHR : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57271,7 +57271,7 @@ public ref partial struct OpSDot : IMemoryInstruction
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57435,7 +57435,7 @@ public ref partial struct OpUDot : IMemoryInstruction
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57599,7 +57599,7 @@ public ref partial struct OpSUDot : IMemoryInstruction
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57778,7 +57778,7 @@ public ref partial struct OpSDotAccSat : IMemoryInstruction
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -57957,7 +57957,7 @@ public ref partial struct OpUDotAccSat : IMemoryInstruction
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -58136,7 +58136,7 @@ public ref partial struct OpSUDotAccSat : IMemoryInstruction
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -58314,7 +58314,7 @@ public ref partial struct OpTypeCooperativeMatrixKHR : IMemoryInstruction
                     Use = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -58494,7 +58494,7 @@ public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
                         MemoryOperand = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -58658,7 +58658,7 @@ public ref partial struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
                         MemoryOperand = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -58837,7 +58837,7 @@ public ref partial struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
                         CooperativeMatrixOperands = o.ToEnum<CooperativeMatrixOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -58970,7 +58970,7 @@ public ref partial struct OpCooperativeMatrixLengthKHR : IMemoryInstruction
                     Type = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59103,7 +59103,7 @@ public ref partial struct OpConstantCompositeReplicateEXT : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59236,7 +59236,7 @@ public ref partial struct OpSpecConstantCompositeReplicateEXT : IMemoryInstructi
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59369,7 +59369,7 @@ public ref partial struct OpCompositeConstructReplicateEXT : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59472,7 +59472,7 @@ public ref partial struct OpTypeRayQueryKHR : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59679,7 +59679,7 @@ public ref partial struct OpRayQueryInitializeKHR : IMemoryInstruction
                     RayTMax = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59781,7 +59781,7 @@ public ref partial struct OpRayQueryTerminateKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -59898,7 +59898,7 @@ public ref partial struct OpRayQueryGenerateIntersectionKHR : IMemoryInstruction
                     HitT = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60000,7 +60000,7 @@ public ref partial struct OpRayQueryConfirmIntersectionKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60133,7 +60133,7 @@ public ref partial struct OpRayQueryProceedKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60281,7 +60281,7 @@ public ref partial struct OpRayQueryGetIntersectionTypeKHR : IMemoryInstruction
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60444,7 +60444,7 @@ public ref partial struct OpImageSampleWeightedQCOM : IMemoryInstruction
                     Weights = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60607,7 +60607,7 @@ public ref partial struct OpImageBoxFilterQCOM : IMemoryInstruction
                     BoxSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60800,7 +60800,7 @@ public ref partial struct OpImageBlockMatchSSDQCOM : IMemoryInstruction
                     BlockSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -60993,7 +60993,7 @@ public ref partial struct OpImageBlockMatchSADQCOM : IMemoryInstruction
                     BlockSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -61186,7 +61186,7 @@ public ref partial struct OpImageBlockMatchWindowSSDQCOM : IMemoryInstruction
                     BlockSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -61379,7 +61379,7 @@ public ref partial struct OpImageBlockMatchWindowSADQCOM : IMemoryInstruction
                     BlockSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -61572,7 +61572,7 @@ public ref partial struct OpImageBlockMatchGatherSSDQCOM : IMemoryInstruction
                     BlockSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -61765,7 +61765,7 @@ public ref partial struct OpImageBlockMatchGatherSADQCOM : IMemoryInstruction
                     BlockSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -61928,7 +61928,7 @@ public ref partial struct OpGroupIAddNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -62091,7 +62091,7 @@ public ref partial struct OpGroupFAddNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -62254,7 +62254,7 @@ public ref partial struct OpGroupFMinNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -62417,7 +62417,7 @@ public ref partial struct OpGroupUMinNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -62580,7 +62580,7 @@ public ref partial struct OpGroupSMinNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -62743,7 +62743,7 @@ public ref partial struct OpGroupFMaxNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -62906,7 +62906,7 @@ public ref partial struct OpGroupUMaxNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63069,7 +63069,7 @@ public ref partial struct OpGroupSMaxNonUniformAMD : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63217,7 +63217,7 @@ public ref partial struct OpFragmentMaskFetchAMD : IMemoryInstruction
                     Coordinate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63380,7 +63380,7 @@ public ref partial struct OpFragmentFetchAMD : IMemoryInstruction
                     FragmentIndex = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63513,7 +63513,7 @@ public ref partial struct OpReadClockKHR : IMemoryInstruction
                     Scope = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63676,7 +63676,7 @@ public ref partial struct OpAllocateNodePayloadsAMDX : IMemoryInstruction
                     NodeIndex = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63778,7 +63778,7 @@ public ref partial struct OpEnqueueNodePayloadsAMDX : IMemoryInstruction
                     PayloadArray = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -63896,7 +63896,7 @@ public ref partial struct OpTypeNodePayloadArrayAMDX : IMemoryInstruction
                     PayloadType = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64029,7 +64029,7 @@ public ref partial struct OpFinishWritingNodePayloadAMDX : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64162,7 +64162,7 @@ public ref partial struct OpNodePayloadArrayLengthAMDX : IMemoryInstruction
                     PayloadArray = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64310,7 +64310,7 @@ public ref partial struct OpIsNodePayloadValidAMDX : IMemoryInstruction
                     NodeIndex = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64428,7 +64428,7 @@ public ref partial struct OpConstantStringAMDX : IMemoryInstruction
                     LiteralString = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64546,7 +64546,7 @@ public ref partial struct OpSpecConstantStringAMDX : IMemoryInstruction
                     LiteralString = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64679,7 +64679,7 @@ public ref partial struct OpGroupNonUniformQuadAllKHR : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -64812,7 +64812,7 @@ public ref partial struct OpGroupNonUniformQuadAnyKHR : IMemoryInstruction
                     Predicate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -65109,7 +65109,7 @@ public ref partial struct OpHitObjectRecordHitMotionNV : IMemoryInstruction
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -65391,7 +65391,7 @@ public ref partial struct OpHitObjectRecordHitWithIndexMotionNV : IMemoryInstruc
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -65583,7 +65583,7 @@ public ref partial struct OpHitObjectRecordMissMotionNV : IMemoryInstruction
                     CurrentTime = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -65716,7 +65716,7 @@ public ref partial struct OpHitObjectGetWorldToObjectNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -65849,7 +65849,7 @@ public ref partial struct OpHitObjectGetObjectToWorldNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -65982,7 +65982,7 @@ public ref partial struct OpHitObjectGetObjectRayDirectionNV : IMemoryInstructio
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -66115,7 +66115,7 @@ public ref partial struct OpHitObjectGetObjectRayOriginNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -66397,7 +66397,7 @@ public ref partial struct OpHitObjectTraceRayMotionNV : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -66530,7 +66530,7 @@ public ref partial struct OpHitObjectGetShaderRecordBufferHandleNV : IMemoryInst
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -66663,7 +66663,7 @@ public ref partial struct OpHitObjectGetShaderBindingTableRecordIndexNV : IMemor
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -66765,7 +66765,7 @@ public ref partial struct OpHitObjectRecordEmptyNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -67032,7 +67032,7 @@ public ref partial struct OpHitObjectTraceRayNV : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -67314,7 +67314,7 @@ public ref partial struct OpHitObjectRecordHitNV : IMemoryInstruction
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -67581,7 +67581,7 @@ public ref partial struct OpHitObjectRecordHitWithIndexNV : IMemoryInstruction
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -67758,7 +67758,7 @@ public ref partial struct OpHitObjectRecordMissNV : IMemoryInstruction
                     TMax = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -67875,7 +67875,7 @@ public ref partial struct OpHitObjectExecuteShaderNV : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68008,7 +68008,7 @@ public ref partial struct OpHitObjectGetCurrentTimeNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68125,7 +68125,7 @@ public ref partial struct OpHitObjectGetAttributesNV : IMemoryInstruction
                     HitObjectAttribute = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68258,7 +68258,7 @@ public ref partial struct OpHitObjectGetHitKindNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68391,7 +68391,7 @@ public ref partial struct OpHitObjectGetPrimitiveIndexNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68524,7 +68524,7 @@ public ref partial struct OpHitObjectGetGeometryIndexNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68657,7 +68657,7 @@ public ref partial struct OpHitObjectGetInstanceIdNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68790,7 +68790,7 @@ public ref partial struct OpHitObjectGetInstanceCustomIndexNV : IMemoryInstructi
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -68923,7 +68923,7 @@ public ref partial struct OpHitObjectGetWorldRayDirectionNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69056,7 +69056,7 @@ public ref partial struct OpHitObjectGetWorldRayOriginNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69189,7 +69189,7 @@ public ref partial struct OpHitObjectGetRayTMaxNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69322,7 +69322,7 @@ public ref partial struct OpHitObjectGetRayTMinNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69455,7 +69455,7 @@ public ref partial struct OpHitObjectIsEmptyNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69588,7 +69588,7 @@ public ref partial struct OpHitObjectIsHitNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69721,7 +69721,7 @@ public ref partial struct OpHitObjectIsMissNV : IMemoryInstruction
                     HitObject = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69855,7 +69855,7 @@ public ref partial struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
                         Bits = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -69972,7 +69972,7 @@ public ref partial struct OpReorderThreadWithHintNV : IMemoryInstruction
                     Bits = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70075,7 +70075,7 @@ public ref partial struct OpTypeHitObjectNV : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70269,7 +70269,7 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70402,7 +70402,7 @@ public ref partial struct OpCooperativeMatrixConvertNV : IMemoryInstruction
                     Matrix = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70550,7 +70550,7 @@ public ref partial struct OpEmitMeshTasksEXT : IMemoryInstruction
                         Payload = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70667,7 +70667,7 @@ public ref partial struct OpSetMeshOutputsEXT : IMemoryInstruction
                     PrimitiveCount = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70800,7 +70800,7 @@ public ref partial struct OpGroupNonUniformPartitionNV : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -70917,7 +70917,7 @@ public ref partial struct OpWritePackedPrimitiveIndices4x8NV : IMemoryInstructio
                     PackedIndices = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -71110,7 +71110,7 @@ public ref partial struct OpFetchMicroTriangleVertexPositionNV : IMemoryInstruct
                     Barycentric = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -71303,7 +71303,7 @@ public ref partial struct OpFetchMicroTriangleVertexBarycentricNV : IMemoryInstr
                     Barycentric = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -71451,7 +71451,7 @@ public ref partial struct OpReportIntersectionKHR : IMemoryInstruction
                     HitKind = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -71532,7 +71532,7 @@ public ref partial struct OpIgnoreIntersectionNV : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -71613,7 +71613,7 @@ public ref partial struct OpTerminateRayNV : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -71865,7 +71865,7 @@ public ref partial struct OpTraceNV : IMemoryInstruction
                     PayloadId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -72132,7 +72132,7 @@ public ref partial struct OpTraceMotionNV : IMemoryInstruction
                     PayloadId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -72399,7 +72399,7 @@ public ref partial struct OpTraceRayMotionNV : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -72547,7 +72547,7 @@ public ref partial struct OpRayQueryGetIntersectionTriangleVertexPositionsKHR : 
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -72650,7 +72650,7 @@ public ref partial struct OpTypeAccelerationStructureKHR : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -72767,7 +72767,7 @@ public ref partial struct OpExecuteCallableNV : IMemoryInstruction
                     CallableDataId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -72930,7 +72930,7 @@ public ref partial struct OpTypeCooperativeMatrixNV : IMemoryInstruction
                     Columns = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73109,7 +73109,7 @@ public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73272,7 +73272,7 @@ public ref partial struct OpCooperativeMatrixStoreNV : IMemoryInstruction
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73435,7 +73435,7 @@ public ref partial struct OpCooperativeMatrixMulAddNV : IMemoryInstruction
                     C = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73568,7 +73568,7 @@ public ref partial struct OpCooperativeMatrixLengthNV : IMemoryInstruction
                     Type = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73649,7 +73649,7 @@ public ref partial struct OpBeginInvocationInterlockEXT : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73730,7 +73730,7 @@ public ref partial struct OpEndInvocationInterlockEXT : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -73893,7 +73893,7 @@ public ref partial struct OpCooperativeMatrixReduceNV : IMemoryInstruction
                     CombineFunc = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -74086,7 +74086,7 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
                     TensorAddressingOperands = o.ToEnum<TensorAddressingOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -74248,7 +74248,7 @@ public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
                     TensorAddressingOperands = o.ToEnum<TensorAddressingOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -74411,7 +74411,7 @@ public ref partial struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -74547,7 +74547,7 @@ public ref partial struct OpTypeTensorLayoutNV : IMemoryInstruction
                     ClampMode = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -74695,7 +74695,7 @@ public ref partial struct OpTypeTensorViewNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -74816,7 +74816,7 @@ public ref partial struct OpCreateTensorLayoutNV : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -74964,7 +74964,7 @@ public ref partial struct OpTensorLayoutSetDimensionNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -75115,7 +75115,7 @@ public ref partial struct OpTensorLayoutSetStrideNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -75266,7 +75266,7 @@ public ref partial struct OpTensorLayoutSliceNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -75417,7 +75417,7 @@ public ref partial struct OpTensorLayoutSetClampValueNV : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -75535,7 +75535,7 @@ public ref partial struct OpCreateTensorViewNV : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -75683,7 +75683,7 @@ public ref partial struct OpTensorViewSetDimensionNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -75834,7 +75834,7 @@ public ref partial struct OpTensorViewSetStrideNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -75918,7 +75918,7 @@ public ref partial struct OpDemoteToHelperInvocation : IMemoryInstruction
             switch (o.Name)
             {
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -76036,7 +76036,7 @@ public ref partial struct OpIsHelperInvocationEXT : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -76229,7 +76229,7 @@ public ref partial struct OpTensorViewSetClipNV : IMemoryInstruction
                     ClipColSpan = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -76377,7 +76377,7 @@ public ref partial struct OpTensorLayoutSetBlockSizeNV : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -76513,7 +76513,7 @@ public ref partial struct OpCooperativeMatrixTransposeNV : IMemoryInstruction
                     Matrix = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -76646,7 +76646,7 @@ public ref partial struct OpConvertUToImageNV : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -76779,7 +76779,7 @@ public ref partial struct OpConvertUToSamplerNV : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -76912,7 +76912,7 @@ public ref partial struct OpConvertImageToUNV : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77045,7 +77045,7 @@ public ref partial struct OpConvertSamplerToUNV : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77178,7 +77178,7 @@ public ref partial struct OpConvertUToSampledImageNV : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77311,7 +77311,7 @@ public ref partial struct OpConvertSampledImageToUNV : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77413,7 +77413,7 @@ public ref partial struct OpSamplerImageAddressingModeNV : IMemoryInstruction
                     BitWidth = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77607,7 +77607,7 @@ public ref partial struct OpRawAccessChainNV : IMemoryInstruction
                         Rawaccesschainoperands = o.ToEnum<RawAccessChainOperandsMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77755,7 +77755,7 @@ public ref partial struct OpSubgroupShuffleINTEL : IMemoryInstruction
                     InvocationId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -77918,7 +77918,7 @@ public ref partial struct OpSubgroupShuffleDownINTEL : IMemoryInstruction
                     Delta = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78081,7 +78081,7 @@ public ref partial struct OpSubgroupShuffleUpINTEL : IMemoryInstruction
                     Delta = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78229,7 +78229,7 @@ public ref partial struct OpSubgroupShuffleXorINTEL : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78362,7 +78362,7 @@ public ref partial struct OpSubgroupBlockReadINTEL : IMemoryInstruction
                     Ptr = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78479,7 +78479,7 @@ public ref partial struct OpSubgroupBlockWriteINTEL : IMemoryInstruction
                     Data = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78627,7 +78627,7 @@ public ref partial struct OpSubgroupImageBlockReadINTEL : IMemoryInstruction
                     Coordinate = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78759,7 +78759,7 @@ public ref partial struct OpSubgroupImageBlockWriteINTEL : IMemoryInstruction
                     Data = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -78937,7 +78937,7 @@ public ref partial struct OpSubgroupImageMediaBlockReadINTEL : IMemoryInstructio
                     Height = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79099,7 +79099,7 @@ public ref partial struct OpSubgroupImageMediaBlockWriteINTEL : IMemoryInstructi
                     Data = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79232,7 +79232,7 @@ public ref partial struct OpUCountLeadingZerosINTEL : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79365,7 +79365,7 @@ public ref partial struct OpUCountTrailingZerosINTEL : IMemoryInstruction
                     Operand = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79513,7 +79513,7 @@ public ref partial struct OpAbsISubINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79661,7 +79661,7 @@ public ref partial struct OpAbsUSubINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79809,7 +79809,7 @@ public ref partial struct OpIAddSatINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -79957,7 +79957,7 @@ public ref partial struct OpUAddSatINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80105,7 +80105,7 @@ public ref partial struct OpIAverageINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80253,7 +80253,7 @@ public ref partial struct OpUAverageINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80401,7 +80401,7 @@ public ref partial struct OpIAverageRoundedINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80549,7 +80549,7 @@ public ref partial struct OpUAverageRoundedINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80697,7 +80697,7 @@ public ref partial struct OpISubSatINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80845,7 +80845,7 @@ public ref partial struct OpUSubSatINTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -80993,7 +80993,7 @@ public ref partial struct OpIMul32x16INTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -81141,7 +81141,7 @@ public ref partial struct OpUMul32x16INTEL : IMemoryInstruction
                     Operand2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -81274,7 +81274,7 @@ public ref partial struct OpConstantFunctionPointerINTEL : IMemoryInstruction
                     Function = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -81407,7 +81407,7 @@ public ref partial struct OpFunctionPointerCallINTEL : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -81543,7 +81543,7 @@ public ref partial struct OpAsmTargetINTEL : IMemoryInstruction
                     Asmtarget = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -81721,7 +81721,7 @@ public ref partial struct OpAsmINTEL : IMemoryInstruction
                     Constraints = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -81869,7 +81869,7 @@ public ref partial struct OpAsmCallINTEL : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -82050,7 +82050,7 @@ public ref partial struct OpAtomicFMinEXT : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -82228,7 +82228,7 @@ public ref partial struct OpAtomicFMaxEXT : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -82330,7 +82330,7 @@ public ref partial struct OpAssumeTrueKHR : IMemoryInstruction
                     Condition = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -82478,7 +82478,7 @@ public ref partial struct OpExpectKHR : IMemoryInstruction
                     ExpectedValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -82610,7 +82610,7 @@ public ref partial struct OpDecorateString : IMemoryInstruction
                     Value = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -82757,7 +82757,7 @@ public ref partial struct OpMemberDecorateString : IMemoryInstruction
                     Value = o.ToLiteral<string>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -82905,7 +82905,7 @@ public ref partial struct OpVmeImageINTEL : IMemoryInstruction
                     Sampler = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83023,7 +83023,7 @@ public ref partial struct OpTypeVmeImageINTEL : IMemoryInstruction
                     ImageType = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83126,7 +83126,7 @@ public ref partial struct OpTypeAvcImePayloadINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83229,7 +83229,7 @@ public ref partial struct OpTypeAvcRefPayloadINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83332,7 +83332,7 @@ public ref partial struct OpTypeAvcSicPayloadINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83435,7 +83435,7 @@ public ref partial struct OpTypeAvcMcePayloadINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83538,7 +83538,7 @@ public ref partial struct OpTypeAvcMceResultINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83641,7 +83641,7 @@ public ref partial struct OpTypeAvcImeResultINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83744,7 +83744,7 @@ public ref partial struct OpTypeAvcImeResultSingleReferenceStreamoutINTEL : IMem
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83847,7 +83847,7 @@ public ref partial struct OpTypeAvcImeResultDualReferenceStreamoutINTEL : IMemor
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -83950,7 +83950,7 @@ public ref partial struct OpTypeAvcImeSingleReferenceStreaminINTEL : IMemoryInst
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84053,7 +84053,7 @@ public ref partial struct OpTypeAvcImeDualReferenceStreaminINTEL : IMemoryInstru
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84156,7 +84156,7 @@ public ref partial struct OpTypeAvcRefResultINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84259,7 +84259,7 @@ public ref partial struct OpTypeAvcSicResultINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84407,7 +84407,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenal
                     Qp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84555,7 +84555,7 @@ public ref partial struct OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84703,7 +84703,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL : IMe
                     Qp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84851,7 +84851,7 @@ public ref partial struct OpSubgroupAvcMceSetInterShapePenaltyINTEL : IMemoryIns
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -84999,7 +84999,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL :
                     Qp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85147,7 +85147,7 @@ public ref partial struct OpSubgroupAvcMceSetInterDirectionPenaltyINTEL : IMemor
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85295,7 +85295,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL :
                     Qp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85443,7 +85443,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableIN
                     Qp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85561,7 +85561,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL : 
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85679,7 +85679,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL 
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85797,7 +85797,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL : I
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -85975,7 +85975,7 @@ public ref partial struct OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL : IMe
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86123,7 +86123,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL : 
                     Qp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86241,7 +86241,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL :
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86359,7 +86359,7 @@ public ref partial struct OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyIN
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86492,7 +86492,7 @@ public ref partial struct OpSubgroupAvcMceSetAcOnlyHaarINTEL : IMemoryInstructio
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86640,7 +86640,7 @@ public ref partial struct OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL 
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86788,7 +86788,7 @@ public ref partial struct OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolar
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -86951,7 +86951,7 @@ public ref partial struct OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolarit
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87084,7 +87084,7 @@ public ref partial struct OpSubgroupAvcMceConvertToImePayloadINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87217,7 +87217,7 @@ public ref partial struct OpSubgroupAvcMceConvertToImeResultINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87350,7 +87350,7 @@ public ref partial struct OpSubgroupAvcMceConvertToRefPayloadINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87483,7 +87483,7 @@ public ref partial struct OpSubgroupAvcMceConvertToRefResultINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87616,7 +87616,7 @@ public ref partial struct OpSubgroupAvcMceConvertToSicPayloadINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87749,7 +87749,7 @@ public ref partial struct OpSubgroupAvcMceConvertToSicResultINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -87882,7 +87882,7 @@ public ref partial struct OpSubgroupAvcMceGetMotionVectorsINTEL : IMemoryInstruc
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88015,7 +88015,7 @@ public ref partial struct OpSubgroupAvcMceGetInterDistortionsINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88148,7 +88148,7 @@ public ref partial struct OpSubgroupAvcMceGetBestInterDistortionsINTEL : IMemory
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88281,7 +88281,7 @@ public ref partial struct OpSubgroupAvcMceGetInterMajorShapeINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88414,7 +88414,7 @@ public ref partial struct OpSubgroupAvcMceGetInterMinorShapeINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88547,7 +88547,7 @@ public ref partial struct OpSubgroupAvcMceGetInterDirectionsINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88680,7 +88680,7 @@ public ref partial struct OpSubgroupAvcMceGetInterMotionVectorCountINTEL : IMemo
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88813,7 +88813,7 @@ public ref partial struct OpSubgroupAvcMceGetInterReferenceIdsINTEL : IMemoryIns
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -88976,7 +88976,7 @@ public ref partial struct OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolari
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -89139,7 +89139,7 @@ public ref partial struct OpSubgroupAvcImeInitializeINTEL : IMemoryInstruction
                     SADAdjustment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -89302,7 +89302,7 @@ public ref partial struct OpSubgroupAvcImeSetSingleReferenceINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -89480,7 +89480,7 @@ public ref partial struct OpSubgroupAvcImeSetDualReferenceINTEL : IMemoryInstruc
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -89628,7 +89628,7 @@ public ref partial struct OpSubgroupAvcImeRefWindowSizeINTEL : IMemoryInstructio
                     DualRef = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -89806,7 +89806,7 @@ public ref partial struct OpSubgroupAvcImeAdjustRefOffsetINTEL : IMemoryInstruct
                     ImageSize = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -89939,7 +89939,7 @@ public ref partial struct OpSubgroupAvcImeConvertToMcePayloadINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -90087,7 +90087,7 @@ public ref partial struct OpSubgroupAvcImeSetMaxMotionVectorCountINTEL : IMemory
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -90220,7 +90220,7 @@ public ref partial struct OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL : IMe
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -90368,7 +90368,7 @@ public ref partial struct OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTE
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -90516,7 +90516,7 @@ public ref partial struct OpSubgroupAvcImeSetWeightedSadINTEL : IMemoryInstructi
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -90679,7 +90679,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL : IMe
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -90857,7 +90857,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceINTEL : IMemo
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -91035,7 +91035,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINT
                     StreaminComponents = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -91228,7 +91228,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL
                     StreaminComponents = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -91391,7 +91391,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutIN
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -91569,7 +91569,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTE
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -91747,7 +91747,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminout
                     StreaminComponents = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -91940,7 +91940,7 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutIN
                     StreaminComponents = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92073,7 +92073,7 @@ public ref partial struct OpSubgroupAvcImeConvertToMceResultINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92206,7 +92206,7 @@ public ref partial struct OpSubgroupAvcImeGetSingleReferenceStreaminINTEL : IMem
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92339,7 +92339,7 @@ public ref partial struct OpSubgroupAvcImeGetDualReferenceStreaminINTEL : IMemor
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92472,7 +92472,7 @@ public ref partial struct OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL : I
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92605,7 +92605,7 @@ public ref partial struct OpSubgroupAvcImeStripDualReferenceStreamoutINTEL : IMe
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92753,7 +92753,7 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeM
                     MajorShape = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -92901,7 +92901,7 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeD
                     MajorShape = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93049,7 +93049,7 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeR
                     MajorShape = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93212,7 +93212,7 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMot
                     Direction = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93375,7 +93375,7 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDis
                     Direction = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93538,7 +93538,7 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeRef
                     Direction = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93686,7 +93686,7 @@ public ref partial struct OpSubgroupAvcImeGetBorderReachedINTEL : IMemoryInstruc
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93819,7 +93819,7 @@ public ref partial struct OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL : IM
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -93952,7 +93952,7 @@ public ref partial struct OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminatio
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -94085,7 +94085,7 @@ public ref partial struct OpSubgroupAvcImeGetWeightingPatternMinimumMotionVector
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -94218,7 +94218,7 @@ public ref partial struct OpSubgroupAvcImeGetWeightingPatternMinimumDistortionIN
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -94441,7 +94441,7 @@ public ref partial struct OpSubgroupAvcFmeInitializeINTEL : IMemoryInstruction
                     SadAdjustment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -94679,7 +94679,7 @@ public ref partial struct OpSubgroupAvcBmeInitializeINTEL : IMemoryInstruction
                     SadAdjustment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -94812,7 +94812,7 @@ public ref partial struct OpSubgroupAvcRefConvertToMcePayloadINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -94945,7 +94945,7 @@ public ref partial struct OpSubgroupAvcRefSetBidirectionalMixDisableINTEL : IMem
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -95078,7 +95078,7 @@ public ref partial struct OpSubgroupAvcRefSetBilinearFilterEnableINTEL : IMemory
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -95241,7 +95241,7 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL : IMe
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -95419,7 +95419,7 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithDualReferenceINTEL : IMemo
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -95582,7 +95582,7 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL : IMem
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -95760,7 +95760,7 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedIN
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -95893,7 +95893,7 @@ public ref partial struct OpSubgroupAvcRefConvertToMceResultINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -96026,7 +96026,7 @@ public ref partial struct OpSubgroupAvcSicInitializeINTEL : IMemoryInstruction
                     SrcCoord = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -96234,7 +96234,7 @@ public ref partial struct OpSubgroupAvcSicConfigureSkcINTEL : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -96472,7 +96472,7 @@ public ref partial struct OpSubgroupAvcSicConfigureIpeLumaINTEL : IMemoryInstruc
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -96755,7 +96755,7 @@ public ref partial struct OpSubgroupAvcSicConfigureIpeLumaChromaINTEL : IMemoryI
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -96903,7 +96903,7 @@ public ref partial struct OpSubgroupAvcSicGetMotionVectorMaskINTEL : IMemoryInst
                     Direction = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97036,7 +97036,7 @@ public ref partial struct OpSubgroupAvcSicConvertToMcePayloadINTEL : IMemoryInst
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97184,7 +97184,7 @@ public ref partial struct OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL : IMemor
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97362,7 +97362,7 @@ public ref partial struct OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL : IM
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97510,7 +97510,7 @@ public ref partial struct OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL : 
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97643,7 +97643,7 @@ public ref partial struct OpSubgroupAvcSicSetBilinearFilterEnableINTEL : IMemory
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97791,7 +97791,7 @@ public ref partial struct OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL : IM
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -97939,7 +97939,7 @@ public ref partial struct OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL : IMemory
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -98087,7 +98087,7 @@ public ref partial struct OpSubgroupAvcSicEvaluateIpeINTEL : IMemoryInstruction
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -98250,7 +98250,7 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL : IMe
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -98428,7 +98428,7 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithDualReferenceINTEL : IMemo
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -98591,7 +98591,7 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL : IMem
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -98769,7 +98769,7 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedIN
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -98902,7 +98902,7 @@ public ref partial struct OpSubgroupAvcSicConvertToMceResultINTEL : IMemoryInstr
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99035,7 +99035,7 @@ public ref partial struct OpSubgroupAvcSicGetIpeLumaShapeINTEL : IMemoryInstruct
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99168,7 +99168,7 @@ public ref partial struct OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL : IMemor
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99301,7 +99301,7 @@ public ref partial struct OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL : IMem
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99434,7 +99434,7 @@ public ref partial struct OpSubgroupAvcSicGetPackedIpeLumaModesINTEL : IMemoryIn
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99567,7 +99567,7 @@ public ref partial struct OpSubgroupAvcSicGetIpeChromaModeINTEL : IMemoryInstruc
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99700,7 +99700,7 @@ public ref partial struct OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL : 
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99833,7 +99833,7 @@ public ref partial struct OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL : IM
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -99966,7 +99966,7 @@ public ref partial struct OpSubgroupAvcSicGetInterRawSadsINTEL : IMemoryInstruct
                     Payload = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -100099,7 +100099,7 @@ public ref partial struct OpVariableLengthArrayINTEL : IMemoryInstruction
                     Lenght = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -100217,7 +100217,7 @@ public ref partial struct OpSaveMemoryINTEL : IMemoryInstruction
                     ResultId = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -100319,7 +100319,7 @@ public ref partial struct OpRestoreMemoryINTEL : IMemoryInstruction
                     Ptr = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -100542,7 +100542,7 @@ public ref partial struct OpArbitraryFloatSinCosPiINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -100750,7 +100750,7 @@ public ref partial struct OpArbitraryFloatCastINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -100958,7 +100958,7 @@ public ref partial struct OpArbitraryFloatCastFromIntINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -101151,7 +101151,7 @@ public ref partial struct OpArbitraryFloatCastToIntINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -101389,7 +101389,7 @@ public ref partial struct OpArbitraryFloatAddINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -101627,7 +101627,7 @@ public ref partial struct OpArbitraryFloatSubINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -101865,7 +101865,7 @@ public ref partial struct OpArbitraryFloatMulINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -102103,7 +102103,7 @@ public ref partial struct OpArbitraryFloatDivINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -102281,7 +102281,7 @@ public ref partial struct OpArbitraryFloatGTINTEL : IMemoryInstruction
                     M2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -102459,7 +102459,7 @@ public ref partial struct OpArbitraryFloatGEINTEL : IMemoryInstruction
                     M2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -102637,7 +102637,7 @@ public ref partial struct OpArbitraryFloatLTINTEL : IMemoryInstruction
                     M2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -102815,7 +102815,7 @@ public ref partial struct OpArbitraryFloatLEINTEL : IMemoryInstruction
                     M2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -102993,7 +102993,7 @@ public ref partial struct OpArbitraryFloatEQINTEL : IMemoryInstruction
                     M2 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -103201,7 +103201,7 @@ public ref partial struct OpArbitraryFloatRecipINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -103409,7 +103409,7 @@ public ref partial struct OpArbitraryFloatRSqrtINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -103617,7 +103617,7 @@ public ref partial struct OpArbitraryFloatCbrtINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -103855,7 +103855,7 @@ public ref partial struct OpArbitraryFloatHypotINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -104063,7 +104063,7 @@ public ref partial struct OpArbitraryFloatSqrtINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -104271,7 +104271,7 @@ public ref partial struct OpArbitraryFloatLogINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -104479,7 +104479,7 @@ public ref partial struct OpArbitraryFloatLog2INTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -104687,7 +104687,7 @@ public ref partial struct OpArbitraryFloatLog10INTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -104895,7 +104895,7 @@ public ref partial struct OpArbitraryFloatLog1pINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -105103,7 +105103,7 @@ public ref partial struct OpArbitraryFloatExpINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -105311,7 +105311,7 @@ public ref partial struct OpArbitraryFloatExp2INTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -105519,7 +105519,7 @@ public ref partial struct OpArbitraryFloatExp10INTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -105727,7 +105727,7 @@ public ref partial struct OpArbitraryFloatExpm1INTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -105935,7 +105935,7 @@ public ref partial struct OpArbitraryFloatSinINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -106143,7 +106143,7 @@ public ref partial struct OpArbitraryFloatCosINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -106351,7 +106351,7 @@ public ref partial struct OpArbitraryFloatSinCosINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -106559,7 +106559,7 @@ public ref partial struct OpArbitraryFloatSinPiINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -106767,7 +106767,7 @@ public ref partial struct OpArbitraryFloatCosPiINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -106975,7 +106975,7 @@ public ref partial struct OpArbitraryFloatASinINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -107183,7 +107183,7 @@ public ref partial struct OpArbitraryFloatASinPiINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -107391,7 +107391,7 @@ public ref partial struct OpArbitraryFloatACosINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -107599,7 +107599,7 @@ public ref partial struct OpArbitraryFloatACosPiINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -107807,7 +107807,7 @@ public ref partial struct OpArbitraryFloatATanINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -108015,7 +108015,7 @@ public ref partial struct OpArbitraryFloatATanPiINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -108253,7 +108253,7 @@ public ref partial struct OpArbitraryFloatATan2INTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -108491,7 +108491,7 @@ public ref partial struct OpArbitraryFloatPowINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -108729,7 +108729,7 @@ public ref partial struct OpArbitraryFloatPowRINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -108952,7 +108952,7 @@ public ref partial struct OpArbitraryFloatPowNINTEL : IMemoryInstruction
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -109054,7 +109054,7 @@ public ref partial struct OpLoopControlINTEL : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -109176,7 +109176,7 @@ public ref partial struct OpAliasDomainDeclINTEL : IMemoryInstruction
                         Name = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -109310,7 +109310,7 @@ public ref partial struct OpAliasScopeDeclINTEL : IMemoryInstruction
                         Name = o.ToLiteral<int?>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -109428,7 +109428,7 @@ public ref partial struct OpAliasScopeListDeclINTEL : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -109654,7 +109654,7 @@ public ref partial struct OpFixedSqrtINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -109877,7 +109877,7 @@ public ref partial struct OpFixedRecipINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -110100,7 +110100,7 @@ public ref partial struct OpFixedRsqrtINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -110323,7 +110323,7 @@ public ref partial struct OpFixedSinINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -110546,7 +110546,7 @@ public ref partial struct OpFixedCosINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -110769,7 +110769,7 @@ public ref partial struct OpFixedSinCosINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -110992,7 +110992,7 @@ public ref partial struct OpFixedSinPiINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -111215,7 +111215,7 @@ public ref partial struct OpFixedCosPiINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -111438,7 +111438,7 @@ public ref partial struct OpFixedSinCosPiINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -111661,7 +111661,7 @@ public ref partial struct OpFixedLogINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -111884,7 +111884,7 @@ public ref partial struct OpFixedExpINTEL : IMemoryInstruction
                     O = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112017,7 +112017,7 @@ public ref partial struct OpPtrCastToCrossWorkgroupINTEL : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112150,7 +112150,7 @@ public ref partial struct OpCrossWorkgroupCastToPtrINTEL : IMemoryInstruction
                     Pointer = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112298,7 +112298,7 @@ public ref partial struct OpReadPipeBlockingINTEL : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112446,7 +112446,7 @@ public ref partial struct OpWritePipeBlockingINTEL : IMemoryInstruction
                     PacketAlignment = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112594,7 +112594,7 @@ public ref partial struct OpFPGARegINTEL : IMemoryInstruction
                     Input = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112727,7 +112727,7 @@ public ref partial struct OpRayQueryGetRayTMinKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -112860,7 +112860,7 @@ public ref partial struct OpRayQueryGetRayFlagsKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113008,7 +113008,7 @@ public ref partial struct OpRayQueryGetIntersectionTKHR : IMemoryInstruction
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113156,7 +113156,7 @@ public ref partial struct OpRayQueryGetIntersectionInstanceCustomIndexKHR : IMem
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113304,7 +113304,7 @@ public ref partial struct OpRayQueryGetIntersectionInstanceIdKHR : IMemoryInstru
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113452,7 +113452,7 @@ public ref partial struct OpRayQueryGetIntersectionInstanceShaderBindingTableRec
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113600,7 +113600,7 @@ public ref partial struct OpRayQueryGetIntersectionGeometryIndexKHR : IMemoryIns
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113748,7 +113748,7 @@ public ref partial struct OpRayQueryGetIntersectionPrimitiveIndexKHR : IMemoryIn
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -113896,7 +113896,7 @@ public ref partial struct OpRayQueryGetIntersectionBarycentricsKHR : IMemoryInst
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114044,7 +114044,7 @@ public ref partial struct OpRayQueryGetIntersectionFrontFaceKHR : IMemoryInstruc
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114177,7 +114177,7 @@ public ref partial struct OpRayQueryGetIntersectionCandidateAABBOpaqueKHR : IMem
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114325,7 +114325,7 @@ public ref partial struct OpRayQueryGetIntersectionObjectRayDirectionKHR : IMemo
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114473,7 +114473,7 @@ public ref partial struct OpRayQueryGetIntersectionObjectRayOriginKHR : IMemoryI
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114606,7 +114606,7 @@ public ref partial struct OpRayQueryGetWorldRayDirectionKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114739,7 +114739,7 @@ public ref partial struct OpRayQueryGetWorldRayOriginKHR : IMemoryInstruction
                     RayQuery = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -114887,7 +114887,7 @@ public ref partial struct OpRayQueryGetIntersectionObjectToWorldKHR : IMemoryIns
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -115035,7 +115035,7 @@ public ref partial struct OpRayQueryGetIntersectionWorldToObjectKHR : IMemoryIns
                     Intersection = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -115213,7 +115213,7 @@ public ref partial struct OpAtomicFAddEXT : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -115331,7 +115331,7 @@ public ref partial struct OpTypeBufferSurfaceINTEL : IMemoryInstruction
                     AccessQualifier = o.ToEnum<AccessQualifier>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -115433,7 +115433,7 @@ public ref partial struct OpTypeStructContinuedINTEL : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -115538,7 +115538,7 @@ public ref partial struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -115643,7 +115643,7 @@ public ref partial struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruc
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -115779,7 +115779,7 @@ public ref partial struct OpCompositeConstructContinuedINTEL : IMemoryInstructio
                     Values = o.ToLiteralArray<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
 
@@ -115915,7 +115915,7 @@ public ref partial struct OpConvertFToBF16INTEL : IMemoryInstruction
                     FloatValue = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116048,7 +116048,7 @@ public ref partial struct OpConvertBF16ToFINTEL : IMemoryInstruction
                     BFloat16Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116180,7 +116180,7 @@ public ref partial struct OpControlBarrierArriveINTEL : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116312,7 +116312,7 @@ public ref partial struct OpControlBarrierWaitINTEL : IMemoryInstruction
                     Semantics = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116445,7 +116445,7 @@ public ref partial struct OpArithmeticFenceEXT : IMemoryInstruction
                     Target = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116578,7 +116578,7 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116741,7 +116741,7 @@ public ref partial struct OpGroupIMulKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -116904,7 +116904,7 @@ public ref partial struct OpGroupFMulKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -117067,7 +117067,7 @@ public ref partial struct OpGroupBitwiseAndKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -117230,7 +117230,7 @@ public ref partial struct OpGroupBitwiseOrKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -117393,7 +117393,7 @@ public ref partial struct OpGroupBitwiseXorKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -117556,7 +117556,7 @@ public ref partial struct OpGroupLogicalAndKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -117719,7 +117719,7 @@ public ref partial struct OpGroupLogicalOrKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -117882,7 +117882,7 @@ public ref partial struct OpGroupLogicalXorKHR : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118060,7 +118060,7 @@ public ref partial struct OpMaskedGatherINTEL : IMemoryInstruction
                     FillEmpty = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118207,7 +118207,7 @@ public ref partial struct OpMaskedScatterINTEL : IMemoryInstruction
                     Mask = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118355,7 +118355,7 @@ public ref partial struct GLSLRound : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118503,7 +118503,7 @@ public ref partial struct GLSLRoundEven : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118651,7 +118651,7 @@ public ref partial struct GLSLTrunc : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118799,7 +118799,7 @@ public ref partial struct GLSLFAbs : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -118947,7 +118947,7 @@ public ref partial struct GLSLSAbs : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119095,7 +119095,7 @@ public ref partial struct GLSLFSign : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119243,7 +119243,7 @@ public ref partial struct GLSLSSign : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119391,7 +119391,7 @@ public ref partial struct GLSLFloor : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119539,7 +119539,7 @@ public ref partial struct GLSLCeil : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119687,7 +119687,7 @@ public ref partial struct GLSLFract : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119835,7 +119835,7 @@ public ref partial struct GLSLRadians : IMemoryInstruction
                     Degrees = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -119983,7 +119983,7 @@ public ref partial struct GLSLDegrees : IMemoryInstruction
                     Radians = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -120131,7 +120131,7 @@ public ref partial struct GLSLSin : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -120279,7 +120279,7 @@ public ref partial struct GLSLCos : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -120427,7 +120427,7 @@ public ref partial struct GLSLTan : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -120575,7 +120575,7 @@ public ref partial struct GLSLAsin : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -120723,7 +120723,7 @@ public ref partial struct GLSLAcos : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -120871,7 +120871,7 @@ public ref partial struct GLSLAtan : IMemoryInstruction
                     Y_over_x = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121019,7 +121019,7 @@ public ref partial struct GLSLSinh : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121167,7 +121167,7 @@ public ref partial struct GLSLCosh : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121315,7 +121315,7 @@ public ref partial struct GLSLTanh : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121463,7 +121463,7 @@ public ref partial struct GLSLAsinh : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121611,7 +121611,7 @@ public ref partial struct GLSLAcosh : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121759,7 +121759,7 @@ public ref partial struct GLSLAtanh : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -121922,7 +121922,7 @@ public ref partial struct GLSLAtan2 : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122085,7 +122085,7 @@ public ref partial struct GLSLPow : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122233,7 +122233,7 @@ public ref partial struct GLSLExp : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122381,7 +122381,7 @@ public ref partial struct GLSLLog : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122529,7 +122529,7 @@ public ref partial struct GLSLExp2 : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122677,7 +122677,7 @@ public ref partial struct GLSLLog2 : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122825,7 +122825,7 @@ public ref partial struct GLSLSqrt : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -122973,7 +122973,7 @@ public ref partial struct GLSLInverseSqrt : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -123121,7 +123121,7 @@ public ref partial struct GLSLDeterminant : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -123269,7 +123269,7 @@ public ref partial struct GLSLMatrixInverse : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -123432,7 +123432,7 @@ public ref partial struct GLSLModf : IMemoryInstruction
                     I = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -123580,7 +123580,7 @@ public ref partial struct GLSLModfStruct : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -123743,7 +123743,7 @@ public ref partial struct GLSLFMin : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -123906,7 +123906,7 @@ public ref partial struct GLSLUMin : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -124069,7 +124069,7 @@ public ref partial struct GLSLSMin : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -124232,7 +124232,7 @@ public ref partial struct GLSLFMax : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -124395,7 +124395,7 @@ public ref partial struct GLSLUMax : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -124558,7 +124558,7 @@ public ref partial struct GLSLSMax : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -124736,7 +124736,7 @@ public ref partial struct GLSLFClamp : IMemoryInstruction
                     MaxVal = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -124914,7 +124914,7 @@ public ref partial struct GLSLUClamp : IMemoryInstruction
                     MaxVal = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -125092,7 +125092,7 @@ public ref partial struct GLSLSClamp : IMemoryInstruction
                     MaxVal = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -125270,7 +125270,7 @@ public ref partial struct GLSLFMix : IMemoryInstruction
                     A = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -125448,7 +125448,7 @@ public ref partial struct GLSLIMix : IMemoryInstruction
                     A = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -125611,7 +125611,7 @@ public ref partial struct GLSLStep : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -125789,7 +125789,7 @@ public ref partial struct GLSLSmoothStep : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -125967,7 +125967,7 @@ public ref partial struct GLSLFma : IMemoryInstruction
                     C = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -126130,7 +126130,7 @@ public ref partial struct GLSLFrexp : IMemoryInstruction
                     Exp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -126278,7 +126278,7 @@ public ref partial struct GLSLFrexpStruct : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -126441,7 +126441,7 @@ public ref partial struct GLSLLdexp : IMemoryInstruction
                     Exp = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -126589,7 +126589,7 @@ public ref partial struct GLSLPackSnorm4x8 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -126737,7 +126737,7 @@ public ref partial struct GLSLPackUnorm4x8 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -126885,7 +126885,7 @@ public ref partial struct GLSLPackSnorm2x16 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127033,7 +127033,7 @@ public ref partial struct GLSLPackUnorm2x16 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127181,7 +127181,7 @@ public ref partial struct GLSLPackHalf2x16 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127329,7 +127329,7 @@ public ref partial struct GLSLPackDouble2x32 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127477,7 +127477,7 @@ public ref partial struct GLSLUnpackSnorm2x16 : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127625,7 +127625,7 @@ public ref partial struct GLSLUnpackUnorm2x16 : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127773,7 +127773,7 @@ public ref partial struct GLSLUnpackHalf2x16 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -127921,7 +127921,7 @@ public ref partial struct GLSLUnpackSnorm4x8 : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -128069,7 +128069,7 @@ public ref partial struct GLSLUnpackUnorm4x8 : IMemoryInstruction
                     P = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -128217,7 +128217,7 @@ public ref partial struct GLSLUnpackDouble2x32 : IMemoryInstruction
                     V = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -128365,7 +128365,7 @@ public ref partial struct GLSLLength : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -128528,7 +128528,7 @@ public ref partial struct GLSLDistance : IMemoryInstruction
                     P1 = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -128691,7 +128691,7 @@ public ref partial struct GLSLCross : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -128839,7 +128839,7 @@ public ref partial struct GLSLNormalize : IMemoryInstruction
                     X = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129017,7 +129017,7 @@ public ref partial struct GLSLFaceForward : IMemoryInstruction
                     Nref = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129180,7 +129180,7 @@ public ref partial struct GLSLReflect : IMemoryInstruction
                     N = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129358,7 +129358,7 @@ public ref partial struct GLSLRefract : IMemoryInstruction
                     Eta = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129506,7 +129506,7 @@ public ref partial struct GLSLFindILsb : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129654,7 +129654,7 @@ public ref partial struct GLSLFindSMsb : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129802,7 +129802,7 @@ public ref partial struct GLSLFindUMsb : IMemoryInstruction
                     Value = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -129950,7 +129950,7 @@ public ref partial struct GLSLInterpolateAtCentroid : IMemoryInstruction
                     Interpolant = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -130113,7 +130113,7 @@ public ref partial struct GLSLInterpolateAtSample : IMemoryInstruction
                     Sample = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -130276,7 +130276,7 @@ public ref partial struct GLSLInterpolateAtOffset : IMemoryInstruction
                     Offset = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -130439,7 +130439,7 @@ public ref partial struct GLSLNMin : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -130602,7 +130602,7 @@ public ref partial struct GLSLNMax : IMemoryInstruction
                     Y = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }
@@ -130780,7 +130780,7 @@ public ref partial struct GLSLNClamp : IMemoryInstruction
                     MaxVal = o.ToLiteral<int>();
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
             }
         }
     }

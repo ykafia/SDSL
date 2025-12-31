@@ -180,7 +180,7 @@ public partial class SPVGenerator : IIncrementalGenerator
                     switch(o.Name)
                     {{
                         {string.Join("\n", (instruction.Operands?.AsList() ?? []).Select(x => ToAssignSwitchCase(x, grammar)))}
-                        default: break;
+                        default: throw new InvalidOperationException($""Operand unknown: {{o.Name}} for Op {nameof(instruction.OpName)}"");
                     }}
                 }}
 
