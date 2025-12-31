@@ -60,7 +60,7 @@ public partial class SPVGenerator
         var opname = op.OpName;
         if (op.Operands?.AsList() is List<OperandData> operands)
         {
-             if(op.OpName.EndsWith("DecorateString"))
+            if(op.OpName.EndsWith("DecorateString"))
                 operands.Add(new(){ Kind = "LiteralString", Name = "value" });
             else if(op.OpName == "DecorateId")
                 operands.Add(new(){ Kind = "IdRef", Name = "value" });
