@@ -899,12 +899,12 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                 else if (decoration.Decoration == Decoration.LogicalGroupSDSL)
                     linkInfo.LogicalGroup = m;
             }
-            else if ((i.Op == Op.OpDecorate || i.Op == Op.OpDecorateString) && (OpDecorate)i is
+            else if (i.Op == Op.OpDecorate && (OpDecorate)i is
                 {
                     Decoration:
                     {
                         Value: Decoration.SamplerStateFilter or Decoration.SamplerStateAddressU or Decoration.SamplerStateAddressV or Decoration.SamplerStateAddressW
-                            or Decoration.SamplerStateMipLODBias or Decoration.SamplerStateMaxAnisotropy or Decoration.SamplerStateComparisonFunc or Decoration.SamplerStateMinLOD or Decoration.SamplerStateMaxLOD,
+                            or Decoration.SamplerStateMaxAnisotropy or Decoration.SamplerStateComparisonFunc,
                         Parameters: { } p
                     }
                 } decorate)
@@ -926,28 +926,38 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                     case Decoration.SamplerStateAddressW:
                         samplerState.AddressW = (Graphics.TextureAddressMode)p.Span[0];
                         break;
-                    case Decoration.SamplerStateMipLODBias:
-                        {
-                            using var n = new LiteralValue<string>(p.Span);
-                            samplerState.MipMapLevelOfDetailBias = float.Parse(n.Value);
-                            break;
-                        }
                     case Decoration.SamplerStateMaxAnisotropy:
                         samplerState.MaxAnisotropy = p.Span[0];
                         break;
                     case Decoration.SamplerStateComparisonFunc:
                         samplerState.CompareFunction = (Graphics.CompareFunction)p.Span[0];
                         break;
+                }
+            }
+            else if (i.Op == Op.OpDecorateString && (OpDecorateString)i is
+                {
+                    Decoration: Decoration.SamplerStateMipLODBias or Decoration.SamplerStateMinLOD or Decoration.SamplerStateMaxLOD,
+                    Value: string n,
+                } decorate2)
+            {
+                ref var samplerState = ref CollectionsMarshal.GetValueRefOrAddDefault(samplerStates, decorate2.Target, out var exists);
+                if (!exists)
+                    samplerState = Graphics.SamplerStateDescription.Default;
+                switch (decorate2.Decoration)
+                {
+                    case Decoration.SamplerStateMipLODBias:
+                        {
+                            samplerState.MipMapLevelOfDetailBias = float.Parse(n);
+                            break;
+                        }
                     case Decoration.SamplerStateMinLOD:
                         {
-                            using var n = new LiteralValue<string>(p.Span);
-                            samplerState.MinMipLevel = float.Parse(n.Value);
+                            samplerState.MinMipLevel = float.Parse(n);
                             break;
                         }
                     case Decoration.SamplerStateMaxLOD:
                         {
-                            using var n = new LiteralValue<string>(p.Span);
-                            samplerState.MaxMipLevel = float.Parse(n.Value);
+                            samplerState.MaxMipLevel = float.Parse(n);
                             break;
                         }
                 }
