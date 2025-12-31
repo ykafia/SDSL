@@ -1157,12 +1157,18 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                 || i.Op == Op.OpSDSLImportVariable
                 || i.Op == Op.OpSDSLFunctionInfo)
                 temp.RemoveAt(index--);
-            else if ((i.Op == Op.OpDecorate || i.Op == Op.OpDecorateString) && ((OpDecorate)i).Decoration.Value is
-                    Decoration.LinkIdSDSL or Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL or Decoration.ResourceGroupIdSDSL
+            else if (i.Op == Op.OpDecorate && ((OpDecorate)i).Decoration.Value is
+                    Decoration.LinkIdSDSL or Decoration.ResourceGroupIdSDSL
                     or Decoration.SamplerStateFilter or Decoration.SamplerStateAddressU or Decoration.SamplerStateAddressV or Decoration.SamplerStateAddressW
-                    or Decoration.SamplerStateMipLODBias or Decoration.SamplerStateMaxAnisotropy or Decoration.SamplerStateComparisonFunc or Decoration.SamplerStateMinLOD or Decoration.SamplerStateMaxLOD)
+                    or Decoration.SamplerStateMaxAnisotropy or Decoration.SamplerStateComparisonFunc)
                 temp.RemoveAt(index--);
-            else if ((i.Op == Op.OpMemberDecorate || i.Op == Op.OpMemberDecorateString) && ((OpMemberDecorate)i).Decoration.Value is Decoration.LinkIdSDSL or Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
+            else if (i.Op == Op.OpDecorateString && ((OpDecorateString)i).Decoration is
+                    Decoration.LinkSDSL or Decoration.ResourceGroupIdSDSL
+                    or Decoration.SamplerStateMipLODBias or Decoration.SamplerStateMinLOD or Decoration.SamplerStateMaxLOD)
+                temp.RemoveAt(index--);
+            else if (i.Op == Op.OpMemberDecorate && ((OpMemberDecorate)i).Decoration.Value is Decoration.LinkIdSDSL)
+                temp.RemoveAt(index--);
+            else if (i.Op == Op.OpMemberDecorateString && ((OpMemberDecorateString)i).Decoration is Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
                 temp.RemoveAt(index--);
 
             // Remove SPIR-V about pointer types to other shaders (variable and types themselves are removed as well)
