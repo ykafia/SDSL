@@ -99,8 +99,9 @@ public ref partial struct OpSDSLShader : IMemoryInstruction
                 case "shaderName":
                     ShaderName = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -180,8 +181,9 @@ public ref partial struct OpSDSLShaderEnd : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -282,8 +284,9 @@ public ref partial struct OpSDSLEffect : IMemoryInstruction
                 case "effectName":
                     EffectName = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -384,8 +387,9 @@ public ref partial struct OpSDSLComposition : IMemoryInstruction
                 case "compositionPath":
                     CompositionPath = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -465,8 +469,9 @@ public ref partial struct OpSDSLCompositionEnd : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -567,8 +572,9 @@ public ref partial struct OpSDSLMixinInherit : IMemoryInstruction
                 case "shader":
                     Shader = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -684,8 +690,9 @@ public ref partial struct OpSDSLCompose : IMemoryInstruction
                 case "name":
                     Name = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -786,8 +793,9 @@ public ref partial struct OpSDSLStage : IMemoryInstruction
                 case "stagedElement":
                     StagedElement = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -919,8 +927,9 @@ public ref partial struct OpSDSLImportShader : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -1085,8 +1094,9 @@ public ref partial struct OpSDSLImportFunction : IMemoryInstruction
                 case "flags":
                     Flags = o.ToEnum<FunctionFlagsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -1248,8 +1258,9 @@ public ref partial struct OpSDSLImportVariable : IMemoryInstruction
                 case "flags":
                     Flags = o.ToEnum<VariableFlagsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -1381,8 +1392,9 @@ public ref partial struct OpSDSLImportStruct : IMemoryInstruction
                 case "shader":
                     Shader = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -1545,8 +1557,9 @@ public ref partial struct OpVariableSDSL : IMemoryInstruction
                     if (o.Words.Length > 0)
                         MethodInitializer = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -1693,8 +1706,9 @@ public ref partial struct OpMemberAccessSDSL : IMemoryInstruction
                 case "member":
                     Member = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -1826,8 +1840,9 @@ public ref partial struct OpTypeFunctionSDSL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -1946,8 +1961,9 @@ public ref partial struct OpSDSLFunctionInfo : IMemoryInstruction
                 case "parent":
                     Parent = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -2049,8 +2065,9 @@ public ref partial struct OpBaseSDSL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -2152,8 +2169,9 @@ public ref partial struct OpThisSDSL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -2255,8 +2273,9 @@ public ref partial struct OpStageSDSL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -2372,8 +2391,9 @@ public ref partial struct OpSDSLMixin : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -2507,8 +2527,9 @@ public ref partial struct OpSDSLMixinCompose : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -2642,8 +2663,9 @@ public ref partial struct OpSDSLMixinComposeArray : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -2793,8 +2815,9 @@ public ref partial struct OpSDSLGenericParameter : IMemoryInstruction
                 case "declaringClass":
                     DeclaringClass = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -2941,8 +2964,9 @@ public ref partial struct OpSDSLGenericReference : IMemoryInstruction
                 case "declaringClass":
                     DeclaringClass = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3059,8 +3083,9 @@ public ref partial struct OpConstantStringSDSL : IMemoryInstruction
                 case "literalString":
                     LiteralString = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3177,8 +3202,9 @@ public ref partial struct OpTypeGenericSDSL : IMemoryInstruction
                 case "kind":
                     Kind = o.ToEnum<GenericParameterKindSDSL>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3310,8 +3336,9 @@ public ref partial struct OpForeachSDSL : IMemoryInstruction
                 case "collection":
                     Collection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3391,8 +3418,9 @@ public ref partial struct OpForeachEndSDSL : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3508,8 +3536,9 @@ public ref partial struct OpUnresolvableShaderSDSL : IMemoryInstruction
                 case "shaderCodeNameEnd":
                     ShaderCodeNameEnd = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3589,8 +3618,9 @@ public ref partial struct OpNop : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3707,8 +3737,9 @@ public ref partial struct OpUndef : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3809,8 +3840,9 @@ public ref partial struct OpSourceContinued : IMemoryInstruction
                 case "continuedSource":
                     ContinuedSource = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -3958,8 +3990,9 @@ public ref partial struct OpSource : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Source = o.ToLiteral<string?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4060,8 +4093,9 @@ public ref partial struct OpSourceExtension : IMemoryInstruction
                 case "extension":
                     Extension = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4177,8 +4211,9 @@ public ref partial struct OpName : IMemoryInstruction
                 case "name":
                     Name = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4309,8 +4344,9 @@ public ref partial struct OpMemberName : IMemoryInstruction
                 case "name":
                     Name = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4427,8 +4463,9 @@ public ref partial struct OpString : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4559,8 +4596,9 @@ public ref partial struct OpLine : IMemoryInstruction
                 case "column":
                     Column = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4661,8 +4699,9 @@ public ref partial struct OpExtension : IMemoryInstruction
                 case "name":
                     Name = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4779,8 +4818,9 @@ public ref partial struct OpExtInstImport : IMemoryInstruction
                 case "name":
                     Name = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -4942,8 +4982,9 @@ public ref partial struct OpExtInst : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -5062,8 +5103,9 @@ public ref partial struct OpMemoryModel : IMemoryInstruction
                 case "memorymodel":
                     Memorymodel = o.ToEnum<MemoryModel>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -5209,8 +5251,9 @@ public ref partial struct OpEntryPoint : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -5277,7 +5320,9 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ExecutionMode> Mode
+    public ExecutionMode Mode { get; set; }
+
+    public EnumerantParameters ModeParameters
     {
         get;
         set
@@ -5288,10 +5333,11 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
         }
     }
 
-    public OpExecutionMode(int entryPoint, ParameterizedFlag<ExecutionMode> mode)
+    public OpExecutionMode(int entryPoint, ExecutionMode mode, EnumerantParameters modeParameters)
     {
         EntryPoint = entryPoint;
         Mode = mode;
+        ModeParameters = modeParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -5304,7 +5350,7 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpExecutionMode, EntryPoint, ..(Span<int>)[(int)Mode.Value, ..Mode.Span]];
+        Span<int> instruction = [(int)Op.OpExecutionMode, EntryPoint, (int)Mode];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -5326,11 +5372,16 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
                 case "entryPoint":
                     EntryPoint = o.ToLiteral<int>();
                     break;
-                case "numberofInvocationinvocations" or "xsize" or "ysize" or "zsize" or "vertexcount" or "vectortype" or "subgroupSize" or "subgroupsPerWorkgroup" or "xsizehint" or "ysizehint" or "zsizehint" or "targetWidth" or "isEntry" or "numberofrecursions" or "shaderIndex" or "nodeName" or "primitivecount" or "size" or "maxxsize" or "maxysize" or "maxzsize" or "maxdimensions" or "vectorwidth" or "targetfmax" or "targetType" or "fastMathMode" or "stallFreeReturn" or "waitForDoneWrite" or "barrierCount" or "numberofRegisters" or "namedMaximumNumberofRegisters":
+                case "mode":
+                {
                     Mode = o.ToEnum<ExecutionMode>();
+                // Process the other parameters ??
+                }
+
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -5431,8 +5482,9 @@ public ref partial struct OpCapability : IMemoryInstruction
                 case "capability":
                     Capability = o.ToEnum<Capability>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -5534,8 +5586,9 @@ public ref partial struct OpTypeVoid : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -5637,8 +5690,9 @@ public ref partial struct OpTypeBool : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -5770,8 +5824,9 @@ public ref partial struct OpTypeInt : IMemoryInstruction
                 case "signedness":
                     Signedness = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -5904,8 +5959,9 @@ public ref partial struct OpTypeFloat : IMemoryInstruction
                     if (o.Words.Length > 0)
                         FloatingPointEncoding = o.ToEnum<FPEncoding>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6037,8 +6093,9 @@ public ref partial struct OpTypeVector : IMemoryInstruction
                 case "componentCount":
                     ComponentCount = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6170,8 +6227,9 @@ public ref partial struct OpTypeMatrix : IMemoryInstruction
                 case "columnCount":
                     ColumnCount = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6394,8 +6452,9 @@ public ref partial struct OpTypeImage : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Accessqualifier = o.ToEnum<AccessQualifier>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6497,8 +6556,9 @@ public ref partial struct OpTypeSampler : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6615,8 +6675,9 @@ public ref partial struct OpTypeSampledImage : IMemoryInstruction
                 case "imageType":
                     ImageType = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6748,8 +6809,9 @@ public ref partial struct OpTypeArray : IMemoryInstruction
                 case "length":
                     Length = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6866,8 +6928,9 @@ public ref partial struct OpTypeRuntimeArray : IMemoryInstruction
                 case "elementType":
                     ElementType = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -6984,8 +7047,9 @@ public ref partial struct OpTypeStruct : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -7105,8 +7169,9 @@ public ref partial struct OpTypeOpaque : IMemoryInstruction
                 case "thenameoftheopaquetype":
                     Thenameoftheopaquetype = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -7238,8 +7303,9 @@ public ref partial struct OpTypePointer : IMemoryInstruction
                 case "type":
                     Type = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -7371,8 +7437,9 @@ public ref partial struct OpTypeFunction : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -7477,8 +7544,9 @@ public ref partial struct OpTypeEvent : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -7580,8 +7648,9 @@ public ref partial struct OpTypeDeviceEvent : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -7683,8 +7752,9 @@ public ref partial struct OpTypeReserveId : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -7786,8 +7856,9 @@ public ref partial struct OpTypeQueue : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -7904,8 +7975,9 @@ public ref partial struct OpTypePipe : IMemoryInstruction
                 case "qualifier":
                     Qualifier = o.ToEnum<AccessQualifier>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8021,8 +8093,9 @@ public ref partial struct OpTypeForwardPointer : IMemoryInstruction
                 case "storageclass":
                     Storageclass = o.ToEnum<StorageClass>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8139,8 +8212,9 @@ public ref partial struct OpConstantTrue : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8257,8 +8331,9 @@ public ref partial struct OpConstantFalse : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8390,8 +8465,9 @@ public ref partial struct OpConstant<T> : IMemoryInstruction where T : struct, I
                 case "value":
                     Value = o.ToLiteral<LiteralValue<T>>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8523,8 +8599,9 @@ public ref partial struct OpConstantComposite : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -8689,8 +8766,9 @@ public ref partial struct OpConstantSampler : IMemoryInstruction
                 case "samplerfiltermode":
                     Samplerfiltermode = o.ToEnum<SamplerFilterMode>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8807,8 +8885,9 @@ public ref partial struct OpConstantNull : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -8925,8 +9004,9 @@ public ref partial struct OpSpecConstantTrue : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9043,8 +9123,9 @@ public ref partial struct OpSpecConstantFalse : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9176,8 +9257,9 @@ public ref partial struct OpSpecConstant<T> : IMemoryInstruction where T : struc
                 case "value":
                     Value = o.ToLiteral<LiteralValue<T>>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9309,8 +9391,9 @@ public ref partial struct OpSpecConstantComposite : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -9445,8 +9528,9 @@ public ref partial struct OpSpecConstantOp : IMemoryInstruction
                 case "opcode":
                     Opcode = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9593,8 +9677,9 @@ public ref partial struct OpFunction : IMemoryInstruction
                 case "functionType":
                     FunctionType = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9711,8 +9796,9 @@ public ref partial struct OpFunctionParameter : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9792,8 +9878,9 @@ public ref partial struct OpFunctionEnd : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -9940,8 +10027,9 @@ public ref partial struct OpFunctionCall : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -10092,8 +10180,9 @@ public ref partial struct OpVariable : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Initializer = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -10255,8 +10344,9 @@ public ref partial struct OpImageTexelPointer : IMemoryInstruction
                 case "sample":
                     Sample = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -10342,7 +10432,9 @@ public ref partial struct OpLoad : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? Memoryaccess
+    public MemoryAccessMask? Memoryaccess { get; set; }
+
+    public EnumerantParameters MemoryaccessParameters
     {
         get;
         set
@@ -10354,12 +10446,13 @@ public ref partial struct OpLoad : IMemoryInstruction
     }
 
     public static implicit operator int (OpLoad inst) => inst.ResultId;
-    public OpLoad(int resultType, int resultId, int pointer, ParameterizedFlag<MemoryAccessMask>? memoryaccess)
+    public OpLoad(int resultType, int resultId, int pointer, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         Pointer = pointer;
         Memoryaccess = memoryaccess;
+        MemoryaccessParameters = memoryaccessParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -10372,7 +10465,7 @@ public ref partial struct OpLoad : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpLoad, ResultType, ResultId, Pointer, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value.Value, ..Memoryaccess.Value.Span])];
+        Span<int> instruction = [(int)Op.OpLoad, ResultType, ResultId, Pointer, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -10400,12 +10493,13 @@ public ref partial struct OpLoad : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryaccess":
                     if (o.Words.Length > 0)
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -10480,7 +10574,9 @@ public ref partial struct OpStore : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? Memoryaccess
+    public MemoryAccessMask? Memoryaccess { get; set; }
+
+    public EnumerantParameters MemoryaccessParameters
     {
         get;
         set
@@ -10491,11 +10587,12 @@ public ref partial struct OpStore : IMemoryInstruction
         }
     }
 
-    public OpStore(int pointer, int objectId, ParameterizedFlag<MemoryAccessMask>? memoryaccess)
+    public OpStore(int pointer, int objectId, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
     {
         Pointer = pointer;
         ObjectId = objectId;
         Memoryaccess = memoryaccess;
+        MemoryaccessParameters = memoryaccessParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -10508,7 +10605,7 @@ public ref partial struct OpStore : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpStore, Pointer, ObjectId, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value.Value, ..Memoryaccess.Value.Span])];
+        Span<int> instruction = [(int)Op.OpStore, Pointer, ObjectId, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -10533,12 +10630,13 @@ public ref partial struct OpStore : IMemoryInstruction
                 case "objectId":
                     ObjectId = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryaccess":
                     if (o.Words.Length > 0)
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -10685,8 +10783,9 @@ public ref partial struct OpAccessChain : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -10836,8 +10935,9 @@ public ref partial struct OpInBoundsAccessChain : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -11002,8 +11102,9 @@ public ref partial struct OpPtrAccessChain : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -11153,8 +11254,9 @@ public ref partial struct OpArrayLength : IMemoryInstruction
                 case "arraymember":
                     Arraymember = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -11286,8 +11388,9 @@ public ref partial struct OpGenericPtrMemSemantics : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -11449,8 +11552,9 @@ public ref partial struct OpInBoundsPtrAccessChain : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -11517,7 +11621,9 @@ public ref partial struct OpDecorate : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<Decoration> Decoration
+    public Decoration Decoration { get; set; }
+
+    public EnumerantParameters DecorationParameters
     {
         get;
         set
@@ -11528,10 +11634,11 @@ public ref partial struct OpDecorate : IMemoryInstruction
         }
     }
 
-    public OpDecorate(int target, ParameterizedFlag<Decoration> decoration)
+    public OpDecorate(int target, Decoration decoration, EnumerantParameters decorationParameters)
     {
         Target = target;
         Decoration = decoration;
+        DecorationParameters = decorationParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -11544,7 +11651,7 @@ public ref partial struct OpDecorate : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpDecorate, Target, ..(Span<int>)[(int)Decoration.Value, ..Decoration.Span]];
+        Span<int> instruction = [(int)Op.OpDecorate, Target, (int)Decoration];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -11566,11 +11673,16 @@ public ref partial struct OpDecorate : IMemoryInstruction
                 case "target":
                     Target = o.ToLiteral<int>();
                     break;
-                case "name" or "linkidsdsl_idRef0" or "resourceGroup" or "logicalGroup" or "samplerstatefilter_samplerfiltersdsl0" or "samplerstateaddressu_samplertextureaddressmodesdsl0" or "samplerstateaddressv_samplertextureaddressmodesdsl0" or "samplerstateaddressw_samplertextureaddressmodesdsl0" or "samplerstatemiplodbias_literalstring0" or "samplerstatemaxanisotropy_literalinteger0" or "samplerstatecomparisonfunc_samplercomparisonfuncsdsl0" or "samplerstateminlod_literalstring0" or "samplerstatemaxlod_literalstring0" or "specializationConstantID" or "arrayStride" or "matrixStride" or "builtin_builtin0" or "execution" or "streamNumber" or "location" or "component" or "index" or "bindingPoint" or "descriptorSet" or "byteOffset" or "xFBBufferNumber" or "xFBStride" or "functionParameterAttribute" or "floatingPointRoundingMode" or "fastMathMode" or "linkageType" or "attachmentIndex" or "alignment" or "maxByteOffset" or "payloadType" or "maxnumberofpayloads" or "nodeName" or "baseIndex" or "arraySize" or "offset" or "n" or "register" or "kind" or "counterBuffer" or "semantic" or "userType" or "targetWidth" or "fPRoundingMode" or "fPDenormMode" or "memoryType" or "banks" or "bankWidth" or "maximumCopies" or "maximumReplicates" or "mergeKey" or "mergeType" or "bankBits" or "forceKey" or "strideSize" or "wordSize" or "cacheSizeinbytes" or "prefetcherSizeinbytes" or "mode" or "propagate" or "aliasingScopesList" or "cycles" or "invocations" or "enable" or "bufferLocationID" or "iOPipeID" or "fPOperationMode" or "maxError" or "latencyLabel" or "relativeTo" or "controlType" or "relativeCycle" or "addressWidth" or "dataWidth" or "latency" or "readWriteMode" or "maxBurstCount" or "waitrequest" or "access" or "trigger" or "implementinregistermapintelParameter0" or "cacheLevel" or "cacheControl":
+                case "decoration":
+                {
                     Decoration = o.ToEnum<Decoration>();
+                // Process the other parameters ??
+                }
+
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -11645,7 +11757,9 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<Decoration> Decoration
+    public Decoration Decoration { get; set; }
+
+    public EnumerantParameters DecorationParameters
     {
         get;
         set
@@ -11656,11 +11770,12 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
         }
     }
 
-    public OpMemberDecorate(int structureType, int member, ParameterizedFlag<Decoration> decoration)
+    public OpMemberDecorate(int structureType, int member, Decoration decoration, EnumerantParameters decorationParameters)
     {
         StructureType = structureType;
         Member = member;
         Decoration = decoration;
+        DecorationParameters = decorationParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -11673,7 +11788,7 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpMemberDecorate, StructureType, ..Member.AsDisposableLiteralValue().Words, ..(Span<int>)[(int)Decoration.Value, ..Decoration.Span]];
+        Span<int> instruction = [(int)Op.OpMemberDecorate, StructureType, ..Member.AsDisposableLiteralValue().Words, (int)Decoration];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -11698,11 +11813,16 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
                 case "member":
                     Member = o.ToLiteral<int>();
                     break;
-                case "name" or "linkidsdsl_idRef0" or "resourceGroup" or "logicalGroup" or "samplerstatefilter_samplerfiltersdsl0" or "samplerstateaddressu_samplertextureaddressmodesdsl0" or "samplerstateaddressv_samplertextureaddressmodesdsl0" or "samplerstateaddressw_samplertextureaddressmodesdsl0" or "samplerstatemiplodbias_literalstring0" or "samplerstatemaxanisotropy_literalinteger0" or "samplerstatecomparisonfunc_samplercomparisonfuncsdsl0" or "samplerstateminlod_literalstring0" or "samplerstatemaxlod_literalstring0" or "specializationConstantID" or "arrayStride" or "matrixStride" or "builtin_builtin0" or "execution" or "streamNumber" or "location" or "component" or "index" or "bindingPoint" or "descriptorSet" or "byteOffset" or "xFBBufferNumber" or "xFBStride" or "functionParameterAttribute" or "floatingPointRoundingMode" or "fastMathMode" or "linkageType" or "attachmentIndex" or "alignment" or "maxByteOffset" or "payloadType" or "maxnumberofpayloads" or "nodeName" or "baseIndex" or "arraySize" or "offset" or "n" or "register" or "kind" or "counterBuffer" or "semantic" or "userType" or "targetWidth" or "fPRoundingMode" or "fPDenormMode" or "memoryType" or "banks" or "bankWidth" or "maximumCopies" or "maximumReplicates" or "mergeKey" or "mergeType" or "bankBits" or "forceKey" or "strideSize" or "wordSize" or "cacheSizeinbytes" or "prefetcherSizeinbytes" or "mode" or "propagate" or "aliasingScopesList" or "cycles" or "invocations" or "enable" or "bufferLocationID" or "iOPipeID" or "fPOperationMode" or "maxError" or "latencyLabel" or "relativeTo" or "controlType" or "relativeCycle" or "addressWidth" or "dataWidth" or "latency" or "readWriteMode" or "maxBurstCount" or "waitrequest" or "access" or "trigger" or "implementinregistermapintelParameter0" or "cacheLevel" or "cacheControl":
+                case "decoration":
+                {
                     Decoration = o.ToEnum<Decoration>();
+                // Process the other parameters ??
+                }
+
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -11804,8 +11924,9 @@ public ref partial struct OpDecorationGroup : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -11921,8 +12042,9 @@ public ref partial struct OpGroupDecorate : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -12041,8 +12163,9 @@ public ref partial struct OpGroupMemberDecorate : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -12192,8 +12315,9 @@ public ref partial struct OpVectorExtractDynamic : IMemoryInstruction
                 case "index":
                     Index = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -12355,8 +12479,9 @@ public ref partial struct OpVectorInsertDynamic : IMemoryInstruction
                 case "index":
                     Index = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -12518,8 +12643,9 @@ public ref partial struct OpVectorShuffle : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -12654,8 +12780,9 @@ public ref partial struct OpCompositeConstruct : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -12805,8 +12932,9 @@ public ref partial struct OpCompositeExtract : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -12971,8 +13099,9 @@ public ref partial struct OpCompositeInsert : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -13107,8 +13236,9 @@ public ref partial struct OpCopyObject : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -13240,8 +13370,9 @@ public ref partial struct OpTranspose : IMemoryInstruction
                 case "matrix":
                     Matrix = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -13388,8 +13519,9 @@ public ref partial struct OpSampledImage : IMemoryInstruction
                 case "sampler":
                     Sampler = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -13486,7 +13618,9 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -13498,13 +13632,14 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleImplicitLod inst) => inst.ResultId;
-    public OpImageSampleImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSampleImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -13517,7 +13652,7 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSampleImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -13548,12 +13683,13 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -13650,7 +13786,9 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -13662,13 +13800,14 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleExplicitLod inst) => inst.ResultId;
-    public OpImageSampleExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSampleExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -13681,7 +13820,7 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -13712,11 +13851,12 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -13824,7 +13964,9 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -13836,7 +13978,7 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleDrefImplicitLod inst) => inst.ResultId;
-    public OpImageSampleDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSampleDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -13844,6 +13986,7 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -13856,7 +13999,7 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSampleDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -13890,12 +14033,13 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -14003,7 +14147,9 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -14015,7 +14161,7 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleDrefExplicitLod inst) => inst.ResultId;
-    public OpImageSampleDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSampleDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -14023,6 +14169,7 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -14035,7 +14182,7 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14069,11 +14216,12 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -14170,7 +14318,9 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -14182,13 +14332,14 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleProjImplicitLod inst) => inst.ResultId;
-    public OpImageSampleProjImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSampleProjImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -14201,7 +14352,7 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleProjImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSampleProjImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14232,12 +14383,13 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -14334,7 +14486,9 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -14346,13 +14500,14 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleProjExplicitLod inst) => inst.ResultId;
-    public OpImageSampleProjExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSampleProjExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -14365,7 +14520,7 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14396,11 +14551,12 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -14508,7 +14664,9 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -14520,7 +14678,7 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleProjDrefImplicitLod inst) => inst.ResultId;
-    public OpImageSampleProjDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSampleProjDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -14528,6 +14686,7 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -14540,7 +14699,7 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleProjDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSampleProjDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14574,12 +14733,13 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -14687,7 +14847,9 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -14699,7 +14861,7 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleProjDrefExplicitLod inst) => inst.ResultId;
-    public OpImageSampleProjDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSampleProjDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -14707,6 +14869,7 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -14719,7 +14882,7 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14753,11 +14916,12 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -14854,7 +15018,9 @@ public ref partial struct OpImageFetch : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -14866,13 +15032,14 @@ public ref partial struct OpImageFetch : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageFetch inst) => inst.ResultId;
-    public OpImageFetch(int resultType, int resultId, int image, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageFetch(int resultType, int resultId, int image, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         Image = image;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -14885,7 +15052,7 @@ public ref partial struct OpImageFetch : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageFetch, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageFetch, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14916,12 +15083,13 @@ public ref partial struct OpImageFetch : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15029,7 +15197,9 @@ public ref partial struct OpImageGather : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -15041,7 +15211,7 @@ public ref partial struct OpImageGather : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageGather inst) => inst.ResultId;
-    public OpImageGather(int resultType, int resultId, int sampledImage, int coordinate, int component, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageGather(int resultType, int resultId, int sampledImage, int coordinate, int component, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -15049,6 +15219,7 @@ public ref partial struct OpImageGather : IMemoryInstruction
         Coordinate = coordinate;
         Component = component;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -15061,7 +15232,7 @@ public ref partial struct OpImageGather : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageGather, ResultType, ResultId, SampledImage, Coordinate, Component, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageGather, ResultType, ResultId, SampledImage, Coordinate, Component, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -15095,12 +15266,13 @@ public ref partial struct OpImageGather : IMemoryInstruction
                 case "component":
                     Component = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15208,7 +15380,9 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -15220,7 +15394,7 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageDrefGather inst) => inst.ResultId;
-    public OpImageDrefGather(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageDrefGather(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -15228,6 +15402,7 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -15240,7 +15415,7 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageDrefGather, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageDrefGather, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -15274,12 +15449,13 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15376,7 +15552,9 @@ public ref partial struct OpImageRead : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -15388,13 +15566,14 @@ public ref partial struct OpImageRead : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageRead inst) => inst.ResultId;
-    public OpImageRead(int resultType, int resultId, int image, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageRead(int resultType, int resultId, int image, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         Image = image;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -15407,7 +15586,7 @@ public ref partial struct OpImageRead : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageRead, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageRead, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -15438,12 +15617,13 @@ public ref partial struct OpImageRead : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15529,7 +15709,9 @@ public ref partial struct OpImageWrite : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -15540,12 +15722,13 @@ public ref partial struct OpImageWrite : IMemoryInstruction
         }
     }
 
-    public OpImageWrite(int image, int coordinate, int texel, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageWrite(int image, int coordinate, int texel, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         Image = image;
         Coordinate = coordinate;
         Texel = texel;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -15558,7 +15741,7 @@ public ref partial struct OpImageWrite : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageWrite, Image, Coordinate, Texel, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageWrite, Image, Coordinate, Texel, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -15586,12 +15769,13 @@ public ref partial struct OpImageWrite : IMemoryInstruction
                 case "texel":
                     Texel = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15723,8 +15907,9 @@ public ref partial struct OpImage : IMemoryInstruction
                 case "sampledImage":
                     SampledImage = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15856,8 +16041,9 @@ public ref partial struct OpImageQueryFormat : IMemoryInstruction
                 case "image":
                     Image = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -15989,8 +16175,9 @@ public ref partial struct OpImageQueryOrder : IMemoryInstruction
                 case "image":
                     Image = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16137,8 +16324,9 @@ public ref partial struct OpImageQuerySizeLod : IMemoryInstruction
                 case "levelofDetail":
                     LevelofDetail = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16270,8 +16458,9 @@ public ref partial struct OpImageQuerySize : IMemoryInstruction
                 case "image":
                     Image = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16418,8 +16607,9 @@ public ref partial struct OpImageQueryLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16551,8 +16741,9 @@ public ref partial struct OpImageQueryLevels : IMemoryInstruction
                 case "image":
                     Image = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16684,8 +16875,9 @@ public ref partial struct OpImageQuerySamples : IMemoryInstruction
                 case "image":
                     Image = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16817,8 +17009,9 @@ public ref partial struct OpConvertFToU : IMemoryInstruction
                 case "floatValue":
                     FloatValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -16950,8 +17143,9 @@ public ref partial struct OpConvertFToS : IMemoryInstruction
                 case "floatValue":
                     FloatValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17083,8 +17277,9 @@ public ref partial struct OpConvertSToF : IMemoryInstruction
                 case "signedValue":
                     SignedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17216,8 +17411,9 @@ public ref partial struct OpConvertUToF : IMemoryInstruction
                 case "unsignedValue":
                     UnsignedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17349,8 +17545,9 @@ public ref partial struct OpUConvert : IMemoryInstruction
                 case "unsignedValue":
                     UnsignedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17482,8 +17679,9 @@ public ref partial struct OpSConvert : IMemoryInstruction
                 case "signedValue":
                     SignedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17615,8 +17813,9 @@ public ref partial struct OpFConvert : IMemoryInstruction
                 case "floatValue":
                     FloatValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17748,8 +17947,9 @@ public ref partial struct OpQuantizeToF16 : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -17881,8 +18081,9 @@ public ref partial struct OpConvertPtrToU : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18014,8 +18215,9 @@ public ref partial struct OpSatConvertSToU : IMemoryInstruction
                 case "signedValue":
                     SignedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18147,8 +18349,9 @@ public ref partial struct OpSatConvertUToS : IMemoryInstruction
                 case "unsignedValue":
                     UnsignedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18280,8 +18483,9 @@ public ref partial struct OpConvertUToPtr : IMemoryInstruction
                 case "integerValue":
                     IntegerValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18413,8 +18617,9 @@ public ref partial struct OpPtrCastToGeneric : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18546,8 +18751,9 @@ public ref partial struct OpGenericCastToPtr : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18694,8 +18900,9 @@ public ref partial struct OpGenericCastToPtrExplicit : IMemoryInstruction
                 case "storage":
                     Storage = o.ToEnum<StorageClass>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18827,8 +19034,9 @@ public ref partial struct OpBitcast : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -18960,8 +19168,9 @@ public ref partial struct OpSNegate : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19093,8 +19302,9 @@ public ref partial struct OpFNegate : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19241,8 +19451,9 @@ public ref partial struct OpIAdd : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19389,8 +19600,9 @@ public ref partial struct OpFAdd : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19537,8 +19749,9 @@ public ref partial struct OpISub : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19685,8 +19898,9 @@ public ref partial struct OpFSub : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19833,8 +20047,9 @@ public ref partial struct OpIMul : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -19981,8 +20196,9 @@ public ref partial struct OpFMul : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -20129,8 +20345,9 @@ public ref partial struct OpUDiv : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -20277,8 +20494,9 @@ public ref partial struct OpSDiv : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -20425,8 +20643,9 @@ public ref partial struct OpFDiv : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -20573,8 +20792,9 @@ public ref partial struct OpUMod : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -20721,8 +20941,9 @@ public ref partial struct OpSRem : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -20869,8 +21090,9 @@ public ref partial struct OpSMod : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21017,8 +21239,9 @@ public ref partial struct OpFRem : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21165,8 +21388,9 @@ public ref partial struct OpFMod : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21313,8 +21537,9 @@ public ref partial struct OpVectorTimesScalar : IMemoryInstruction
                 case "scalar":
                     Scalar = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21461,8 +21686,9 @@ public ref partial struct OpMatrixTimesScalar : IMemoryInstruction
                 case "scalar":
                     Scalar = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21609,8 +21835,9 @@ public ref partial struct OpVectorTimesMatrix : IMemoryInstruction
                 case "matrix":
                     Matrix = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21757,8 +21984,9 @@ public ref partial struct OpMatrixTimesVector : IMemoryInstruction
                 case "vector":
                     Vector = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -21905,8 +22133,9 @@ public ref partial struct OpMatrixTimesMatrix : IMemoryInstruction
                 case "rightMatrix":
                     RightMatrix = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22053,8 +22282,9 @@ public ref partial struct OpOuterProduct : IMemoryInstruction
                 case "vector2":
                     Vector2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22201,8 +22431,9 @@ public ref partial struct OpDot : IMemoryInstruction
                 case "vector2":
                     Vector2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22349,8 +22580,9 @@ public ref partial struct OpIAddCarry : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22497,8 +22729,9 @@ public ref partial struct OpISubBorrow : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22645,8 +22878,9 @@ public ref partial struct OpUMulExtended : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22793,8 +23027,9 @@ public ref partial struct OpSMulExtended : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -22926,8 +23161,9 @@ public ref partial struct OpAny : IMemoryInstruction
                 case "vector":
                     Vector = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23059,8 +23295,9 @@ public ref partial struct OpAll : IMemoryInstruction
                 case "vector":
                     Vector = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23192,8 +23429,9 @@ public ref partial struct OpIsNan : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23325,8 +23563,9 @@ public ref partial struct OpIsInf : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23458,8 +23697,9 @@ public ref partial struct OpIsFinite : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23591,8 +23831,9 @@ public ref partial struct OpIsNormal : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23724,8 +23965,9 @@ public ref partial struct OpSignBitSet : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -23872,8 +24114,9 @@ public ref partial struct OpLessOrGreater : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24020,8 +24263,9 @@ public ref partial struct OpOrdered : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24168,8 +24412,9 @@ public ref partial struct OpUnordered : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24316,8 +24561,9 @@ public ref partial struct OpLogicalEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24464,8 +24710,9 @@ public ref partial struct OpLogicalNotEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24612,8 +24859,9 @@ public ref partial struct OpLogicalOr : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24760,8 +25008,9 @@ public ref partial struct OpLogicalAnd : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -24893,8 +25142,9 @@ public ref partial struct OpLogicalNot : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25056,8 +25306,9 @@ public ref partial struct OpSelect : IMemoryInstruction
                 case "object2":
                     Object2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25204,8 +25455,9 @@ public ref partial struct OpIEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25352,8 +25604,9 @@ public ref partial struct OpINotEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25500,8 +25753,9 @@ public ref partial struct OpUGreaterThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25648,8 +25902,9 @@ public ref partial struct OpSGreaterThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25796,8 +26051,9 @@ public ref partial struct OpUGreaterThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -25944,8 +26200,9 @@ public ref partial struct OpSGreaterThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26092,8 +26349,9 @@ public ref partial struct OpULessThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26240,8 +26498,9 @@ public ref partial struct OpSLessThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26388,8 +26647,9 @@ public ref partial struct OpULessThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26536,8 +26796,9 @@ public ref partial struct OpSLessThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26684,8 +26945,9 @@ public ref partial struct OpFOrdEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26832,8 +27094,9 @@ public ref partial struct OpFUnordEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -26980,8 +27243,9 @@ public ref partial struct OpFOrdNotEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -27128,8 +27392,9 @@ public ref partial struct OpFUnordNotEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -27276,8 +27541,9 @@ public ref partial struct OpFOrdLessThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -27424,8 +27690,9 @@ public ref partial struct OpFUnordLessThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -27572,8 +27839,9 @@ public ref partial struct OpFOrdGreaterThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -27720,8 +27988,9 @@ public ref partial struct OpFUnordGreaterThan : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -27868,8 +28137,9 @@ public ref partial struct OpFOrdLessThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28016,8 +28286,9 @@ public ref partial struct OpFUnordLessThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28164,8 +28435,9 @@ public ref partial struct OpFOrdGreaterThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28312,8 +28584,9 @@ public ref partial struct OpFUnordGreaterThanEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28460,8 +28733,9 @@ public ref partial struct OpShiftRightLogical : IMemoryInstruction
                 case "shift":
                     Shift = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28608,8 +28882,9 @@ public ref partial struct OpShiftRightArithmetic : IMemoryInstruction
                 case "shift":
                     Shift = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28756,8 +29031,9 @@ public ref partial struct OpShiftLeftLogical : IMemoryInstruction
                 case "shift":
                     Shift = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -28904,8 +29180,9 @@ public ref partial struct OpBitwiseOr : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29052,8 +29329,9 @@ public ref partial struct OpBitwiseXor : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29200,8 +29478,9 @@ public ref partial struct OpBitwiseAnd : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29333,8 +29612,9 @@ public ref partial struct OpNot : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29511,8 +29791,9 @@ public ref partial struct OpBitFieldInsert : IMemoryInstruction
                 case "count":
                     Count = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29674,8 +29955,9 @@ public ref partial struct OpBitFieldSExtract : IMemoryInstruction
                 case "count":
                     Count = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29837,8 +30119,9 @@ public ref partial struct OpBitFieldUExtract : IMemoryInstruction
                 case "count":
                     Count = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -29970,8 +30253,9 @@ public ref partial struct OpBitReverse : IMemoryInstruction
                 case "baseId":
                     BaseId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30103,8 +30387,9 @@ public ref partial struct OpBitCount : IMemoryInstruction
                 case "baseId":
                     BaseId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30236,8 +30521,9 @@ public ref partial struct OpDPdx : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30369,8 +30655,9 @@ public ref partial struct OpDPdy : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30502,8 +30789,9 @@ public ref partial struct OpFwidth : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30635,8 +30923,9 @@ public ref partial struct OpDPdxFine : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30768,8 +31057,9 @@ public ref partial struct OpDPdyFine : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -30901,8 +31191,9 @@ public ref partial struct OpFwidthFine : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31034,8 +31325,9 @@ public ref partial struct OpDPdxCoarse : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31167,8 +31459,9 @@ public ref partial struct OpDPdyCoarse : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31300,8 +31593,9 @@ public ref partial struct OpFwidthCoarse : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31381,8 +31675,9 @@ public ref partial struct OpEmitVertex : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31462,8 +31757,9 @@ public ref partial struct OpEndPrimitive : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31564,8 +31860,9 @@ public ref partial struct OpEmitStreamVertex : IMemoryInstruction
                 case "stream":
                     Stream = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31666,8 +31963,9 @@ public ref partial struct OpEndStreamPrimitive : IMemoryInstruction
                 case "stream":
                     Stream = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31798,8 +32096,9 @@ public ref partial struct OpControlBarrier : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -31915,8 +32214,9 @@ public ref partial struct OpMemoryBarrier : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -32078,8 +32378,9 @@ public ref partial struct OpAtomicLoad : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -32225,8 +32526,9 @@ public ref partial struct OpAtomicStore : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -32403,8 +32705,9 @@ public ref partial struct OpAtomicExchange : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -32611,8 +32914,9 @@ public ref partial struct OpAtomicCompareExchange : IMemoryInstruction
                 case "comparator":
                     Comparator = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -32819,8 +33123,9 @@ public ref partial struct OpAtomicCompareExchangeWeak : IMemoryInstruction
                 case "comparator":
                     Comparator = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -32982,8 +33287,9 @@ public ref partial struct OpAtomicIIncrement : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -33145,8 +33451,9 @@ public ref partial struct OpAtomicIDecrement : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -33323,8 +33630,9 @@ public ref partial struct OpAtomicIAdd : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -33501,8 +33809,9 @@ public ref partial struct OpAtomicISub : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -33679,8 +33988,9 @@ public ref partial struct OpAtomicSMin : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -33857,8 +34167,9 @@ public ref partial struct OpAtomicUMin : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -34035,8 +34346,9 @@ public ref partial struct OpAtomicSMax : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -34213,8 +34525,9 @@ public ref partial struct OpAtomicUMax : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -34391,8 +34704,9 @@ public ref partial struct OpAtomicAnd : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -34569,8 +34883,9 @@ public ref partial struct OpAtomicOr : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -34747,8 +35062,9 @@ public ref partial struct OpAtomicXor : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -34880,8 +35196,9 @@ public ref partial struct OpPhi : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -34959,7 +35276,9 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<LoopControlMask> Loopcontrol
+    public LoopControlMask Loopcontrol { get; set; }
+
+    public EnumerantParameters LoopcontrolParameters
     {
         get;
         set
@@ -34970,11 +35289,12 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
         }
     }
 
-    public OpLoopMerge(int mergeBlock, int continueTarget, ParameterizedFlag<LoopControlMask> loopcontrol)
+    public OpLoopMerge(int mergeBlock, int continueTarget, LoopControlMask loopcontrol, EnumerantParameters loopcontrolParameters)
     {
         MergeBlock = mergeBlock;
         ContinueTarget = continueTarget;
         Loopcontrol = loopcontrol;
+        LoopcontrolParameters = loopcontrolParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -34987,7 +35307,7 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpLoopMerge, MergeBlock, ContinueTarget, ..(Span<int>)[(int)Loopcontrol.Value, ..Loopcontrol.Span]];
+        Span<int> instruction = [(int)Op.OpLoopMerge, MergeBlock, ContinueTarget, (int)Loopcontrol];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -35012,11 +35332,12 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
                 case "continueTarget":
                     ContinueTarget = o.ToLiteral<int>();
                     break;
-                case "dependencylength_literalinteger0" or "miniterations_literalinteger0" or "maxiterations_literalinteger0" or "iterationmultiple_literalinteger0" or "peelcount_literalinteger0" or "partialcount_literalinteger0" or "initiationintervalintel_literalinteger0" or "maxconcurrencyintel_literalinteger0" or "dependencyarrayintel_literalinteger0" or "pipelineenableintel_literalinteger0" or "loopcoalesceintel_literalinteger0" or "maxinterleavingintel_literalinteger0" or "speculatediterationsintel_literalinteger0" or "loopcountintel_literalinteger0" or "maxreinvocationdelayintel_literalinteger0":
+                case "loopcontrol":
                     Loopcontrol = o.ToEnum<LoopControlMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35132,8 +35453,9 @@ public ref partial struct OpSelectionMerge : IMemoryInstruction
                 case "selectioncontrol":
                     Selectioncontrol = o.ToEnum<SelectionControlMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35235,8 +35557,9 @@ public ref partial struct OpLabel : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35337,8 +35660,9 @@ public ref partial struct OpBranch : IMemoryInstruction
                 case "targetLabel":
                     TargetLabel = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35484,8 +35808,9 @@ public ref partial struct OpBranchConditional : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -35619,8 +35944,9 @@ public ref partial struct OpSwitch : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<(int, int)>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -35703,8 +36029,9 @@ public ref partial struct OpKill : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35784,8 +36111,9 @@ public ref partial struct OpReturn : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35886,8 +36214,9 @@ public ref partial struct OpReturnValue : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -35967,8 +36296,9 @@ public ref partial struct OpUnreachable : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -36084,8 +36414,9 @@ public ref partial struct OpLifetimeStart : IMemoryInstruction
                 case "size":
                     Size = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -36201,8 +36532,9 @@ public ref partial struct OpLifetimeStop : IMemoryInstruction
                 case "size":
                     Size = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -36409,8 +36741,9 @@ public ref partial struct OpGroupAsyncCopy : IMemoryInstruction
                 case "eventId":
                     EventId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -36541,8 +36874,9 @@ public ref partial struct OpGroupWaitEvents : IMemoryInstruction
                 case "eventsList":
                     EventsList = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -36689,8 +37023,9 @@ public ref partial struct OpGroupAll : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -36837,8 +37172,9 @@ public ref partial struct OpGroupAny : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37000,8 +37336,9 @@ public ref partial struct OpGroupBroadcast : IMemoryInstruction
                 case "localId":
                     LocalId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37163,8 +37500,9 @@ public ref partial struct OpGroupIAdd : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37326,8 +37664,9 @@ public ref partial struct OpGroupFAdd : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37489,8 +37828,9 @@ public ref partial struct OpGroupFMin : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37652,8 +37992,9 @@ public ref partial struct OpGroupUMin : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37815,8 +38156,9 @@ public ref partial struct OpGroupSMin : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -37978,8 +38320,9 @@ public ref partial struct OpGroupFMax : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -38141,8 +38484,9 @@ public ref partial struct OpGroupUMax : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -38304,8 +38648,9 @@ public ref partial struct OpGroupSMax : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -38482,8 +38827,9 @@ public ref partial struct OpReadPipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -38660,8 +39006,9 @@ public ref partial struct OpWritePipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -38868,8 +39215,9 @@ public ref partial struct OpReservedReadPipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -39076,8 +39424,9 @@ public ref partial struct OpReservedWritePipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -39254,8 +39603,9 @@ public ref partial struct OpReserveReadPipePackets : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -39432,8 +39782,9 @@ public ref partial struct OpReserveWritePipePackets : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -39579,8 +39930,9 @@ public ref partial struct OpCommitReadPipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -39726,8 +40078,9 @@ public ref partial struct OpCommitWritePipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -39859,8 +40212,9 @@ public ref partial struct OpIsValidReserveId : IMemoryInstruction
                 case "reserveId":
                     ReserveId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -40022,8 +40376,9 @@ public ref partial struct OpGetNumPipePackets : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -40185,8 +40540,9 @@ public ref partial struct OpGetMaxPipePackets : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -40378,8 +40734,9 @@ public ref partial struct OpGroupReserveReadPipePackets : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -40571,8 +40928,9 @@ public ref partial struct OpGroupReserveWritePipePackets : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -40733,8 +41091,9 @@ public ref partial struct OpGroupCommitReadPipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -40895,8 +41254,9 @@ public ref partial struct OpGroupCommitWritePipe : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -41073,8 +41433,9 @@ public ref partial struct OpEnqueueMarker : IMemoryInstruction
                 case "retEvent":
                     RetEvent = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -41356,8 +41717,9 @@ public ref partial struct OpEnqueueKernel : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -41552,8 +41914,9 @@ public ref partial struct OpGetKernelNDrangeSubGroupCount : IMemoryInstruction
                 case "paramAlign":
                     ParamAlign = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -41745,8 +42108,9 @@ public ref partial struct OpGetKernelNDrangeMaxSubGroupSize : IMemoryInstruction
                 case "paramAlign":
                     ParamAlign = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -41923,8 +42287,9 @@ public ref partial struct OpGetKernelWorkGroupSize : IMemoryInstruction
                 case "paramAlign":
                     ParamAlign = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42101,8 +42466,9 @@ public ref partial struct OpGetKernelPreferredWorkGroupSizeMultiple : IMemoryIns
                 case "paramAlign":
                     ParamAlign = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42203,8 +42569,9 @@ public ref partial struct OpRetainEvent : IMemoryInstruction
                 case "eventId":
                     EventId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42305,8 +42672,9 @@ public ref partial struct OpReleaseEvent : IMemoryInstruction
                 case "eventId":
                     EventId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42423,8 +42791,9 @@ public ref partial struct OpCreateUserEvent : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42556,8 +42925,9 @@ public ref partial struct OpIsValidEvent : IMemoryInstruction
                 case "eventId":
                     EventId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42673,8 +43043,9 @@ public ref partial struct OpSetUserEventStatus : IMemoryInstruction
                 case "status":
                     Status = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42805,8 +43176,9 @@ public ref partial struct OpCaptureEventProfilingInfo : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -42923,8 +43295,9 @@ public ref partial struct OpGetDefaultQueue : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -43086,8 +43459,9 @@ public ref partial struct OpBuildNDRange : IMemoryInstruction
                 case "globalWorkOffset":
                     GlobalWorkOffset = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -43184,7 +43558,9 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -43196,13 +43572,14 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSparseSampleImplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseSampleImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -43215,7 +43592,7 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -43246,12 +43623,13 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -43348,7 +43726,9 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -43360,13 +43740,14 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSparseSampleExplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSparseSampleExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -43379,7 +43760,7 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -43410,11 +43791,12 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -43522,7 +43904,9 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -43534,7 +43918,7 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
     }
 
     public static implicit operator int (OpImageSparseSampleDrefImplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseSampleDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -43542,6 +43926,7 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -43554,7 +43939,7 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -43588,12 +43973,13 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -43701,7 +44087,9 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -43713,7 +44101,7 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
     }
 
     public static implicit operator int (OpImageSparseSampleDrefExplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSparseSampleDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -43721,6 +44109,7 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -43733,7 +44122,7 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -43767,11 +44156,12 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -43868,7 +44258,9 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -43880,13 +44272,14 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
     }
 
     public static implicit operator int (OpImageSparseSampleProjImplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleProjImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseSampleProjImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -43899,7 +44292,7 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleProjImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleProjImplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -43930,12 +44323,13 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -44032,7 +44426,9 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -44044,13 +44440,14 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
     }
 
     public static implicit operator int (OpImageSparseSampleProjExplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleProjExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSparseSampleProjExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         SampledImage = sampledImage;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -44063,7 +44460,7 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44094,11 +44491,12 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -44206,7 +44604,9 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -44218,7 +44618,7 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
     }
 
     public static implicit operator int (OpImageSparseSampleProjDrefImplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleProjDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseSampleProjDrefImplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -44226,6 +44626,7 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -44238,7 +44639,7 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleProjDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleProjDrefImplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44272,12 +44673,13 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -44385,7 +44787,9 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask> Imageoperands
+    public ImageOperandsMask Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -44397,7 +44801,7 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
     }
 
     public static implicit operator int (OpImageSparseSampleProjDrefExplicitLod inst) => inst.ResultId;
-    public OpImageSparseSampleProjDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask> imageoperands)
+    public OpImageSparseSampleProjDrefExplicitLod(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -44405,6 +44809,7 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -44417,7 +44822,7 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Span<int>)[(int)Imageoperands.Value, ..Imageoperands.Span]];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44451,11 +44856,12 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -44552,7 +44958,9 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -44564,13 +44972,14 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSparseFetch inst) => inst.ResultId;
-    public OpImageSparseFetch(int resultType, int resultId, int image, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseFetch(int resultType, int resultId, int image, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         Image = image;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -44583,7 +44992,7 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseFetch, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseFetch, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44614,12 +45023,13 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -44727,7 +45137,9 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -44739,7 +45151,7 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSparseGather inst) => inst.ResultId;
-    public OpImageSparseGather(int resultType, int resultId, int sampledImage, int coordinate, int component, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseGather(int resultType, int resultId, int sampledImage, int coordinate, int component, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -44747,6 +45159,7 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
         Coordinate = coordinate;
         Component = component;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -44759,7 +45172,7 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseGather, ResultType, ResultId, SampledImage, Coordinate, Component, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseGather, ResultType, ResultId, SampledImage, Coordinate, Component, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44793,12 +45206,13 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
                 case "component":
                     Component = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -44906,7 +45320,9 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -44918,7 +45334,7 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSparseDrefGather inst) => inst.ResultId;
-    public OpImageSparseDrefGather(int resultType, int resultId, int sampledImage, int coordinate, int dref, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseDrefGather(int resultType, int resultId, int sampledImage, int coordinate, int dref, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -44926,6 +45342,7 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
         Coordinate = coordinate;
         Dref = dref;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -44938,7 +45355,7 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseDrefGather, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseDrefGather, ResultType, ResultId, SampledImage, Coordinate, Dref, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44972,12 +45389,13 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
                 case "dref":
                     Dref = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45109,8 +45527,9 @@ public ref partial struct OpImageSparseTexelsResident : IMemoryInstruction
                 case "residentCode":
                     ResidentCode = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45190,8 +45609,9 @@ public ref partial struct OpNoLine : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45353,8 +45773,9 @@ public ref partial struct OpAtomicFlagTestAndSet : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45485,8 +45906,9 @@ public ref partial struct OpAtomicFlagClear : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45583,7 +46005,9 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -45595,13 +46019,14 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSparseRead inst) => inst.ResultId;
-    public OpImageSparseRead(int resultType, int resultId, int image, int coordinate, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSparseRead(int resultType, int resultId, int image, int coordinate, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
         Image = image;
         Coordinate = coordinate;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -45614,7 +46039,7 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseRead, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSparseRead, ResultType, ResultId, Image, Coordinate, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -45645,12 +46070,13 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45782,8 +46208,9 @@ public ref partial struct OpSizeOf : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -45885,8 +46312,9 @@ public ref partial struct OpTypePipeStorage : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46048,8 +46476,9 @@ public ref partial struct OpConstantPipeStorage : IMemoryInstruction
                 case "capacity":
                     Capacity = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46181,8 +46610,9 @@ public ref partial struct OpCreatePipeFromPipeStorage : IMemoryInstruction
                 case "pipeStorage":
                     PipeStorage = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46374,8 +46804,9 @@ public ref partial struct OpGetKernelLocalSizeForSubgroupCount : IMemoryInstruct
                 case "paramAlign":
                     ParamAlign = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46552,8 +46983,9 @@ public ref partial struct OpGetKernelMaxNumSubgroups : IMemoryInstruction
                 case "paramAlign":
                     ParamAlign = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46655,8 +47087,9 @@ public ref partial struct OpTypeNamedBarrier : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46788,8 +47221,9 @@ public ref partial struct OpNamedBarrierInitialize : IMemoryInstruction
                 case "subgroupCount":
                     SubgroupCount = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -46920,8 +47354,9 @@ public ref partial struct OpMemoryNamedBarrier : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47022,8 +47457,9 @@ public ref partial struct OpModuleProcessed : IMemoryInstruction
                 case "process":
                     Process = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47087,7 +47523,9 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ExecutionMode> Mode
+    public ExecutionMode Mode { get; set; }
+
+    public EnumerantParameters ModeParameters
     {
         get;
         set
@@ -47098,10 +47536,11 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
         }
     }
 
-    public OpExecutionModeId(int entryPoint, ParameterizedFlag<ExecutionMode> mode)
+    public OpExecutionModeId(int entryPoint, ExecutionMode mode, EnumerantParameters modeParameters)
     {
         EntryPoint = entryPoint;
         Mode = mode;
+        ModeParameters = modeParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -47114,7 +47553,7 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpExecutionModeId, EntryPoint, ..(Span<int>)[(int)Mode.Value, ..Mode.Span]];
+        Span<int> instruction = [(int)Op.OpExecutionModeId, EntryPoint, (int)Mode];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -47136,11 +47575,16 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
                 case "entryPoint":
                     EntryPoint = o.ToLiteral<int>();
                     break;
-                case "numberofInvocationinvocations" or "xsize" or "ysize" or "zsize" or "vertexcount" or "vectortype" or "subgroupSize" or "subgroupsPerWorkgroup" or "xsizehint" or "ysizehint" or "zsizehint" or "targetWidth" or "isEntry" or "numberofrecursions" or "shaderIndex" or "nodeName" or "primitivecount" or "size" or "maxxsize" or "maxysize" or "maxzsize" or "maxdimensions" or "vectorwidth" or "targetfmax" or "targetType" or "fastMathMode" or "stallFreeReturn" or "waitForDoneWrite" or "barrierCount" or "numberofRegisters" or "namedMaximumNumberofRegisters":
+                case "mode":
+                {
                     Mode = o.ToEnum<ExecutionMode>();
+                // Process the other parameters ??
+                }
+
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47215,10 +47659,22 @@ public ref partial struct OpDecorateId : IMemoryInstruction
         }
     }
 
-    public OpDecorateId(int target, Decoration decoration)
+    public int Value
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpDecorateId(int target, Decoration decoration, int value)
     {
         Target = target;
         Decoration = decoration;
+        Value = value;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -47231,7 +47687,7 @@ public ref partial struct OpDecorateId : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpDecorateId, Target, (int)Decoration];
+        Span<int> instruction = [(int)Op.OpDecorateId, Target, (int)Decoration, Value];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -47256,8 +47712,12 @@ public ref partial struct OpDecorateId : IMemoryInstruction
                 case "decoration":
                     Decoration = o.ToEnum<Decoration>();
                     break;
+                case "value":
+                    Value = o.ToLiteral<int>();
+                    break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47389,8 +47849,9 @@ public ref partial struct OpGroupNonUniformElect : IMemoryInstruction
                 case "execution":
                     Execution = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47537,8 +47998,9 @@ public ref partial struct OpGroupNonUniformAll : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47685,8 +48147,9 @@ public ref partial struct OpGroupNonUniformAny : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47833,8 +48296,9 @@ public ref partial struct OpGroupNonUniformAllEqual : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -47996,8 +48460,9 @@ public ref partial struct OpGroupNonUniformBroadcast : IMemoryInstruction
                 case "id":
                     Id = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -48144,8 +48609,9 @@ public ref partial struct OpGroupNonUniformBroadcastFirst : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -48292,8 +48758,9 @@ public ref partial struct OpGroupNonUniformBallot : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -48440,8 +48907,9 @@ public ref partial struct OpGroupNonUniformInverseBallot : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -48603,8 +49071,9 @@ public ref partial struct OpGroupNonUniformBallotBitExtract : IMemoryInstruction
                 case "index":
                     Index = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -48766,8 +49235,9 @@ public ref partial struct OpGroupNonUniformBallotBitCount : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -48914,8 +49384,9 @@ public ref partial struct OpGroupNonUniformBallotFindLSB : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -49062,8 +49533,9 @@ public ref partial struct OpGroupNonUniformBallotFindMSB : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -49225,8 +49697,9 @@ public ref partial struct OpGroupNonUniformShuffle : IMemoryInstruction
                 case "id":
                     Id = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -49388,8 +49861,9 @@ public ref partial struct OpGroupNonUniformShuffleXor : IMemoryInstruction
                 case "mask":
                     Mask = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -49551,8 +50025,9 @@ public ref partial struct OpGroupNonUniformShuffleUp : IMemoryInstruction
                 case "delta":
                     Delta = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -49714,8 +50189,9 @@ public ref partial struct OpGroupNonUniformShuffleDown : IMemoryInstruction
                 case "delta":
                     Delta = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -49893,8 +50369,9 @@ public ref partial struct OpGroupNonUniformIAdd : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -50072,8 +50549,9 @@ public ref partial struct OpGroupNonUniformFAdd : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -50251,8 +50729,9 @@ public ref partial struct OpGroupNonUniformIMul : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -50430,8 +50909,9 @@ public ref partial struct OpGroupNonUniformFMul : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -50609,8 +51089,9 @@ public ref partial struct OpGroupNonUniformSMin : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -50788,8 +51269,9 @@ public ref partial struct OpGroupNonUniformUMin : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -50967,8 +51449,9 @@ public ref partial struct OpGroupNonUniformFMin : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -51146,8 +51629,9 @@ public ref partial struct OpGroupNonUniformSMax : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -51325,8 +51809,9 @@ public ref partial struct OpGroupNonUniformUMax : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -51504,8 +51989,9 @@ public ref partial struct OpGroupNonUniformFMax : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -51683,8 +52169,9 @@ public ref partial struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -51862,8 +52349,9 @@ public ref partial struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -52041,8 +52529,9 @@ public ref partial struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -52220,8 +52709,9 @@ public ref partial struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -52399,8 +52889,9 @@ public ref partial struct OpGroupNonUniformLogicalOr : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -52578,8 +53069,9 @@ public ref partial struct OpGroupNonUniformLogicalXor : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -52741,8 +53233,9 @@ public ref partial struct OpGroupNonUniformQuadBroadcast : IMemoryInstruction
                 case "index":
                     Index = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -52904,8 +53397,9 @@ public ref partial struct OpGroupNonUniformQuadSwap : IMemoryInstruction
                 case "direction":
                     Direction = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53037,8 +53531,9 @@ public ref partial struct OpCopyLogical : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53185,8 +53680,9 @@ public ref partial struct OpPtrEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53333,8 +53829,9 @@ public ref partial struct OpPtrNotEqual : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53481,8 +53978,9 @@ public ref partial struct OpPtrDiff : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53630,8 +54128,9 @@ public ref partial struct OpColorAttachmentReadEXT : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Sample = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53764,8 +54263,9 @@ public ref partial struct OpDepthAttachmentReadEXT : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Sample = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53898,8 +54398,9 @@ public ref partial struct OpStencilAttachmentReadEXT : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Sample = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -53979,8 +54480,9 @@ public ref partial struct OpTerminateInvocation : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -54097,8 +54599,9 @@ public ref partial struct OpTypeUntypedPointerKHR : IMemoryInstruction
                 case "storageclass":
                     Storageclass = o.ToEnum<StorageClass>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -54262,8 +54765,9 @@ public ref partial struct OpUntypedVariableKHR : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Initializer = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -54425,8 +54929,9 @@ public ref partial struct OpUntypedAccessChainKHR : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -54591,8 +55096,9 @@ public ref partial struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -54727,8 +55233,9 @@ public ref partial struct OpSubgroupBallotKHR : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -54860,8 +55367,9 @@ public ref partial struct OpSubgroupFirstInvocationKHR : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -55038,8 +55546,9 @@ public ref partial struct OpUntypedPtrAccessChainKHR : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -55219,8 +55728,9 @@ public ref partial struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstructio
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -55385,8 +55895,9 @@ public ref partial struct OpUntypedArrayLengthKHR : IMemoryInstruction
                 case "arraymember":
                     Arraymember = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -55550,8 +56061,9 @@ public ref partial struct OpUntypedPrefetchKHR : IMemoryInstruction
                     if (o.Words.Length > 0)
                         CacheType = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -55683,8 +56195,9 @@ public ref partial struct OpSubgroupAllKHR : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -55816,8 +56329,9 @@ public ref partial struct OpSubgroupAnyKHR : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -55949,8 +56463,9 @@ public ref partial struct OpSubgroupAllEqualKHR : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -56128,8 +56643,9 @@ public ref partial struct OpGroupNonUniformRotateKHR : IMemoryInstruction
                     if (o.Words.Length > 0)
                         ClusterSize = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -56276,8 +56792,9 @@ public ref partial struct OpSubgroupReadInvocationKHR : IMemoryInstruction
                 case "index":
                     Index = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -56439,8 +56956,9 @@ public ref partial struct OpExtInstWithForwardRefsKHR : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -56694,8 +57212,9 @@ public ref partial struct OpTraceRayKHR : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -56811,8 +57330,9 @@ public ref partial struct OpExecuteCallableKHR : IMemoryInstruction
                 case "callableData":
                     CallableData = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -56944,8 +57464,9 @@ public ref partial struct OpConvertUToAccelerationStructureKHR : IMemoryInstruct
                 case "accel":
                     Accel = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57025,8 +57546,9 @@ public ref partial struct OpIgnoreIntersectionKHR : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57106,8 +57628,9 @@ public ref partial struct OpTerminateRayKHR : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57270,8 +57793,9 @@ public ref partial struct OpSDot : IMemoryInstruction
                     if (o.Words.Length > 0)
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57434,8 +57958,9 @@ public ref partial struct OpUDot : IMemoryInstruction
                     if (o.Words.Length > 0)
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57598,8 +58123,9 @@ public ref partial struct OpSUDot : IMemoryInstruction
                     if (o.Words.Length > 0)
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57777,8 +58303,9 @@ public ref partial struct OpSDotAccSat : IMemoryInstruction
                     if (o.Words.Length > 0)
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -57956,8 +58483,9 @@ public ref partial struct OpUDotAccSat : IMemoryInstruction
                     if (o.Words.Length > 0)
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -58135,8 +58663,9 @@ public ref partial struct OpSUDotAccSat : IMemoryInstruction
                     if (o.Words.Length > 0)
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -58313,8 +58842,9 @@ public ref partial struct OpTypeCooperativeMatrixKHR : IMemoryInstruction
                 case "use":
                     Use = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -58422,7 +58952,9 @@ public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? MemoryOperand
+    public MemoryAccessMask? MemoryOperand { get; set; }
+
+    public EnumerantParameters MemoryOperandParameters
     {
         get;
         set
@@ -58434,7 +58966,7 @@ public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
     }
 
     public static implicit operator int (OpCooperativeMatrixLoadKHR inst) => inst.ResultId;
-    public OpCooperativeMatrixLoadKHR(int resultType, int resultId, int pointer, int memoryLayout, int? stride, ParameterizedFlag<MemoryAccessMask>? memoryOperand)
+    public OpCooperativeMatrixLoadKHR(int resultType, int resultId, int pointer, int memoryLayout, int? stride, MemoryAccessMask? memoryOperand, EnumerantParameters memoryOperandParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -58442,6 +58974,7 @@ public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
         MemoryLayout = memoryLayout;
         Stride = stride;
         MemoryOperand = memoryOperand;
+        MemoryOperandParameters = memoryOperandParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -58454,7 +58987,7 @@ public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadKHR, ResultType, ResultId, Pointer, MemoryLayout, ..(Stride is null ? (Span<int>)[] : [Stride.Value]), ..(MemoryOperand is null ? (Span<int>)[] : [(int)MemoryOperand.Value.Value, ..MemoryOperand.Value.Span])];
+        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadKHR, ResultType, ResultId, Pointer, MemoryLayout, ..(Stride is null ? (Span<int>)[] : [Stride.Value]), ..(MemoryOperand is null ? (Span<int>)[] : [(int)MemoryOperand.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -58489,12 +59022,13 @@ public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Stride = o.ToLiteral<int?>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryOperand":
                     if (o.Words.Length > 0)
                         MemoryOperand = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -58591,7 +59125,9 @@ public ref partial struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? MemoryOperand
+    public MemoryAccessMask? MemoryOperand { get; set; }
+
+    public EnumerantParameters MemoryOperandParameters
     {
         get;
         set
@@ -58602,13 +59138,14 @@ public ref partial struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
         }
     }
 
-    public OpCooperativeMatrixStoreKHR(int pointer, int objectId, int memoryLayout, int? stride, ParameterizedFlag<MemoryAccessMask>? memoryOperand)
+    public OpCooperativeMatrixStoreKHR(int pointer, int objectId, int memoryLayout, int? stride, MemoryAccessMask? memoryOperand, EnumerantParameters memoryOperandParameters)
     {
         Pointer = pointer;
         ObjectId = objectId;
         MemoryLayout = memoryLayout;
         Stride = stride;
         MemoryOperand = memoryOperand;
+        MemoryOperandParameters = memoryOperandParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -58621,7 +59158,7 @@ public ref partial struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreKHR, Pointer, ObjectId, MemoryLayout, ..(Stride is null ? (Span<int>)[] : [Stride.Value]), ..(MemoryOperand is null ? (Span<int>)[] : [(int)MemoryOperand.Value.Value, ..MemoryOperand.Value.Span])];
+        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreKHR, Pointer, ObjectId, MemoryLayout, ..(Stride is null ? (Span<int>)[] : [Stride.Value]), ..(MemoryOperand is null ? (Span<int>)[] : [(int)MemoryOperand.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -58653,12 +59190,13 @@ public ref partial struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Stride = o.ToLiteral<int?>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryOperand":
                     if (o.Words.Length > 0)
                         MemoryOperand = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -58836,8 +59374,9 @@ public ref partial struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
                     if (o.Words.Length > 0)
                         CooperativeMatrixOperands = o.ToEnum<CooperativeMatrixOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -58969,8 +59508,9 @@ public ref partial struct OpCooperativeMatrixLengthKHR : IMemoryInstruction
                 case "type":
                     Type = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59102,8 +59642,9 @@ public ref partial struct OpConstantCompositeReplicateEXT : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59235,8 +59776,9 @@ public ref partial struct OpSpecConstantCompositeReplicateEXT : IMemoryInstructi
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59368,8 +59910,9 @@ public ref partial struct OpCompositeConstructReplicateEXT : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59471,8 +60014,9 @@ public ref partial struct OpTypeRayQueryKHR : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59678,8 +60222,9 @@ public ref partial struct OpRayQueryInitializeKHR : IMemoryInstruction
                 case "rayTMax":
                     RayTMax = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59780,8 +60325,9 @@ public ref partial struct OpRayQueryTerminateKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59897,8 +60443,9 @@ public ref partial struct OpRayQueryGenerateIntersectionKHR : IMemoryInstruction
                 case "hitT":
                     HitT = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -59999,8 +60546,9 @@ public ref partial struct OpRayQueryConfirmIntersectionKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -60132,8 +60680,9 @@ public ref partial struct OpRayQueryProceedKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -60280,8 +60829,9 @@ public ref partial struct OpRayQueryGetIntersectionTypeKHR : IMemoryInstruction
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -60443,8 +60993,9 @@ public ref partial struct OpImageSampleWeightedQCOM : IMemoryInstruction
                 case "weights":
                     Weights = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -60606,8 +61157,9 @@ public ref partial struct OpImageBoxFilterQCOM : IMemoryInstruction
                 case "boxSize":
                     BoxSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -60799,8 +61351,9 @@ public ref partial struct OpImageBlockMatchSSDQCOM : IMemoryInstruction
                 case "blockSize":
                     BlockSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -60992,8 +61545,9 @@ public ref partial struct OpImageBlockMatchSADQCOM : IMemoryInstruction
                 case "blockSize":
                     BlockSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -61185,8 +61739,9 @@ public ref partial struct OpImageBlockMatchWindowSSDQCOM : IMemoryInstruction
                 case "blockSize":
                     BlockSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -61378,8 +61933,9 @@ public ref partial struct OpImageBlockMatchWindowSADQCOM : IMemoryInstruction
                 case "blockSize":
                     BlockSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -61571,8 +62127,9 @@ public ref partial struct OpImageBlockMatchGatherSSDQCOM : IMemoryInstruction
                 case "blockSize":
                     BlockSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -61764,8 +62321,9 @@ public ref partial struct OpImageBlockMatchGatherSADQCOM : IMemoryInstruction
                 case "blockSize":
                     BlockSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -61927,8 +62485,9 @@ public ref partial struct OpGroupIAddNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -62090,8 +62649,9 @@ public ref partial struct OpGroupFAddNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -62253,8 +62813,9 @@ public ref partial struct OpGroupFMinNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -62416,8 +62977,9 @@ public ref partial struct OpGroupUMinNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -62579,8 +63141,9 @@ public ref partial struct OpGroupSMinNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -62742,8 +63305,9 @@ public ref partial struct OpGroupFMaxNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -62905,8 +63469,9 @@ public ref partial struct OpGroupUMaxNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63068,8 +63633,9 @@ public ref partial struct OpGroupSMaxNonUniformAMD : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63216,8 +63782,9 @@ public ref partial struct OpFragmentMaskFetchAMD : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63379,8 +63946,9 @@ public ref partial struct OpFragmentFetchAMD : IMemoryInstruction
                 case "fragmentIndex":
                     FragmentIndex = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63512,8 +64080,9 @@ public ref partial struct OpReadClockKHR : IMemoryInstruction
                 case "scope":
                     Scope = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63675,8 +64244,9 @@ public ref partial struct OpAllocateNodePayloadsAMDX : IMemoryInstruction
                 case "nodeIndex":
                     NodeIndex = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63777,8 +64347,9 @@ public ref partial struct OpEnqueueNodePayloadsAMDX : IMemoryInstruction
                 case "payloadArray":
                     PayloadArray = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -63895,8 +64466,9 @@ public ref partial struct OpTypeNodePayloadArrayAMDX : IMemoryInstruction
                 case "payloadType":
                     PayloadType = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64028,8 +64600,9 @@ public ref partial struct OpFinishWritingNodePayloadAMDX : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64161,8 +64734,9 @@ public ref partial struct OpNodePayloadArrayLengthAMDX : IMemoryInstruction
                 case "payloadArray":
                     PayloadArray = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64309,8 +64883,9 @@ public ref partial struct OpIsNodePayloadValidAMDX : IMemoryInstruction
                 case "nodeIndex":
                     NodeIndex = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64427,8 +65002,9 @@ public ref partial struct OpConstantStringAMDX : IMemoryInstruction
                 case "literalString":
                     LiteralString = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64545,8 +65121,9 @@ public ref partial struct OpSpecConstantStringAMDX : IMemoryInstruction
                 case "literalString":
                     LiteralString = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64678,8 +65255,9 @@ public ref partial struct OpGroupNonUniformQuadAllKHR : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -64811,8 +65389,9 @@ public ref partial struct OpGroupNonUniformQuadAnyKHR : IMemoryInstruction
                 case "predicate":
                     Predicate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -65108,8 +65687,9 @@ public ref partial struct OpHitObjectRecordHitMotionNV : IMemoryInstruction
                 case "hitObjectAttributes":
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -65390,8 +65970,9 @@ public ref partial struct OpHitObjectRecordHitWithIndexMotionNV : IMemoryInstruc
                 case "hitObjectAttributes":
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -65582,8 +66163,9 @@ public ref partial struct OpHitObjectRecordMissMotionNV : IMemoryInstruction
                 case "currentTime":
                     CurrentTime = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -65715,8 +66297,9 @@ public ref partial struct OpHitObjectGetWorldToObjectNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -65848,8 +66431,9 @@ public ref partial struct OpHitObjectGetObjectToWorldNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -65981,8 +66565,9 @@ public ref partial struct OpHitObjectGetObjectRayDirectionNV : IMemoryInstructio
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -66114,8 +66699,9 @@ public ref partial struct OpHitObjectGetObjectRayOriginNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -66396,8 +66982,9 @@ public ref partial struct OpHitObjectTraceRayMotionNV : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -66529,8 +67116,9 @@ public ref partial struct OpHitObjectGetShaderRecordBufferHandleNV : IMemoryInst
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -66662,8 +67250,9 @@ public ref partial struct OpHitObjectGetShaderBindingTableRecordIndexNV : IMemor
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -66764,8 +67353,9 @@ public ref partial struct OpHitObjectRecordEmptyNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -67031,8 +67621,9 @@ public ref partial struct OpHitObjectTraceRayNV : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -67313,8 +67904,9 @@ public ref partial struct OpHitObjectRecordHitNV : IMemoryInstruction
                 case "hitObjectAttributes":
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -67580,8 +68172,9 @@ public ref partial struct OpHitObjectRecordHitWithIndexNV : IMemoryInstruction
                 case "hitObjectAttributes":
                     HitObjectAttributes = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -67757,8 +68350,9 @@ public ref partial struct OpHitObjectRecordMissNV : IMemoryInstruction
                 case "tMax":
                     TMax = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -67874,8 +68468,9 @@ public ref partial struct OpHitObjectExecuteShaderNV : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68007,8 +68602,9 @@ public ref partial struct OpHitObjectGetCurrentTimeNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68124,8 +68720,9 @@ public ref partial struct OpHitObjectGetAttributesNV : IMemoryInstruction
                 case "hitObjectAttribute":
                     HitObjectAttribute = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68257,8 +68854,9 @@ public ref partial struct OpHitObjectGetHitKindNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68390,8 +68988,9 @@ public ref partial struct OpHitObjectGetPrimitiveIndexNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68523,8 +69122,9 @@ public ref partial struct OpHitObjectGetGeometryIndexNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68656,8 +69256,9 @@ public ref partial struct OpHitObjectGetInstanceIdNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68789,8 +69390,9 @@ public ref partial struct OpHitObjectGetInstanceCustomIndexNV : IMemoryInstructi
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -68922,8 +69524,9 @@ public ref partial struct OpHitObjectGetWorldRayDirectionNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69055,8 +69658,9 @@ public ref partial struct OpHitObjectGetWorldRayOriginNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69188,8 +69792,9 @@ public ref partial struct OpHitObjectGetRayTMaxNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69321,8 +69926,9 @@ public ref partial struct OpHitObjectGetRayTMinNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69454,8 +70060,9 @@ public ref partial struct OpHitObjectIsEmptyNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69587,8 +70194,9 @@ public ref partial struct OpHitObjectIsHitNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69720,8 +70328,9 @@ public ref partial struct OpHitObjectIsMissNV : IMemoryInstruction
                 case "hitObject":
                     HitObject = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69854,8 +70463,9 @@ public ref partial struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Bits = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -69971,8 +70581,9 @@ public ref partial struct OpReorderThreadWithHintNV : IMemoryInstruction
                 case "bits":
                     Bits = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70074,8 +70685,9 @@ public ref partial struct OpTypeHitObjectNV : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70194,7 +70806,9 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<ImageOperandsMask>? Imageoperands
+    public ImageOperandsMask? Imageoperands { get; set; }
+
+    public EnumerantParameters ImageoperandsParameters
     {
         get;
         set
@@ -70206,7 +70820,7 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
     }
 
     public static implicit operator int (OpImageSampleFootprintNV inst) => inst.ResultId;
-    public OpImageSampleFootprintNV(int resultType, int resultId, int sampledImage, int coordinate, int granularity, int coarse, ParameterizedFlag<ImageOperandsMask>? imageoperands)
+    public OpImageSampleFootprintNV(int resultType, int resultId, int sampledImage, int coordinate, int granularity, int coarse, ImageOperandsMask? imageoperands, EnumerantParameters imageoperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -70215,6 +70829,7 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
         Granularity = granularity;
         Coarse = coarse;
         Imageoperands = imageoperands;
+        ImageoperandsParameters = imageoperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -70227,7 +70842,7 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleFootprintNV, ResultType, ResultId, SampledImage, Coordinate, Granularity, Coarse, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value.Value, ..Imageoperands.Value.Span])];
+        Span<int> instruction = [(int)Op.OpImageSampleFootprintNV, ResultType, ResultId, SampledImage, Coordinate, Granularity, Coarse, ..(Imageoperands is null ? (Span<int>)[] : [(int)Imageoperands.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -70264,12 +70879,13 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
                 case "coarse":
                     Coarse = o.ToLiteral<int>();
                     break;
-                case "bias_idRef0" or "lod_idRef0" or "grad_idRef0" or "grad_idRef1" or "constoffset_idRef0" or "offset_idRef0" or "constoffsets_idRef0" or "sample_idRef0" or "minlod_idRef0" or "maketexelavailable_idscope0" or "maketexelvisible_idscope0" or "offsets_idRef0":
+                case "imageoperands":
                     if (o.Words.Length > 0)
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70401,8 +71017,9 @@ public ref partial struct OpCooperativeMatrixConvertNV : IMemoryInstruction
                 case "matrix":
                     Matrix = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70549,8 +71166,9 @@ public ref partial struct OpEmitMeshTasksEXT : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Payload = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70666,8 +71284,9 @@ public ref partial struct OpSetMeshOutputsEXT : IMemoryInstruction
                 case "primitiveCount":
                     PrimitiveCount = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70799,8 +71418,9 @@ public ref partial struct OpGroupNonUniformPartitionNV : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -70916,8 +71536,9 @@ public ref partial struct OpWritePackedPrimitiveIndices4x8NV : IMemoryInstructio
                 case "packedIndices":
                     PackedIndices = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -71109,8 +71730,9 @@ public ref partial struct OpFetchMicroTriangleVertexPositionNV : IMemoryInstruct
                 case "barycentric":
                     Barycentric = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -71302,8 +71924,9 @@ public ref partial struct OpFetchMicroTriangleVertexBarycentricNV : IMemoryInstr
                 case "barycentric":
                     Barycentric = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -71450,8 +72073,9 @@ public ref partial struct OpReportIntersectionKHR : IMemoryInstruction
                 case "hitKind":
                     HitKind = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -71531,8 +72155,9 @@ public ref partial struct OpIgnoreIntersectionNV : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -71612,8 +72237,9 @@ public ref partial struct OpTerminateRayNV : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -71864,8 +72490,9 @@ public ref partial struct OpTraceNV : IMemoryInstruction
                 case "payloadId":
                     PayloadId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -72131,8 +72758,9 @@ public ref partial struct OpTraceMotionNV : IMemoryInstruction
                 case "payloadId":
                     PayloadId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -72398,8 +73026,9 @@ public ref partial struct OpTraceRayMotionNV : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -72546,8 +73175,9 @@ public ref partial struct OpRayQueryGetIntersectionTriangleVertexPositionsKHR : 
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -72649,8 +73279,9 @@ public ref partial struct OpTypeAccelerationStructureKHR : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -72766,8 +73397,9 @@ public ref partial struct OpExecuteCallableNV : IMemoryInstruction
                 case "callableDataId":
                     CallableDataId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -72929,8 +73561,9 @@ public ref partial struct OpTypeCooperativeMatrixNV : IMemoryInstruction
                 case "columns":
                     Columns = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73038,7 +73671,9 @@ public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? Memoryaccess
+    public MemoryAccessMask? Memoryaccess { get; set; }
+
+    public EnumerantParameters MemoryaccessParameters
     {
         get;
         set
@@ -73050,7 +73685,7 @@ public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
     }
 
     public static implicit operator int (OpCooperativeMatrixLoadNV inst) => inst.ResultId;
-    public OpCooperativeMatrixLoadNV(int resultType, int resultId, int pointer, int stride, int columnMajor, ParameterizedFlag<MemoryAccessMask>? memoryaccess)
+    public OpCooperativeMatrixLoadNV(int resultType, int resultId, int pointer, int stride, int columnMajor, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -73058,6 +73693,7 @@ public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
         Stride = stride;
         ColumnMajor = columnMajor;
         Memoryaccess = memoryaccess;
+        MemoryaccessParameters = memoryaccessParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -73070,7 +73706,7 @@ public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadNV, ResultType, ResultId, Pointer, Stride, ColumnMajor, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value.Value, ..Memoryaccess.Value.Span])];
+        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadNV, ResultType, ResultId, Pointer, Stride, ColumnMajor, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -73104,12 +73740,13 @@ public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
                 case "columnMajor":
                     ColumnMajor = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryaccess":
                     if (o.Words.Length > 0)
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73206,7 +73843,9 @@ public ref partial struct OpCooperativeMatrixStoreNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? Memoryaccess
+    public MemoryAccessMask? Memoryaccess { get; set; }
+
+    public EnumerantParameters MemoryaccessParameters
     {
         get;
         set
@@ -73217,13 +73856,14 @@ public ref partial struct OpCooperativeMatrixStoreNV : IMemoryInstruction
         }
     }
 
-    public OpCooperativeMatrixStoreNV(int pointer, int objectId, int stride, int columnMajor, ParameterizedFlag<MemoryAccessMask>? memoryaccess)
+    public OpCooperativeMatrixStoreNV(int pointer, int objectId, int stride, int columnMajor, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
     {
         Pointer = pointer;
         ObjectId = objectId;
         Stride = stride;
         ColumnMajor = columnMajor;
         Memoryaccess = memoryaccess;
+        MemoryaccessParameters = memoryaccessParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -73236,7 +73876,7 @@ public ref partial struct OpCooperativeMatrixStoreNV : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreNV, Pointer, ObjectId, Stride, ColumnMajor, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value.Value, ..Memoryaccess.Value.Span])];
+        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreNV, Pointer, ObjectId, Stride, ColumnMajor, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -73267,12 +73907,13 @@ public ref partial struct OpCooperativeMatrixStoreNV : IMemoryInstruction
                 case "columnMajor":
                     ColumnMajor = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryaccess":
                     if (o.Words.Length > 0)
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73434,8 +74075,9 @@ public ref partial struct OpCooperativeMatrixMulAddNV : IMemoryInstruction
                 case "c":
                     C = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73567,8 +74209,9 @@ public ref partial struct OpCooperativeMatrixLengthNV : IMemoryInstruction
                 case "type":
                     Type = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73648,8 +74291,9 @@ public ref partial struct OpBeginInvocationInterlockEXT : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73729,8 +74373,9 @@ public ref partial struct OpEndInvocationInterlockEXT : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -73892,8 +74537,9 @@ public ref partial struct OpCooperativeMatrixReduceNV : IMemoryInstruction
                 case "combineFunc":
                     CombineFunc = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -74001,7 +74647,9 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask> MemoryOperand
+    public MemoryAccessMask MemoryOperand { get; set; }
+
+    public EnumerantParameters MemoryOperandParameters
     {
         get;
         set
@@ -74012,7 +74660,9 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<TensorAddressingOperandsMask> TensorAddressingOperands
+    public TensorAddressingOperandsMask TensorAddressingOperands { get; set; }
+
+    public EnumerantParameters TensorAddressingOperandsParameters
     {
         get;
         set
@@ -74024,7 +74674,7 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
     }
 
     public static implicit operator int (OpCooperativeMatrixLoadTensorNV inst) => inst.ResultId;
-    public OpCooperativeMatrixLoadTensorNV(int resultType, int resultId, int pointer, int objectId, int tensorLayout, ParameterizedFlag<MemoryAccessMask> memoryOperand, ParameterizedFlag<TensorAddressingOperandsMask> tensorAddressingOperands)
+    public OpCooperativeMatrixLoadTensorNV(int resultType, int resultId, int pointer, int objectId, int tensorLayout, MemoryAccessMask memoryOperand, EnumerantParameters memoryOperandParameters, TensorAddressingOperandsMask tensorAddressingOperands, EnumerantParameters tensorAddressingOperandsParameters)
     {
         ResultType = resultType;
         ResultId = resultId;
@@ -74032,7 +74682,9 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
         ObjectId = objectId;
         TensorLayout = tensorLayout;
         MemoryOperand = memoryOperand;
+        MemoryOperandParameters = memoryOperandParameters;
         TensorAddressingOperands = tensorAddressingOperands;
+        TensorAddressingOperandsParameters = tensorAddressingOperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -74045,7 +74697,7 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadTensorNV, ResultType, ResultId, Pointer, ObjectId, TensorLayout, ..(Span<int>)[(int)MemoryOperand.Value, ..MemoryOperand.Span], ..(Span<int>)[(int)TensorAddressingOperands.Value, ..TensorAddressingOperands.Span]];
+        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadTensorNV, ResultType, ResultId, Pointer, ObjectId, TensorLayout, (int)MemoryOperand, (int)TensorAddressingOperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -74079,14 +74731,12 @@ public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
                 case "tensorLayout":
                     TensorLayout = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryOperand":
                     MemoryOperand = o.ToEnum<MemoryAccessMask>();
                     break;
-                case "tensorview_idRef0" or "decodefunc_idRef0":
-                    TensorAddressingOperands = o.ToEnum<TensorAddressingOperandsMask>();
-                    break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -74172,7 +74822,9 @@ public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask> MemoryOperand
+    public MemoryAccessMask MemoryOperand { get; set; }
+
+    public EnumerantParameters MemoryOperandParameters
     {
         get;
         set
@@ -74183,7 +74835,9 @@ public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<TensorAddressingOperandsMask> TensorAddressingOperands
+    public TensorAddressingOperandsMask TensorAddressingOperands { get; set; }
+
+    public EnumerantParameters TensorAddressingOperandsParameters
     {
         get;
         set
@@ -74194,13 +74848,15 @@ public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
         }
     }
 
-    public OpCooperativeMatrixStoreTensorNV(int pointer, int objectId, int tensorLayout, ParameterizedFlag<MemoryAccessMask> memoryOperand, ParameterizedFlag<TensorAddressingOperandsMask> tensorAddressingOperands)
+    public OpCooperativeMatrixStoreTensorNV(int pointer, int objectId, int tensorLayout, MemoryAccessMask memoryOperand, EnumerantParameters memoryOperandParameters, TensorAddressingOperandsMask tensorAddressingOperands, EnumerantParameters tensorAddressingOperandsParameters)
     {
         Pointer = pointer;
         ObjectId = objectId;
         TensorLayout = tensorLayout;
         MemoryOperand = memoryOperand;
+        MemoryOperandParameters = memoryOperandParameters;
         TensorAddressingOperands = tensorAddressingOperands;
+        TensorAddressingOperandsParameters = tensorAddressingOperandsParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -74213,7 +74869,7 @@ public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreTensorNV, Pointer, ObjectId, TensorLayout, ..(Span<int>)[(int)MemoryOperand.Value, ..MemoryOperand.Span], ..(Span<int>)[(int)TensorAddressingOperands.Value, ..TensorAddressingOperands.Span]];
+        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreTensorNV, Pointer, ObjectId, TensorLayout, (int)MemoryOperand, (int)TensorAddressingOperands];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -74241,14 +74897,12 @@ public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
                 case "tensorLayout":
                     TensorLayout = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryOperand":
                     MemoryOperand = o.ToEnum<MemoryAccessMask>();
                     break;
-                case "tensorview_idRef0" or "decodefunc_idRef0":
-                    TensorAddressingOperands = o.ToEnum<TensorAddressingOperandsMask>();
-                    break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -74410,8 +75064,9 @@ public ref partial struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -74546,8 +75201,9 @@ public ref partial struct OpTypeTensorLayoutNV : IMemoryInstruction
                 case "clampMode":
                     ClampMode = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -74694,8 +75350,9 @@ public ref partial struct OpTypeTensorViewNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -74815,8 +75472,9 @@ public ref partial struct OpCreateTensorLayoutNV : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -74963,8 +75621,9 @@ public ref partial struct OpTensorLayoutSetDimensionNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -75114,8 +75773,9 @@ public ref partial struct OpTensorLayoutSetStrideNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -75265,8 +75925,9 @@ public ref partial struct OpTensorLayoutSliceNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -75416,8 +76077,9 @@ public ref partial struct OpTensorLayoutSetClampValueNV : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -75534,8 +76196,9 @@ public ref partial struct OpCreateTensorViewNV : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -75682,8 +76345,9 @@ public ref partial struct OpTensorViewSetDimensionNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -75833,8 +76497,9 @@ public ref partial struct OpTensorViewSetStrideNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -75917,8 +76582,9 @@ public ref partial struct OpDemoteToHelperInvocation : IMemoryInstruction
         {
             switch (o.Name)
             {
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -76035,8 +76701,9 @@ public ref partial struct OpIsHelperInvocationEXT : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -76228,8 +76895,9 @@ public ref partial struct OpTensorViewSetClipNV : IMemoryInstruction
                 case "clipColSpan":
                     ClipColSpan = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -76376,8 +77044,9 @@ public ref partial struct OpTensorLayoutSetBlockSizeNV : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -76512,8 +77181,9 @@ public ref partial struct OpCooperativeMatrixTransposeNV : IMemoryInstruction
                 case "matrix":
                     Matrix = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -76645,8 +77315,9 @@ public ref partial struct OpConvertUToImageNV : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -76778,8 +77449,9 @@ public ref partial struct OpConvertUToSamplerNV : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -76911,8 +77583,9 @@ public ref partial struct OpConvertImageToUNV : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77044,8 +77717,9 @@ public ref partial struct OpConvertSamplerToUNV : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77177,8 +77851,9 @@ public ref partial struct OpConvertUToSampledImageNV : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77310,8 +77985,9 @@ public ref partial struct OpConvertSampledImageToUNV : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77412,8 +78088,9 @@ public ref partial struct OpSamplerImageAddressingModeNV : IMemoryInstruction
                 case "bitWidth":
                     BitWidth = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77606,8 +78283,9 @@ public ref partial struct OpRawAccessChainNV : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Rawaccesschainoperands = o.ToEnum<RawAccessChainOperandsMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77754,8 +78432,9 @@ public ref partial struct OpSubgroupShuffleINTEL : IMemoryInstruction
                 case "invocationId":
                     InvocationId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -77917,8 +78596,9 @@ public ref partial struct OpSubgroupShuffleDownINTEL : IMemoryInstruction
                 case "delta":
                     Delta = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78080,8 +78760,9 @@ public ref partial struct OpSubgroupShuffleUpINTEL : IMemoryInstruction
                 case "delta":
                     Delta = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78228,8 +78909,9 @@ public ref partial struct OpSubgroupShuffleXorINTEL : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78361,8 +79043,9 @@ public ref partial struct OpSubgroupBlockReadINTEL : IMemoryInstruction
                 case "ptr":
                     Ptr = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78478,8 +79161,9 @@ public ref partial struct OpSubgroupBlockWriteINTEL : IMemoryInstruction
                 case "data":
                     Data = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78626,8 +79310,9 @@ public ref partial struct OpSubgroupImageBlockReadINTEL : IMemoryInstruction
                 case "coordinate":
                     Coordinate = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78758,8 +79443,9 @@ public ref partial struct OpSubgroupImageBlockWriteINTEL : IMemoryInstruction
                 case "data":
                     Data = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -78936,8 +79622,9 @@ public ref partial struct OpSubgroupImageMediaBlockReadINTEL : IMemoryInstructio
                 case "height":
                     Height = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79098,8 +79785,9 @@ public ref partial struct OpSubgroupImageMediaBlockWriteINTEL : IMemoryInstructi
                 case "data":
                     Data = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79231,8 +79919,9 @@ public ref partial struct OpUCountLeadingZerosINTEL : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79364,8 +80053,9 @@ public ref partial struct OpUCountTrailingZerosINTEL : IMemoryInstruction
                 case "operand":
                     Operand = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79512,8 +80202,9 @@ public ref partial struct OpAbsISubINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79660,8 +80351,9 @@ public ref partial struct OpAbsUSubINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79808,8 +80500,9 @@ public ref partial struct OpIAddSatINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -79956,8 +80649,9 @@ public ref partial struct OpUAddSatINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80104,8 +80798,9 @@ public ref partial struct OpIAverageINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80252,8 +80947,9 @@ public ref partial struct OpUAverageINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80400,8 +81096,9 @@ public ref partial struct OpIAverageRoundedINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80548,8 +81245,9 @@ public ref partial struct OpUAverageRoundedINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80696,8 +81394,9 @@ public ref partial struct OpISubSatINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80844,8 +81543,9 @@ public ref partial struct OpUSubSatINTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -80992,8 +81692,9 @@ public ref partial struct OpIMul32x16INTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -81140,8 +81841,9 @@ public ref partial struct OpUMul32x16INTEL : IMemoryInstruction
                 case "operand2":
                     Operand2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -81273,8 +81975,9 @@ public ref partial struct OpConstantFunctionPointerINTEL : IMemoryInstruction
                 case "function":
                     Function = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -81406,8 +82109,9 @@ public ref partial struct OpFunctionPointerCallINTEL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -81542,8 +82246,9 @@ public ref partial struct OpAsmTargetINTEL : IMemoryInstruction
                 case "asmtarget":
                     Asmtarget = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -81720,8 +82425,9 @@ public ref partial struct OpAsmINTEL : IMemoryInstruction
                 case "constraints":
                     Constraints = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -81868,8 +82574,9 @@ public ref partial struct OpAsmCallINTEL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -82049,8 +82756,9 @@ public ref partial struct OpAtomicFMinEXT : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -82227,8 +82935,9 @@ public ref partial struct OpAtomicFMaxEXT : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -82329,8 +83038,9 @@ public ref partial struct OpAssumeTrueKHR : IMemoryInstruction
                 case "condition":
                     Condition = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -82477,8 +83187,9 @@ public ref partial struct OpExpectKHR : IMemoryInstruction
                 case "expectedValue":
                     ExpectedValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -82609,8 +83320,9 @@ public ref partial struct OpDecorateString : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -82756,8 +83468,9 @@ public ref partial struct OpMemberDecorateString : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<string>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -82904,8 +83617,9 @@ public ref partial struct OpVmeImageINTEL : IMemoryInstruction
                 case "sampler":
                     Sampler = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83022,8 +83736,9 @@ public ref partial struct OpTypeVmeImageINTEL : IMemoryInstruction
                 case "imageType":
                     ImageType = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83125,8 +83840,9 @@ public ref partial struct OpTypeAvcImePayloadINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83228,8 +83944,9 @@ public ref partial struct OpTypeAvcRefPayloadINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83331,8 +84048,9 @@ public ref partial struct OpTypeAvcSicPayloadINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83434,8 +84152,9 @@ public ref partial struct OpTypeAvcMcePayloadINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83537,8 +84256,9 @@ public ref partial struct OpTypeAvcMceResultINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83640,8 +84360,9 @@ public ref partial struct OpTypeAvcImeResultINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83743,8 +84464,9 @@ public ref partial struct OpTypeAvcImeResultSingleReferenceStreamoutINTEL : IMem
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83846,8 +84568,9 @@ public ref partial struct OpTypeAvcImeResultDualReferenceStreamoutINTEL : IMemor
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -83949,8 +84672,9 @@ public ref partial struct OpTypeAvcImeSingleReferenceStreaminINTEL : IMemoryInst
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84052,8 +84776,9 @@ public ref partial struct OpTypeAvcImeDualReferenceStreaminINTEL : IMemoryInstru
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84155,8 +84880,9 @@ public ref partial struct OpTypeAvcRefResultINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84258,8 +84984,9 @@ public ref partial struct OpTypeAvcSicResultINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84406,8 +85133,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterBaseMultiReferencePenal
                 case "qp":
                     Qp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84554,8 +85282,9 @@ public ref partial struct OpSubgroupAvcMceSetInterBaseMultiReferencePenaltyINTEL
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84702,8 +85431,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterShapePenaltyINTEL : IMe
                 case "qp":
                     Qp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84850,8 +85580,9 @@ public ref partial struct OpSubgroupAvcMceSetInterShapePenaltyINTEL : IMemoryIns
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -84998,8 +85729,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterDirectionPenaltyINTEL :
                 case "qp":
                     Qp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85146,8 +85878,9 @@ public ref partial struct OpSubgroupAvcMceSetInterDirectionPenaltyINTEL : IMemor
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85294,8 +86027,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultIntraLumaShapePenaltyINTEL :
                 case "qp":
                     Qp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85442,8 +86176,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultInterMotionVectorCostTableIN
                 case "qp":
                     Qp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85560,8 +86295,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultHighPenaltyCostTableINTEL : 
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85678,8 +86414,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultMediumPenaltyCostTableINTEL 
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85796,8 +86533,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultLowPenaltyCostTableINTEL : I
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -85974,8 +86712,9 @@ public ref partial struct OpSubgroupAvcMceSetMotionVectorCostFunctionINTEL : IMe
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86122,8 +86861,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultIntraLumaModePenaltyINTEL : 
                 case "qp":
                     Qp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86240,8 +86980,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultNonDcLumaIntraPenaltyINTEL :
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86358,8 +87099,9 @@ public ref partial struct OpSubgroupAvcMceGetDefaultIntraChromaModeBasePenaltyIN
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86491,8 +87233,9 @@ public ref partial struct OpSubgroupAvcMceSetAcOnlyHaarINTEL : IMemoryInstructio
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86639,8 +87382,9 @@ public ref partial struct OpSubgroupAvcMceSetSourceInterlacedFieldPolarityINTEL 
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86787,8 +87531,9 @@ public ref partial struct OpSubgroupAvcMceSetSingleReferenceInterlacedFieldPolar
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -86950,8 +87695,9 @@ public ref partial struct OpSubgroupAvcMceSetDualReferenceInterlacedFieldPolarit
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87083,8 +87829,9 @@ public ref partial struct OpSubgroupAvcMceConvertToImePayloadINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87216,8 +87963,9 @@ public ref partial struct OpSubgroupAvcMceConvertToImeResultINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87349,8 +88097,9 @@ public ref partial struct OpSubgroupAvcMceConvertToRefPayloadINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87482,8 +88231,9 @@ public ref partial struct OpSubgroupAvcMceConvertToRefResultINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87615,8 +88365,9 @@ public ref partial struct OpSubgroupAvcMceConvertToSicPayloadINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87748,8 +88499,9 @@ public ref partial struct OpSubgroupAvcMceConvertToSicResultINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -87881,8 +88633,9 @@ public ref partial struct OpSubgroupAvcMceGetMotionVectorsINTEL : IMemoryInstruc
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88014,8 +88767,9 @@ public ref partial struct OpSubgroupAvcMceGetInterDistortionsINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88147,8 +88901,9 @@ public ref partial struct OpSubgroupAvcMceGetBestInterDistortionsINTEL : IMemory
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88280,8 +89035,9 @@ public ref partial struct OpSubgroupAvcMceGetInterMajorShapeINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88413,8 +89169,9 @@ public ref partial struct OpSubgroupAvcMceGetInterMinorShapeINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88546,8 +89303,9 @@ public ref partial struct OpSubgroupAvcMceGetInterDirectionsINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88679,8 +89437,9 @@ public ref partial struct OpSubgroupAvcMceGetInterMotionVectorCountINTEL : IMemo
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88812,8 +89571,9 @@ public ref partial struct OpSubgroupAvcMceGetInterReferenceIdsINTEL : IMemoryIns
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -88975,8 +89735,9 @@ public ref partial struct OpSubgroupAvcMceGetInterReferenceInterlacedFieldPolari
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -89138,8 +89899,9 @@ public ref partial struct OpSubgroupAvcImeInitializeINTEL : IMemoryInstruction
                 case "sADAdjustment":
                     SADAdjustment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -89301,8 +90063,9 @@ public ref partial struct OpSubgroupAvcImeSetSingleReferenceINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -89479,8 +90242,9 @@ public ref partial struct OpSubgroupAvcImeSetDualReferenceINTEL : IMemoryInstruc
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -89627,8 +90391,9 @@ public ref partial struct OpSubgroupAvcImeRefWindowSizeINTEL : IMemoryInstructio
                 case "dualRef":
                     DualRef = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -89805,8 +90570,9 @@ public ref partial struct OpSubgroupAvcImeAdjustRefOffsetINTEL : IMemoryInstruct
                 case "imageSize":
                     ImageSize = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -89938,8 +90704,9 @@ public ref partial struct OpSubgroupAvcImeConvertToMcePayloadINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -90086,8 +90853,9 @@ public ref partial struct OpSubgroupAvcImeSetMaxMotionVectorCountINTEL : IMemory
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -90219,8 +90987,9 @@ public ref partial struct OpSubgroupAvcImeSetUnidirectionalMixDisableINTEL : IMe
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -90367,8 +91136,9 @@ public ref partial struct OpSubgroupAvcImeSetEarlySearchTerminationThresholdINTE
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -90515,8 +91285,9 @@ public ref partial struct OpSubgroupAvcImeSetWeightedSadINTEL : IMemoryInstructi
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -90678,8 +91449,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceINTEL : IMe
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -90856,8 +91628,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceINTEL : IMemo
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -91034,8 +91807,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminINT
                 case "streaminComponents":
                     StreaminComponents = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -91227,8 +92001,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminINTEL
                 case "streaminComponents":
                     StreaminComponents = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -91390,8 +92165,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreamoutIN
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -91568,8 +92344,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceStreamoutINTE
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -91746,8 +92523,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithSingleReferenceStreaminout
                 case "streaminComponents":
                     StreaminComponents = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -91939,8 +92717,9 @@ public ref partial struct OpSubgroupAvcImeEvaluateWithDualReferenceStreaminoutIN
                 case "streaminComponents":
                     StreaminComponents = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92072,8 +92851,9 @@ public ref partial struct OpSubgroupAvcImeConvertToMceResultINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92205,8 +92985,9 @@ public ref partial struct OpSubgroupAvcImeGetSingleReferenceStreaminINTEL : IMem
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92338,8 +93119,9 @@ public ref partial struct OpSubgroupAvcImeGetDualReferenceStreaminINTEL : IMemor
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92471,8 +93253,9 @@ public ref partial struct OpSubgroupAvcImeStripSingleReferenceStreamoutINTEL : I
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92604,8 +93387,9 @@ public ref partial struct OpSubgroupAvcImeStripDualReferenceStreamoutINTEL : IMe
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92752,8 +93536,9 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeM
                 case "majorShape":
                     MajorShape = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -92900,8 +93685,9 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeD
                 case "majorShape":
                     MajorShape = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93048,8 +93834,9 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutSingleReferenceMajorShapeR
                 case "majorShape":
                     MajorShape = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93211,8 +93998,9 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeMot
                 case "direction":
                     Direction = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93374,8 +94162,9 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeDis
                 case "direction":
                     Direction = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93537,8 +94326,9 @@ public ref partial struct OpSubgroupAvcImeGetStreamoutDualReferenceMajorShapeRef
                 case "direction":
                     Direction = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93685,8 +94475,9 @@ public ref partial struct OpSubgroupAvcImeGetBorderReachedINTEL : IMemoryInstruc
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93818,8 +94609,9 @@ public ref partial struct OpSubgroupAvcImeGetTruncatedSearchIndicationINTEL : IM
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -93951,8 +94743,9 @@ public ref partial struct OpSubgroupAvcImeGetUnidirectionalEarlySearchTerminatio
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -94084,8 +94877,9 @@ public ref partial struct OpSubgroupAvcImeGetWeightingPatternMinimumMotionVector
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -94217,8 +95011,9 @@ public ref partial struct OpSubgroupAvcImeGetWeightingPatternMinimumDistortionIN
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -94440,8 +95235,9 @@ public ref partial struct OpSubgroupAvcFmeInitializeINTEL : IMemoryInstruction
                 case "sadAdjustment":
                     SadAdjustment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -94678,8 +95474,9 @@ public ref partial struct OpSubgroupAvcBmeInitializeINTEL : IMemoryInstruction
                 case "sadAdjustment":
                     SadAdjustment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -94811,8 +95608,9 @@ public ref partial struct OpSubgroupAvcRefConvertToMcePayloadINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -94944,8 +95742,9 @@ public ref partial struct OpSubgroupAvcRefSetBidirectionalMixDisableINTEL : IMem
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -95077,8 +95876,9 @@ public ref partial struct OpSubgroupAvcRefSetBilinearFilterEnableINTEL : IMemory
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -95240,8 +96040,9 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithSingleReferenceINTEL : IMe
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -95418,8 +96219,9 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithDualReferenceINTEL : IMemo
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -95581,8 +96383,9 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithMultiReferenceINTEL : IMem
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -95759,8 +96562,9 @@ public ref partial struct OpSubgroupAvcRefEvaluateWithMultiReferenceInterlacedIN
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -95892,8 +96696,9 @@ public ref partial struct OpSubgroupAvcRefConvertToMceResultINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -96025,8 +96830,9 @@ public ref partial struct OpSubgroupAvcSicInitializeINTEL : IMemoryInstruction
                 case "srcCoord":
                     SrcCoord = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -96233,8 +97039,9 @@ public ref partial struct OpSubgroupAvcSicConfigureSkcINTEL : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -96471,8 +97278,9 @@ public ref partial struct OpSubgroupAvcSicConfigureIpeLumaINTEL : IMemoryInstruc
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -96754,8 +97562,9 @@ public ref partial struct OpSubgroupAvcSicConfigureIpeLumaChromaINTEL : IMemoryI
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -96902,8 +97711,9 @@ public ref partial struct OpSubgroupAvcSicGetMotionVectorMaskINTEL : IMemoryInst
                 case "direction":
                     Direction = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97035,8 +97845,9 @@ public ref partial struct OpSubgroupAvcSicConvertToMcePayloadINTEL : IMemoryInst
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97183,8 +97994,9 @@ public ref partial struct OpSubgroupAvcSicSetIntraLumaShapePenaltyINTEL : IMemor
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97361,8 +98173,9 @@ public ref partial struct OpSubgroupAvcSicSetIntraLumaModeCostFunctionINTEL : IM
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97509,8 +98322,9 @@ public ref partial struct OpSubgroupAvcSicSetIntraChromaModeCostFunctionINTEL : 
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97642,8 +98456,9 @@ public ref partial struct OpSubgroupAvcSicSetBilinearFilterEnableINTEL : IMemory
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97790,8 +98605,9 @@ public ref partial struct OpSubgroupAvcSicSetSkcForwardTransformEnableINTEL : IM
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -97938,8 +98754,9 @@ public ref partial struct OpSubgroupAvcSicSetBlockBasedRawSkipSadINTEL : IMemory
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -98086,8 +98903,9 @@ public ref partial struct OpSubgroupAvcSicEvaluateIpeINTEL : IMemoryInstruction
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -98249,8 +99067,9 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithSingleReferenceINTEL : IMe
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -98427,8 +99246,9 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithDualReferenceINTEL : IMemo
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -98590,8 +99410,9 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithMultiReferenceINTEL : IMem
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -98768,8 +99589,9 @@ public ref partial struct OpSubgroupAvcSicEvaluateWithMultiReferenceInterlacedIN
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -98901,8 +99723,9 @@ public ref partial struct OpSubgroupAvcSicConvertToMceResultINTEL : IMemoryInstr
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99034,8 +99857,9 @@ public ref partial struct OpSubgroupAvcSicGetIpeLumaShapeINTEL : IMemoryInstruct
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99167,8 +99991,9 @@ public ref partial struct OpSubgroupAvcSicGetBestIpeLumaDistortionINTEL : IMemor
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99300,8 +100125,9 @@ public ref partial struct OpSubgroupAvcSicGetBestIpeChromaDistortionINTEL : IMem
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99433,8 +100259,9 @@ public ref partial struct OpSubgroupAvcSicGetPackedIpeLumaModesINTEL : IMemoryIn
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99566,8 +100393,9 @@ public ref partial struct OpSubgroupAvcSicGetIpeChromaModeINTEL : IMemoryInstruc
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99699,8 +100527,9 @@ public ref partial struct OpSubgroupAvcSicGetPackedSkcLumaCountThresholdINTEL : 
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99832,8 +100661,9 @@ public ref partial struct OpSubgroupAvcSicGetPackedSkcLumaSumThresholdINTEL : IM
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -99965,8 +100795,9 @@ public ref partial struct OpSubgroupAvcSicGetInterRawSadsINTEL : IMemoryInstruct
                 case "payload":
                     Payload = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -100098,8 +100929,9 @@ public ref partial struct OpVariableLengthArrayINTEL : IMemoryInstruction
                 case "lenght":
                     Lenght = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -100216,8 +101048,9 @@ public ref partial struct OpSaveMemoryINTEL : IMemoryInstruction
                 case "resultId":
                     ResultId = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -100318,8 +101151,9 @@ public ref partial struct OpRestoreMemoryINTEL : IMemoryInstruction
                 case "ptr":
                     Ptr = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -100541,8 +101375,9 @@ public ref partial struct OpArbitraryFloatSinCosPiINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -100749,8 +101584,9 @@ public ref partial struct OpArbitraryFloatCastINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -100957,8 +101793,9 @@ public ref partial struct OpArbitraryFloatCastFromIntINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -101150,8 +101987,9 @@ public ref partial struct OpArbitraryFloatCastToIntINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -101388,8 +102226,9 @@ public ref partial struct OpArbitraryFloatAddINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -101626,8 +102465,9 @@ public ref partial struct OpArbitraryFloatSubINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -101864,8 +102704,9 @@ public ref partial struct OpArbitraryFloatMulINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -102102,8 +102943,9 @@ public ref partial struct OpArbitraryFloatDivINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -102280,8 +103122,9 @@ public ref partial struct OpArbitraryFloatGTINTEL : IMemoryInstruction
                 case "m2":
                     M2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -102458,8 +103301,9 @@ public ref partial struct OpArbitraryFloatGEINTEL : IMemoryInstruction
                 case "m2":
                     M2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -102636,8 +103480,9 @@ public ref partial struct OpArbitraryFloatLTINTEL : IMemoryInstruction
                 case "m2":
                     M2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -102814,8 +103659,9 @@ public ref partial struct OpArbitraryFloatLEINTEL : IMemoryInstruction
                 case "m2":
                     M2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -102992,8 +103838,9 @@ public ref partial struct OpArbitraryFloatEQINTEL : IMemoryInstruction
                 case "m2":
                     M2 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -103200,8 +104047,9 @@ public ref partial struct OpArbitraryFloatRecipINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -103408,8 +104256,9 @@ public ref partial struct OpArbitraryFloatRSqrtINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -103616,8 +104465,9 @@ public ref partial struct OpArbitraryFloatCbrtINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -103854,8 +104704,9 @@ public ref partial struct OpArbitraryFloatHypotINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -104062,8 +104913,9 @@ public ref partial struct OpArbitraryFloatSqrtINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -104270,8 +105122,9 @@ public ref partial struct OpArbitraryFloatLogINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -104478,8 +105331,9 @@ public ref partial struct OpArbitraryFloatLog2INTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -104686,8 +105540,9 @@ public ref partial struct OpArbitraryFloatLog10INTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -104894,8 +105749,9 @@ public ref partial struct OpArbitraryFloatLog1pINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -105102,8 +105958,9 @@ public ref partial struct OpArbitraryFloatExpINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -105310,8 +106167,9 @@ public ref partial struct OpArbitraryFloatExp2INTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -105518,8 +106376,9 @@ public ref partial struct OpArbitraryFloatExp10INTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -105726,8 +106585,9 @@ public ref partial struct OpArbitraryFloatExpm1INTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -105934,8 +106794,9 @@ public ref partial struct OpArbitraryFloatSinINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -106142,8 +107003,9 @@ public ref partial struct OpArbitraryFloatCosINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -106350,8 +107212,9 @@ public ref partial struct OpArbitraryFloatSinCosINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -106558,8 +107421,9 @@ public ref partial struct OpArbitraryFloatSinPiINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -106766,8 +107630,9 @@ public ref partial struct OpArbitraryFloatCosPiINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -106974,8 +107839,9 @@ public ref partial struct OpArbitraryFloatASinINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -107182,8 +108048,9 @@ public ref partial struct OpArbitraryFloatASinPiINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -107390,8 +108257,9 @@ public ref partial struct OpArbitraryFloatACosINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -107598,8 +108466,9 @@ public ref partial struct OpArbitraryFloatACosPiINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -107806,8 +108675,9 @@ public ref partial struct OpArbitraryFloatATanINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -108014,8 +108884,9 @@ public ref partial struct OpArbitraryFloatATanPiINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -108252,8 +109123,9 @@ public ref partial struct OpArbitraryFloatATan2INTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -108490,8 +109362,9 @@ public ref partial struct OpArbitraryFloatPowINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -108728,8 +109601,9 @@ public ref partial struct OpArbitraryFloatPowRINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -108951,8 +109825,9 @@ public ref partial struct OpArbitraryFloatPowNINTEL : IMemoryInstruction
                 case "roundingAccuracy":
                     RoundingAccuracy = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -109053,8 +109928,9 @@ public ref partial struct OpLoopControlINTEL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -109175,8 +110051,9 @@ public ref partial struct OpAliasDomainDeclINTEL : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Name = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -109309,8 +110186,9 @@ public ref partial struct OpAliasScopeDeclINTEL : IMemoryInstruction
                     if (o.Words.Length > 0)
                         Name = o.ToLiteral<int?>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -109427,8 +110305,9 @@ public ref partial struct OpAliasScopeListDeclINTEL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -109653,8 +110532,9 @@ public ref partial struct OpFixedSqrtINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -109876,8 +110756,9 @@ public ref partial struct OpFixedRecipINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -110099,8 +110980,9 @@ public ref partial struct OpFixedRsqrtINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -110322,8 +111204,9 @@ public ref partial struct OpFixedSinINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -110545,8 +111428,9 @@ public ref partial struct OpFixedCosINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -110768,8 +111652,9 @@ public ref partial struct OpFixedSinCosINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -110991,8 +111876,9 @@ public ref partial struct OpFixedSinPiINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -111214,8 +112100,9 @@ public ref partial struct OpFixedCosPiINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -111437,8 +112324,9 @@ public ref partial struct OpFixedSinCosPiINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -111660,8 +112548,9 @@ public ref partial struct OpFixedLogINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -111883,8 +112772,9 @@ public ref partial struct OpFixedExpINTEL : IMemoryInstruction
                 case "o":
                     O = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112016,8 +112906,9 @@ public ref partial struct OpPtrCastToCrossWorkgroupINTEL : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112149,8 +113040,9 @@ public ref partial struct OpCrossWorkgroupCastToPtrINTEL : IMemoryInstruction
                 case "pointer":
                     Pointer = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112297,8 +113189,9 @@ public ref partial struct OpReadPipeBlockingINTEL : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112445,8 +113338,9 @@ public ref partial struct OpWritePipeBlockingINTEL : IMemoryInstruction
                 case "packetAlignment":
                     PacketAlignment = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112593,8 +113487,9 @@ public ref partial struct OpFPGARegINTEL : IMemoryInstruction
                 case "input":
                     Input = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112726,8 +113621,9 @@ public ref partial struct OpRayQueryGetRayTMinKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -112859,8 +113755,9 @@ public ref partial struct OpRayQueryGetRayFlagsKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113007,8 +113904,9 @@ public ref partial struct OpRayQueryGetIntersectionTKHR : IMemoryInstruction
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113155,8 +114053,9 @@ public ref partial struct OpRayQueryGetIntersectionInstanceCustomIndexKHR : IMem
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113303,8 +114202,9 @@ public ref partial struct OpRayQueryGetIntersectionInstanceIdKHR : IMemoryInstru
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113451,8 +114351,9 @@ public ref partial struct OpRayQueryGetIntersectionInstanceShaderBindingTableRec
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113599,8 +114500,9 @@ public ref partial struct OpRayQueryGetIntersectionGeometryIndexKHR : IMemoryIns
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113747,8 +114649,9 @@ public ref partial struct OpRayQueryGetIntersectionPrimitiveIndexKHR : IMemoryIn
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -113895,8 +114798,9 @@ public ref partial struct OpRayQueryGetIntersectionBarycentricsKHR : IMemoryInst
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114043,8 +114947,9 @@ public ref partial struct OpRayQueryGetIntersectionFrontFaceKHR : IMemoryInstruc
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114176,8 +115081,9 @@ public ref partial struct OpRayQueryGetIntersectionCandidateAABBOpaqueKHR : IMem
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114324,8 +115230,9 @@ public ref partial struct OpRayQueryGetIntersectionObjectRayDirectionKHR : IMemo
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114472,8 +115379,9 @@ public ref partial struct OpRayQueryGetIntersectionObjectRayOriginKHR : IMemoryI
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114605,8 +115513,9 @@ public ref partial struct OpRayQueryGetWorldRayDirectionKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114738,8 +115647,9 @@ public ref partial struct OpRayQueryGetWorldRayOriginKHR : IMemoryInstruction
                 case "rayQuery":
                     RayQuery = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -114886,8 +115796,9 @@ public ref partial struct OpRayQueryGetIntersectionObjectToWorldKHR : IMemoryIns
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -115034,8 +115945,9 @@ public ref partial struct OpRayQueryGetIntersectionWorldToObjectKHR : IMemoryIns
                 case "intersection":
                     Intersection = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -115212,8 +116124,9 @@ public ref partial struct OpAtomicFAddEXT : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -115330,8 +116243,9 @@ public ref partial struct OpTypeBufferSurfaceINTEL : IMemoryInstruction
                 case "accessQualifier":
                     AccessQualifier = o.ToEnum<AccessQualifier>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -115432,8 +116346,9 @@ public ref partial struct OpTypeStructContinuedINTEL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -115537,8 +116452,9 @@ public ref partial struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -115642,8 +116558,9 @@ public ref partial struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruc
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -115778,8 +116695,9 @@ public ref partial struct OpCompositeConstructContinuedINTEL : IMemoryInstructio
                 case "values":
                     Values = o.ToLiteralArray<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
 
@@ -115914,8 +116832,9 @@ public ref partial struct OpConvertFToBF16INTEL : IMemoryInstruction
                 case "floatValue":
                     FloatValue = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116047,8 +116966,9 @@ public ref partial struct OpConvertBF16ToFINTEL : IMemoryInstruction
                 case "bFloat16Value":
                     BFloat16Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116179,8 +117099,9 @@ public ref partial struct OpControlBarrierArriveINTEL : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116311,8 +117232,9 @@ public ref partial struct OpControlBarrierWaitINTEL : IMemoryInstruction
                 case "semantics":
                     Semantics = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116444,8 +117366,9 @@ public ref partial struct OpArithmeticFenceEXT : IMemoryInstruction
                 case "target":
                     Target = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116520,7 +117443,9 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
         }
     }
 
-    public ParameterizedFlag<MemoryAccessMask>? Memoryaccess
+    public MemoryAccessMask? Memoryaccess { get; set; }
+
+    public EnumerantParameters MemoryaccessParameters
     {
         get;
         set
@@ -116531,11 +117456,12 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
         }
     }
 
-    public OpSubgroupBlockPrefetchINTEL(int ptr, int numBytes, ParameterizedFlag<MemoryAccessMask>? memoryaccess)
+    public OpSubgroupBlockPrefetchINTEL(int ptr, int numBytes, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
     {
         Ptr = ptr;
         NumBytes = numBytes;
         Memoryaccess = memoryaccess;
+        MemoryaccessParameters = memoryaccessParameters;
         UpdateInstructionMemory();
         opData = ref Unsafe.NullRef<OpData>();
     }
@@ -116548,7 +117474,7 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpSubgroupBlockPrefetchINTEL, Ptr, NumBytes, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value.Value, ..Memoryaccess.Value.Span])];
+        Span<int> instruction = [(int)Op.OpSubgroupBlockPrefetchINTEL, Ptr, NumBytes, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -116573,12 +117499,13 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
                 case "numBytes":
                     NumBytes = o.ToLiteral<int>();
                     break;
-                case "aligned_literalinteger0" or "makepointeravailable_idscope0" or "makepointervisible_idscope0" or "aliasscopeintelmask_idRef0" or "noaliasintelmask_idRef0":
+                case "memoryaccess":
                     if (o.Words.Length > 0)
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116740,8 +117667,9 @@ public ref partial struct OpGroupIMulKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -116903,8 +117831,9 @@ public ref partial struct OpGroupFMulKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -117066,8 +117995,9 @@ public ref partial struct OpGroupBitwiseAndKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -117229,8 +118159,9 @@ public ref partial struct OpGroupBitwiseOrKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -117392,8 +118323,9 @@ public ref partial struct OpGroupBitwiseXorKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -117555,8 +118487,9 @@ public ref partial struct OpGroupLogicalAndKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -117718,8 +118651,9 @@ public ref partial struct OpGroupLogicalOrKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -117881,8 +118815,9 @@ public ref partial struct OpGroupLogicalXorKHR : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118059,8 +118994,9 @@ public ref partial struct OpMaskedGatherINTEL : IMemoryInstruction
                 case "fillEmpty":
                     FillEmpty = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118206,8 +119142,9 @@ public ref partial struct OpMaskedScatterINTEL : IMemoryInstruction
                 case "mask":
                     Mask = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118354,8 +119291,9 @@ public ref partial struct GLSLRound : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118502,8 +119440,9 @@ public ref partial struct GLSLRoundEven : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118650,8 +119589,9 @@ public ref partial struct GLSLTrunc : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118798,8 +119738,9 @@ public ref partial struct GLSLFAbs : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -118946,8 +119887,9 @@ public ref partial struct GLSLSAbs : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119094,8 +120036,9 @@ public ref partial struct GLSLFSign : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119242,8 +120185,9 @@ public ref partial struct GLSLSSign : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119390,8 +120334,9 @@ public ref partial struct GLSLFloor : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119538,8 +120483,9 @@ public ref partial struct GLSLCeil : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119686,8 +120632,9 @@ public ref partial struct GLSLFract : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119834,8 +120781,9 @@ public ref partial struct GLSLRadians : IMemoryInstruction
                 case "degrees":
                     Degrees = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -119982,8 +120930,9 @@ public ref partial struct GLSLDegrees : IMemoryInstruction
                 case "radians":
                     Radians = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -120130,8 +121079,9 @@ public ref partial struct GLSLSin : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -120278,8 +121228,9 @@ public ref partial struct GLSLCos : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -120426,8 +121377,9 @@ public ref partial struct GLSLTan : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -120574,8 +121526,9 @@ public ref partial struct GLSLAsin : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -120722,8 +121675,9 @@ public ref partial struct GLSLAcos : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -120870,8 +121824,9 @@ public ref partial struct GLSLAtan : IMemoryInstruction
                 case "y_over_x":
                     Y_over_x = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121018,8 +121973,9 @@ public ref partial struct GLSLSinh : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121166,8 +122122,9 @@ public ref partial struct GLSLCosh : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121314,8 +122271,9 @@ public ref partial struct GLSLTanh : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121462,8 +122420,9 @@ public ref partial struct GLSLAsinh : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121610,8 +122569,9 @@ public ref partial struct GLSLAcosh : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121758,8 +122718,9 @@ public ref partial struct GLSLAtanh : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -121921,8 +122882,9 @@ public ref partial struct GLSLAtan2 : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122084,8 +123046,9 @@ public ref partial struct GLSLPow : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122232,8 +123195,9 @@ public ref partial struct GLSLExp : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122380,8 +123344,9 @@ public ref partial struct GLSLLog : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122528,8 +123493,9 @@ public ref partial struct GLSLExp2 : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122676,8 +123642,9 @@ public ref partial struct GLSLLog2 : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122824,8 +123791,9 @@ public ref partial struct GLSLSqrt : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -122972,8 +123940,9 @@ public ref partial struct GLSLInverseSqrt : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -123120,8 +124089,9 @@ public ref partial struct GLSLDeterminant : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -123268,8 +124238,9 @@ public ref partial struct GLSLMatrixInverse : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -123431,8 +124402,9 @@ public ref partial struct GLSLModf : IMemoryInstruction
                 case "i":
                     I = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -123579,8 +124551,9 @@ public ref partial struct GLSLModfStruct : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -123742,8 +124715,9 @@ public ref partial struct GLSLFMin : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -123905,8 +124879,9 @@ public ref partial struct GLSLUMin : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -124068,8 +125043,9 @@ public ref partial struct GLSLSMin : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -124231,8 +125207,9 @@ public ref partial struct GLSLFMax : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -124394,8 +125371,9 @@ public ref partial struct GLSLUMax : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -124557,8 +125535,9 @@ public ref partial struct GLSLSMax : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -124735,8 +125714,9 @@ public ref partial struct GLSLFClamp : IMemoryInstruction
                 case "maxVal":
                     MaxVal = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -124913,8 +125893,9 @@ public ref partial struct GLSLUClamp : IMemoryInstruction
                 case "maxVal":
                     MaxVal = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -125091,8 +126072,9 @@ public ref partial struct GLSLSClamp : IMemoryInstruction
                 case "maxVal":
                     MaxVal = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -125269,8 +126251,9 @@ public ref partial struct GLSLFMix : IMemoryInstruction
                 case "a":
                     A = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -125447,8 +126430,9 @@ public ref partial struct GLSLIMix : IMemoryInstruction
                 case "a":
                     A = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -125610,8 +126594,9 @@ public ref partial struct GLSLStep : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -125788,8 +126773,9 @@ public ref partial struct GLSLSmoothStep : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -125966,8 +126952,9 @@ public ref partial struct GLSLFma : IMemoryInstruction
                 case "c":
                     C = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -126129,8 +127116,9 @@ public ref partial struct GLSLFrexp : IMemoryInstruction
                 case "exp":
                     Exp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -126277,8 +127265,9 @@ public ref partial struct GLSLFrexpStruct : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -126440,8 +127429,9 @@ public ref partial struct GLSLLdexp : IMemoryInstruction
                 case "exp":
                     Exp = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -126588,8 +127578,9 @@ public ref partial struct GLSLPackSnorm4x8 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -126736,8 +127727,9 @@ public ref partial struct GLSLPackUnorm4x8 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -126884,8 +127876,9 @@ public ref partial struct GLSLPackSnorm2x16 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127032,8 +128025,9 @@ public ref partial struct GLSLPackUnorm2x16 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127180,8 +128174,9 @@ public ref partial struct GLSLPackHalf2x16 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127328,8 +128323,9 @@ public ref partial struct GLSLPackDouble2x32 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127476,8 +128472,9 @@ public ref partial struct GLSLUnpackSnorm2x16 : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127624,8 +128621,9 @@ public ref partial struct GLSLUnpackUnorm2x16 : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127772,8 +128770,9 @@ public ref partial struct GLSLUnpackHalf2x16 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -127920,8 +128919,9 @@ public ref partial struct GLSLUnpackSnorm4x8 : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -128068,8 +129068,9 @@ public ref partial struct GLSLUnpackUnorm4x8 : IMemoryInstruction
                 case "p":
                     P = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -128216,8 +129217,9 @@ public ref partial struct GLSLUnpackDouble2x32 : IMemoryInstruction
                 case "v":
                     V = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -128364,8 +129366,9 @@ public ref partial struct GLSLLength : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -128527,8 +129530,9 @@ public ref partial struct GLSLDistance : IMemoryInstruction
                 case "p1":
                     P1 = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -128690,8 +129694,9 @@ public ref partial struct GLSLCross : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -128838,8 +129843,9 @@ public ref partial struct GLSLNormalize : IMemoryInstruction
                 case "x":
                     X = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129016,8 +130022,9 @@ public ref partial struct GLSLFaceForward : IMemoryInstruction
                 case "nref":
                     Nref = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129179,8 +130186,9 @@ public ref partial struct GLSLReflect : IMemoryInstruction
                 case "n":
                     N = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129357,8 +130365,9 @@ public ref partial struct GLSLRefract : IMemoryInstruction
                 case "eta":
                     Eta = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129505,8 +130514,9 @@ public ref partial struct GLSLFindILsb : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129653,8 +130663,9 @@ public ref partial struct GLSLFindSMsb : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129801,8 +130812,9 @@ public ref partial struct GLSLFindUMsb : IMemoryInstruction
                 case "value":
                     Value = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -129949,8 +130961,9 @@ public ref partial struct GLSLInterpolateAtCentroid : IMemoryInstruction
                 case "interpolant":
                     Interpolant = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -130112,8 +131125,9 @@ public ref partial struct GLSLInterpolateAtSample : IMemoryInstruction
                 case "sample":
                     Sample = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -130275,8 +131289,9 @@ public ref partial struct GLSLInterpolateAtOffset : IMemoryInstruction
                 case "offset":
                     Offset = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -130438,8 +131453,9 @@ public ref partial struct GLSLNMin : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -130601,8 +131617,9 @@ public ref partial struct GLSLNMax : IMemoryInstruction
                 case "y":
                     Y = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }
@@ -130779,8 +131796,9 @@ public ref partial struct GLSLNClamp : IMemoryInstruction
                 case "maxVal":
                     MaxVal = o.ToLiteral<int>();
                     break;
+                // We ignore unrecognized operands
                 default:
-                    throw new InvalidOperationException($"Operand unknown: {o.Name} for Op OpName");
+                    break;
             }
         }
     }

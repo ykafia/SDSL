@@ -62,7 +62,7 @@ public partial class SPVGenerator
         {
             if(op.OpName.EndsWith("DecorateString"))
                 operands.Add(new(){ Kind = "LiteralString", Name = "value" });
-            else if(op.OpName == "DecorateId")
+            else if(op.OpName.EndsWith("DecorateId"))
                 operands.Add(new(){ Kind = "IdRef", Name = "value" });
             bool computable = true;
             for (int i = 0; i < operands.Count; i++)

@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using System.Collections.Concurrent;
+using System.Dynamic;
 using System.Text;
 using System.Text.Json;
 
@@ -62,7 +63,7 @@ public partial class SPVGenerator : IIncrementalGenerator
     }
     public static string GenerateInstructionStructsSingle(InstructionData instruction, SpirvGrammar grammar)
     {
-        if (instruction.OpName.StartsWith("OpCopyMemory"))
+        if (instruction.OpName.StartsWith("OpCopyMemory") || instruction.OpName.StartsWith("OpCooperativeMatrixLoad") || instruction.OpName.StartsWith("OpCooperativeMatrixStore"))
             return "";
         var structBuilder = StringBuilderPool.Get();
         // var extinst = Instructions?.AsList().First(x => x.OpName == "OpExtInst") ?? throw new Exception("Could not find OpExtInst instruction");
@@ -128,6 +129,11 @@ public partial class SPVGenerator : IIncrementalGenerator
                 (string typename, string fieldName, string operandName) = ToTypeFieldAndOperandName(op);
                 if (typename.StartsWith("LiteralArray"))
                     structBuilder.Append($"public {typename} {fieldName} {{ get; set {{ field.Assign(value); if(InstructionMemory is not null) UpdateInstructionMemory(); }} }}");
+                else if(op.IsParameterized)
+                    structBuilder.Append(@$"
+                        public {typename} {fieldName} {{ get; set; }}
+                        public EnumerantParameters {fieldName}Parameters {{ get; set {{ field = value; if(InstructionMemory is not null) UpdateInstructionMemory(); }} }}"
+                    );
                 else if (instruction.OpName.EndsWith("Constant") && typename.StartsWith("LiteralValue"))
                     structBuilder.Append($"public T {fieldName} {{ get; set {{ field = value; if(InstructionMemory is not null) UpdateInstructionMemory(); }} }}");
                 else
@@ -179,8 +185,9 @@ public partial class SPVGenerator : IIncrementalGenerator
                 {{
                     switch(o.Name)
                     {{
-                        {string.Join("\n", (instruction.Operands?.AsList() ?? []).Select(x => ToAssignSwitchCase(x, grammar)))}
-                        default: throw new InvalidOperationException($""Operand unknown: {{o.Name}} for Op {nameof(instruction.OpName)}"");
+                        {ToAssignSwitchCases(instruction.Operands?.AsList() ?? [], grammar)}
+                        // We ignore unrecognized operands
+                        default: break;
                     }}
                 }}
 
@@ -209,9 +216,21 @@ public partial class SPVGenerator : IIncrementalGenerator
     public static string ToAssignSimple(OperandData operand)
     {
         (string typename, string fieldName, string operandName) = ToTypeFieldAndOperandName(operand);
-        return $"{fieldName} = {operandName};";
+        return$"{fieldName} = {operandName};{(operand.IsParameterized ? $"\n{fieldName}Parameters = {operandName}Parameters;" : "")}";
     }
-    public static string ToAssignSwitchCase(OperandData operand, SpirvGrammar grammar)
+    public static string ToAssignSwitchCases(List<OperandData> operands, SpirvGrammar grammar)
+    {
+        var sb = StringBuilderPool.Get();
+        foreach(var operand in operands)
+        {
+            sb.AppendLine(ToAssignSwitchCase(operand));
+            if(operand.IsParameterized)
+                break;
+        }
+        StringBuilderPool.Return(sb);
+        return sb.ToString();
+    }
+    public static string ToAssignSwitchCase(OperandData operand)
     {
         var sb = StringBuilderPool.Get();
 
@@ -221,75 +240,62 @@ public partial class SPVGenerator : IIncrementalGenerator
         var isArray = typename.StartsWith("LiteralArray");
         var opClass = operand.Class;
         var isParameterized = operand.IsParameterized;
-        sb.Append("case ");
-        if(isParameterized && grammar.OperandKinds?.AsDictionary() is Dictionary<string, OpKind> dict
-            && dict.TryGetValue(operand.Kind, out var opkind) && opkind.Enumerants?.AsList() is List<Enumerant> enumerants && enumerants.Any(x => x.Parameters?.AsList() is List<EnumerantParameter> { Count: > 0 }))
-        {
-            sb.Append(
-                string.Join(
-                    " or ", 
-                    enumerants
-                    .Where(e => e.Parameters?.AsList() is List<EnumerantParameter> { Count: > 0 })
-                    .SelectMany(enumerant => enumerant.Parameters?.AsList())
-                    .Select(param => $"\"{param.Name}\"")
-                    .Distinct()
-                )
-            );
-        }
-        else
-            sb.Append($"\"{operandName}\"");
-        sb.AppendLine(":");
-        
+        sb.Append($"case \"{operandName}\" : ");
         if (isOptional)
             sb.AppendLine("if (o.Words.Length > 0)");
-        
+
         if (isArray)
             sb.AppendLine($"{fieldName} = o.To{typename}();");
         else if (opClass == "BitEnum")
             sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}Mask>();");
-        else if (opClass == "ValueEnum")
+        else if (opClass == "ValueEnum" && isParameterized)
+            sb.AppendLine(@$"
+                {{
+                    {fieldName} = o.ToEnum<{operand.Kind}>();
+                    // Process the other parameters ??
+                }}");
+        else if(opClass == "ValueEnum" && !isParameterized)
             sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}>();");
         else
             sb.AppendLine($"{fieldName} = o.ToLiteral<{typename}>();");
+
         sb.Append("break;");
+        
         StringBuilderPool.Return(sb);
         return sb.ToString();
     }
     public static string ToFunctionParameters(OperandData operand)
     {
         (string typename, string fieldName, string operandName) = ToTypeFieldAndOperandName(operand);
-        return $"{typename} {operandName}";
+        
+        return operand.IsParameterized ? $"{typename} {operandName}, EnumerantParameters {operandName}Parameters" : $"{typename} {operandName}";
     }
     
     public static (string TypeName, string FieldName, string OperandName) ToTypeFieldAndOperandName(OperandData operand)
     {
-        string typename = (operand.Kind, operand.Quantifier, operand.Class, operand.IsParameterized) switch
+        string typename = (operand.Kind, operand.Quantifier, operand.Class) switch
         {
-            (string s, null or "", "ValueEnum", true) => $"ParameterizedFlag<{s}>",
-            (string s, null or "", "BitEnum", true) => $"ParameterizedFlag<{s}Mask>",
-            (string s, null or "", _, false) when s.StartsWith("Id") => "int",
-            ("LiteralInteger" or "LiteralExtInstInteger" or "LiteralSpecConstantOpInteger", null or "", _, false) => "int",
-            ("LiteralFloat", null or "", _, false) => "float",
-            ("LiteralString", null or "", _, false) => "string",
-            (string s, null or "", _, false) when s.StartsWith("Pair") => "(int, int)",
-            (string s, null or "", "BitEnum", false) when !s.StartsWith("Literal") => $"{s}Mask",
-            (string s, null or "", "ValueEnum", false) when !s.StartsWith("Literal") => s,
-            (string s, "?", "ValueEnum", true) => $"ParameterizedFlag<{s}>?",
-            (string s, "?", "BitEnum", true) => $"ParameterizedFlag<{s}Mask>?",
-            (string s, "?", _, false) when s.StartsWith("Id") => "int?",
-            ("LiteralInteger" or "LiteralExtInstInteger" or "LiteralSpecConstantOpInteger", "?", _, false) => "int?",
-            ("LiteralFloat", "?", _, false) => "float?",
-            ("LiteralString", "?", _, false) => "string?",
-            (string s, "?", "BitEnum", false) when !s.StartsWith("Literal") => $"{s}Mask?",
-            (string s, "?", "ValueEnum", false) when !s.StartsWith("Literal") => $"{s}?",
-            (string s, "*", _, false) when s.StartsWith("Id") => $"LiteralArray<int>",
-            ("LiteralInteger" or "LiteralExtInstInteger" or "LiteralSpecConstantOpInteger", "*", _, false) => "LiteralArray<int>",
-            ("LiteralFloat", "*", _, false) => "LiteralArray<float>",
+            (string s, null or "", _) when s.StartsWith("Id") => "int",
+            ("LiteralInteger" or "LiteralExtInstInteger" or "LiteralSpecConstantOpInteger", null or "", _) => "int",
+            ("LiteralFloat", null or "", _) => "float",
+            ("LiteralString", null or "", _) => "string",
+            (string s, null or "", _) when s.StartsWith("Pair") => "(int, int)",
+            (string s, null or "", "BitEnum") when !s.StartsWith("Literal") => $"{s}Mask",
+            (string s, null or "", "ValueEnum") when !s.StartsWith("Literal") => s,
+            (string s, "?", _) when s.StartsWith("Id") => "int?",
+            ("LiteralInteger" or "LiteralExtInstInteger" or "LiteralSpecConstantOpInteger", "?", _) => "int?",
+            ("LiteralFloat", "?", _) => "float?",
+            ("LiteralString", "?", _) => "string?",
+            (string s, "?", "BitEnum") when !s.StartsWith("Literal") => $"{s}Mask?",
+            (string s, "?", "ValueEnum") when !s.StartsWith("Literal") => $"{s}?",
+            (string s, "*", _) when s.StartsWith("Id") => $"LiteralArray<int>",
+            ("LiteralInteger" or "LiteralExtInstInteger" or "LiteralSpecConstantOpInteger", "*", _) => "LiteralArray<int>",
+            ("LiteralFloat", "*", _) => "LiteralArray<float>",
             // ("LiteralString", "*", _) => "LiteralArray<string>",
-            (string s, "*", _, false) when s.StartsWith("Pair") => $"LiteralArray<(int, int)>",
-            (string s, "*", "BitEnum", false) when !s.StartsWith("Literal") => $"LiteralArray<{s}Mask>",
-            (string s, "*", "ValueEnum", false) when !s.StartsWith("Literal") => $"LiteralArray<{s}>",
-            ("LiteralContextDependentNumber", null or "", _, false) => "LiteralValue<T>",
+            (string s, "*", _) when s.StartsWith("Pair") => $"LiteralArray<(int, int)>",
+            (string s, "*", "BitEnum") when !s.StartsWith("Literal") => $"LiteralArray<{s}Mask>",
+            (string s, "*", "ValueEnum") when !s.StartsWith("Literal") => $"LiteralArray<{s}>",
+            ("LiteralContextDependentNumber", null or "", _) => "LiteralValue<T>",
             _ => throw new NotImplementedException($"Could not generate C# type for '{operand.Kind}{operand.Quantifier}'")
         };
 
@@ -320,17 +326,15 @@ public partial class SPVGenerator : IIncrementalGenerator
     static string ToSpreadOperator(OperandData operand)
     {
         (string typename, string fieldName, string operandName) = ToTypeFieldAndOperandName(operand);
-        return (operand.Class, operand.Quantifier, operand.IsParameterized) switch
+        return (operand.Class, operand.Quantifier) switch
         {
-            (string s, null or "", false) when s.Contains("Id") => $"{fieldName}",
-            (string s, "?", false) when s.Contains("Id") => $".. ({fieldName} is null ? (Span<int>)[] : [{fieldName}.Value])",
-            (string s, null or "", false) when s.Contains("Enum") => $"(int){fieldName}",
-            (string s, null or "", true) when s.Contains("Enum") => $".. (Span<int>)[(int){fieldName}.Value, .. {fieldName}.Span]",
-            (string s, "?", false) when s.Contains("Enum") => $".. ({fieldName} is null ? (Span<int>)[] : [(int){fieldName}.Value])",
-            (string s, "?", true) when s.Contains("Enum") => $".. ({fieldName} is null ? (Span<int>)[] : [(int){fieldName}.Value.Value, .. {fieldName}.Value.Span])",
-            (string, "*", false) => $".. {fieldName}.Words",
-            (string, "?", false) => $".. ({fieldName} is null ? (Span<int>)[] : {fieldName}.AsDisposableLiteralValue().Words)",
-            (_, "?", false) => $".. ({fieldName} is null ? (Span<int>)[] : {fieldName}.AsDisposableLiteralValue().Words)",
+            (string s, null or "") when s.Contains("Id") => $"{fieldName}",
+            (string s, "?") when s.Contains("Id") => $".. ({fieldName} is null ? (Span<int>)[] : [{fieldName}.Value])",
+            (string s, null or "") when s.Contains("Enum") => $"(int){fieldName}",
+            (string s, "?") when s.Contains("Enum") => $".. ({fieldName} is null ? (Span<int>)[] : [(int){fieldName}.Value])",
+            (string, "*") => $".. {fieldName}.Words",
+            (string, "?") => $".. ({fieldName} is null ? (Span<int>)[] : {fieldName}.AsDisposableLiteralValue().Words)",
+            (_, "?") => $".. ({fieldName} is null ? (Span<int>)[] : {fieldName}.AsDisposableLiteralValue().Words)",
             _ => $".. {fieldName}.AsDisposableLiteralValue().Words"
         };
     }

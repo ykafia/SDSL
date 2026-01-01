@@ -83,8 +83,8 @@ public partial class SPVGenerator
                                 param.Name = param.Name switch
                                 {
                                     string s when s.Any(char.IsPunctuation) => LowerFirst(string.Join("", s.Where(char.IsLetterOrDigit))),
-                                    null or "" => $"{enumerant.Name.ToLowerInvariant()}_{KindToVariableName(param.Kind)}{j}",
-                                    _ => $"{enumerant.Name.ToLowerInvariant()}Parameter{j}"
+                                    null or "" => $"{KindToVariableName(param.Kind)}{j}",
+                                    _ => $"parameter{j}"
                                 };
                                 param.CSType = param.Kind switch
                                 {

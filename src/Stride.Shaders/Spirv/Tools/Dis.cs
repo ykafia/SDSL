@@ -229,7 +229,7 @@ public static partial class Spv
 
         }
 
-        private DisWriter AppendPairIdRefLiteralIntegers(SpvOperand operand)
+        private readonly DisWriter AppendPairIdRefLiteralIntegers(SpvOperand operand)
         {
             var count = operand.Quantifier switch
             {

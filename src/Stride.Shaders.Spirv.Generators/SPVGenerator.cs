@@ -38,6 +38,7 @@ public partial class SPVGenerator : IIncrementalGenerator
         CreateParameterizedFuncs(context, grammarData);
         CreateInfo(context, grammarData);
         CreateSDSLOp(context, grammarData);
+        GenerateEnumerantParameters(context, grammarData);
         GenerateStructs(context, grammarData);
         CreateSpecification(context, grammarData);
 
