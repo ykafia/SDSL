@@ -70,7 +70,7 @@ public ref partial struct EnumerantParameters
         return T.Create(Words.Span);
     }
 
-    public void Dispose()
+    public readonly void Dispose()
     {
         Words.Dispose();
     }
