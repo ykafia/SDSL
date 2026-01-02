@@ -69,6 +69,11 @@ public ref partial struct EnumerantParameters
     {
         return T.Create(Words.Span);
     }
+
+    public void Dispose()
+    {
+        Words.Dispose();
+    }
 }
 
 // public ref struct OpMyInstruction

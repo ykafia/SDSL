@@ -98,7 +98,7 @@ public ref struct OpDataEnumerator
         return logOp switch
         {
             { Parameters: OperandParameters { Count: > 0 } } when pid == -1 =>
-                new(logOp.Name, logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 1), wid),
+                new(logOp.Name, logOp.Kind ?? OperandKind.None, logOp.Quantifier ?? OperandQuantifier.One, Operands.Slice(wid, 1), wid, true),
             { Parameters: OperandParameters { Count: > 0 } p } when p.ContainsKey(new(logOp.Kind ?? OperandKind.None, Operands[startOperand])) && pid < p[new(logOp.Kind ?? OperandKind.None, Operands[startOperand])].Length =>
             p[new(logOp.Kind ?? OperandKind.None, Operands[startOperand])][pid] switch
             {

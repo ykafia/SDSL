@@ -938,6 +938,10 @@ public ref partial struct OpSDSLImportShader : IMemoryInstruction
     }
 
     public static implicit operator OpSDSLImportShader(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSDSLImportFunction : IMemoryInstruction
@@ -1555,7 +1559,10 @@ public ref partial struct OpVariableSDSL : IMemoryInstruction
                     break;
                 case "methodInitializer":
                     if (o.Words.Length > 0)
+                    {
                         MethodInitializer = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -1851,6 +1858,10 @@ public ref partial struct OpTypeFunctionSDSL : IMemoryInstruction
     }
 
     public static implicit operator OpTypeFunctionSDSL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSDSLFunctionInfo : IMemoryInstruction
@@ -2402,6 +2413,10 @@ public ref partial struct OpSDSLMixin : IMemoryInstruction
     }
 
     public static implicit operator OpSDSLMixin(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSDSLMixinCompose : IMemoryInstruction
@@ -2538,6 +2553,10 @@ public ref partial struct OpSDSLMixinCompose : IMemoryInstruction
     }
 
     public static implicit operator OpSDSLMixinCompose(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSDSLMixinComposeArray : IMemoryInstruction
@@ -2674,6 +2693,10 @@ public ref partial struct OpSDSLMixinComposeArray : IMemoryInstruction
     }
 
     public static implicit operator OpSDSLMixinComposeArray(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSDSLGenericParameter : IMemoryInstruction
@@ -3984,11 +4007,17 @@ public ref partial struct OpSource : IMemoryInstruction
                     break;
                 case "file":
                     if (o.Words.Length > 0)
+                    {
                         File = o.ToLiteral<int?>();
+                    }
+
                     break;
                 case "source":
                     if (o.Words.Length > 0)
+                    {
                         Source = o.ToLiteral<string?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -4993,6 +5022,10 @@ public ref partial struct OpExtInst : IMemoryInstruction
     }
 
     public static implicit operator OpExtInst(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpMemoryModel : IMemoryInstruction
@@ -5262,6 +5295,10 @@ public ref partial struct OpEntryPoint : IMemoryInstruction
     }
 
     public static implicit operator OpEntryPoint(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpExecutionMode : IMemoryInstruction
@@ -5373,11 +5410,8 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
                     EntryPoint = o.ToLiteral<int>();
                     break;
                 case "mode":
-                {
                     Mode = o.ToEnum<ExecutionMode>();
-                // Process the other parameters ??
-                }
-
+                    ModeParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -5387,6 +5421,10 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
     }
 
     public static implicit operator OpExecutionMode(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ModeParameters.Dispose();
+    }
 }
 
 public ref partial struct OpCapability : IMemoryInstruction
@@ -5957,7 +5995,10 @@ public ref partial struct OpTypeFloat : IMemoryInstruction
                     break;
                 case "floatingPointEncoding":
                     if (o.Words.Length > 0)
+                    {
                         FloatingPointEncoding = o.ToEnum<FPEncoding>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -6450,7 +6491,10 @@ public ref partial struct OpTypeImage : IMemoryInstruction
                     break;
                 case "accessqualifier":
                     if (o.Words.Length > 0)
+                    {
                         Accessqualifier = o.ToEnum<AccessQualifier>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -7058,6 +7102,10 @@ public ref partial struct OpTypeStruct : IMemoryInstruction
     }
 
     public static implicit operator OpTypeStruct(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTypeOpaque : IMemoryInstruction
@@ -7448,6 +7496,10 @@ public ref partial struct OpTypeFunction : IMemoryInstruction
     }
 
     public static implicit operator OpTypeFunction(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTypeEvent : IMemoryInstruction
@@ -8610,6 +8662,10 @@ public ref partial struct OpConstantComposite : IMemoryInstruction
     }
 
     public static implicit operator OpConstantComposite(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpConstantSampler : IMemoryInstruction
@@ -9402,6 +9458,10 @@ public ref partial struct OpSpecConstantComposite : IMemoryInstruction
     }
 
     public static implicit operator OpSpecConstantComposite(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSpecConstantOp : IMemoryInstruction
@@ -10038,6 +10098,10 @@ public ref partial struct OpFunctionCall : IMemoryInstruction
     }
 
     public static implicit operator OpFunctionCall(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpVariable : IMemoryInstruction
@@ -10178,7 +10242,10 @@ public ref partial struct OpVariable : IMemoryInstruction
                     break;
                 case "initializer":
                     if (o.Words.Length > 0)
+                    {
                         Initializer = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -10495,7 +10562,12 @@ public ref partial struct OpLoad : IMemoryInstruction
                     break;
                 case "memoryaccess":
                     if (o.Words.Length > 0)
+                    {
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -10505,6 +10577,10 @@ public ref partial struct OpLoad : IMemoryInstruction
     }
 
     public static implicit operator OpLoad(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        MemoryaccessParameters.Dispose();
+    }
 }
 
 public ref partial struct OpStore : IMemoryInstruction
@@ -10632,7 +10708,12 @@ public ref partial struct OpStore : IMemoryInstruction
                     break;
                 case "memoryaccess":
                     if (o.Words.Length > 0)
+                    {
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -10642,6 +10723,10 @@ public ref partial struct OpStore : IMemoryInstruction
     }
 
     public static implicit operator OpStore(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        MemoryaccessParameters.Dispose();
+    }
 }
 
 public ref partial struct OpAccessChain : IMemoryInstruction
@@ -10794,6 +10879,10 @@ public ref partial struct OpAccessChain : IMemoryInstruction
     }
 
     public static implicit operator OpAccessChain(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpInBoundsAccessChain : IMemoryInstruction
@@ -10946,6 +11035,10 @@ public ref partial struct OpInBoundsAccessChain : IMemoryInstruction
     }
 
     public static implicit operator OpInBoundsAccessChain(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpPtrAccessChain : IMemoryInstruction
@@ -11113,6 +11206,10 @@ public ref partial struct OpPtrAccessChain : IMemoryInstruction
     }
 
     public static implicit operator OpPtrAccessChain(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpArrayLength : IMemoryInstruction
@@ -11563,6 +11660,10 @@ public ref partial struct OpInBoundsPtrAccessChain : IMemoryInstruction
     }
 
     public static implicit operator OpInBoundsPtrAccessChain(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpDecorate : IMemoryInstruction
@@ -11674,11 +11775,8 @@ public ref partial struct OpDecorate : IMemoryInstruction
                     Target = o.ToLiteral<int>();
                     break;
                 case "decoration":
-                {
                     Decoration = o.ToEnum<Decoration>();
-                // Process the other parameters ??
-                }
-
+                    DecorationParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -11688,6 +11786,10 @@ public ref partial struct OpDecorate : IMemoryInstruction
     }
 
     public static implicit operator OpDecorate(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        DecorationParameters.Dispose();
+    }
 }
 
 public ref partial struct OpMemberDecorate : IMemoryInstruction
@@ -11814,11 +11916,8 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
                     Member = o.ToLiteral<int>();
                     break;
                 case "decoration":
-                {
                     Decoration = o.ToEnum<Decoration>();
-                // Process the other parameters ??
-                }
-
+                    DecorationParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -11828,6 +11927,10 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
     }
 
     public static implicit operator OpMemberDecorate(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        DecorationParameters.Dispose();
+    }
 }
 
 public ref partial struct OpDecorationGroup : IMemoryInstruction
@@ -12053,6 +12156,10 @@ public ref partial struct OpGroupDecorate : IMemoryInstruction
     }
 
     public static implicit operator OpGroupDecorate(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpGroupMemberDecorate : IMemoryInstruction
@@ -12174,6 +12281,10 @@ public ref partial struct OpGroupMemberDecorate : IMemoryInstruction
     }
 
     public static implicit operator OpGroupMemberDecorate(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpVectorExtractDynamic : IMemoryInstruction
@@ -12654,6 +12765,10 @@ public ref partial struct OpVectorShuffle : IMemoryInstruction
     }
 
     public static implicit operator OpVectorShuffle(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCompositeConstruct : IMemoryInstruction
@@ -12791,6 +12906,10 @@ public ref partial struct OpCompositeConstruct : IMemoryInstruction
     }
 
     public static implicit operator OpCompositeConstruct(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCompositeExtract : IMemoryInstruction
@@ -12943,6 +13062,10 @@ public ref partial struct OpCompositeExtract : IMemoryInstruction
     }
 
     public static implicit operator OpCompositeExtract(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCompositeInsert : IMemoryInstruction
@@ -13110,6 +13233,10 @@ public ref partial struct OpCompositeInsert : IMemoryInstruction
     }
 
     public static implicit operator OpCompositeInsert(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCopyObject : IMemoryInstruction
@@ -13685,7 +13812,12 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -13695,6 +13827,10 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
@@ -13853,6 +13989,8 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -13862,6 +14000,10 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
@@ -14035,7 +14177,12 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14045,6 +14192,10 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
@@ -14218,6 +14369,8 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14227,6 +14380,10 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
@@ -14385,7 +14542,12 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14395,6 +14557,10 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleProjImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
@@ -14553,6 +14719,8 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14562,6 +14730,10 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleProjExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
@@ -14735,7 +14907,12 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14745,6 +14922,10 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleProjDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
@@ -14918,6 +15099,8 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14927,6 +15110,10 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleProjDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageFetch : IMemoryInstruction
@@ -15085,7 +15272,12 @@ public ref partial struct OpImageFetch : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15095,6 +15287,10 @@ public ref partial struct OpImageFetch : IMemoryInstruction
     }
 
     public static implicit operator OpImageFetch(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageGather : IMemoryInstruction
@@ -15268,7 +15464,12 @@ public ref partial struct OpImageGather : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15278,6 +15479,10 @@ public ref partial struct OpImageGather : IMemoryInstruction
     }
 
     public static implicit operator OpImageGather(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageDrefGather : IMemoryInstruction
@@ -15451,7 +15656,12 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15461,6 +15671,10 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
     }
 
     public static implicit operator OpImageDrefGather(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageRead : IMemoryInstruction
@@ -15619,7 +15833,12 @@ public ref partial struct OpImageRead : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15629,6 +15848,10 @@ public ref partial struct OpImageRead : IMemoryInstruction
     }
 
     public static implicit operator OpImageRead(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageWrite : IMemoryInstruction
@@ -15771,7 +15994,12 @@ public ref partial struct OpImageWrite : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15781,6 +16009,10 @@ public ref partial struct OpImageWrite : IMemoryInstruction
     }
 
     public static implicit operator OpImageWrite(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImage : IMemoryInstruction
@@ -35207,6 +35439,10 @@ public ref partial struct OpPhi : IMemoryInstruction
     }
 
     public static implicit operator OpPhi(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpLoopMerge : IMemoryInstruction
@@ -35334,6 +35570,8 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
                     break;
                 case "loopcontrol":
                     Loopcontrol = o.ToEnum<LoopControlMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        LoopcontrolParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -35343,6 +35581,10 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
     }
 
     public static implicit operator OpLoopMerge(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        LoopcontrolParameters.Dispose();
+    }
 }
 
 public ref partial struct OpSelectionMerge : IMemoryInstruction
@@ -35819,6 +36061,10 @@ public ref partial struct OpBranchConditional : IMemoryInstruction
     }
 
     public static implicit operator OpBranchConditional(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSwitch : IMemoryInstruction
@@ -35955,6 +36201,10 @@ public ref partial struct OpSwitch : IMemoryInstruction
     }
 
     public static implicit operator OpSwitch(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpKill : IMemoryInstruction
@@ -41728,6 +41978,10 @@ public ref partial struct OpEnqueueKernel : IMemoryInstruction
     }
 
     public static implicit operator OpEnqueueKernel(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpGetKernelNDrangeSubGroupCount : IMemoryInstruction
@@ -43625,7 +43879,12 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -43635,6 +43894,10 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSparseSampleImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
@@ -43793,6 +44056,8 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -43802,6 +44067,10 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
     }
 
     public static implicit operator OpImageSparseSampleExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstruction
@@ -43975,7 +44244,12 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -43985,6 +44259,10 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
     }
 
     public static implicit operator OpImageSparseSampleDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstruction
@@ -44158,6 +44436,8 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44167,6 +44447,10 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
     }
 
     public static implicit operator OpImageSparseSampleDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstruction
@@ -44325,7 +44609,12 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44335,6 +44624,10 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
     }
 
     public static implicit operator OpImageSparseSampleProjImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstruction
@@ -44493,6 +44786,8 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44502,6 +44797,10 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
     }
 
     public static implicit operator OpImageSparseSampleProjExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstruction
@@ -44675,7 +44974,12 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44685,6 +44989,10 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
     }
 
     public static implicit operator OpImageSparseSampleProjDrefImplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstruction
@@ -44858,6 +45166,8 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
                     break;
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
+                    if (data.Memory.Span.Length > o.Offset + 1)
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44867,6 +45177,10 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
     }
 
     public static implicit operator OpImageSparseSampleProjDrefExplicitLod(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseFetch : IMemoryInstruction
@@ -45025,7 +45339,12 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -45035,6 +45354,10 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
     }
 
     public static implicit operator OpImageSparseFetch(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseGather : IMemoryInstruction
@@ -45208,7 +45531,12 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -45218,6 +45546,10 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
     }
 
     public static implicit operator OpImageSparseGather(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
@@ -45391,7 +45723,12 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -45401,6 +45738,10 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
     }
 
     public static implicit operator OpImageSparseDrefGather(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpImageSparseTexelsResident : IMemoryInstruction
@@ -46072,7 +46413,12 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -46082,6 +46428,10 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
     }
 
     public static implicit operator OpImageSparseRead(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpSizeOf : IMemoryInstruction
@@ -47576,11 +47926,8 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
                     EntryPoint = o.ToLiteral<int>();
                     break;
                 case "mode":
-                {
                     Mode = o.ToEnum<ExecutionMode>();
-                // Process the other parameters ??
-                }
-
+                    ModeParameters = new(data.Memory.Span[(o.Offset + 1)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -47590,6 +47937,10 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
     }
 
     public static implicit operator OpExecutionModeId(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ModeParameters.Dispose();
+    }
 }
 
 public ref partial struct OpDecorateId : IMemoryInstruction
@@ -50367,7 +50718,10 @@ public ref partial struct OpGroupNonUniformIAdd : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -50547,7 +50901,10 @@ public ref partial struct OpGroupNonUniformFAdd : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -50727,7 +51084,10 @@ public ref partial struct OpGroupNonUniformIMul : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -50907,7 +51267,10 @@ public ref partial struct OpGroupNonUniformFMul : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -51087,7 +51450,10 @@ public ref partial struct OpGroupNonUniformSMin : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -51267,7 +51633,10 @@ public ref partial struct OpGroupNonUniformUMin : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -51447,7 +51816,10 @@ public ref partial struct OpGroupNonUniformFMin : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -51627,7 +51999,10 @@ public ref partial struct OpGroupNonUniformSMax : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -51807,7 +52182,10 @@ public ref partial struct OpGroupNonUniformUMax : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -51987,7 +52365,10 @@ public ref partial struct OpGroupNonUniformFMax : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -52167,7 +52548,10 @@ public ref partial struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -52347,7 +52731,10 @@ public ref partial struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -52527,7 +52914,10 @@ public ref partial struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -52707,7 +53097,10 @@ public ref partial struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -52887,7 +53280,10 @@ public ref partial struct OpGroupNonUniformLogicalOr : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -53067,7 +53463,10 @@ public ref partial struct OpGroupNonUniformLogicalXor : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -54126,7 +54525,10 @@ public ref partial struct OpColorAttachmentReadEXT : IMemoryInstruction
                     break;
                 case "sample":
                     if (o.Words.Length > 0)
+                    {
                         Sample = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -54261,7 +54663,10 @@ public ref partial struct OpDepthAttachmentReadEXT : IMemoryInstruction
                     break;
                 case "sample":
                     if (o.Words.Length > 0)
+                    {
                         Sample = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -54396,7 +54801,10 @@ public ref partial struct OpStencilAttachmentReadEXT : IMemoryInstruction
                     break;
                 case "sample":
                     if (o.Words.Length > 0)
+                    {
                         Sample = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -54759,11 +55167,17 @@ public ref partial struct OpUntypedVariableKHR : IMemoryInstruction
                     break;
                 case "dataType":
                     if (o.Words.Length > 0)
+                    {
                         DataType = o.ToLiteral<int?>();
+                    }
+
                     break;
                 case "initializer":
                     if (o.Words.Length > 0)
+                    {
                         Initializer = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -54940,6 +55354,10 @@ public ref partial struct OpUntypedAccessChainKHR : IMemoryInstruction
     }
 
     public static implicit operator OpUntypedAccessChainKHR(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
@@ -55107,6 +55525,10 @@ public ref partial struct OpUntypedInBoundsAccessChainKHR : IMemoryInstruction
     }
 
     public static implicit operator OpUntypedInBoundsAccessChainKHR(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSubgroupBallotKHR : IMemoryInstruction
@@ -55557,6 +55979,10 @@ public ref partial struct OpUntypedPtrAccessChainKHR : IMemoryInstruction
     }
 
     public static implicit operator OpUntypedPtrAccessChainKHR(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstruction
@@ -55739,6 +56165,10 @@ public ref partial struct OpUntypedInBoundsPtrAccessChainKHR : IMemoryInstructio
     }
 
     public static implicit operator OpUntypedInBoundsPtrAccessChainKHR(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpUntypedArrayLengthKHR : IMemoryInstruction
@@ -56051,15 +56481,24 @@ public ref partial struct OpUntypedPrefetchKHR : IMemoryInstruction
                     break;
                 case "rW":
                     if (o.Words.Length > 0)
+                    {
                         RW = o.ToLiteral<int?>();
+                    }
+
                     break;
                 case "locality":
                     if (o.Words.Length > 0)
+                    {
                         Locality = o.ToLiteral<int?>();
+                    }
+
                     break;
                 case "cacheType":
                     if (o.Words.Length > 0)
+                    {
                         CacheType = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -56641,7 +57080,10 @@ public ref partial struct OpGroupNonUniformRotateKHR : IMemoryInstruction
                     break;
                 case "clusterSize":
                     if (o.Words.Length > 0)
+                    {
                         ClusterSize = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -56967,6 +57409,10 @@ public ref partial struct OpExtInstWithForwardRefsKHR : IMemoryInstruction
     }
 
     public static implicit operator OpExtInstWithForwardRefsKHR(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTraceRayKHR : IMemoryInstruction
@@ -57791,7 +58237,10 @@ public ref partial struct OpSDot : IMemoryInstruction
                     break;
                 case "packedVectorFormat":
                     if (o.Words.Length > 0)
+                    {
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -57956,7 +58405,10 @@ public ref partial struct OpUDot : IMemoryInstruction
                     break;
                 case "packedVectorFormat":
                     if (o.Words.Length > 0)
+                    {
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -58121,7 +58573,10 @@ public ref partial struct OpSUDot : IMemoryInstruction
                     break;
                 case "packedVectorFormat":
                     if (o.Words.Length > 0)
+                    {
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -58301,7 +58756,10 @@ public ref partial struct OpSDotAccSat : IMemoryInstruction
                     break;
                 case "packedVectorFormat":
                     if (o.Words.Length > 0)
+                    {
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -58481,7 +58939,10 @@ public ref partial struct OpUDotAccSat : IMemoryInstruction
                     break;
                 case "packedVectorFormat":
                     if (o.Words.Length > 0)
+                    {
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -58661,7 +59122,10 @@ public ref partial struct OpSUDotAccSat : IMemoryInstruction
                     break;
                 case "packedVectorFormat":
                     if (o.Words.Length > 0)
+                    {
                         PackedVectorFormat = o.ToEnum<PackedVectorFormat>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -58852,358 +59316,6 @@ public ref partial struct OpTypeCooperativeMatrixKHR : IMemoryInstruction
     public static implicit operator OpTypeCooperativeMatrixKHR(OpDataIndex odi) => new(odi);
 }
 
-public ref partial struct OpCooperativeMatrixLoadKHR : IMemoryInstruction
-{
-    private ref OpData opData;
-    public ref OpData OpData => ref opData;
-
-    public MemoryOwner<int> InstructionMemory
-    {
-        get
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-                return OpData.Memory;
-            else
-                return field;
-        }
-
-        private set
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-            {
-                OpData.Memory.Dispose();
-                OpData.Memory = value;
-            }
-            else
-                field = value;
-        }
-    }
-
-    public OpCooperativeMatrixLoadKHR()
-    {
-        InstructionMemory = MemoryOwner<int>.Allocate(1);
-        InstructionMemory.Span[0] = (int)Op.OpCooperativeMatrixLoadKHR | (1 << 16);
-    }
-
-    public OpCooperativeMatrixLoadKHR(OpDataIndex index)
-    {
-        InitializeProperties(ref index.Data);
-        opData = ref index.Data;
-    }
-
-    public OpCooperativeMatrixLoadKHR(ref OpData data)
-    {
-        InitializeProperties(ref data);
-        opData = ref data;
-    }
-
-    public int ResultType
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ResultId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int Pointer
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int MemoryLayout
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int? Stride
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public MemoryAccessMask? MemoryOperand { get; set; }
-
-    public EnumerantParameters MemoryOperandParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public static implicit operator int (OpCooperativeMatrixLoadKHR inst) => inst.ResultId;
-    public OpCooperativeMatrixLoadKHR(int resultType, int resultId, int pointer, int memoryLayout, int? stride, MemoryAccessMask? memoryOperand, EnumerantParameters memoryOperandParameters)
-    {
-        ResultType = resultType;
-        ResultId = resultId;
-        Pointer = pointer;
-        MemoryLayout = memoryLayout;
-        Stride = stride;
-        MemoryOperand = memoryOperand;
-        MemoryOperandParameters = memoryOperandParameters;
-        UpdateInstructionMemory();
-        opData = ref Unsafe.NullRef<OpData>();
-    }
-
-    public void Attach(OpDataIndex index)
-    {
-        opData = ref index.Data;
-    }
-
-    public void UpdateInstructionMemory()
-    {
-        InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadKHR, ResultType, ResultId, Pointer, MemoryLayout, ..(Stride is null ? (Span<int>)[] : [Stride.Value]), ..(MemoryOperand is null ? (Span<int>)[] : [(int)MemoryOperand.Value])];
-        instruction[0] |= instruction.Length << 16;
-        if (instruction.Length == InstructionMemory.Length)
-            instruction.CopyTo(InstructionMemory.Span);
-        else
-        {
-            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
-            instruction.CopyTo(tmp.Span);
-            InstructionMemory?.Dispose();
-            InstructionMemory = tmp;
-        }
-    }
-
-    private void InitializeProperties(ref OpData data)
-    {
-        foreach (var o in data)
-        {
-            switch (o.Name)
-            {
-                case "resultType":
-                    ResultType = o.ToLiteral<int>();
-                    break;
-                case "resultId":
-                    ResultId = o.ToLiteral<int>();
-                    break;
-                case "pointer":
-                    Pointer = o.ToLiteral<int>();
-                    break;
-                case "memoryLayout":
-                    MemoryLayout = o.ToLiteral<int>();
-                    break;
-                case "stride":
-                    if (o.Words.Length > 0)
-                        Stride = o.ToLiteral<int?>();
-                    break;
-                case "memoryOperand":
-                    if (o.Words.Length > 0)
-                        MemoryOperand = o.ToEnum<MemoryAccessMask>();
-                    break;
-                // We ignore unrecognized operands
-                default:
-                    break;
-            }
-        }
-    }
-
-    public static implicit operator OpCooperativeMatrixLoadKHR(OpDataIndex odi) => new(odi);
-}
-
-public ref partial struct OpCooperativeMatrixStoreKHR : IMemoryInstruction
-{
-    private ref OpData opData;
-    public ref OpData OpData => ref opData;
-
-    public MemoryOwner<int> InstructionMemory
-    {
-        get
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-                return OpData.Memory;
-            else
-                return field;
-        }
-
-        private set
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-            {
-                OpData.Memory.Dispose();
-                OpData.Memory = value;
-            }
-            else
-                field = value;
-        }
-    }
-
-    public OpCooperativeMatrixStoreKHR()
-    {
-        InstructionMemory = MemoryOwner<int>.Allocate(1);
-        InstructionMemory.Span[0] = (int)Op.OpCooperativeMatrixStoreKHR | (1 << 16);
-    }
-
-    public OpCooperativeMatrixStoreKHR(OpDataIndex index)
-    {
-        InitializeProperties(ref index.Data);
-        opData = ref index.Data;
-    }
-
-    public OpCooperativeMatrixStoreKHR(ref OpData data)
-    {
-        InitializeProperties(ref data);
-        opData = ref data;
-    }
-
-    public int Pointer
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ObjectId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int MemoryLayout
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int? Stride
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public MemoryAccessMask? MemoryOperand { get; set; }
-
-    public EnumerantParameters MemoryOperandParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public OpCooperativeMatrixStoreKHR(int pointer, int objectId, int memoryLayout, int? stride, MemoryAccessMask? memoryOperand, EnumerantParameters memoryOperandParameters)
-    {
-        Pointer = pointer;
-        ObjectId = objectId;
-        MemoryLayout = memoryLayout;
-        Stride = stride;
-        MemoryOperand = memoryOperand;
-        MemoryOperandParameters = memoryOperandParameters;
-        UpdateInstructionMemory();
-        opData = ref Unsafe.NullRef<OpData>();
-    }
-
-    public void Attach(OpDataIndex index)
-    {
-        opData = ref index.Data;
-    }
-
-    public void UpdateInstructionMemory()
-    {
-        InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreKHR, Pointer, ObjectId, MemoryLayout, ..(Stride is null ? (Span<int>)[] : [Stride.Value]), ..(MemoryOperand is null ? (Span<int>)[] : [(int)MemoryOperand.Value])];
-        instruction[0] |= instruction.Length << 16;
-        if (instruction.Length == InstructionMemory.Length)
-            instruction.CopyTo(InstructionMemory.Span);
-        else
-        {
-            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
-            instruction.CopyTo(tmp.Span);
-            InstructionMemory?.Dispose();
-            InstructionMemory = tmp;
-        }
-    }
-
-    private void InitializeProperties(ref OpData data)
-    {
-        foreach (var o in data)
-        {
-            switch (o.Name)
-            {
-                case "pointer":
-                    Pointer = o.ToLiteral<int>();
-                    break;
-                case "objectId":
-                    ObjectId = o.ToLiteral<int>();
-                    break;
-                case "memoryLayout":
-                    MemoryLayout = o.ToLiteral<int>();
-                    break;
-                case "stride":
-                    if (o.Words.Length > 0)
-                        Stride = o.ToLiteral<int?>();
-                    break;
-                case "memoryOperand":
-                    if (o.Words.Length > 0)
-                        MemoryOperand = o.ToEnum<MemoryAccessMask>();
-                    break;
-                // We ignore unrecognized operands
-                default:
-                    break;
-            }
-        }
-    }
-
-    public static implicit operator OpCooperativeMatrixStoreKHR(OpDataIndex odi) => new(odi);
-}
-
 public ref partial struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
 {
     private ref OpData opData;
@@ -59372,7 +59484,10 @@ public ref partial struct OpCooperativeMatrixMulAddKHR : IMemoryInstruction
                     break;
                 case "cooperativeMatrixOperands":
                     if (o.Words.Length > 0)
+                    {
                         CooperativeMatrixOperands = o.ToEnum<CooperativeMatrixOperandsMask>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -70457,11 +70572,17 @@ public ref partial struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
                     break;
                 case "hint":
                     if (o.Words.Length > 0)
+                    {
                         Hint = o.ToLiteral<int?>();
+                    }
+
                     break;
                 case "bits":
                     if (o.Words.Length > 0)
+                    {
                         Bits = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -70881,7 +71002,12 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
                     break;
                 case "imageoperands":
                     if (o.Words.Length > 0)
+                    {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -70891,6 +71017,10 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
     }
 
     public static implicit operator OpImageSampleFootprintNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        ImageoperandsParameters.Dispose();
+    }
 }
 
 public ref partial struct OpCooperativeMatrixConvertNV : IMemoryInstruction
@@ -71164,7 +71294,10 @@ public ref partial struct OpEmitMeshTasksEXT : IMemoryInstruction
                     break;
                 case "payload":
                     if (o.Words.Length > 0)
+                    {
                         Payload = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -73571,356 +73704,6 @@ public ref partial struct OpTypeCooperativeMatrixNV : IMemoryInstruction
     public static implicit operator OpTypeCooperativeMatrixNV(OpDataIndex odi) => new(odi);
 }
 
-public ref partial struct OpCooperativeMatrixLoadNV : IMemoryInstruction
-{
-    private ref OpData opData;
-    public ref OpData OpData => ref opData;
-
-    public MemoryOwner<int> InstructionMemory
-    {
-        get
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-                return OpData.Memory;
-            else
-                return field;
-        }
-
-        private set
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-            {
-                OpData.Memory.Dispose();
-                OpData.Memory = value;
-            }
-            else
-                field = value;
-        }
-    }
-
-    public OpCooperativeMatrixLoadNV()
-    {
-        InstructionMemory = MemoryOwner<int>.Allocate(1);
-        InstructionMemory.Span[0] = (int)Op.OpCooperativeMatrixLoadNV | (1 << 16);
-    }
-
-    public OpCooperativeMatrixLoadNV(OpDataIndex index)
-    {
-        InitializeProperties(ref index.Data);
-        opData = ref index.Data;
-    }
-
-    public OpCooperativeMatrixLoadNV(ref OpData data)
-    {
-        InitializeProperties(ref data);
-        opData = ref data;
-    }
-
-    public int ResultType
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ResultId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int Pointer
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int Stride
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ColumnMajor
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public MemoryAccessMask? Memoryaccess { get; set; }
-
-    public EnumerantParameters MemoryaccessParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public static implicit operator int (OpCooperativeMatrixLoadNV inst) => inst.ResultId;
-    public OpCooperativeMatrixLoadNV(int resultType, int resultId, int pointer, int stride, int columnMajor, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
-    {
-        ResultType = resultType;
-        ResultId = resultId;
-        Pointer = pointer;
-        Stride = stride;
-        ColumnMajor = columnMajor;
-        Memoryaccess = memoryaccess;
-        MemoryaccessParameters = memoryaccessParameters;
-        UpdateInstructionMemory();
-        opData = ref Unsafe.NullRef<OpData>();
-    }
-
-    public void Attach(OpDataIndex index)
-    {
-        opData = ref index.Data;
-    }
-
-    public void UpdateInstructionMemory()
-    {
-        InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadNV, ResultType, ResultId, Pointer, Stride, ColumnMajor, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
-        instruction[0] |= instruction.Length << 16;
-        if (instruction.Length == InstructionMemory.Length)
-            instruction.CopyTo(InstructionMemory.Span);
-        else
-        {
-            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
-            instruction.CopyTo(tmp.Span);
-            InstructionMemory?.Dispose();
-            InstructionMemory = tmp;
-        }
-    }
-
-    private void InitializeProperties(ref OpData data)
-    {
-        foreach (var o in data)
-        {
-            switch (o.Name)
-            {
-                case "resultType":
-                    ResultType = o.ToLiteral<int>();
-                    break;
-                case "resultId":
-                    ResultId = o.ToLiteral<int>();
-                    break;
-                case "pointer":
-                    Pointer = o.ToLiteral<int>();
-                    break;
-                case "stride":
-                    Stride = o.ToLiteral<int>();
-                    break;
-                case "columnMajor":
-                    ColumnMajor = o.ToLiteral<int>();
-                    break;
-                case "memoryaccess":
-                    if (o.Words.Length > 0)
-                        Memoryaccess = o.ToEnum<MemoryAccessMask>();
-                    break;
-                // We ignore unrecognized operands
-                default:
-                    break;
-            }
-        }
-    }
-
-    public static implicit operator OpCooperativeMatrixLoadNV(OpDataIndex odi) => new(odi);
-}
-
-public ref partial struct OpCooperativeMatrixStoreNV : IMemoryInstruction
-{
-    private ref OpData opData;
-    public ref OpData OpData => ref opData;
-
-    public MemoryOwner<int> InstructionMemory
-    {
-        get
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-                return OpData.Memory;
-            else
-                return field;
-        }
-
-        private set
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-            {
-                OpData.Memory.Dispose();
-                OpData.Memory = value;
-            }
-            else
-                field = value;
-        }
-    }
-
-    public OpCooperativeMatrixStoreNV()
-    {
-        InstructionMemory = MemoryOwner<int>.Allocate(1);
-        InstructionMemory.Span[0] = (int)Op.OpCooperativeMatrixStoreNV | (1 << 16);
-    }
-
-    public OpCooperativeMatrixStoreNV(OpDataIndex index)
-    {
-        InitializeProperties(ref index.Data);
-        opData = ref index.Data;
-    }
-
-    public OpCooperativeMatrixStoreNV(ref OpData data)
-    {
-        InitializeProperties(ref data);
-        opData = ref data;
-    }
-
-    public int Pointer
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ObjectId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int Stride
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ColumnMajor
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public MemoryAccessMask? Memoryaccess { get; set; }
-
-    public EnumerantParameters MemoryaccessParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public OpCooperativeMatrixStoreNV(int pointer, int objectId, int stride, int columnMajor, MemoryAccessMask? memoryaccess, EnumerantParameters memoryaccessParameters)
-    {
-        Pointer = pointer;
-        ObjectId = objectId;
-        Stride = stride;
-        ColumnMajor = columnMajor;
-        Memoryaccess = memoryaccess;
-        MemoryaccessParameters = memoryaccessParameters;
-        UpdateInstructionMemory();
-        opData = ref Unsafe.NullRef<OpData>();
-    }
-
-    public void Attach(OpDataIndex index)
-    {
-        opData = ref index.Data;
-    }
-
-    public void UpdateInstructionMemory()
-    {
-        InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreNV, Pointer, ObjectId, Stride, ColumnMajor, ..(Memoryaccess is null ? (Span<int>)[] : [(int)Memoryaccess.Value])];
-        instruction[0] |= instruction.Length << 16;
-        if (instruction.Length == InstructionMemory.Length)
-            instruction.CopyTo(InstructionMemory.Span);
-        else
-        {
-            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
-            instruction.CopyTo(tmp.Span);
-            InstructionMemory?.Dispose();
-            InstructionMemory = tmp;
-        }
-    }
-
-    private void InitializeProperties(ref OpData data)
-    {
-        foreach (var o in data)
-        {
-            switch (o.Name)
-            {
-                case "pointer":
-                    Pointer = o.ToLiteral<int>();
-                    break;
-                case "objectId":
-                    ObjectId = o.ToLiteral<int>();
-                    break;
-                case "stride":
-                    Stride = o.ToLiteral<int>();
-                    break;
-                case "columnMajor":
-                    ColumnMajor = o.ToLiteral<int>();
-                    break;
-                case "memoryaccess":
-                    if (o.Words.Length > 0)
-                        Memoryaccess = o.ToEnum<MemoryAccessMask>();
-                    break;
-                // We ignore unrecognized operands
-                default:
-                    break;
-            }
-        }
-    }
-
-    public static implicit operator OpCooperativeMatrixStoreNV(OpDataIndex odi) => new(odi);
-}
-
 public ref partial struct OpCooperativeMatrixMulAddNV : IMemoryInstruction
 {
     private ref OpData opData;
@@ -74547,369 +74330,6 @@ public ref partial struct OpCooperativeMatrixReduceNV : IMemoryInstruction
     public static implicit operator OpCooperativeMatrixReduceNV(OpDataIndex odi) => new(odi);
 }
 
-public ref partial struct OpCooperativeMatrixLoadTensorNV : IMemoryInstruction
-{
-    private ref OpData opData;
-    public ref OpData OpData => ref opData;
-
-    public MemoryOwner<int> InstructionMemory
-    {
-        get
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-                return OpData.Memory;
-            else
-                return field;
-        }
-
-        private set
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-            {
-                OpData.Memory.Dispose();
-                OpData.Memory = value;
-            }
-            else
-                field = value;
-        }
-    }
-
-    public OpCooperativeMatrixLoadTensorNV()
-    {
-        InstructionMemory = MemoryOwner<int>.Allocate(1);
-        InstructionMemory.Span[0] = (int)Op.OpCooperativeMatrixLoadTensorNV | (1 << 16);
-    }
-
-    public OpCooperativeMatrixLoadTensorNV(OpDataIndex index)
-    {
-        InitializeProperties(ref index.Data);
-        opData = ref index.Data;
-    }
-
-    public OpCooperativeMatrixLoadTensorNV(ref OpData data)
-    {
-        InitializeProperties(ref data);
-        opData = ref data;
-    }
-
-    public int ResultType
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ResultId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int Pointer
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ObjectId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int TensorLayout
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public MemoryAccessMask MemoryOperand { get; set; }
-
-    public EnumerantParameters MemoryOperandParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public TensorAddressingOperandsMask TensorAddressingOperands { get; set; }
-
-    public EnumerantParameters TensorAddressingOperandsParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public static implicit operator int (OpCooperativeMatrixLoadTensorNV inst) => inst.ResultId;
-    public OpCooperativeMatrixLoadTensorNV(int resultType, int resultId, int pointer, int objectId, int tensorLayout, MemoryAccessMask memoryOperand, EnumerantParameters memoryOperandParameters, TensorAddressingOperandsMask tensorAddressingOperands, EnumerantParameters tensorAddressingOperandsParameters)
-    {
-        ResultType = resultType;
-        ResultId = resultId;
-        Pointer = pointer;
-        ObjectId = objectId;
-        TensorLayout = tensorLayout;
-        MemoryOperand = memoryOperand;
-        MemoryOperandParameters = memoryOperandParameters;
-        TensorAddressingOperands = tensorAddressingOperands;
-        TensorAddressingOperandsParameters = tensorAddressingOperandsParameters;
-        UpdateInstructionMemory();
-        opData = ref Unsafe.NullRef<OpData>();
-    }
-
-    public void Attach(OpDataIndex index)
-    {
-        opData = ref index.Data;
-    }
-
-    public void UpdateInstructionMemory()
-    {
-        InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixLoadTensorNV, ResultType, ResultId, Pointer, ObjectId, TensorLayout, (int)MemoryOperand, (int)TensorAddressingOperands];
-        instruction[0] |= instruction.Length << 16;
-        if (instruction.Length == InstructionMemory.Length)
-            instruction.CopyTo(InstructionMemory.Span);
-        else
-        {
-            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
-            instruction.CopyTo(tmp.Span);
-            InstructionMemory?.Dispose();
-            InstructionMemory = tmp;
-        }
-    }
-
-    private void InitializeProperties(ref OpData data)
-    {
-        foreach (var o in data)
-        {
-            switch (o.Name)
-            {
-                case "resultType":
-                    ResultType = o.ToLiteral<int>();
-                    break;
-                case "resultId":
-                    ResultId = o.ToLiteral<int>();
-                    break;
-                case "pointer":
-                    Pointer = o.ToLiteral<int>();
-                    break;
-                case "objectId":
-                    ObjectId = o.ToLiteral<int>();
-                    break;
-                case "tensorLayout":
-                    TensorLayout = o.ToLiteral<int>();
-                    break;
-                case "memoryOperand":
-                    MemoryOperand = o.ToEnum<MemoryAccessMask>();
-                    break;
-                // We ignore unrecognized operands
-                default:
-                    break;
-            }
-        }
-    }
-
-    public static implicit operator OpCooperativeMatrixLoadTensorNV(OpDataIndex odi) => new(odi);
-}
-
-public ref partial struct OpCooperativeMatrixStoreTensorNV : IMemoryInstruction
-{
-    private ref OpData opData;
-    public ref OpData OpData => ref opData;
-
-    public MemoryOwner<int> InstructionMemory
-    {
-        get
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-                return OpData.Memory;
-            else
-                return field;
-        }
-
-        private set
-        {
-            if (!Unsafe.IsNullRef(ref OpData))
-            {
-                OpData.Memory.Dispose();
-                OpData.Memory = value;
-            }
-            else
-                field = value;
-        }
-    }
-
-    public OpCooperativeMatrixStoreTensorNV()
-    {
-        InstructionMemory = MemoryOwner<int>.Allocate(1);
-        InstructionMemory.Span[0] = (int)Op.OpCooperativeMatrixStoreTensorNV | (1 << 16);
-    }
-
-    public OpCooperativeMatrixStoreTensorNV(OpDataIndex index)
-    {
-        InitializeProperties(ref index.Data);
-        opData = ref index.Data;
-    }
-
-    public OpCooperativeMatrixStoreTensorNV(ref OpData data)
-    {
-        InitializeProperties(ref data);
-        opData = ref data;
-    }
-
-    public int Pointer
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int ObjectId
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public int TensorLayout
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public MemoryAccessMask MemoryOperand { get; set; }
-
-    public EnumerantParameters MemoryOperandParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public TensorAddressingOperandsMask TensorAddressingOperands { get; set; }
-
-    public EnumerantParameters TensorAddressingOperandsParameters
-    {
-        get;
-        set
-        {
-            field = value;
-            if (InstructionMemory is not null)
-                UpdateInstructionMemory();
-        }
-    }
-
-    public OpCooperativeMatrixStoreTensorNV(int pointer, int objectId, int tensorLayout, MemoryAccessMask memoryOperand, EnumerantParameters memoryOperandParameters, TensorAddressingOperandsMask tensorAddressingOperands, EnumerantParameters tensorAddressingOperandsParameters)
-    {
-        Pointer = pointer;
-        ObjectId = objectId;
-        TensorLayout = tensorLayout;
-        MemoryOperand = memoryOperand;
-        MemoryOperandParameters = memoryOperandParameters;
-        TensorAddressingOperands = tensorAddressingOperands;
-        TensorAddressingOperandsParameters = tensorAddressingOperandsParameters;
-        UpdateInstructionMemory();
-        opData = ref Unsafe.NullRef<OpData>();
-    }
-
-    public void Attach(OpDataIndex index)
-    {
-        opData = ref index.Data;
-    }
-
-    public void UpdateInstructionMemory()
-    {
-        InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpCooperativeMatrixStoreTensorNV, Pointer, ObjectId, TensorLayout, (int)MemoryOperand, (int)TensorAddressingOperands];
-        instruction[0] |= instruction.Length << 16;
-        if (instruction.Length == InstructionMemory.Length)
-            instruction.CopyTo(InstructionMemory.Span);
-        else
-        {
-            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
-            instruction.CopyTo(tmp.Span);
-            InstructionMemory?.Dispose();
-            InstructionMemory = tmp;
-        }
-    }
-
-    private void InitializeProperties(ref OpData data)
-    {
-        foreach (var o in data)
-        {
-            switch (o.Name)
-            {
-                case "pointer":
-                    Pointer = o.ToLiteral<int>();
-                    break;
-                case "objectId":
-                    ObjectId = o.ToLiteral<int>();
-                    break;
-                case "tensorLayout":
-                    TensorLayout = o.ToLiteral<int>();
-                    break;
-                case "memoryOperand":
-                    MemoryOperand = o.ToEnum<MemoryAccessMask>();
-                    break;
-                // We ignore unrecognized operands
-                default:
-                    break;
-            }
-        }
-    }
-
-    public static implicit operator OpCooperativeMatrixStoreTensorNV(OpDataIndex odi) => new(odi);
-}
-
 public ref partial struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
 {
     private ref OpData opData;
@@ -75075,6 +74495,10 @@ public ref partial struct OpCooperativeMatrixPerElementOpNV : IMemoryInstruction
     }
 
     public static implicit operator OpCooperativeMatrixPerElementOpNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTypeTensorLayoutNV : IMemoryInstruction
@@ -75361,6 +74785,10 @@ public ref partial struct OpTypeTensorViewNV : IMemoryInstruction
     }
 
     public static implicit operator OpTypeTensorViewNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCreateTensorLayoutNV : IMemoryInstruction
@@ -75632,6 +75060,10 @@ public ref partial struct OpTensorLayoutSetDimensionNV : IMemoryInstruction
     }
 
     public static implicit operator OpTensorLayoutSetDimensionNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTensorLayoutSetStrideNV : IMemoryInstruction
@@ -75784,6 +75216,10 @@ public ref partial struct OpTensorLayoutSetStrideNV : IMemoryInstruction
     }
 
     public static implicit operator OpTensorLayoutSetStrideNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTensorLayoutSliceNV : IMemoryInstruction
@@ -75936,6 +75372,10 @@ public ref partial struct OpTensorLayoutSliceNV : IMemoryInstruction
     }
 
     public static implicit operator OpTensorLayoutSliceNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTensorLayoutSetClampValueNV : IMemoryInstruction
@@ -76356,6 +75796,10 @@ public ref partial struct OpTensorViewSetDimensionNV : IMemoryInstruction
     }
 
     public static implicit operator OpTensorViewSetDimensionNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpTensorViewSetStrideNV : IMemoryInstruction
@@ -76508,6 +75952,10 @@ public ref partial struct OpTensorViewSetStrideNV : IMemoryInstruction
     }
 
     public static implicit operator OpTensorViewSetStrideNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpDemoteToHelperInvocation : IMemoryInstruction
@@ -77055,6 +76503,10 @@ public ref partial struct OpTensorLayoutSetBlockSizeNV : IMemoryInstruction
     }
 
     public static implicit operator OpTensorLayoutSetBlockSizeNV(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCooperativeMatrixTransposeNV : IMemoryInstruction
@@ -78281,7 +77733,10 @@ public ref partial struct OpRawAccessChainNV : IMemoryInstruction
                     break;
                 case "rawaccesschainoperands":
                     if (o.Words.Length > 0)
+                    {
                         Rawaccesschainoperands = o.ToEnum<RawAccessChainOperandsMask>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -82120,6 +81575,10 @@ public ref partial struct OpFunctionPointerCallINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpFunctionPointerCallINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpAsmTargetINTEL : IMemoryInstruction
@@ -82585,6 +82044,10 @@ public ref partial struct OpAsmCallINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpAsmCallINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpAtomicFMinEXT : IMemoryInstruction
@@ -109939,6 +109402,10 @@ public ref partial struct OpLoopControlINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpLoopControlINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpAliasDomainDeclINTEL : IMemoryInstruction
@@ -110049,7 +109516,10 @@ public ref partial struct OpAliasDomainDeclINTEL : IMemoryInstruction
                     break;
                 case "name":
                     if (o.Words.Length > 0)
+                    {
                         Name = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -110184,7 +109654,10 @@ public ref partial struct OpAliasScopeDeclINTEL : IMemoryInstruction
                     break;
                 case "name":
                     if (o.Words.Length > 0)
+                    {
                         Name = o.ToLiteral<int?>();
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -110316,6 +109789,10 @@ public ref partial struct OpAliasScopeListDeclINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpAliasScopeListDeclINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpFixedSqrtINTEL : IMemoryInstruction
@@ -116357,6 +115834,10 @@ public ref partial struct OpTypeStructContinuedINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpTypeStructContinuedINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
@@ -116463,6 +115944,10 @@ public ref partial struct OpConstantCompositeContinuedINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpConstantCompositeContinuedINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruction
@@ -116569,6 +116054,10 @@ public ref partial struct OpSpecConstantCompositeContinuedINTEL : IMemoryInstruc
     }
 
     public static implicit operator OpSpecConstantCompositeContinuedINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpCompositeConstructContinuedINTEL : IMemoryInstruction
@@ -116706,6 +116195,10 @@ public ref partial struct OpCompositeConstructContinuedINTEL : IMemoryInstructio
     }
 
     public static implicit operator OpCompositeConstructContinuedINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        Values.Dispose();
+    }
 }
 
 public ref partial struct OpConvertFToBF16INTEL : IMemoryInstruction
@@ -117501,7 +116994,12 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
                     break;
                 case "memoryaccess":
                     if (o.Words.Length > 0)
+                    {
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
+                        if (data.Memory.Span.Length > o.Offset + 1)
+                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    }
+
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -117511,6 +117009,10 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
     }
 
     public static implicit operator OpSubgroupBlockPrefetchINTEL(OpDataIndex odi) => new(odi);
+    public void Dispose()
+    {
+        MemoryaccessParameters.Dispose();
+    }
 }
 
 public ref partial struct OpGroupIMulKHR : IMemoryInstruction

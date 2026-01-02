@@ -206,8 +206,19 @@ public partial class SPVGenerator : IIncrementalGenerator
                     )
                 }
             }}
-            public static implicit operator {instruction.OpName}{(instruction.OpName.EndsWith("Constant") ? "<T>" : "")}(OpDataIndex odi) => new(odi);
-        }}");
+            public static implicit operator {instruction.OpName}{(instruction.OpName.EndsWith("Constant") ? "<T>" : "")}(OpDataIndex odi) => new(odi);");
+
+        if(instruction.Operands?.AsList() is List<OperandData> ops && ops.Any(x => x is { Quantifier: "*" } or { IsParameterized: true }))
+        {
+            structBuilder.AppendLine(@$"
+                public void Dispose()
+                {{
+                    {string.Join("\n", ops.Where(x => x is { Quantifier: "*" }).Select(ToTypeFieldAndOperandName).Select(t => $"{t.FieldName}.Dispose();"))}
+                    {string.Join("\n", ops.Where(x => x is { IsParameterized: true }).Select(ToTypeFieldAndOperandName).Select(t => $"{t.FieldName}Parameters.Dispose();"))}
+                }}
+            ");
+        }
+        structBuilder.AppendLine("}");
         StringBuilderPool.Return(structBuilder);
         return structBuilder.ToString();
 
@@ -242,23 +253,30 @@ public partial class SPVGenerator : IIncrementalGenerator
         var isParameterized = operand.IsParameterized;
         sb.Append($"case \"{operandName}\" : ");
         if (isOptional)
-            sb.AppendLine("if (o.Words.Length > 0)");
+            sb.AppendLine("if (o.Words.Length > 0){");
 
         if (isArray)
             sb.AppendLine($"{fieldName} = o.To{typename}();");
-        else if (opClass == "BitEnum")
-            sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}Mask>();");
+        
         else if (opClass == "ValueEnum" && isParameterized)
             sb.AppendLine(@$"
-                {{
                     {fieldName} = o.ToEnum<{operand.Kind}>();
-                    // Process the other parameters ??
-                }}");
+                    {fieldName}Parameters = new(data.Memory.Span[(o.Offset+1)..]);
+                ");
+        else if (opClass == "BitEnum" && isParameterized)
+            sb.AppendLine(@$"
+                    {fieldName} = o.ToEnum<{operand.Kind}Mask>();
+                    if(data.Memory.Span.Length > o.Offset + 1)
+                        {fieldName}Parameters = new(data.Memory.Span[(o.Offset+1)..]);
+                ");
+        else if (opClass == "BitEnum" && !isParameterized)
+            sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}Mask>();");
         else if(opClass == "ValueEnum" && !isParameterized)
             sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}>();");
         else
             sb.AppendLine($"{fieldName} = o.ToLiteral<{typename}>();");
-
+        if (isOptional)
+            sb.AppendLine("}");
         sb.Append("break;");
         
         StringBuilderPool.Return(sb);
