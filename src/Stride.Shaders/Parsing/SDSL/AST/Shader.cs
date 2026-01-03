@@ -91,7 +91,7 @@ public class ShaderClass(Identifier name, TextLocation info) : ShaderDeclaration
             else if (instruction.Op == Op.OpDecorate)
             {
                 var decorateInstruction = new OpDecorate(instruction);
-                if (decorateInstruction.Decoration.Value == Decoration.Block)
+                if (decorateInstruction.Decoration == Decoration.Block)
                     blocks.Add(decorateInstruction.Target);
             }
             else if (instruction.Op == Op.OpTypeFloat)

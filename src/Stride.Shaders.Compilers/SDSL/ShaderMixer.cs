@@ -318,14 +318,13 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                     context.Bound = Math.Max(context.Bound, i2.IdResult.Value + 1);
 
                 // ResourceGroupId: adjust offsets too
-                if (i2.Op == Op.OpDecorate && new OpDecorate(ref i2) is { Decoration: { Value: Decoration.ResourceGroupIdSDSL, Parameters: { } m } } resourceGroupIdDecorate)
+                if (i2.Op == Op.OpDecorate && new OpDecorate(ref i2) is { Decoration: Decoration.ResourceGroupIdSDSL, DecorationParameters: { } m } resourceGroupIdDecorate)
                 {
                     // Somehow data doesn't get mutated inside i2 if we update resourceGroupIdDecorate.Decoration, so we reference buffer directly
-                    var n = new LiteralValue<int>(m.Span);
-                    n.Value += resourceGroupOffset;
-                    resourceGroupIdDecorate.Decoration = new(resourceGroupIdDecorate.Decoration.Value, n.Words);
-                    context.ResourceGroupBound = Math.Max(context.ResourceGroupBound, n.Value + 1);
-                    n.Dispose();
+                    var n = m.To<DecorationParams.ResourceGroupIdSDSL>();
+                    n.ResourceGroup += resourceGroupOffset;
+                    resourceGroupIdDecorate.DecorationParameters = n;
+                    context.ResourceGroupBound = Math.Max(context.ResourceGroupBound, n.ResourceGroup + 1);
                 }
 
                 if (SpirvBuilder.ContainIds(forbiddenIds, i2))
@@ -439,13 +438,8 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
         {
             foreach (var i in buffer)
             {
-                if (i.Op == Op.OpMemberDecorateString && (OpMemberDecorateString)i is { Decoration: { Value: Decoration.LinkSDSL, Parameters: { } m } } memberDecorate)
-                {
-                    var n = new LiteralValue<string>(m.Span);
-                    n.Value = $"{n.Value}.{mixinNode.CompositionPath}";
-                    memberDecorate.Decoration = new(memberDecorate.Decoration.Value, n.Words);
-                    n.Dispose();
-                }
+                if (i.Op == Op.OpMemberDecorateString && (OpMemberDecorateString)i is { Decoration: Decoration.LinkSDSL, Value : string m } memberDecorate)
+                    memberDecorate.Value = $"{m}.{mixinNode.CompositionPath}";
             }
         }
 
@@ -874,36 +868,31 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
             if (i.Op == Op.OpDecorateString && (OpDecorateString)i is
                 {
                     Target: int t,
-                    Decoration:
-                    {
-                        Value: Decoration.LinkSDSL or Decoration.ResourceGroupSDSL or Decoration.LogicalGroupSDSL,
-                        Parameters: { } m
-                    }
+                    Decoration: Decoration.LinkSDSL or Decoration.ResourceGroupSDSL or Decoration.LogicalGroupSDSL,
+                    Value: string m
+                    
                 } decoration)
             {
-                using var n = new LiteralValue<string>(m.Span);
                 ref var linkInfo = ref CollectionsMarshal.GetValueRefOrAddDefault(linkInfos, t, out _);
-                if (decoration.Decoration.Value == Decoration.LinkSDSL)
-                    linkInfo.LinkName = n.Value;
-                else if (decoration.Decoration.Value == Decoration.ResourceGroupSDSL)
-                    linkInfo.ResourceGroup = n.Value;
-                else if (decoration.Decoration.Value == Decoration.LogicalGroupSDSL)
-                    linkInfo.LogicalGroup = n.Value;
+                if (decoration.Decoration == Decoration.LinkSDSL)
+                    linkInfo.LinkName = m;
+                else if (decoration.Decoration == Decoration.ResourceGroupSDSL)
+                    linkInfo.ResourceGroup = m;
+                else if (decoration.Decoration == Decoration.LogicalGroupSDSL)
+                    linkInfo.LogicalGroup = m;
             }
             else if ((i.Op == Op.OpDecorate || i.Op == Op.OpDecorateString) && (OpDecorate)i is
                 {
-                    Decoration:
-                    {
-                        Value: Decoration.SamplerStateFilter or Decoration.SamplerStateAddressU or Decoration.SamplerStateAddressV or Decoration.SamplerStateAddressW
+                    Decoration: Decoration.SamplerStateFilter or Decoration.SamplerStateAddressU or Decoration.SamplerStateAddressV or Decoration.SamplerStateAddressW
                             or Decoration.SamplerStateMipLODBias or Decoration.SamplerStateMaxAnisotropy or Decoration.SamplerStateComparisonFunc or Decoration.SamplerStateMinLOD or Decoration.SamplerStateMaxLOD,
-                        Parameters: { } p
-                    }
+                    DecorationParameters: { } p
+                
                 } decorate)
             {
                 ref var samplerState = ref CollectionsMarshal.GetValueRefOrAddDefault(samplerStates, decorate.Target, out var exists);
                 if (!exists)
                     samplerState = Graphics.SamplerStateDescription.Default;
-                switch (decorate.Decoration.Value)
+                switch (decorate.Decoration)
                 {
                     case Decoration.SamplerStateFilter:
                         samplerState.Filter = (Graphics.TextureFilter)p.Span[0];
@@ -993,8 +982,8 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                             SlotCount = 1,
                         });
 
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationDescriptorSet(0)));
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationBinding(srvSlot)));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.DescriptorSet, [0]));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.Binding, [srvSlot]));
 
                         srvSlot++;
                     }
@@ -1009,8 +998,8 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                             SlotCount = 1,
                         });
 
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationDescriptorSet(0)));
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationBinding(srvSlot)));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.DescriptorSet,[0]));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.Binding, [srvSlot]));
 
                         srvSlot++;
                     }
@@ -1024,8 +1013,8 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                             SlotCount = 1,
                         });
 
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationDescriptorSet(0)));
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationBinding(samplerSlot)));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.DescriptorSet, [0]));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.Binding, [samplerSlot]));
 
                         if (samplerStates.TryGetValue(variable.ResultId, out var samplerState))
                             globalContext.Reflection.SamplerStates.Add(new EffectSamplerStateBinding(linkName, samplerState));
@@ -1046,8 +1035,8 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                             ResourceGroup = name,
                         });
 
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationDescriptorSet(0)));
-                        context.Add(new OpDecorate(variable.ResultId, ParameterizedFlags.DecorationBinding(cbufferSlot)));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.DescriptorSet, [0]));
+                        context.Add(new OpDecorate(variable.ResultId, Decoration.Binding, [cbufferSlot]));
 
                         cbufferSlot++;
                     }
@@ -1148,12 +1137,12 @@ public partial class ShaderMixer(IExternalShaderLoader shaderLoader)
                 || i.Op == Op.OpSDSLImportVariable
                 || i.Op == Op.OpSDSLFunctionInfo)
                 temp.RemoveAt(index--);
-            else if ((i.Op == Op.OpDecorate || i.Op == Op.OpDecorateString) && ((OpDecorate)i).Decoration.Value is
+            else if ((i.Op == Op.OpDecorate || i.Op == Op.OpDecorateString) && ((OpDecorate)i).Decoration is
                     Decoration.LinkIdSDSL or Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL or Decoration.ResourceGroupIdSDSL
                     or Decoration.SamplerStateFilter or Decoration.SamplerStateAddressU or Decoration.SamplerStateAddressV or Decoration.SamplerStateAddressW
                     or Decoration.SamplerStateMipLODBias or Decoration.SamplerStateMaxAnisotropy or Decoration.SamplerStateComparisonFunc or Decoration.SamplerStateMinLOD or Decoration.SamplerStateMaxLOD)
                 temp.RemoveAt(index--);
-            else if ((i.Op == Op.OpMemberDecorate || i.Op == Op.OpMemberDecorateString) && ((OpMemberDecorate)i).Decoration.Value is Decoration.LinkIdSDSL or Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
+            else if ((i.Op == Op.OpMemberDecorate || i.Op == Op.OpMemberDecorateString) && ((OpMemberDecorate)i).Decoration is Decoration.LinkIdSDSL or Decoration.LinkSDSL or Decoration.LogicalGroupSDSL or Decoration.ResourceGroupSDSL)
                 temp.RemoveAt(index--);
 
             // Remove SPIR-V about pointer types to other shaders (variable and types themselves are removed as well)
