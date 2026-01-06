@@ -5596,7 +5596,7 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpExecutionMode, EntryPoint, (int)Mode];
+        Span<int> instruction = [(int)Op.OpExecutionMode, EntryPoint, (int)Mode, ..ModeParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -11964,7 +11964,7 @@ public ref partial struct OpDecorate : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpDecorate, Target, (int)Decoration];
+        Span<int> instruction = [(int)Op.OpDecorate, Target, (int)Decoration, ..DecorationParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -12103,7 +12103,7 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpMemberDecorate, StructureType, ..Member.AsDisposableLiteralValue().Words, (int)Decoration];
+        Span<int> instruction = [(int)Op.OpMemberDecorate, StructureType, ..Member.AsDisposableLiteralValue().Words, (int)Decoration, ..DecorationParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14171,7 +14171,7 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14550,7 +14550,7 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -14905,7 +14905,7 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -15284,7 +15284,7 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -35770,7 +35770,7 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpLoopMerge, MergeBlock, ContinueTarget, (int)Loopcontrol];
+        Span<int> instruction = [(int)Op.OpLoopMerge, MergeBlock, ContinueTarget, (int)Loopcontrol, ..LoopcontrolParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44252,7 +44252,7 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44631,7 +44631,7 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -44986,7 +44986,7 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleProjExplicitLod, ResultType, ResultId, SampledImage, Coordinate, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -45365,7 +45365,7 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpImageSparseSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands];
+        Span<int> instruction = [(int)Op.OpImageSparseSampleProjDrefExplicitLod, ResultType, ResultId, SampledImage, Coordinate, Dref, (int)Imageoperands, ..ImageoperandsParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);
@@ -48143,7 +48143,7 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
     public void UpdateInstructionMemory()
     {
         InstructionMemory ??= MemoryOwner<int>.Empty;
-        Span<int> instruction = [(int)Op.OpExecutionModeId, EntryPoint, (int)Mode];
+        Span<int> instruction = [(int)Op.OpExecutionModeId, EntryPoint, (int)Mode, ..ModeParameters];
         instruction[0] |= instruction.Length << 16;
         if (instruction.Length == InstructionMemory.Length)
             instruction.CopyTo(InstructionMemory.Span);

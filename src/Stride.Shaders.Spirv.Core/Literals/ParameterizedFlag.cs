@@ -75,7 +75,7 @@ public ref partial struct EnumerantParameters
 
     public readonly void Dispose()
     {
-        Words.Dispose();
+        Words?.Dispose();
     }
 }
 
