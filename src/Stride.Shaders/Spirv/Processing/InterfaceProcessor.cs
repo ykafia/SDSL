@@ -174,7 +174,7 @@ namespace Stride.Shaders.Spirv.Processing
             // If written to, they are expected at the end of pixel shader
             foreach (var stream in streams)
             {
-                if (stream.Value.Semantic is { } semantic && (semantic.ToUpperInvariant().StartsWith("SV_TARGET") || semantic.ToUpperInvariant() == "SV_DEPTH")
+                if (stream.Value.Semantic is { } semantic && (semantic.StartsWith("SV_TARGET", StringComparison.InvariantCultureIgnoreCase) || semantic.Equals("SV_DEPTH", StringComparison.InvariantCultureIgnoreCase))
                     && stream.Value.Write)
                     stream.Value.Output = true;
             }
