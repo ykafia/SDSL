@@ -913,7 +913,7 @@ namespace Stride.Shaders.Spirv.Processing
             {
                 var i = buffer[index];
 
-                if (i.Op == Op.OpStreamsSDSL && (OpAccessChain)i is { } streamsInstruction)
+                if (i.Op == Op.OpStreamsSDSL && (OpStreamsSDSL)i is { } streamsInstruction)
                 {
                     streamsInstructionIds.Add(streamsInstruction.ResultId);
                     remapIds.Add(streamsInstruction.ResultId, streamsVariableId);
