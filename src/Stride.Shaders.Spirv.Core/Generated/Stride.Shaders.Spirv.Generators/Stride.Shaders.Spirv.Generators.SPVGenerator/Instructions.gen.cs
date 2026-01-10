@@ -1560,7 +1560,7 @@ public ref partial struct OpVariableSDSL : IMemoryInstruction
                 case "methodInitializer":
                     if (o.Words.Length > 0)
                     {
-                        MethodInitializer = o.ToLiteral<int?>();
+                        MethodInitializer = o.ToLiteral<int>();
                     }
 
                     break;
@@ -4216,14 +4216,14 @@ public ref partial struct OpSource : IMemoryInstruction
                 case "file":
                     if (o.Words.Length > 0)
                     {
-                        File = o.ToLiteral<int?>();
+                        File = o.ToLiteral<int>();
                     }
 
                     break;
                 case "source":
                     if (o.Words.Length > 0)
                     {
-                        Source = o.ToLiteral<string?>();
+                        Source = o.ToLiteral<string>();
                     }
 
                     break;
@@ -10452,7 +10452,7 @@ public ref partial struct OpVariable : IMemoryInstruction
                 case "initializer":
                     if (o.Words.Length > 0)
                     {
-                        Initializer = o.ToLiteral<int?>();
+                        Initializer = o.ToLiteral<int>();
                     }
 
                     break;
@@ -50959,7 +50959,7 @@ public ref partial struct OpGroupNonUniformIAdd : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -51142,7 +51142,7 @@ public ref partial struct OpGroupNonUniformFAdd : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -51325,7 +51325,7 @@ public ref partial struct OpGroupNonUniformIMul : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -51508,7 +51508,7 @@ public ref partial struct OpGroupNonUniformFMul : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -51691,7 +51691,7 @@ public ref partial struct OpGroupNonUniformSMin : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -51874,7 +51874,7 @@ public ref partial struct OpGroupNonUniformUMin : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -52057,7 +52057,7 @@ public ref partial struct OpGroupNonUniformFMin : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -52240,7 +52240,7 @@ public ref partial struct OpGroupNonUniformSMax : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -52423,7 +52423,7 @@ public ref partial struct OpGroupNonUniformUMax : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -52606,7 +52606,7 @@ public ref partial struct OpGroupNonUniformFMax : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -52789,7 +52789,7 @@ public ref partial struct OpGroupNonUniformBitwiseAnd : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -52972,7 +52972,7 @@ public ref partial struct OpGroupNonUniformBitwiseOr : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -53155,7 +53155,7 @@ public ref partial struct OpGroupNonUniformBitwiseXor : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -53338,7 +53338,7 @@ public ref partial struct OpGroupNonUniformLogicalAnd : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -53521,7 +53521,7 @@ public ref partial struct OpGroupNonUniformLogicalOr : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -53704,7 +53704,7 @@ public ref partial struct OpGroupNonUniformLogicalXor : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -54766,7 +54766,7 @@ public ref partial struct OpColorAttachmentReadEXT : IMemoryInstruction
                 case "sample":
                     if (o.Words.Length > 0)
                     {
-                        Sample = o.ToLiteral<int?>();
+                        Sample = o.ToLiteral<int>();
                     }
 
                     break;
@@ -54904,7 +54904,7 @@ public ref partial struct OpDepthAttachmentReadEXT : IMemoryInstruction
                 case "sample":
                     if (o.Words.Length > 0)
                     {
-                        Sample = o.ToLiteral<int?>();
+                        Sample = o.ToLiteral<int>();
                     }
 
                     break;
@@ -55042,7 +55042,7 @@ public ref partial struct OpStencilAttachmentReadEXT : IMemoryInstruction
                 case "sample":
                     if (o.Words.Length > 0)
                     {
-                        Sample = o.ToLiteral<int?>();
+                        Sample = o.ToLiteral<int>();
                     }
 
                     break;
@@ -55408,14 +55408,14 @@ public ref partial struct OpUntypedVariableKHR : IMemoryInstruction
                 case "dataType":
                     if (o.Words.Length > 0)
                     {
-                        DataType = o.ToLiteral<int?>();
+                        DataType = o.ToLiteral<int>();
                     }
 
                     break;
                 case "initializer":
                     if (o.Words.Length > 0)
                     {
-                        Initializer = o.ToLiteral<int?>();
+                        Initializer = o.ToLiteral<int>();
                     }
 
                     break;
@@ -56722,21 +56722,21 @@ public ref partial struct OpUntypedPrefetchKHR : IMemoryInstruction
                 case "rW":
                     if (o.Words.Length > 0)
                     {
-                        RW = o.ToLiteral<int?>();
+                        RW = o.ToLiteral<int>();
                     }
 
                     break;
                 case "locality":
                     if (o.Words.Length > 0)
                     {
-                        Locality = o.ToLiteral<int?>();
+                        Locality = o.ToLiteral<int>();
                     }
 
                     break;
                 case "cacheType":
                     if (o.Words.Length > 0)
                     {
-                        CacheType = o.ToLiteral<int?>();
+                        CacheType = o.ToLiteral<int>();
                     }
 
                     break;
@@ -57321,7 +57321,7 @@ public ref partial struct OpGroupNonUniformRotateKHR : IMemoryInstruction
                 case "clusterSize":
                     if (o.Words.Length > 0)
                     {
-                        ClusterSize = o.ToLiteral<int?>();
+                        ClusterSize = o.ToLiteral<int>();
                     }
 
                     break;
@@ -70813,14 +70813,14 @@ public ref partial struct OpReorderThreadWithHitObjectNV : IMemoryInstruction
                 case "hint":
                     if (o.Words.Length > 0)
                     {
-                        Hint = o.ToLiteral<int?>();
+                        Hint = o.ToLiteral<int>();
                     }
 
                     break;
                 case "bits":
                     if (o.Words.Length > 0)
                     {
-                        Bits = o.ToLiteral<int?>();
+                        Bits = o.ToLiteral<int>();
                     }
 
                     break;
@@ -71536,7 +71536,7 @@ public ref partial struct OpEmitMeshTasksEXT : IMemoryInstruction
                 case "payload":
                     if (o.Words.Length > 0)
                     {
-                        Payload = o.ToLiteral<int?>();
+                        Payload = o.ToLiteral<int>();
                     }
 
                     break;
@@ -109758,7 +109758,7 @@ public ref partial struct OpAliasDomainDeclINTEL : IMemoryInstruction
                 case "name":
                     if (o.Words.Length > 0)
                     {
-                        Name = o.ToLiteral<int?>();
+                        Name = o.ToLiteral<int>();
                     }
 
                     break;
@@ -109896,7 +109896,7 @@ public ref partial struct OpAliasScopeDeclINTEL : IMemoryInstruction
                 case "name":
                     if (o.Words.Length > 0)
                     {
-                        Name = o.ToLiteral<int?>();
+                        Name = o.ToLiteral<int>();
                     }
 
                     break;

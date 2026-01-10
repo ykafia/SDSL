@@ -274,7 +274,7 @@ public partial class SPVGenerator : IIncrementalGenerator
         else if(opClass == "ValueEnum" && !isParameterized)
             sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}>();");
         else
-            sb.AppendLine($"{fieldName} = o.ToLiteral<{typename}>();");
+            sb.AppendLine($"{fieldName} = o.ToLiteral<{typename.Replace("?","")}>();");
         if (isOptional)
             sb.AppendLine("}");
         sb.Append("break;");
