@@ -261,13 +261,13 @@ public partial class SPVGenerator : IIncrementalGenerator
         else if (opClass == "ValueEnum" && isParameterized)
             sb.AppendLine(@$"
                     {fieldName} = o.ToEnum<{operand.Kind}>();
-                    {fieldName}Parameters = new(data.Memory.Span[(o.Offset+1)..]);
+                    {fieldName}Parameters = new(data.Memory.Span[(o.Offset+2)..]);
                 ");
         else if (opClass == "BitEnum" && isParameterized)
             sb.AppendLine(@$"
                     {fieldName} = o.ToEnum<{operand.Kind}Mask>();
                     if(data.Memory.Span.Length > o.Offset + 1)
-                        {fieldName}Parameters = new(data.Memory.Span[(o.Offset+1)..]);
+                        {fieldName}Parameters = new(data.Memory.Span[(o.Offset+2)..]);
                 ");
         else if (opClass == "BitEnum" && !isParameterized)
             sb.AppendLine($"{fieldName} = o.ToEnum<{operand.Kind}Mask>();");

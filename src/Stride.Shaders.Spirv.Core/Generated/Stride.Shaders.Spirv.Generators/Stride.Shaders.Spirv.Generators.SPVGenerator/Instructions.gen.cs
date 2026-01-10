@@ -5620,7 +5620,7 @@ public ref partial struct OpExecutionMode : IMemoryInstruction
                     break;
                 case "mode":
                     Mode = o.ToEnum<ExecutionMode>();
-                    ModeParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    ModeParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -10775,7 +10775,7 @@ public ref partial struct OpLoad : IMemoryInstruction
                     {
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -10922,7 +10922,7 @@ public ref partial struct OpStore : IMemoryInstruction
                     {
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -11988,7 +11988,7 @@ public ref partial struct OpDecorate : IMemoryInstruction
                     break;
                 case "decoration":
                     Decoration = o.ToEnum<Decoration>();
-                    DecorationParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    DecorationParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -12130,7 +12130,7 @@ public ref partial struct OpMemberDecorate : IMemoryInstruction
                     break;
                 case "decoration":
                     Decoration = o.ToEnum<Decoration>();
-                    DecorationParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    DecorationParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14029,7 +14029,7 @@ public ref partial struct OpImageSampleImplicitLod : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -14205,7 +14205,7 @@ public ref partial struct OpImageSampleExplicitLod : IMemoryInstruction
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14396,7 +14396,7 @@ public ref partial struct OpImageSampleDrefImplicitLod : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -14587,7 +14587,7 @@ public ref partial struct OpImageSampleDrefExplicitLod : IMemoryInstruction
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -14763,7 +14763,7 @@ public ref partial struct OpImageSampleProjImplicitLod : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -14939,7 +14939,7 @@ public ref partial struct OpImageSampleProjExplicitLod : IMemoryInstruction
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15130,7 +15130,7 @@ public ref partial struct OpImageSampleProjDrefImplicitLod : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -15321,7 +15321,7 @@ public ref partial struct OpImageSampleProjDrefExplicitLod : IMemoryInstruction
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -15497,7 +15497,7 @@ public ref partial struct OpImageFetch : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -15690,7 +15690,7 @@ public ref partial struct OpImageGather : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -15883,7 +15883,7 @@ public ref partial struct OpImageDrefGather : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -16061,7 +16061,7 @@ public ref partial struct OpImageRead : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -16223,7 +16223,7 @@ public ref partial struct OpImageWrite : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -35798,7 +35798,7 @@ public ref partial struct OpLoopMerge : IMemoryInstruction
                 case "loopcontrol":
                     Loopcontrol = o.ToEnum<LoopControlMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        LoopcontrolParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        LoopcontrolParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44110,7 +44110,7 @@ public ref partial struct OpImageSparseSampleImplicitLod : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -44286,7 +44286,7 @@ public ref partial struct OpImageSparseSampleExplicitLod : IMemoryInstruction
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44477,7 +44477,7 @@ public ref partial struct OpImageSparseSampleDrefImplicitLod : IMemoryInstructio
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -44668,7 +44668,7 @@ public ref partial struct OpImageSparseSampleDrefExplicitLod : IMemoryInstructio
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -44844,7 +44844,7 @@ public ref partial struct OpImageSparseSampleProjImplicitLod : IMemoryInstructio
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -45020,7 +45020,7 @@ public ref partial struct OpImageSparseSampleProjExplicitLod : IMemoryInstructio
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -45211,7 +45211,7 @@ public ref partial struct OpImageSparseSampleProjDrefImplicitLod : IMemoryInstru
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -45402,7 +45402,7 @@ public ref partial struct OpImageSparseSampleProjDrefExplicitLod : IMemoryInstru
                 case "imageoperands":
                     Imageoperands = o.ToEnum<ImageOperandsMask>();
                     if (data.Memory.Span.Length > o.Offset + 1)
-                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                        ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -45578,7 +45578,7 @@ public ref partial struct OpImageSparseFetch : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -45771,7 +45771,7 @@ public ref partial struct OpImageSparseGather : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -45964,7 +45964,7 @@ public ref partial struct OpImageSparseDrefGather : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -46655,7 +46655,7 @@ public ref partial struct OpImageSparseRead : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -48167,7 +48167,7 @@ public ref partial struct OpExecutionModeId : IMemoryInstruction
                     break;
                 case "mode":
                     Mode = o.ToEnum<ExecutionMode>();
-                    ModeParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                    ModeParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     break;
                 // We ignore unrecognized operands
                 default:
@@ -71246,7 +71246,7 @@ public ref partial struct OpImageSampleFootprintNV : IMemoryInstruction
                     {
                         Imageoperands = o.ToEnum<ImageOperandsMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            ImageoperandsParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
@@ -117239,7 +117239,7 @@ public ref partial struct OpSubgroupBlockPrefetchINTEL : IMemoryInstruction
                     {
                         Memoryaccess = o.ToEnum<MemoryAccessMask>();
                         if (data.Memory.Span.Length > o.Offset + 1)
-                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 1)..]);
+                            MemoryaccessParameters = new(data.Memory.Span[(o.Offset + 2)..]);
                     }
 
                     break;
