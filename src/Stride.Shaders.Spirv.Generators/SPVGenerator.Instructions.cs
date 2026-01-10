@@ -167,7 +167,7 @@ public partial class SPVGenerator : IIncrementalGenerator
             public void UpdateInstructionMemory()
             {{
                 InstructionMemory ??= MemoryOwner<int>.Empty;
-                Span<int> instruction = [(int)Op.{(instruction.OpName.StartsWith("GLSL") ? "OpExtInst" : instruction.OpName)}, {string.Join(", ", (instruction.Operands?.AsList() ?? []).Select(ToSpreadOperator))}];
+                Span<int> instruction = [(int)Op.{ToSpreadOperators(instruction, grammar)}];
                 instruction[0] |= instruction.Length << 16;
                 if(instruction.Length == InstructionMemory.Length)
                     instruction.CopyTo(InstructionMemory.Span);
@@ -222,6 +222,33 @@ public partial class SPVGenerator : IIncrementalGenerator
         StringBuilderPool.Return(structBuilder);
         return structBuilder.ToString();
 
+    }
+
+    public static string ToSpreadOperators(InstructionData instruction, SpirvGrammar grammar)
+    {
+        // (instruction.OpName.StartsWith("GLSL") ? "OpExtInst" : instruction.OpName)}, {string.Join(", ", (instruction.Operands?.AsList() ?? []).Select(ToSpreadOperator))
+        if (instruction.Operands?.AsList() is List<OperandData> operands)
+        {
+            var sb = StringBuilderPool.Get();
+            if (instruction.OpName.StartsWith("GLSL"))
+            {
+                sb.Append("OpExtInst, ");
+                foreach (var operand in operands)
+                {
+                    if (operand != operands[0])
+                        sb.Append(", ");
+                    sb.Append(ToSpreadOperator(operand));
+                    var (_, fieldname, _) = ToTypeFieldAndOperandName(operand);
+                    if (fieldname == "Set")
+                        sb.Append($", {instruction.OpCode}");
+                }
+            }
+            else
+                sb.Append(instruction.OpName).Append(", ").Append(string.Join(", ", operands.Select(ToSpreadOperator)));
+            StringBuilderPool.Return(sb);
+            return sb.ToString();
+        }
+        return instruction.OpName;
     }
 
     public static string ToAssignSimple(OperandData operand)

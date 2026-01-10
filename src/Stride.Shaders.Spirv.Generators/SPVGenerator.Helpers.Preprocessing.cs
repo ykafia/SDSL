@@ -177,7 +177,9 @@ public partial class SPVGenerator
                 if (instruction.Operands?.AsList() is List<OperandData> operands)
                 {
                     if (instruction.OpName.StartsWith("GLSL"))
+                    {
                         operands.InsertRange(0, extinst.Operands?.AsList().Where(x => x is not { Kind: "IdRef", Quantifier: "*" } and not { Kind: "LiteralExtInstInteger" }) ?? []);
+                    }
                     PreProcessOperands(instruction, grammar.OperandKinds?.AsDictionary()!, buffer);
                 }
 
