@@ -34,6 +34,10 @@ public class SpirvTests
                     break;
             };
         }
+
+        OpDecorateString d = buffer[0];
+        Assert.Equal(Decoration.LinkSDSL, d.Decoration);
+        Assert.Equal("Hello world", d.Value);
     }
 
     [Fact]
