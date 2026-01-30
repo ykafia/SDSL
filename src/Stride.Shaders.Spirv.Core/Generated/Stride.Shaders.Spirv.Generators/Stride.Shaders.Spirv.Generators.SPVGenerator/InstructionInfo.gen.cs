@@ -69,12 +69,17 @@ public partial class InstructionInfo
         Instance.Register(Op.OpTypeGenericSDSL, OperandKind.IdResult, OperandQuantifier.One, "resultId", "Miscellaneous", []);
         Instance.Register(Op.OpTypeGenericSDSL, OperandKind.GenericParameterKindSDSL, OperandQuantifier.One, "kind", "Miscellaneous", []);
         Instance.Register(Op.OpTypeStreamsSDSL, OperandKind.IdResult, OperandQuantifier.One, "resultId", "Miscellaneous", []);
+        Instance.Register(Op.OpTypeStreamsSDSL, OperandKind.StreamsKindSDSL, OperandQuantifier.One, "kind", "Miscellaneous", []);
+        Instance.Register(Op.OpTypeGeometryStreamOutputSDSL, OperandKind.IdResult, OperandQuantifier.One, "resultId", "Miscellaneous", []);
+        Instance.Register(Op.OpTypeGeometryStreamOutputSDSL, OperandKind.IdRef, OperandQuantifier.One, "baseType", "Miscellaneous", []);
+        Instance.Register(Op.OpTypeGeometryStreamOutputSDSL, OperandKind.GeometryStreamOutputKindSDSL, OperandQuantifier.One, "kind", "Miscellaneous", []);
         Instance.Register(Op.OpForeachSDSL, OperandKind.IdResultType, OperandQuantifier.One, "resultType", "Miscellaneous", []);
         Instance.Register(Op.OpForeachSDSL, OperandKind.IdResult, OperandQuantifier.One, "resultId", "Miscellaneous", []);
         Instance.Register(Op.OpForeachSDSL, OperandKind.IdRef, OperandQuantifier.One, "collection", "Miscellaneous", []);
         Instance.Register(Op.OpForeachEndSDSL, OperandKind.None, null, "Debug");
         Instance.Register(Op.OpUnresolvableShaderSDSL, OperandKind.LiteralString, OperandQuantifier.One, "shaderCode", "Miscellaneous", []);
         Instance.Register(Op.OpUnresolvableShaderSDSL, OperandKind.LiteralInteger, OperandQuantifier.One, "shaderCodeNameEnd", "Miscellaneous", []);
+        Instance.Register(Op.OpEmitVertexSDSL, OperandKind.IdRef, OperandQuantifier.One, "output", "Miscellaneous", []);
         Instance.Register(Op.OpNop, OperandKind.None, null, "Debug");
         Instance.Register(Op.OpUndef, OperandKind.IdResultType, OperandQuantifier.One, "resultType", "Miscellaneous", []);
         Instance.Register(Op.OpUndef, OperandKind.IdResult, OperandQuantifier.One, "resultId", "Miscellaneous", []);
