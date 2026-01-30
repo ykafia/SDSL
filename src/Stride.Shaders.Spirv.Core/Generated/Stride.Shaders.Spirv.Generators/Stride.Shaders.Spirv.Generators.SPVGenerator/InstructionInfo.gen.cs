@@ -8,6 +8,17 @@ public partial class InstructionInfo
         Instance.Register(Op.OpSDSLShader, OperandKind.LiteralString, OperandQuantifier.One, "shaderName", "Miscellaneous", []);
         Instance.Register(Op.OpSDSLShaderEnd, OperandKind.None, null, "Debug");
         Instance.Register(Op.OpSDSLEffect, OperandKind.LiteralString, OperandQuantifier.One, "effectName", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLParamsUse, OperandKind.LiteralString, OperandQuantifier.One, "paramsName", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLMixinUse, OperandKind.LiteralString, OperandQuantifier.One, "mixinName", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLMixinChild, OperandKind.LiteralString, OperandQuantifier.One, "mixinName", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLMixinClone, OperandKind.LiteralString, OperandQuantifier.One, "mixinName", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLParams, OperandKind.LiteralString, OperandQuantifier.One, "name", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLParamsField, OperandKind.LiteralString, OperandQuantifier.One, "name", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLParamsField, OperandKind.LiteralString, OperandQuantifier.One, "cstype", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLConditionalStart, OperandKind.None, null, "Debug");
+        Instance.Register(Op.OpSDSLConditionalEnd, OperandKind.None, null, "Debug");
+        Instance.Register(Op.OpSDSLParamsTrue, OperandKind.LiteralString, OperandQuantifier.One, "mixinName", "Miscellaneous", []);
+        Instance.Register(Op.OpSDSLElse, OperandKind.LiteralString, OperandQuantifier.One, "mixinName", "Miscellaneous", []);
         Instance.Register(Op.OpSDSLComposition, OperandKind.LiteralString, OperandQuantifier.One, "compositionPath", "Miscellaneous", []);
         Instance.Register(Op.OpSDSLCompositionEnd, OperandKind.None, null, "Debug");
         Instance.Register(Op.OpSDSLMixinInherit, OperandKind.IdRef, OperandQuantifier.One, "shader", "Miscellaneous", []);

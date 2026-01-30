@@ -276,6 +276,38 @@ public static partial class Specification
         Always = 8,
     }
 
+    public enum StorageClass
+    {
+        Params = 8000,
+        UniformConstant = 0,
+        Input = 1,
+        Uniform = 2,
+        Output = 3,
+        Workgroup = 4,
+        CrossWorkgroup = 5,
+        Private = 6,
+        Function = 7,
+        Generic = 8,
+        PushConstant = 9,
+        AtomicCounter = 10,
+        Image = 11,
+        StorageBuffer = 12,
+        TileImageEXT = 4172,
+        NodePayloadAMDX = 5068,
+        CallableDataKHR = 5328,
+        IncomingCallableDataKHR = 5329,
+        RayPayloadKHR = 5338,
+        HitAttributeKHR = 5339,
+        IncomingRayPayloadKHR = 5342,
+        ShaderRecordBufferKHR = 5343,
+        PhysicalStorageBuffer = 5349,
+        HitObjectAttributeNV = 5385,
+        TaskPayloadWorkgroupEXT = 5402,
+        CodeSectionINTEL = 5605,
+        DeviceOnlyINTEL = 5936,
+        HostOnlyINTEL = 5937,
+    }
+
     [Flags]
     public enum ImageOperandsMask
     {
@@ -560,37 +592,6 @@ public static partial class Specification
         MaximumRegistersINTEL = 6461,
         MaximumRegistersIdINTEL = 6462,
         NamedMaximumRegistersINTEL = 6463,
-    }
-
-    public enum StorageClass
-    {
-        UniformConstant = 0,
-        Input = 1,
-        Uniform = 2,
-        Output = 3,
-        Workgroup = 4,
-        CrossWorkgroup = 5,
-        Private = 6,
-        Function = 7,
-        Generic = 8,
-        PushConstant = 9,
-        AtomicCounter = 10,
-        Image = 11,
-        StorageBuffer = 12,
-        TileImageEXT = 4172,
-        NodePayloadAMDX = 5068,
-        CallableDataKHR = 5328,
-        IncomingCallableDataKHR = 5329,
-        RayPayloadKHR = 5338,
-        HitAttributeKHR = 5339,
-        IncomingRayPayloadKHR = 5342,
-        ShaderRecordBufferKHR = 5343,
-        PhysicalStorageBuffer = 5349,
-        HitObjectAttributeNV = 5385,
-        TaskPayloadWorkgroupEXT = 5402,
-        CodeSectionINTEL = 5605,
-        DeviceOnlyINTEL = 5936,
-        HostOnlyINTEL = 5937,
     }
 
     public enum Dim

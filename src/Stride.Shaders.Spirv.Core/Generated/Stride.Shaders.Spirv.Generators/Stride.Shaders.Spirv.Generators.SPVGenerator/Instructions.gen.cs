@@ -294,6 +294,1009 @@ public ref partial struct OpSDSLEffect : IMemoryInstruction
     public static implicit operator OpSDSLEffect(OpDataIndex odi) => new(odi);
 }
 
+public ref partial struct OpSDSLParamsUse : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLParamsUse()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLParamsUse | (1 << 16);
+    }
+
+    public OpSDSLParamsUse(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLParamsUse(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string ParamsName
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLParamsUse(string paramsName)
+    {
+        ParamsName = paramsName;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLParamsUse, ..ParamsName.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "paramsName":
+                    ParamsName = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLParamsUse(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLMixinUse : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLMixinUse()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLMixinUse | (1 << 16);
+    }
+
+    public OpSDSLMixinUse(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLMixinUse(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string MixinName
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLMixinUse(string mixinName)
+    {
+        MixinName = mixinName;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLMixinUse, ..MixinName.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "mixinName":
+                    MixinName = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLMixinUse(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLMixinChild : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLMixinChild()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLMixinChild | (1 << 16);
+    }
+
+    public OpSDSLMixinChild(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLMixinChild(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string MixinName
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLMixinChild(string mixinName)
+    {
+        MixinName = mixinName;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLMixinChild, ..MixinName.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "mixinName":
+                    MixinName = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLMixinChild(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLMixinClone : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLMixinClone()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLMixinClone | (1 << 16);
+    }
+
+    public OpSDSLMixinClone(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLMixinClone(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string MixinName
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLMixinClone(string mixinName)
+    {
+        MixinName = mixinName;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLMixinClone, ..MixinName.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "mixinName":
+                    MixinName = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLMixinClone(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLParams : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLParams()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLParams | (1 << 16);
+    }
+
+    public OpSDSLParams(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLParams(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string Name
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLParams(string name)
+    {
+        Name = name;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLParams, ..Name.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "name":
+                    Name = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLParams(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLParamsField : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLParamsField()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLParamsField | (1 << 16);
+    }
+
+    public OpSDSLParamsField(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLParamsField(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string Name
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public string Cstype
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLParamsField(string name, string cstype)
+    {
+        Name = name;
+        Cstype = cstype;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLParamsField, ..Name.AsDisposableLiteralValue().Words, ..Cstype.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "name":
+                    Name = o.ToLiteral<string>();
+                    break;
+                case "cstype":
+                    Cstype = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLParamsField(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLConditionalStart : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLConditionalStart()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLConditionalStart | (1 << 16);
+    }
+
+    public OpSDSLConditionalStart(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLConditionalStart(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLConditionalStart];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLConditionalStart(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLConditionalEnd : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLConditionalEnd()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLConditionalEnd | (1 << 16);
+    }
+
+    public OpSDSLConditionalEnd(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLConditionalEnd(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLConditionalEnd];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLConditionalEnd(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLParamsTrue : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLParamsTrue()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLParamsTrue | (1 << 16);
+    }
+
+    public OpSDSLParamsTrue(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLParamsTrue(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string MixinName
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLParamsTrue(string mixinName)
+    {
+        MixinName = mixinName;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLParamsTrue, ..MixinName.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "mixinName":
+                    MixinName = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLParamsTrue(OpDataIndex odi) => new(odi);
+}
+
+public ref partial struct OpSDSLElse : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpSDSLElse()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpSDSLElse | (1 << 16);
+    }
+
+    public OpSDSLElse(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpSDSLElse(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public string MixinName
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public OpSDSLElse(string mixinName)
+    {
+        MixinName = mixinName;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpSDSLElse, ..MixinName.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "mixinName":
+                    MixinName = o.ToLiteral<string>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpSDSLElse(OpDataIndex odi) => new(odi);
+}
+
 public ref partial struct OpSDSLComposition : IMemoryInstruction
 {
     private ref OpData opData;
