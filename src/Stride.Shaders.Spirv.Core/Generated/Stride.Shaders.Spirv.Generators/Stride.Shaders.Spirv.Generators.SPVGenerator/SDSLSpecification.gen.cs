@@ -43,6 +43,7 @@ public static partial class Specification
         SamplerStateMaxLOD = 8028,
         FunctionParameterDefaultValueSDSL = 8040,
         ShaderConstantSDSL = 8060,
+        PatchConstantFuncSDSL = 8070,
         RelaxedPrecision = 0,
         SpecId = 1,
         Block = 2,
@@ -200,6 +201,7 @@ public static partial class Specification
         Input = 1,
         Streams = 2,
         Output = 3,
+        Constants = 4,
     }
 
     public enum GeometryStreamOutputKindSDSL
@@ -207,6 +209,12 @@ public static partial class Specification
         Point = 1,
         Line = 2,
         Triangle = 3,
+    }
+
+    public enum PatchTypeKindSDSL
+    {
+        Input = 1,
+        Output = 2,
     }
 
     public enum ExecutionModel

@@ -147,6 +147,11 @@
             return DefaultVisit(geometryStreamType);
         }
 
+        public virtual TResult Visit(Stride.Shaders.Core.PatchType patchType)
+        {
+            return DefaultVisit(patchType);
+        }
+
         public virtual TResult Visit(Stride.Shaders.Core.ShaderMixinType shaderMixinType)
         {
             return DefaultVisit(shaderMixinType);
@@ -426,6 +431,17 @@
             return (SymbolType)base.Visit(geometryStreamType);
         }
 
+        public override SymbolType Visit(Stride.Shaders.Core.PatchType patchType)
+        {
+            var baseTypeTemp = (Stride.Shaders.Core.SymbolType)VisitType(patchType.BaseType);
+            if (!ReferenceEquals(baseTypeTemp, patchType.BaseType))
+                patchType = patchType with
+                {
+                    BaseType = baseTypeTemp
+                };
+            return (SymbolType)base.Visit(patchType);
+        }
+
         public override SymbolType Visit(Stride.Shaders.Core.ShaderMixinType shaderMixinType)
         {
             return (SymbolType)base.Visit(shaderMixinType);
@@ -577,6 +593,11 @@
         public virtual void Visit(Stride.Shaders.Core.GeometryStreamType geometryStreamType)
         {
             DefaultVisit(geometryStreamType);
+        }
+
+        public virtual void Visit(Stride.Shaders.Core.PatchType patchType)
+        {
+            DefaultVisit(patchType);
         }
 
         public virtual void Visit(Stride.Shaders.Core.ShaderMixinType shaderMixinType)
@@ -751,6 +772,12 @@
         {
             VisitType(geometryStreamType.BaseType);
             base.Visit(geometryStreamType);
+        }
+
+        public override void Visit(Stride.Shaders.Core.PatchType patchType)
+        {
+            VisitType(patchType.BaseType);
+            base.Visit(patchType);
         }
 
         public override void Visit(Stride.Shaders.Core.ShaderMixinType shaderMixinType)
@@ -1211,6 +1238,22 @@ namespace Stride.Shaders.Core
 namespace Stride.Shaders.Core
 {
     public partial record GeometryStreamType
+    {
+        public override void Accept(TypeVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+
+        public override TResult Accept<TResult>(TypeVisitor<TResult> visitor)
+        {
+            return visitor.Visit(this);
+        }
+    }
+}
+
+namespace Stride.Shaders.Core
+{
+    public partial record PatchType
     {
         public override void Accept(TypeVisitor visitor)
         {

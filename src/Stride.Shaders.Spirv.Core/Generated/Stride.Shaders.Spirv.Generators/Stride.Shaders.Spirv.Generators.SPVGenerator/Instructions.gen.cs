@@ -3592,6 +3592,155 @@ public ref partial struct OpTypeGeometryStreamOutputSDSL : IMemoryInstruction
     public static implicit operator OpTypeGeometryStreamOutputSDSL(OpDataIndex odi) => new(odi);
 }
 
+public ref partial struct OpTypePatchSDSL : IMemoryInstruction
+{
+    private ref OpData opData;
+    public ref OpData OpData => ref opData;
+
+    public MemoryOwner<int> InstructionMemory
+    {
+        get
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+                return OpData.Memory;
+            else
+                return field;
+        }
+
+        private set
+        {
+            if (!Unsafe.IsNullRef(ref OpData))
+            {
+                OpData.Memory.Dispose();
+                OpData.Memory = value;
+            }
+            else
+                field = value;
+        }
+    }
+
+    public OpTypePatchSDSL()
+    {
+        InstructionMemory = MemoryOwner<int>.Allocate(1);
+        InstructionMemory.Span[0] = (int)Op.OpTypePatchSDSL | (1 << 16);
+    }
+
+    public OpTypePatchSDSL(OpDataIndex index)
+    {
+        InitializeProperties(ref index.Data);
+        opData = ref index.Data;
+    }
+
+    public OpTypePatchSDSL(ref OpData data)
+    {
+        InitializeProperties(ref data);
+        opData = ref data;
+    }
+
+    public int ResultId
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public int BaseType
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public PatchTypeKindSDSL Kind
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public int Size
+    {
+        get;
+        set
+        {
+            field = value;
+            if (InstructionMemory is not null)
+                UpdateInstructionMemory();
+        }
+    }
+
+    public static implicit operator int (OpTypePatchSDSL inst) => inst.ResultId;
+    public OpTypePatchSDSL(int resultId, int baseType, PatchTypeKindSDSL kind, int size)
+    {
+        ResultId = resultId;
+        BaseType = baseType;
+        Kind = kind;
+        Size = size;
+        UpdateInstructionMemory();
+        opData = ref Unsafe.NullRef<OpData>();
+    }
+
+    public void Attach(OpDataIndex index)
+    {
+        opData = ref index.Data;
+    }
+
+    public void UpdateInstructionMemory()
+    {
+        InstructionMemory ??= MemoryOwner<int>.Empty;
+        Span<int> instruction = [(int)Op.OpTypePatchSDSL, ResultId, BaseType, (int)Kind, ..Size.AsDisposableLiteralValue().Words];
+        instruction[0] |= instruction.Length << 16;
+        if (instruction.Length == InstructionMemory.Length)
+            instruction.CopyTo(InstructionMemory.Span);
+        else
+        {
+            var tmp = MemoryOwner<int>.Allocate(instruction.Length);
+            instruction.CopyTo(tmp.Span);
+            InstructionMemory?.Dispose();
+            InstructionMemory = tmp;
+        }
+    }
+
+    private void InitializeProperties(ref OpData data)
+    {
+        foreach (var o in data)
+        {
+            switch (o.Name)
+            {
+                case "resultId":
+                    ResultId = o.ToLiteral<int>();
+                    break;
+                case "baseType":
+                    BaseType = o.ToLiteral<int>();
+                    break;
+                case "kind":
+                    Kind = o.ToEnum<PatchTypeKindSDSL>();
+                    break;
+                case "size":
+                    Size = o.ToLiteral<int>();
+                    break;
+                // We ignore unrecognized operands
+                default:
+                    break;
+            }
+        }
+    }
+
+    public static implicit operator OpTypePatchSDSL(OpDataIndex odi) => new(odi);
+}
+
 public ref partial struct OpForeachSDSL : IMemoryInstruction
 {
     private ref OpData opData;
